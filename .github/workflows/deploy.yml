@@ -4,7 +4,7 @@ name: Hexo Deploy
 on:
   push:
     branches:
-      - master
+      - source
 
 # 自定义环境变量
 env:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout theme repo
         uses: actions/checkout@v2
         with:
-          repository: themes/hexo-theme-tangyuxian
+          # repository: themes/hexo-theme-tangyuxian
           ref: master
           path: themes/hexo-theme-tangyuxian
 
