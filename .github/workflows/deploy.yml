@@ -65,6 +65,5 @@ jobs:
       # 生成并部署
       - name: Deploy
         run: |
-          npx
-          npx hexo deploy --generate
+          hexo deploy --generate
           
