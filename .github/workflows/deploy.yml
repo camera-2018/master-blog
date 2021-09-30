@@ -68,6 +68,6 @@ jobs:
           npm install -g hexo-cli
           
       - name: hexo
-        run:|
+        run: |
           hexo generate -d
           
