@@ -65,5 +65,6 @@ jobs:
       # 生成并部署
       - name: Deploy
         run: |
+          npm install -g hexo-cli
           hexo deploy --generate
           
