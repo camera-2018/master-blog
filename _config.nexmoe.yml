@@ -33,9 +33,9 @@ menu:
   回到首页: 
     - /
     - icon-home
-#  文章归档:  # 使用说明：https://docs.nexmoe.com/article/archive
-#    - /archive.html
-#    - icon-container
+  文章归档:  # 使用说明：https://docs.nexmoe.com/article/archive
+    - /archive.html
+    - icon-container
   关于博客:
     - /about.html
     - icon-info-circle
