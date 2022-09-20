@@ -1,6 +1,8 @@
 ---
 title: Hello World
-image: https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/illust_82448502_20220605_001853.jpg
+cover: https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/illust_82448502_20220605_001853.jpg
+# coverWidth: 1200
+# coverHeight: 920
 ---
 <img src="https://z3.ax1x.com/2021/10/08/5CZo5V.png">
 
