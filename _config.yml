@@ -108,3 +108,26 @@ deploy:
   branch: master
   name: camera-2018
   email: xyxsw2021@gmail.com
+
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: xiaomai
+  display:
+    superSample: 2
+    width: 300
+    height: 600
+    position: right
+    hOffset: 0
+    vOffset: 80
+  mobile:
+    show: false
+  react:
+    opacity: 1
