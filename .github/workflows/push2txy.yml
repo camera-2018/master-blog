@@ -1,0 +1,37 @@
+name: push2txy # 当前工作流程的名称
+on: 
+  push: 
+    branches: 
+      - source # 只要push到main分支，就会触发该工作流程
+jobs:
+  push2txy:
+    runs-on: ubuntu-latest
+    steps:
+      # 使用别人封装好的的action，用于clone该仓库的源码到工作流中
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 同步代码到服务器
+      - name: Deploy
+        uses: cross-the-world/scp-pipeline@master
+        with:
+          host: ${{ secrets.MY_HOST }} # 服务器IP（需要在GitHub上自行配置对应的secret）
+          user: ${{ secrets.MY_USER }} # 服务器用户名
+          pass: ${{ secrets.MY_PASS }} # 服务器密码
+          connect_timeout: 10s
+          local: './*' # 源路径（工作流）
+          remote: /www/wwwroot/blogsource # 目标路径（服务器）
+      
+      # 在服务器端执行相关指令
+      - name: Executing remote ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MY_HOST }} # 服务器IP（需要在GitHub上自行配置对应的secret）
+          username: ${{ secrets.MY_USER }} # 服务器用户名
+          password: ${{ secrets.MY_PASS }} # 服务器密码
+          script: |
+            cd /www/wwwroot/blogsource # 进入服务器中的端工程所在的目录
+            npm install # 安装项目依赖
+            hexo clean # 清除缓存
+            hexo g # 生成静态文件
+            cp -r public/* /www/wwwroot/blogserver/public # 将生成的静态文件复制到服务器中的博客目录
