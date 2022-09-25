@@ -2,7 +2,7 @@ name: push2txy # 当前工作流程的名称
 on: 
   push: 
     branches: 
-      - source # 只要push到main分支，就会触发该工作流程
+      - master # 只要push到main分支，就会触发该工作流程
 jobs:
   push2txy:
     runs-on: ubuntu-latest
@@ -32,6 +32,6 @@ jobs:
           script: |
             cd /www/wwwroot/blogsource # 进入服务器中的端工程所在的目录
             npm install # 安装项目依赖
-            npx hexo clean # 清除缓存
-            npx hexo g # 生成静态文件
-            cp -r public/* /www/wwwroot/blogserver/public # 将生成的静态文件复制到服务器中的博客目录
+            hexo clean # 清除缓存
+            hexo g # 生成静态文件
+            cp -r ./* /www/wwwroot/blogserver/public # 将生成的静态文件复制到服务器中的博客目录
