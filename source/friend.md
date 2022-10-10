@@ -15,6 +15,7 @@ cover: https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/illust_82448502_20220605_00
   <li><a href="https://blog.t0hka.top/">T0hka</a></li>
   <li><a href="https://daidr.me/">Daidr</a></li>
   <li><a href="https://blog.biduang.cn">BiDuang</a></li>
+  <li><a href="https://blog.phxx.ink/">Poivre</a></li>
 </ul>
 
 <style>
