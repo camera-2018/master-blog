@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1666256668231">
+  <link rel="stylesheet" href="/css/style.css?v=1666427686503">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -58,7 +58,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>8 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>9 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -133,7 +133,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -170,6 +170,293 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2022/10/22/java_crud%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="" class="lazyload">
+                    <h1></h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2022年10月22日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h1 id="java-crud环境配置教程"><a href="#java-crud环境配置教程" class="headerlink" title="java_crud环境配置教程"></a>java_crud环境配置教程</h1><p>本文会从安装开始，到最后写出一个带命令行交互窗口的CRUD的小项目.</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><p><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#jdk17-windows">安装地址</a></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221643.png"></p>
+<p> 建议下载java17以防止有依赖问题</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221712.png"></p>
+<p>点击这个下载<code>.msi</code>安装包来安装</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221734.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221748.png"></p>
+<p>这里建议不要更改<strong>默认位置</strong></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221802.png"></p>
+<p>安装完成🥳</p>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>在<code>Windows开始菜单</code>搜索<code>环境变量</code></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221840.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221858.png"></p>
+<p>在系统环境变量下面点击新建</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221915.png"></p>
+<p>变量名设置为 <code>JAVA_HOME</code></p>
+<p>变量值设置为 <code>C:\Program Files\Java\jdk-17.0.4.1</code> 如果你有安装到其他目录请填其他目录</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221927.png"></p>
+<p>新建环境变量 <code>CLASS_PATH</code> </p>
+<p>变量值为 <code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p>
+<p>如下图所示</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929221948.png"></p>
+<p>注意 变量值比较奇怪 可能理解不能  但是要照上填写</p>
+<p>在系统变量里找到<code>path</code> 双击</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222004.png"></p>
+<p>点击新建  值填写</p>
+<p><code>%JAVA_HOME%\bin</code></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222021.png"></p>
+<p>点击确定</p>
+<p>接下来按 Windows键加R键  输入cmd点确定</p>
+<p>在命令行里输入<code>java --version</code></p>
+<p>如有正常不报错则配置成功🥳</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222038.png"></p>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/installer/">MySQL :: Download MySQL Installer (Archived Versions)</a></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222056.png"></p>
+<p>双击打开</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222109.png"></p>
+<p>选default</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222120.png"></p>
+<p>直接next</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222134.png"></p>
+<p>yes</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222149.png"></p>
+<p>Execute</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222201.png"></p>
+<p>一路next</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222212.png"></p>
+<p>设一个密码</p>
+<p>然后一路next</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222223.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222238.png"></p>
+<p>点check</p>
+<p>点next</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929222255.png"></p>
+<p>最后会跳出这么一个奇奇怪怪的 MySQL JS 的命令行 （说实话我没懂为什么有这玩意</p>
+<p>（不过你可以在上面玩玩 JS 的特性   ：）</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929230157.png"></p>
+<p>和命令行同时弹出来的是workbench </p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929230229.png"></p>
+<p>MySQL已安装完成🥳</p>
+<h2 id="安装-JetBrain-IntelliJ-IDEA"><a href="#安装-JetBrain-IntelliJ-IDEA" class="headerlink" title="安装 JetBrain IntelliJ IDEA"></a>安装 JetBrain IntelliJ IDEA</h2><p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/idea/">下载地址</a></p>
+<p>直接下载咯 0配置的</p>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929230750.png"></p>
+<p>新建项目</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929230914.png"></p>
+<p>创建配置如图所示</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231039.png"></p>
+<p>点进 <code>src/main/java/org/example/main</code>运行一下试试</p>
+<h2 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h2><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231348.png"></p>
+<p>点击编辑配置</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231437.png"></p>
+<p>新建一个Maven配置</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231601.png"></p>
+<p>配置如图 保存应用</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231748.png"></p>
+<p>点击运行</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231717.png"></p>
+<p>build成功后会生成一个snapshot的jar</p>
+<p>接下来是安装maven依赖项</p>
+<p>打开pom.xml 右键点生成</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231903.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929231942.png"></p>
+<p>搜索 mysql-connector 添加这个8版本的依赖</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929232035.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220930000633.png"></p>
+<p>生成了如图的代码则成功</p>
+<p>在与 dependencies 同级的标签下面 添加如下代码 配置maven依赖自动安装</p>
+<pre><code class="xml"> &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;phase&gt;package&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;single&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+                &lt;configuration&gt;
+                    &lt;descriptorRefs&gt;
+                        &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt;
+                    &lt;/descriptorRefs&gt;
+                    &lt;archive&gt;
+                        &lt;manifest&gt;
+                            &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+                            &lt;classpathPrefix&gt;lib/&lt;/classpathPrefix&gt;
+                            &lt;mainClass&gt;org.example.Main&lt;/mainClass&gt;
+                        &lt;/manifest&gt;
+                    &lt;/archive&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+</code></pre>
+<p>点击右上角 <img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929232533.png"> 重新加载maven变更</p>
+<h2 id="加载数据库-amp-amp-创建数据表"><a href="#加载数据库-amp-amp-创建数据表" class="headerlink" title="加载数据库&amp;&amp;创建数据表"></a>加载数据库&amp;&amp;创建数据表</h2><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929232829.png"></p>
+<p>在右边的侧边栏中找到数据库  添加一个MySQL</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929233002.png"></p>
+<p>输入你刚设置的账号密码连接</p>
+<p>弹出一个console</p>
+<p>在里面输入</p>
+<pre><code class="sql">CREATE DATABASE `java_crud_demo` CHARACTER SET &#39;utf8mb4&#39; COLLATE &#39;utf8mb4_general_ci&#39;;
+</code></pre>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929233123.png"></p>
+<p>绿色框内是idea识别出来的sql语句  点击左上绿色箭头执行</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929233231.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929233308.png"></p>
+<p>右侧数据库栏里会出现你刚创建的数据库 但是里面没有表</p>
+<p>在console里输入</p>
+<pre><code class="sql">create table if not exists `java_crud_demo`.`article_table`
+(
+    id     int unsigned auto_increment
+        primary key,
+    title  varchar(100) not null,
+    author varchar(40)  not null,
+    time   datetime     null
+);
+</code></pre>
+<p>ctrl + a 全选中 然后点执行</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929233643.png"></p>
+<p>生成了表article_table 里面没有数据</p>
+<p>简单的填充数据 可以 console输入</p>
+<pre><code class="sql">INSERT INTO `java_crud_demo`.`article_table` (`title`, `author`, `time`)
+VALUES (&#39;标题&#39;, &#39;作者&#39;, NOW());
+</code></pre>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929234014.png"></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220929234049.png"></p>
+<p>插入完了记得点这个刷新</p>
+<p>也可以直接在table预览界面</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20220930000521.png"></p>
+<p>添加行 输入完毕后 点提交</p>
+<h2 id="数据库crud模板"><a href="#数据库crud模板" class="headerlink" title="数据库crud模板"></a>数据库crud模板</h2><p>新建一个crud.java</p>
+<pre><code class="java">package org.example;
+
+import java.sql.*;
+
+public class Crud &#123;
+
+    // MySQL 8.0 以下版本 - JDBC 驱动名及数据库 URL
+    //static final String JDBC_DRIVER = &quot;com.mysql.jdbc.Driver&quot;;
+    //static final String DB_URL = &quot;jdbc:mysql://localhost:3306/java_crud_demo&quot;;
+
+    // MySQL 8.0 以上版本 - JDBC 驱动名及数据库 URL
+    static final String JDBC_DRIVER = &quot;com.mysql.cj.jdbc.Driver&quot;;
+    static final String DB_URL = &quot;jdbc:mysql://localhost:3306/java_crud_demo?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&quot;;
+
+
+    // 数据库的用户名与密码，需要根据自己的设置
+    static final String USER = &quot;root&quot;;
+    static final String PASS = &quot;123456&quot;;
+
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        Statement stmt = null;
+        try&#123;
+            // 注册 JDBC 驱动
+            Class.forName(JDBC_DRIVER);
+
+            // 打开链接
+            System.out.println(&quot;连接数据库...&quot;);
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+            // 执行查询
+            System.out.println(&quot; 实例化Statement对象...&quot;);
+            stmt = conn.createStatement();
+            String sql;
+            sql = &quot;SELECT id, title, author, time FROM java_crud_demo&quot;;
+            ResultSet rs = stmt.executeQuery(sql);
+
+            // 展开结果集数据库
+            while(rs.next())&#123;
+                // 通过字段检索
+                int id  = rs.getInt(&quot;id&quot;);
+                String title = rs.getString(&quot;title&quot;);
+                String author = rs.getString(&quot;author&quot;);
+                String time = rs.getString(&quot;time&quot;);
+
+                // 输出数据
+                System.out.println(&quot;ID: &quot; + id);
+                System.out.println(&quot;标题：&quot; + title);
+                System.out.println(&quot;作者：&quot; + author);
+                System.out.println(&quot;时间：&quot; + time);
+            &#125;
+            // 完成后关闭
+            rs.close();
+            stmt.close();
+            conn.close();
+        &#125;catch(SQLException se)&#123;
+            // 处理 JDBC 错误
+            se.printStackTrace();
+        &#125;catch(Exception e)&#123;
+            // 处理 Class.forName 错误
+            e.printStackTrace();
+        &#125;finally&#123;
+            // 关闭资源
+            try&#123;
+                if(stmt!=null) stmt.close();
+            &#125;catch(SQLException se2)&#123;
+            &#125;// 什么都不做
+            try&#123;
+                if(conn!=null) conn.close();
+            &#125;catch(SQLException se)&#123;
+                se.printStackTrace();
+            &#125;
+        &#125;
+        System.out.println(&quot;Goodbye!&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>接下来愉快写你的代码主逻辑咯🥳</p>
+<h2 id="双击打开jar"><a href="#双击打开jar" class="headerlink" title="双击打开jar"></a>双击打开jar</h2><pre><code class="java">package org.example;
+
+import java.io.File;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        if (args.length == 0) &#123;
+            try &#123;
+                String path = System.getProperty(&quot;java.class.path&quot;);
+                int lastIndex = path.lastIndexOf(File.separator) + 1;
+                String file_name = path.substring(lastIndex);
+                ProcessBuilder pb = new ProcessBuilder();
+                pb.directory(new File(&quot;.&quot;));
+                System.out.printf(&quot;%s %s %s %s %s %s %s&quot;, &quot;cmd&quot;, &quot;/c&quot;, &quot;start&quot;, &quot;java&quot;, &quot;-jar&quot;, file_name, &quot;eject&quot;);
+                        pb.command(&quot;cmd&quot;, &quot;/c&quot;, &quot;start&quot;, &quot;java&quot;, &quot;-jar&quot;, file_name, &quot;eject&quot;);
+                pb.start();
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125; finally &#123;
+                System.exit(0);
+            &#125;
+        &#125;
+        else &#123;
+            //主函数
+            System.out.println(&quot;Hello World!&quot;);
+        &#125;
+    &#125;
+    
+&#125;
+</code></pre>
+<p>在main开头加上这样一段 他会帮你输入命令来打开一个弹出的新窗口啦🥳</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>Maven 构建之后就得到了需要的jar包了🥳</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2022/09/19/%E8%8E%B7%E5%A5%96%E6%84%9F%E8%A8%80/">
@@ -1567,7 +1854,7 @@ public class Main &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1666256668232"></script>
+<script src="/js/app.js?v=1666427686503"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
