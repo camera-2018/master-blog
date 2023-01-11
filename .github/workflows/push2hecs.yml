@@ -4,7 +4,7 @@ on:
     branches: 
       - source # 只要push到main分支，就会触发该工作流程
 jobs:
-  push2txy:
+  push2hecs:
     runs-on: ubuntu-latest
     steps:
       # 使用别人封装好的的action，用于clone该仓库的源码到工作流中
