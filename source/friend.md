@@ -4,7 +4,6 @@ layout: friends
 cover: https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/illust_82448502_20220605_001853.jpg
 ---
 
-
 <ul id="friends">
   <li><a href="https://l0tus.vip">L0tus</a></li>
   <li><a href="http://ma5hr00m.top/">Ma5hr00m</a></li>
@@ -23,7 +22,6 @@ cover: https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/illust_82448502_20220605_00
     list-style: none;
     font-size: 1.5em;
     font-family: consolas;
-    /* width: 600px; */
     line-height: 50px;
     text-align: center;
     height: 50px;
