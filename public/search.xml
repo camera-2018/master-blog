@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>前端与 HTML ｜ 青训营笔记</title>
+      <link href="/2023/01/16/%E5%89%8D%E7%AB%AF%E4%B8%8E%20HTML%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/"/>
+      <url>/2023/01/16/%E5%89%8D%E7%AB%AF%E4%B8%8E%20HTML%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 1 天</strong></p><h2 id="本堂课重点内容："><a href="#本堂课重点内容：" class="headerlink" title="本堂课重点内容："></a>本堂课重点内容：</h2><ol><li>前端的介绍</li><li>HTML 标签的简单介绍</li><li>HTML 语义化</li></ol><h2 id="详细知识点介绍："><a href="#详细知识点介绍：" class="headerlink" title="详细知识点介绍："></a>详细知识点介绍：</h2><ol><li>前端技术栈</li><li>前端的边界、开发环境（ide、浏览器）</li><li>DOM 树的简单介绍</li><li>HTML 语法简单介绍</li><li>各类常用标签（h1-h5、p、form、a）</li><li>常见的语义化标签（main&#x2F;footer&#x2F;section）</li><li>语义化的优势</li></ol><h2 id="实践练习例子："><a href="#实践练习例子：" class="headerlink" title="实践练习例子："></a>实践练习例子：</h2><h3 id="1-标题元素"><a href="#1-标题元素" class="headerlink" title="1. 标题元素"></a>1. 标题元素</h3><p>使用 <code>h1</code>~&#96;h6&#96; 标签将标题文本包裹，标题会根据级别拥有默认的字重、字号和外边距。</p><pre><code class="html">&lt;h1&gt;一级标题&lt;/h1&gt;&lt;h2&gt;二级标题&lt;/h2&gt;&lt;h3&gt;三级标题&lt;/h3&gt;&lt;h4&gt;四级标题&lt;/h4&gt;&lt;h5&gt;五级标题&lt;/h5&gt;&lt;h6&gt;六级标题&lt;/h6&gt;</code></pre><h3 id="2-图片元素"><a href="#2-图片元素" class="headerlink" title="2. 图片元素"></a>2. 图片元素</h3><p>使用 <code>src</code> 属性来确定图片链接，<code>alt</code> 属性用于表示图片无法显示时的替代文本</p><pre><code class="html">&lt;img src=&quot;https://example.com/image&quot; /&gt;&lt;img src=&quot;https://example.com&quot; alt=&quot;显示不出来的图片&quot; /&gt;</code></pre><h3 id="3-单选框"><a href="#3-单选框" class="headerlink" title="3. 单选框"></a>3. 单选框</h3><p><code>radio</code> 类型的 <code>input</code> 元素，相同 <code>name</code> 的单选框会归为同一组（只能选其中一个） 使用 <code>label</code> 标签来标识单选框的内容</p><pre><code class="html">&lt;input type=&quot;radio&quot; id=&quot;el1&quot; name=&quot;group1&quot; /&gt;&lt;label for=&quot;el1&quot;&gt;第一组-选项1&lt;/label&gt;&lt;input type=&quot;radio&quot; id=&quot;el2&quot; name=&quot;group1&quot; /&gt;&lt;label for=&quot;el2&quot;&gt;第一组-选项1&lt;/label&gt;&lt;br&gt;&lt;input type=&quot;radio&quot; id=&quot;el3&quot; name=&quot;group2&quot; /&gt;&lt;label for=&quot;el3&quot;&gt;第二组-选项1&lt;/label&gt;&lt;input type=&quot;radio&quot; id=&quot;el4&quot; name=&quot;group2&quot; /&gt;&lt;label for=&quot;el4&quot;&gt;第二组-选项2&lt;/label&gt;</code></pre><h3 id="4-超链接"><a href="#4-超链接" class="headerlink" title="4. 超链接"></a>4. 超链接</h3><p>使用 <code>a</code> 标签包裹文本，<code>href</code> 属性是目标链接，默认在当前页面打开，为了在新标签页打开，可以将 <code>target</code> 属性设置为 <code>_blank</code></p><pre><code class="html">&lt;a href=&quot;https://example.com&quot;&gt;在当前页面打开&lt;/a&gt;&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;在新页面打开&lt;/a&gt;</code></pre><h3 id="5-有序列表"><a href="#5-有序列表" class="headerlink" title="5. 有序列表"></a>5. 有序列表</h3><p>最外层使用 <code>ol</code>标签包裹，内部包含多个 <code>li</code> 标签</p><pre><code class="html">&lt;ol&gt;    &lt;li&gt;第一&lt;/li&gt;    &lt;li&gt;第二&lt;/li&gt;    &lt;li&gt;&lt;em&gt;第三&lt;/em&gt;&lt;/li&gt;&lt;/ol&gt;</code></pre><h3 id="6-无序列表"><a href="#6-无序列表" class="headerlink" title="6. 无序列表"></a>6. 无序列表</h3><p>最外层使用 <code>ul</code>标签包裹，内部包含多个 <code>li</code>标签</p><pre><code class="html">&lt;ul&gt;    &lt;li&gt;第一&lt;/li&gt;    &lt;li&gt;第二&lt;/li&gt;    &lt;li&gt;&lt;em&gt;第三&lt;/em&gt;&lt;/li&gt;&lt;/ul&gt;</code></pre><h3 id="课后个人总结："><a href="#课后个人总结：" class="headerlink" title="课后个人总结："></a>课后个人总结：</h3><p>本节课主要介绍了前端的技术栈，以及 HTML 标签的简单介绍和 HTML 语义化，通过本节课的学习，我对 HTML 标签有了一定的了解，掌握了如何使用标签来表达页面元素，并且学习了如何使用语义化标签来提高前端代码的可读性，以及提升代码的可维护性。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 青训营笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTTP/3试水</title>
       <link href="/2023/01/11/http3%E8%AF%95%E6%B0%B4/"/>
       <url>/2023/01/11/http3%E8%AF%95%E6%B0%B4/</url>

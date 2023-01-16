@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>文章归档：2023/1 - 向阳信息</title>
+  <title>标签：青训营笔记 - 向阳信息</title>
   <meta charset="UTF-8">
   <meta name="description" content="若月千鸮的博客&#39;">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -19,7 +19,7 @@
   <meta name="description" content="若月千鸮的博客&#39;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="向阳信息">
-<meta property="og:url" content="https://blog.xyxsw.ltd/archives/2023/01/index.html">
+<meta property="og:url" content="https://blog.xyxsw.ltd/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="向阳信息">
 <meta property="og:description" content="若月千鸮的博客&#39;">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673842837148">
+  <link rel="stylesheet" href="/css/style.css?v=1673842837152">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -253,91 +253,6 @@
 &lt;/ul&gt;
 </code></pre>
 <h3 id="课后个人总结："><a href="#课后个人总结：" class="headerlink" title="课后个人总结："></a>课后个人总结：</h3><p>本节课主要介绍了前端的技术栈，以及 HTML 标签的简单介绍和 HTML 语义化，通过本节课的学习，我对 HTML 标签有了一定的了解，掌握了如何使用标签来表达页面元素，并且学习了如何使用语义化标签来提高前端代码的可读性，以及提升代码的可维护性。</p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/11/http3%E8%AF%95%E6%B0%B4/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="HTTP/3试水" class="lazyload">
-                    <h1>HTTP/3试水</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月11日</a>
-            <a><i class="nexmoefont icon-areachart"></i>670 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-        </div>
-        
-        <article>
-            
-                <h2 id="HTTP-x2F-3试水"><a href="#HTTP-x2F-3试水" class="headerlink" title="HTTP&#x2F;3试水"></a>HTTP&#x2F;3试水</h2><h3 id="I"><a href="#I" class="headerlink" title="I"></a>I</h3><p>小看一眼，发现全是编译啥的。应该会踩很多坑的，这次用国外没东西的小1h512M服务器试水一下。<br>目前cloudflare给出了一键开启http3。很好用，我在netlify托管的网页一键开开了。<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221046.png" alt="1" class="lazyload"><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221121.png" alt="2" class="lazyload"></p>
-<h3 id="II"><a href="#II" class="headerlink" title="II"></a>II</h3><p>现在要编译安装一个nginx，用的是<a target="_blank" rel="noopener" href="https://github.com/cloudflare/quiche">https://github.com/cloudflare/quiche</a>方案。<br><a target="_blank" rel="noopener" href="https://github.com/cloudflare/quiche/tree/master/nginx">https://github.com/cloudflare/quiche/tree/master/nginx</a>处理nginx的教程在这里，一步步跟上</p>
-<pre><code class="bash">  curl -O https://nginx.org/download/nginx-1.16.1.tar.gz
-  tar xzvf nginx-1.16.1.tar.gz
-  git clone --recursive https://github.com/cloudflare/quiche
-  cd nginx-1.16.1
-  patch -p01 &lt; ../quiche/nginx/nginx-1.16.patch
-</code></pre>
-<p>在之前要apt upgrade一下避免有装不上的东西<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221522.png" alt="3" class="lazyload"><br>外网服务器下的就是快😎<br>要编译了发现cmake没有  装个cmake先<br><code>apt install cmake</code></p>
-<p>gcc g++也没有 装个</p>
-<p>接下来</p>
-<pre><code class="bash">  ./configure                                 \
-       --prefix=$PWD                           \
-       --build=&quot;quiche-$(git --git-dir=../quiche/.git rev-parse --short HEAD)&quot; \
-       --with-http_ssl_module                  \
-       --with-http_v2_module                   \
-       --with-http_v3_module                   \
-       --with-openssl=../quiche/quiche/deps/boringssl \
-       --with-quiche=../quiche
-  make
-</code></pre>
-<p>nginx configure 时候报错，<br><code>the HTTP rewrite module requires the PCRE library.</code><br>搜了 装这个 <code>apt install libpcre3 libpcre3-dev</code></p>
-<p><code>the HTTP gzip module requires the zlib library</code><br>搜了 装这个 <code>apt install zlib1g-dev</code></p>
-<p>又error 没有cargo 装个<br><code>apt install cargo</code></p>
-<p>make好了</p>
-<pre><code class="bash">nginx -V
-</code></pre>
-<p>装是装好了 好像要一个https证书啊<br>acme签一个<br><code>https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E</code></p>
-<pre><code class="conf">events &#123;
-    worker_connections  1024;
-&#125;
-
-http &#123;
-    server &#123;
-        # Enable QUIC and HTTP/3.
-        listen 443 quic reuseport;
-
-        # Enable HTTP/2 (optional).
-        listen 443 ssl http2;
-
-        ssl_certificate      cert.crt;
-        ssl_certificate_key  cert.key;
-
-        # Enable all TLS versions (TLSv1.3 is required for QUIC).
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-
-        # Add Alt-Svc header to negotiate HTTP/3.
-        add_header alt-svc &#39;h3=&quot;:443&quot;; ma=86400&#39;;
-    &#125;
-&#125;
-</code></pre>
-<p>签证书签了半天 签好了 放在</p>
-<pre><code class="bash">        ssl_certificate      cert.crt;
-        ssl_certificate_key  cert.key;
-</code></pre>
-<p>里面<br>配置好nginx 注意网站不要在root下<br>在root下nginx访问不到直接403了<br>建一个<code>/www/wwwroot/domin</code>文件夹放东西</p>
-<h3 id="III"><a href="#III" class="headerlink" title="III"></a>III</h3><p>最后配置结果是这样滴</p>
-<h4 id="第一个"><a href="#第一个" class="headerlink" title="第一个"></a>第一个</h4><p><a target="_blank" rel="noopener" href="https://geekflare.com/tools/test/yn22t29e04y7v0u5jl61mcark2dwxmbn">https://geekflare.com/tools/test/yn22t29e04y7v0u5jl61mcark2dwxmbn</a><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004019.png" alt="6" class="lazyload"><br>这个网站会检测什么h3-xxx的版本协议 （看不懂，看懂了在写一篇<br>你没有这个版本号的协议这个网站就检测不出来好像 在这里改就行<br><code>add_header alt-svc &#39;h3=&quot;:443&quot;; ma=86400&#39;;</code><br>我加了版本号114514🤓<br><code>add_header alt-svc h3=&quot;:443&quot;; ma=86400; h3-114514=&quot;:443&quot;; ma=86400</code><br>上面这个好像就检测这个alt-svc这个头</p>
-<h4 id="第二个"><a href="#第二个" class="headerlink" title="第二个"></a>第二个</h4><p><a target="_blank" rel="noopener" href="https://http3check.net/?host=http3.typescriptactions.xyz">https://http3check.net/?host=http3.typescriptactions.xyz</a><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004253.png" alt="7" class="lazyload"><br>这个就很正常了 不加版本直接检测h3的</p>
-<h4 id="第三个"><a href="#第三个" class="headerlink" title="第三个"></a>第三个</h4><p>然后是wappalyzer插件<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004611.png" alt="8" class="lazyload"></p>
-<h4 id="第四个"><a href="#第四个" class="headerlink" title="第四个"></a>第四个</h4><p>然后是浏览器devtools的协议检查<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004854.png" alt="9" class="lazyload"></p>
-<h3 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h3><p>总结一下<br>2023-1-11 21:57:32 开始的<br>2023-1-12 00:53:12 写完这篇<br>🤥感觉没啥可总结的 国外服务器也测不了http3优势啥的<br>下班！睡觉！😝</p>
 
             
         </article>
@@ -1058,7 +973,7 @@ http &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673842837149"></script>
+<script src="/js/app.js?v=1673842837153"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
