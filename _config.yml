@@ -108,6 +108,7 @@ deploy:
   branch: master
   name: camera-2018
   email: xyxsw2021@gmail.com
+  ignore_hidden: false
 
 
 live2d:
@@ -131,3 +132,25 @@ live2d:
     show: false
   react:
     opacity: 1
+
+sitemap:
+    path: sitemap.xml
+
+# enable: 开启/关闭 推送
+# cron: 执行时间周期
+# count: 每次提交最新的10篇文章，输入0或者不填写则默认为所有文章(建议是最新的10篇文章)
+# date: 更新时间(updated)|创建日期(created)
+hexo_seo_autopush:
+  cron: 0 5 * * *
+  baidu:
+    enable: true
+    date: created
+    count: 10
+  bing:
+    enable: true
+    date: created
+    count: 10
+  google:
+    enable: true
+    date: created
+    count: 10
