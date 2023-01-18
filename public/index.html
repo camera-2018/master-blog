@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673970972600">
+  <link rel="stylesheet" href="/css/style.css?v=1674053587748">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>10 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>11 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,152 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/18/JavaScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="JavaScript ｜ 青训营笔记" class="lazyload">
+                    <h1>JavaScript ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月18日</a>
+            <a><i class="nexmoefont icon-areachart"></i>998 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 3 天</strong></p>
+<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ol>
+<li>编码原则</li>
+<li>组件封装</li>
+<li>过程抽象概念</li>
+<li>高阶函数使用模式</li>
+<li>JavaScript 编程范式</li>
+</ol>
+<h2 id="详细知识点介绍"><a href="#详细知识点介绍" class="headerlink" title="详细知识点介绍"></a>详细知识点介绍</h2><h3 id="编码原则"><a href="#编码原则" class="headerlink" title="编码原则"></a>编码原则</h3><p>各司其职，组件封装，过程抽象</p>
+<p>我们在编码的时候需要注意，尽量让HTML&#x2F;CSS&#x2F;JS各司其职，避免不必要的由JS直接操作样式。</p>
+<h3 id="组件封装"><a href="#组件封装" class="headerlink" title="组件封装"></a>组件封装</h3><p>组件是指一个包含模板、功能、样式的单元，好的组件具有封装性、正确性、扩展性、复用性。 </p>
+<h3 id="过程抽象"><a href="#过程抽象" class="headerlink" title="过程抽象"></a>过程抽象</h3><p>过程抽象用来处理细节控制的一些方法。 需要函数式编程的思想。</p>
+<p>函数式编程，简单理解就是无副作用的输入-&gt;处理-&gt;输出。</p>
+<p>为了能够让<code>只执行一次</code>的需求覆盖不同的事件处理，我们可以将这个需求剥离出来，这个过程我们称为<code>过程抽象</code>。</p>
+<h3 id="高阶函数（HOF）介绍"><a href="#高阶函数（HOF）介绍" class="headerlink" title="高阶函数（HOF）介绍"></a>高阶函数（HOF）介绍</h3><ul>
+<li><p>以函数作为参数</p>
+</li>
+<li><p>以函数作为返回值</p>
+</li>
+<li><p>常用于作为函数装饰器</p>
+</li>
+</ul>
+<h3 id="常见的高阶函数"><a href="#常见的高阶函数" class="headerlink" title="常见的高阶函数"></a>常见的高阶函数</h3><h4 id="Once"><a href="#Once" class="headerlink" title="Once"></a>Once</h4><p>用于只需要执行一次的函数</p>
+<pre><code class="js">function once(fn) &#123;
+    return function(...args) &#123;
+        if(fn) &#123;
+            const ret = fn.apply(this, args);
+            fn = null;
+            return ret;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>使用方法：</p>
+<pre><code class="js">const print = (content) =&gt; &#123;
+    console.log(content)
+&#125;
+
+const printOnce = once(print)
+
+printOnce(&quot;1&quot;) // 输出 1
+printOnce(&quot;2&quot;) // 不输出
+</code></pre>
+<p>常用于只需要执行一次的的事件侦听器（也可以使用事件侦听器自带的once option，或者手动在执行后移除侦听器）</p>
+<h4 id="节流（Throttle）"><a href="#节流（Throttle）" class="headerlink" title="节流（Throttle）"></a>节流（Throttle）</h4><p>如果快速调用函数，那么只有第一次能成功调用函数，之后时间间隔之内的调用会被忽略。常用于滚动条事件&#x2F;瀑布流无限滚动的场景（限制函数调用频率，保证一段时间内函数只调用一次）</p>
+<pre><code class="js">function throttle(fn, time = 500) &#123;
+    let timer = null;
+    return function (...args) &#123;
+        if (timer) return;
+        fn.apply(this, args);
+        timer = setTimeout(() =&gt; &#123;
+            timer = null;
+        &#125;, time);
+    &#125;
+&#125;
+</code></pre>
+<h4 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h4><p>当在时间间隔之内快速调用函数时，函数将始终没法执行，直到停止后，函数才会被执行。常用于一些文本输入的场景（比如搜索框停止输入后，展示联想词；文章编辑器中，输入停止后，进行草稿的保存）。</p>
+<pre><code class="js">function debounce(fn, time = 500) &#123;
+    let timer = null;
+    return function (...args) &#123;
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() =&gt; &#123;
+            fn.apply(this, args);
+        &#125;, time);
+    &#125;
+&#125;
+</code></pre>
+<h4 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h4><p>从名字也很好理解，当快速点击时，函数并不会立刻被调用，而是先将任务推入列表，然后在一定时间后一个一个消费掉。</p>
+<pre><code class="js">function consumer(fn, time = 500) &#123;
+    let tasks = [];
+    let timer = null;
+    return function (...args) &#123;
+        tasks.push(args);
+        if (timer) return;
+        timer = setInterval(() =&gt; &#123;
+            fn.apply(this, tasks.shift());
+            if (tasks.length === 0) &#123;
+                clearInterval(timer);
+                timer = null;
+            &#125;
+        &#125;, time)
+    &#125;
+&#125;
+</code></pre>
+<h4 id="Lterative-可迭代函数"><a href="#Lterative-可迭代函数" class="headerlink" title="Lterative 可迭代函数"></a>Lterative 可迭代函数</h4><h3 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h3><p>命令式与声明式。</p>
+<p>命令式趋向于怎么做。声明式趋向于做什么。</p>
+<p>JS是既有命令式又有声明式。</p>
+<h4 id="命令式"><a href="#命令式" class="headerlink" title="命令式"></a>命令式</h4><pre><code class="js">let list =[1,2,3]
+let map = []
+
+for(let i =0;i&lt;list.length;i++)&#123;
+    map.push(list[i]*2);
+&#125;
+</code></pre>
+<h4 id="声明式"><a href="#声明式" class="headerlink" title="声明式"></a>声明式</h4><pre><code class="js">let list = [1,2,3,4];
+const double = x =&gt; x*2;
+list.map(double);
+</code></pre>
+<h2 id="实践练习例子"><a href="#实践练习例子" class="headerlink" title="实践练习例子"></a>实践练习例子</h2><p>实现一个只能执行一次的函数：</p>
+<pre><code class="js">// 只执行一次函数
+const once = (fn) =&gt; &#123;
+  let done = false;
+  return function (...args) &#123;
+    if (!done) &#123;
+      done = true;
+      return fn.apply(this, args);
+    &#125;
+  &#125;
+&#125;
+
+// 测试
+const sayHello = (name) =&gt; &#123;
+  console.log(`Hello $&#123;name&#125;`);
+&#125;;
+
+const sayHelloOnce = once(sayHello);
+
+sayHelloOnce(&#39;xiaoming&#39;); // Hello xiaoming
+sayHelloOnce(&#39;xiaohong&#39;); // undefined
+</code></pre>
+<h2 id="课后个人总结"><a href="#课后个人总结" class="headerlink" title="课后个人总结"></a>课后个人总结</h2><p>​	本次课程让我学到了很多有关编程原则、组件封装、过程抽象概念、高阶函数使用模式以及JavaScript编程范式的知识，收获很大。 	</p>
+<p>​	对于高阶函数，过去只是略有了解，现在能够真正去理解它们是什么，以及它们的用处如何。</p>
+<h2 id="引用参考"><a href="#引用参考" class="headerlink" title="引用参考"></a>引用参考</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcnxKucsHPvnJ7PfXyCQF5WCd">https://bytedance.feishu.cn/file/boxcnxKucsHPvnJ7PfXyCQF5WCd</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/17/%E6%B7%B1%E5%85%A5CSS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -1543,100 +1689,12 @@ public class Main &#123;
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2021/10/06/%E5%A4%A9%E6%B0%94%E5%B0%8F%E7%BB%84%E4%BB%B6%E5%85%A5%E9%97%A8/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="天气小组件入门" class="lazyload">
-                    <h1>天气小组件入门</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月06日</a>
-            <a><i class="nexmoefont icon-areachart"></i>471 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-        
-        <article>
-            
-                <h1 id="天气api"><a href="#天气api" class="headerlink" title="天气api"></a>天气api</h1><p>用的api是qweather<br><strong>和风天气</strong><br><a target="_blank" rel="noopener" href="https://www.qweather.com/">qweather</a><br><a target="_blank" rel="noopener" href="https://dev.qweather.com/docs/api/">api手册</a></p>
-<h5 id="我是蒟蒻"><a href="#我是蒟蒻" class="headerlink" title="我是蒟蒻"></a>我是蒟蒻</h5><p><del>UI设计拉胯</del><br><strong>使用世界上最好的js框架 vanilla js</strong></p>
-<p>已经实现的功能：</p>
-<ul>
-<li>获取实时气温 湿度 风向 风力 风速 大气压 能见度</li>
-<li>获取当前日期时间周几</li>
-<li>天气小图标</li>
-<li>3天天气预告</li>
-<li>flex布局，适应设备</li>
-</ul>
-<p>待实现功能：</p>
-<ul>
-<li>气温变化图表</li>
-<li>穿衣建议</li>
-<li>darkmode</li>
-<li>iconfont图标</li>
-</ul>
-<p>通过这次小组件开发学会的东西：</p>
-<ul>
-<li>flex的使用</li>
-<li>fetch then promise （还是不会用<del>抄的</del>）</li>
-<li>天气api的使用</li>
-<li>json格式化处理</li>
-</ul>
-<h5 id="api请求格式"><a href="#api请求格式" class="headerlink" title="api请求格式"></a>api请求格式</h5><pre><code>https://devapi.qweather.com/v7/weather/now?[请求参数]
-</code></pre>
-<p>必须参数 –location<br>必须参数 –key</p>
-<h5 id="返回数据例"><a href="#返回数据例" class="headerlink" title="返回数据例"></a>返回数据例</h5><pre><code>// 北京实况天气 
-// 商业版 https://api.qweather.com/v7/weather/now?location=101010100&amp;key=你的KEY
-// 开发版 https://devapi.qweather.com/v7/weather/now?location=101010100&amp;key=你的KEY
-&#123;
-  &quot;code&quot;: &quot;200&quot;,
-  &quot;updateTime&quot;: &quot;2020-06-30T22:00+08:00&quot;,
-  &quot;fxLink&quot;: &quot;http://hfx.link/2ax1&quot;,
-  &quot;now&quot;: &#123;
-    &quot;obsTime&quot;: &quot;2020-06-30T21:40+08:00&quot;,
-    &quot;temp&quot;: &quot;24&quot;,
-    &quot;feelsLike&quot;: &quot;26&quot;,
-    &quot;icon&quot;: &quot;101&quot;,
-    &quot;text&quot;: &quot;多云&quot;,
-    &quot;wind360&quot;: &quot;123&quot;,
-    &quot;windDir&quot;: &quot;东南风&quot;,
-    &quot;windScale&quot;: &quot;1&quot;,
-    &quot;windSpeed&quot;: &quot;3&quot;,
-    &quot;humidity&quot;: &quot;72&quot;,
-    &quot;precip&quot;: &quot;0.0&quot;,
-    &quot;pressure&quot;: &quot;1003&quot;,
-    &quot;vis&quot;: &quot;16&quot;,
-    &quot;cloud&quot;: &quot;10&quot;,
-    &quot;dew&quot;: &quot;21&quot;
-  &#125;,
-  &quot;refer&quot;: &#123;
-    &quot;sources&quot;: [
-      &quot;Weather China&quot;
-    ],
-    &quot;license&quot;: [
-      &quot;commercial license&quot;
-    ]
-  &#125;
-&#125;
-</code></pre>
-<h5 id="js例"><a href="#js例" class="headerlink" title="js例"></a>js例</h5><p>  function fetchwea() {<br>    fetch(‘<a target="_blank" rel="noopener" href="https://devapi.qweather.com/v7/weather/now?key=90304353392d4ea4ba00608cb2e7f9ae&amp;location=101210101&#39;">https://devapi.qweather.com/v7/weather/now?key=90304353392d4ea4ba00608cb2e7f9ae&amp;location=101210101&#39;</a>)<br>    .then(res &#x3D;&gt; res.json())<br>    .then(json &#x3D;&gt; {</p>
-<pre><code>  document.getElementById(&#39;temp&#39;).innerHTML=json.now.temp+&quot;℃&quot;;
-</code></pre>
-<h3 id="使用图标icon"><a href="#使用图标icon" class="headerlink" title="使用图标icon"></a>使用图标icon</h3><p><a target="_blank" rel="noopener" href="https://dev.qweather.com/docs/start/icons/">图标api手册</a></p>
-<pre><code>document.getElementById(&#39;i&#39;).className=&#39;qi-&#39;+json.now.icon;
-</code></pre>
-<p>这里json.now.icon会返回图标代码<br>导入图标css<br>改变HTML里 <i>标签的class为qi-(图标代码)<br>就可以显示好看的图标啦~<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://dev.qweather.com/assets/images/content/qweather-icon-screenshot-new.png" alt="images" class="lazyload"></p>
-<h1 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5CZo5V"><img data-fancybox="gallery" data-sizes="auto" data-src="https://z3.ax1x.com/2021/10/08/5CZo5V.png" alt="5CZo5V.png" class="lazyload"></a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
+    <nav class="nexmoe-page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
 
         <div class="nexmoe-post-right">
           
@@ -2350,7 +2408,7 @@ public class Main &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673970972601"></script>
+<script src="/js/app.js?v=1674053587749"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -2367,6 +2425,8 @@ public class Main &#123;
 
 
 <!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -2378,8 +2438,6 @@ public class Main &#123;
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
-
-<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
