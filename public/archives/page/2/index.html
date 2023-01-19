@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674053587732">
+  <link rel="stylesheet" href="/css/style.css?v=1674143796512">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>11 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>12 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,76 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2021/10/20/yaml/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="yaml" class="lazyload">
+                    <h1>yaml</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月20日</a>
+            <a><i class="nexmoefont icon-areachart"></i>435 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h1 id="🍉前提知识"><a href="#🍉前提知识" class="headerlink" title="🍉前提知识"></a>🍉前提知识</h1><ol>
+<li>Nodejs和npm，会使用Npm安装包</li>
+<li>了解yaml基础语法</li>
+<li>基本的js</li>
+<li>从命令行接收参数 <a target="_blank" rel="noopener" href="http://nodejs.cn/learn/nodejs-accept-arguments-from-the-command-line">http://nodejs.cn/learn/nodejs-accept-arguments-from-the-command-line</a></li>
+<li>如何本地直接运行js代码：打开终端，输入 <code>node xxx.js</code></li>
+</ol>
+<h1 id="涉及到的库"><a href="#涉及到的库" class="headerlink" title="涉及到的库"></a>涉及到的库</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/nodeca/js-yaml">js-yaml</a></li>
+</ol>
+<h1 id="练习内容：无页面版Todo-list"><a href="#练习内容：无页面版Todo-list" class="headerlink" title="练习内容：无页面版Todo list"></a>练习内容：无页面版Todo list</h1><ol>
+<li><p>在你的项目文件夹新建一个 todo.yaml</p>
+<ul>
+<li>包含三大块： todo, doing, done，分别代表待办任务的三种状态</li>
+<li>每条任务分布在三大块中，每条任务有以下属性：id，content,</li>
+</ul>
+</li>
+<li><p>实现以下命令：</p>
+</li>
+</ol>
+<ul>
+<li><code>node xxx.js ls</code>：列出所有任务</li>
+<li><code>node xxx.js ls --status=done</code>：列出所有任务完成的任务</li>
+<li><code>node xxx.js ls --status=doing</code>: 列出所有进行中的任务</li>
+<li><code>node xxx.js ls --status=todo</code></li>
+<li><code>node xxx.js done 任务id</code>： 将该id对应的任务置为完成状态</li>
+<li><code>node xxx.js todo 任务id</code></li>
+<li><code>node xxx.js doing 任务id</code></li>
+<li>下面的我省略node xxx.js：</li>
+<li>delete 任务id</li>
+<li>add 任务内容<br>  。。。自行想象添加功能。。。</li>
+</ul>
+<h1 id="一些实现的细节："><a href="#一些实现的细节：" class="headerlink" title="一些实现的细节："></a>一些实现的细节：</h1><ol>
+<li>利用js-yaml中的dump保存js对象到yaml文件</li>
+<li>利用js-yaml中的load读取yaml文件到js对象</li>
+<li>可以边写边加入es6语法来练习</li>
+</ol>
+<hr>
+<h1 id="最后声明"><a href="#最后声明" class="headerlink" title="最后声明"></a>最后声明</h1><blockquote>
+<p>本练习真的只是为了你练习，主要是练习node,npm,js，es6,所以还是靠自觉完成，<strong>但是您的提交次数会作为我们评优的依据</strong>，完成了请推到你的分支</p>
+</blockquote>
+<h1 id="links"><a href="#links" class="headerlink" title="links"></a>links</h1><p><a target="_blank" rel="noopener" href="https://github.com/hduhelp/frontend_2021_pratice/">https://github.com/hduhelp/frontend_2021_pratice/</a></p>
+<p>如何将yaml转为js对象: <a target="_blank" rel="noopener" href="https://github.com/nodeca/js-yaml">https://github.com/nodeca/js-yaml</a></p>
+<p>每日一篇之yaml: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">http://www.ruanyifeng.com/blog/2016/07/yaml.html</a></p>
+<p>每日一篇之es6: <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/escript6/escript6-827l37er.html">https://www.w3cschool.cn/escript6/escript6-827l37er.html</a>  ES6 简介_w3cschool</p>
+<p>安利一本书<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a> ES6 入门教程</p>
+<p><a target="_blank" rel="noopener" href="https://hduhelp21.yuque.com/staff-mhchbm/ergbdy/lobnc5">https://hduhelp21.yuque.com/staff-mhchbm/ergbdy/lobnc5</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2021/10/06/%E5%A4%A9%E6%B0%94%E5%B0%8F%E7%BB%84%E4%BB%B6%E5%85%A5%E9%97%A8/">
@@ -992,7 +1062,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674053587733"></script>
+<script src="/js/app.js?v=1674143796513"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1009,8 +1079,6 @@
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1022,6 +1090,8 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 

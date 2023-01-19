@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674053587748">
+  <link rel="stylesheet" href="/css/style.css?v=1674143796522">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>11 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>12 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,156 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/19/TypeScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="TypeScript ｜ 青训营笔记" class="lazyload">
+                    <h1>TypeScript ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月19日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 4 天</strong></p>
+<h2 id="本堂课重点内容"><a href="#本堂课重点内容" class="headerlink" title="本堂课重点内容"></a>本堂课重点内容</h2><ol>
+<li>TypeScript 定义解析</li>
+<li>TypeScript 基础语法</li>
+</ol>
+<h2 id="详细知识点介绍"><a href="#详细知识点介绍" class="headerlink" title="详细知识点介绍"></a>详细知识点介绍</h2><ol>
+<li>语言特性</li>
+<li>基本数据类型</li>
+</ol>
+<h3 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h3><p>JavaScript 是动态类型的语言，而TypeScript顾名思义是静态类型的语言。与js相比，静态类型的特性为ts带来了许多优势</p>
+<ul>
+<li>更强的可读性</li>
+<li>更强的可维护性</li>
+<li>大型项目中提升稳定性</li>
+<li>开发效率</li>
+</ul>
+<p>而作为js的超集，ts兼容所有js特性，且支持与js共存，能够渐进式地引入和升级。</p>
+<h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><p>TypeScript能够在变量名称后面添加冒号和期望的类型来为变量赋予具体的类型，例如下面的代码，常见的类型有 <code>string</code> <code>number</code> <code>boolean</code> <code>null</code> <code>undefined</code></p>
+<pre><code class="ts">let a: string = &quot;string&quot;
+let b: number = 12
+let c: boolean = true
+</code></pre>
+<p>如果在之后尝试给变量赋值不同类型的值，将会产生报错</p>
+<h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><p>ts使用<code>interface</code>关键字来定义新类型</p>
+<pre><code class="ts">interface ICustomObject &#123;
+    name: string
+    age: number
+    hobby?: string
+    readonly id: number
+&#125;
+
+const obj: ICustonObject &#123;
+    name: &quot;hello world&quot;,
+    age: 12,
+    hobby: &#39;coding&#39;,
+    id: 10
+&#125;
+</code></pre>
+<p>对于只读属性，可以在类型定义时增加readonly修饰符，在之后倘若修改只读属性，将会报错。在属性名后面紧跟问号表示该属性可选（可能不存在），后续倘若直接读取该属性，将导致报错（需要先判断该属性是否存在）</p>
+<blockquote>
+<p>一般情况下，约定自定义类型以大写字母<code>I</code>开头，例如上面的 <code>ICustomObject</code></p>
+</blockquote>
+<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>在某些情况下，对象的键名（key）可能并不固定，比如我希望某个对象键名是任意string，键值是布尔型，那么可以向下面这样定义</p>
+<pre><code class="ts">interface IObj &#123;
+    [key: string]: boolean
+&#125;
+</code></pre>
+<p>或者使用 <code>type</code> 关键字</p>
+<pre><code class="ts">type IObj = Record&lt;string, boolean&gt;
+</code></pre>
+<h3 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h3><p>假设有一个js函数 <code>add</code></p>
+<pre><code class="js">function add(x, y) &#123;
+    return x + y
+&#125;
+</code></pre>
+<p>为其添加类型声明后</p>
+<pre><code class="ts">function add(x: number, y: number):number &#123;
+    return x + y
+&#125;
+</code></pre>
+<p>对于匿名的箭头函数，我们也可以为其添加类型</p>
+<pre><code class="ts">// js
+const add = (x, y) =&gt; x + y
+
+// ts
+const add: (x: number, y: number) =&gt; number = (x, y) =&gt; x + y
+</code></pre>
+<p>或许在某些情况下，将类型和函数写在一起会稍显凌乱，那么我们也可以将函数类型单独定义，例如下面这样</p>
+<pre><code class="ts">interface IAdd &#123;
+    (x: number, y: number): number
+&#125;
+
+const add: IAdd = (x, y) =&gt; x + y
+</code></pre>
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p>数组的类型定义有很多方法，最常见的是像c语言那样的类型定义</p>
+<pre><code class="ts">type IArray = number[]
+
+const array: IArray = [1, 2, 3, 4, 5]
+</code></pre>
+<p>同样也可以使用ts提供的Array泛型，是一样的效果</p>
+<pre><code class="ts">type IArray = Array&lt;number&gt;
+
+const array: IArray = [1, 2, 3, 4, 5]
+</code></pre>
+<p>因为数组实际上就是键名特殊的对象，所以也可以用表示对象的方法来表示</p>
+<pre><code class="ts">interface IArray &#123;
+    [key: number]: number
+&#125;
+
+const array: IArray = [1, 2, 3, 4, 5]
+</code></pre>
+<h3 id="TS-新增的类型"><a href="#TS-新增的类型" class="headerlink" title="TS 新增的类型"></a>TS 新增的类型</h3><p>为了实现一些特殊需求，ts也新增了许多类型方便使用</p>
+<h4 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h4><pre><code class="ts">function test(): void &#123;
+    alert(&quot;hello&quot;)
+&#125;
+</code></pre>
+<p>顾名思义，表示无赋值，例如函数没有返回值</p>
+<h3 id="任意类型"><a href="#任意类型" class="headerlink" title="任意类型"></a>任意类型</h3><pre><code class="ts">type IArray = Array&lt;any&gt;
+
+const array: IArray = [1, &quot;string&quot;, true, &#123;a: 1&#125;]
+</code></pre>
+<h3 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h3><p>该类型能够通过枚举名查枚举值，同时能够使用枚举值查枚举名</p>
+<pre><code class="ts">enum EnumTest &#123;
+    man = &#39;male&#39;,
+    woman = &#39;female&#39;,
+&#125;
+
+EnumTest[&#39;man&#39;] === &#39;male&#39;
+EnumTest[&#39;male&#39;] === &#39;man&#39;
+</code></pre>
+<p>在不提供枚举名的时候，将默认为由0开始的索引值</p>
+<pre><code class="ts">enum EnumWeekDay &#123; Mon, Tue, Wed, Thu, Fri &#125;
+
+EnumTest[&#39;Mon&#39;] === 0
+EnumTest[&#39;Tue&#39;] === 1
+</code></pre>
+<h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><h4 id="联合类型与交叉类型"><a href="#联合类型与交叉类型" class="headerlink" title="联合类型与交叉类型"></a>联合类型与交叉类型</h4><p>联合类型： <code>IA | IB</code>;</p>
+<p>交叉类型： <code>IA &amp; IB;</code></p>
+<h4 id="类型保护"><a href="#类型保护" class="headerlink" title="类型保护"></a>类型保护</h4><p>可以直接通过<code>.type</code>然后拿到某个变量的类型，可用于后续变量类型的判断，达到类型保护的作用。</p>
+<h4 id="补充类型"><a href="#补充类型" class="headerlink" title="补充类型"></a>补充类型</h4><ul>
+<li>空类型，表示无赋值</li>
+<li>任意类型，是所有类型的子类型</li>
+<li>枚举类型：支持枚举值到枚举名的正、反向映射</li>
+</ul>
+<h2 id="课后个人总结"><a href="#课后个人总结" class="headerlink" title="课后个人总结"></a>课后个人总结</h2><p>TypeScript是一个非常有用的语言，给JavaScript开发带来了严格的检查</p>
+<h2 id="引用参考"><a href="#引用参考" class="headerlink" title="引用参考"></a>引用参考</h2><p><a target="_blank" rel="noopener" href="http://www.typescriptlang.org/docs/">www.typescriptlang.org/docs/</a></p>
+<p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcnIjrYQpF7pL6nWGtTl5W8Jd">https://bytedance.feishu.cn/file/boxcnIjrYQpF7pL6nWGtTl5W8Jd</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/18/JavaScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -1619,76 +1769,6 @@ public class Main &#123;
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2021/10/20/yaml/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="yaml" class="lazyload">
-                    <h1>yaml</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月20日</a>
-            <a><i class="nexmoefont icon-areachart"></i>435 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-        
-        <article>
-            
-                <h1 id="🍉前提知识"><a href="#🍉前提知识" class="headerlink" title="🍉前提知识"></a>🍉前提知识</h1><ol>
-<li>Nodejs和npm，会使用Npm安装包</li>
-<li>了解yaml基础语法</li>
-<li>基本的js</li>
-<li>从命令行接收参数 <a target="_blank" rel="noopener" href="http://nodejs.cn/learn/nodejs-accept-arguments-from-the-command-line">http://nodejs.cn/learn/nodejs-accept-arguments-from-the-command-line</a></li>
-<li>如何本地直接运行js代码：打开终端，输入 <code>node xxx.js</code></li>
-</ol>
-<h1 id="涉及到的库"><a href="#涉及到的库" class="headerlink" title="涉及到的库"></a>涉及到的库</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/nodeca/js-yaml">js-yaml</a></li>
-</ol>
-<h1 id="练习内容：无页面版Todo-list"><a href="#练习内容：无页面版Todo-list" class="headerlink" title="练习内容：无页面版Todo list"></a>练习内容：无页面版Todo list</h1><ol>
-<li><p>在你的项目文件夹新建一个 todo.yaml</p>
-<ul>
-<li>包含三大块： todo, doing, done，分别代表待办任务的三种状态</li>
-<li>每条任务分布在三大块中，每条任务有以下属性：id，content,</li>
-</ul>
-</li>
-<li><p>实现以下命令：</p>
-</li>
-</ol>
-<ul>
-<li><code>node xxx.js ls</code>：列出所有任务</li>
-<li><code>node xxx.js ls --status=done</code>：列出所有任务完成的任务</li>
-<li><code>node xxx.js ls --status=doing</code>: 列出所有进行中的任务</li>
-<li><code>node xxx.js ls --status=todo</code></li>
-<li><code>node xxx.js done 任务id</code>： 将该id对应的任务置为完成状态</li>
-<li><code>node xxx.js todo 任务id</code></li>
-<li><code>node xxx.js doing 任务id</code></li>
-<li>下面的我省略node xxx.js：</li>
-<li>delete 任务id</li>
-<li>add 任务内容<br>  。。。自行想象添加功能。。。</li>
-</ul>
-<h1 id="一些实现的细节："><a href="#一些实现的细节：" class="headerlink" title="一些实现的细节："></a>一些实现的细节：</h1><ol>
-<li>利用js-yaml中的dump保存js对象到yaml文件</li>
-<li>利用js-yaml中的load读取yaml文件到js对象</li>
-<li>可以边写边加入es6语法来练习</li>
-</ol>
-<hr>
-<h1 id="最后声明"><a href="#最后声明" class="headerlink" title="最后声明"></a>最后声明</h1><blockquote>
-<p>本练习真的只是为了你练习，主要是练习node,npm,js，es6,所以还是靠自觉完成，<strong>但是您的提交次数会作为我们评优的依据</strong>，完成了请推到你的分支</p>
-</blockquote>
-<h1 id="links"><a href="#links" class="headerlink" title="links"></a>links</h1><p><a target="_blank" rel="noopener" href="https://github.com/hduhelp/frontend_2021_pratice/">https://github.com/hduhelp/frontend_2021_pratice/</a></p>
-<p>如何将yaml转为js对象: <a target="_blank" rel="noopener" href="https://github.com/nodeca/js-yaml">https://github.com/nodeca/js-yaml</a></p>
-<p>每日一篇之yaml: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">http://www.ruanyifeng.com/blog/2016/07/yaml.html</a></p>
-<p>每日一篇之es6: <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/escript6/escript6-827l37er.html">https://www.w3cschool.cn/escript6/escript6-827l37er.html</a>  ES6 简介_w3cschool</p>
-<p>安利一本书<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a> ES6 入门教程</p>
-<p><a target="_blank" rel="noopener" href="https://hduhelp21.yuque.com/staff-mhchbm/ergbdy/lobnc5">https://hduhelp21.yuque.com/staff-mhchbm/ergbdy/lobnc5</a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
     <nav class="nexmoe-page-nav">
@@ -2408,7 +2488,7 @@ public class Main &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674053587749"></script>
+<script src="/js/app.js?v=1674143796523"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -2425,8 +2505,6 @@ public class Main &#123;
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -2438,6 +2516,8 @@ public class Main &#123;
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
