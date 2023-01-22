@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674143796512">
+  <link rel="stylesheet" href="/css/style.css?v=1674373066802">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>12 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>13 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,395 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2022/09/19/jvav/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="java答案" class="lazyload">
+                    <h1>java答案</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2022年09月19日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>BDCDA CABCC</p>
+<h3 id="程序填空"><a href="#程序填空" class="headerlink" title="程序填空"></a>程序填空</h3><p>5-1</p>
+<pre><code>str.toCharArray()
+i&lt;x.length
+ch&gt;=&#39;a&#39;&amp;&amp;ch&lt;=&#39;z&#39; ||ch&gt;=&#39;A&#39;&amp;&amp;ch&lt;=&#39;Z&#39;
+ch&gt;=&#39;0&#39;&amp;&amp;ch&lt;=&#39;9&#39;
+c++
+</code></pre>
+<p>5-2</p>
+<pre><code>sc.nextLine()
+str.charAt(i)
+String.valueOf(curChar).toUpperCase()
+String.valueOf(curChar).toLowerCase()
+sb.append(s1)
+sb.toString()
+</code></pre>
+<p>5-3</p>
+<pre><code>super(a);
+this.a=super.a*10;
+super.a
+this.a
+</code></pre>
+<h3 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h3><p>7-1</p>
+<pre><code>import java.util.Scanner;
+
+class Rectangle &#123;
+    double width = 1;
+    double height = 1;
+
+    Rectangle() &#123;
+    &#125;
+
+    Rectangle(double width, double height) &#123;
+        this.width = width;
+        this.height = height;
+    &#125;
+
+    double getArea() &#123;
+        return width * height;
+    &#125;
+
+    double getPerimeter() &#123;
+        return 2 * (width + height);
+    &#125;
+&#125;
+class Main&#123;
+    public static void main(String[] args) &#123;
+        Scanner scanner = new Scanner(System.in);
+        double width = scanner.nextDouble();
+        double height = scanner.nextDouble();
+        Rectangle rectangle1 = new Rectangle(width, height);
+        System.out.println(rectangle1.width + &quot; &quot; + rectangle1.height + &quot; &quot; + rectangle1.getArea() + &quot; &quot; + rectangle1.getPerimeter());
+        width = scanner.nextDouble();
+        height = scanner.nextDouble();
+        Rectangle rectangle2 = new Rectangle(width, height);
+        System.out.print(rectangle2.width + &quot; &quot; + rectangle2.height + &quot; &quot; + rectangle2.getArea() + &quot; &quot; + rectangle2.getPerimeter());
+    &#125;
+&#125;
+</code></pre>
+<p>7-2</p>
+<pre><code>import java.util.Scanner;
+
+interface ICompute&#123;
+    int computer(int n, int m);
+&#125;
+
+class Add implements ICompute&#123;
+    public int computer(int n, int m)&#123;
+        return n+m;
+    &#125;
+&#125;
+
+class Sub implements ICompute&#123;
+    public int computer(int n, int m)&#123;
+        return n-m;
+    &#125;
+&#125;
+
+class Main&#123;
+    public static void main(String[] args)&#123;
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        ICompute add = new Add();
+        ICompute sub = new Sub();
+        System.out.println(add.computer(a, b));
+        System.out.println(sub.computer(a, b));
+    &#125;
+&#125;
+</code></pre>
+<p>7-3</p>
+<pre><code>import java.util.Scanner;
+
+class Circle&#123;
+    private double radius;
+    Circle(double radius)&#123;
+        this.radius = radius;
+    &#125;
+    Circle()&#123;
+        this.radius =0;
+    &#125;
+    void setRadius(double r)&#123;
+        this.radius = r;
+    &#125;
+    double getRadius()&#123;
+        return this.radius;
+    &#125;
+    double getArea()&#123;
+        return Math.PI * this.radius * this.radius;
+    &#125;
+    double getPerimeter()&#123;
+        return Math.PI * this.radius * 2;
+    &#125;
+    public String toString()&#123;
+        return&quot;Circle(r:&quot;+this.radius+&quot;)&quot;;
+    &#125;
+&#125;
+
+class Cylinder&#123;
+    private double height;
+    private Circle circle;
+    Cylinder(double height,Circle circle)&#123;
+        this.height = height;
+        this.circle = circle;
+    &#125;
+    Cylinder()&#123;
+        this.height = 0;
+        this.circle = new Circle();
+    &#125;
+    void setHeight(double height)&#123;
+        this.height = height;
+    &#125;
+    double getHeight()&#123;
+        return this.height;
+    &#125;
+    void setCircle(Circle circle)&#123;
+        this.circle = circle;
+    &#125;
+    Circle getCircle()&#123;
+        return this.circle;
+    &#125;
+    double getArea()&#123;
+        return 2 * this.circle.getArea() + this.circle.getPerimeter() * this.height;
+    &#125;
+    double getVolume()&#123;
+        return this.circle.getArea() * this.height;
+    &#125;
+    public String toString()&#123;
+        return &quot;Cylinder(h:&quot;+this.height+&quot;,&quot;+this.circle+&quot;)&quot;;
+    &#125;
+
+&#125;
+
+public class Main&#123;
+    public static void main(String args[]) &#123;
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        for(int i = 0; i &lt; n; i++) &#123;
+            String str = input.next();
+            if(str.equals(&quot;Circle&quot;)) &#123;
+                Circle c = new Circle(input.nextDouble());
+                System.out.println(&quot;The area of &quot; + c.toString() + &quot; is &quot; + String.format(&quot;%.2f&quot;,c.getArea()));
+                System.out.println(&quot;The perimeterof &quot; + c.toString() + &quot; is &quot;+ String.format(&quot;%.2f&quot;,c.getPerimeter()));
+            &#125; else if(str.equals(&quot;Cylinder&quot;)) &#123;
+                Cylinder r = new Cylinder(input.nextDouble(), new Circle(input.nextDouble()));
+                System.out.println(&quot;The area of &quot; + r.toString() + &quot; is &quot; + String.format(&quot;%.2f&quot;,r.getArea()));
+                System.out.println(&quot;The volume of &quot; + r.toString() + &quot; is &quot; + String.format(&quot;%.2f&quot;,r.getVolume()));
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>7-4</p>
+<pre><code>import java.util.Scanner;
+
+class Shape&#123;
+    double PI=3.1415926;
+    public double area()&#123;
+        return 0;
+    &#125;
+    public double perimeter()&#123;
+        return 0;
+    &#125;
+&#125;
+
+class Oval extends Shape&#123;
+    private double a;
+    private double b;
+    public Oval(double a,double b)&#123;
+        this.a=a;
+        this.b=b;
+    &#125;
+    public Oval()&#123;
+        this.a=0;
+        this.b=0;
+    &#125;
+    public double area()&#123;
+        return PI*a*b;
+    &#125;
+    public double perimeter()&#123;
+        return 2*PI*Math.sqrt((a*a+b*b)/2);
+    &#125;
+    public String toString()&#123;
+        return &quot;Oval(a:&quot;+a+&quot;,b:&quot;+b+&quot;)&quot;;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        Scanner sc=new Scanner(System.in);
+        double a=sc.nextDouble();
+        double b=sc.nextDouble();
+        Oval o=new Oval(a,b);
+        System.out.println(&quot;The area of &quot;+o.toString()+&quot; is &quot;+o.area());
+        System.out.println(&quot;The perimeterof &quot;+o.toString()+&quot; is &quot;+o.perimeter());
+    &#125;
+&#125;
+</code></pre>
+<p>7-5</p>
+<pre><code>import java.util.Scanner;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        String statement;
+            Scanner sc =new Scanner(System.in);
+            statement=sc.nextLine();
+            String word1=sc.next();
+            String word2=sc.next();//用word2替换word1
+
+            String words[]=statement.split(&quot; &quot;);
+        /* for(int i=0;i&lt;words.length;i++)
+                System.out.print(words[i]+&quot;\t&quot;);*/
+            for(int i=0;i&lt;words.length;i++) &#123;//将句子分割成单词
+                if(word1.equals(words[i])) &#123;
+                    words[i]=word2;
+                &#125;
+            &#125;
+        StringBuffer stb=new StringBuffer();
+        String sta=null;
+        for(int i=0;i&lt;words.length;i++) &#123;//数组转换为句子
+            if(i==words.length-1)stb.append(words[i]);
+            else	stb.append(words[i]+&quot; &quot;);
+        &#125;
+        sta=stb.toString();
+        System.out.println(sta);
+            sc.close();
+    &#125;
+
+&#125;
+</code></pre>
+<p>7-6</p>
+<pre><code>import java.util.Scanner;
+
+interface Shape&#123;
+    double length();
+&#125;
+
+class Triangle implements Shape&#123;
+    double a;
+    double b;
+    double c;
+
+    Triangle()&#123;
+        this.a = this.b = this.c = 0;
+    &#125;
+
+    Triangle(double a)&#123;
+        this.a = this.b = this.c = 0;
+    &#125;
+
+    Triangle(double a, double b)&#123;
+        this.a = this.b = this.c = 0;
+    &#125;
+
+    Triangle(double a, double b, double c)&#123;
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        if(a &lt;= 0 || b &lt;= 0 || c &lt;= 0 || !(a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a))&#123;
+            this.a = this.b = this.c = 0;
+        &#125;
+    &#125;
+
+    @Override
+    public double length() &#123;
+        return a + b + c;
+    &#125;
+&#125;
+
+class Rectangle implements Shape&#123;
+    double a, b;
+
+    Rectangle()&#123;
+        this.a = this.b = 0;
+    &#125;
+
+    Rectangle(double a)&#123;
+        this.a = this.b = 0;
+    &#125;
+
+    Rectangle(double a, double b)&#123;
+        this.a = a;
+        this.b = b;
+        if(a &lt;= 0 || b &lt;= 0)&#123;
+            this.a = this.b = 0;
+        &#125;
+    &#125;
+
+    @Override
+    public double length() &#123;
+        return 2 * (a + b);
+    &#125;
+&#125;
+
+class Circle implements Shape&#123;
+    double r;
+
+    Circle()&#123;
+        r = 0;
+    &#125;
+
+    Circle(double r)&#123;
+        this.r = r;
+        if(r &lt;= 0) this.r = 0;
+    &#125;
+
+    @Override
+    public double length() &#123;
+        return 2 * 3.14 * r;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        Scanner sc = new Scanner(System.in);
+
+        while(sc.hasNextInt()) &#123;
+            double[] l = new double[5];
+
+            String s;
+            s = sc.nextLine();
+            String[] str = s.split(&quot; &quot;);
+
+            int cnt = 0;
+            for (String value : str) &#123;
+                l[cnt++] = Double.parseDouble(value);
+            &#125;
+
+
+            if(cnt == 1)&#123;
+                Circle C = new Circle(l[0]);
+                System.out.printf(&quot;%.2f\n&quot;, C.length());
+            &#125;
+
+            else if (cnt == 2)&#123;
+                Rectangle r = new Rectangle(l[0], l[1]);
+                System.out.printf(&quot;%.2f\n&quot;, r.length());
+            &#125;
+            else&#123;
+                Triangle t = new Triangle(l[0], l[1], l[2]);
+                System.out.printf(&quot;%.2f\n&quot;, t.length());
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2021/10/20/yaml/">
@@ -1062,7 +1451,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674143796513"></script>
+<script src="/js/app.js?v=1674373066803"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1093,11 +1482,11 @@
 
 <script src="/js/clock.js"></script>
 
+<script src="/js/webapp.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
-
-<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
 </html>
 
