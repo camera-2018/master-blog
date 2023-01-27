@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674745253832">
+  <link rel="stylesheet" href="/css/style.css?v=1674822143636">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>17 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>18 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,155 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/27/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8A%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（上） ｜ 青训营笔记" class="lazyload">
+                    <h1>Nuxt3与服务端渲染SSR（上） ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月27日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 11 天</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Nuxt同时提供了前端和后端功能，因此您可以专注于重要的事情：创建web应用程序。</p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs">Nuxt3</a> 是基于 <code>Vite</code>、<code>Vue3</code> 和 <code>Nitro</code> 的 <code>Nuxt</code> 框架的重构，具有一流的 <code>Typescript</code> 支持，且这次更新对内核进行了精简，使之速度更快，体验更好。</p>
+<h2 id="了解-SSR"><a href="#了解-SSR" class="headerlink" title="了解 SSR"></a>了解 <code>SSR</code></h2><p><code>Nuxt</code> 是一个基于 <code>Vue.js</code> 的服务端渲染应用框架</p>
+<h3 id="什么是-SSR"><a href="#什么是-SSR" class="headerlink" title="什么是 SSR"></a>什么是 <code>SSR</code></h3><p><code>服务器端渲染</code>（Server-Side Rendering）是指由服务端完成页面的 HTML 结构拼接的页面处理技术，发送到浏览器，然后为其绑定状态与事件，成为完全可交互页面的过程。</p>
+<p>简单理解就是html是由服务端写出，可以动态改变页面内容，即所谓的动态页面。早年的 php 、 asp 、 jsp  这些 Server page 都是 SSR 的。</p>
+<h3 id="为什么使用-SSR"><a href="#为什么使用-SSR" class="headerlink" title="为什么使用 SSR"></a>为什么使用 <code>SSR</code></h3><ul>
+<li>网页内容在服务器端渲染完成，一次性传输到浏览器，所以 <code>首屏加载速度非常快</code>；</li>
+<li><code>有利于SEO</code>，因为服务器返回的是一个完整的 html，在浏览器可以看到完整的 dom，对于爬虫、百度搜索等引擎就比较友好；</li>
+</ul>
+<h2 id="Nuxt-3"><a href="#Nuxt-3" class="headerlink" title="Nuxt 3"></a>Nuxt 3</h2><p><code>Nuxt</code> 是一个基于 <code>Vue.js</code> 的服务端渲染应用框架，</p>
+<p>刚去查了一下 nuxt3在1月23日变成了默认版本</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125003129.png"></p>
+<p>在1月25日发布了3.1.0版本</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127185726.png"></p>
+<ul>
+<li><p>实验组件群岛 准备就绪</p>
+</li>
+<li><p>新的api</p>
+</li>
+<li><p>Nitro v2 ，vite 4 ，rollup3</p>
+</li>
+<li><p>性能改进</p>
+</li>
+</ul>
+<h2 id="什么是Nuxt？"><a href="#什么是Nuxt？" class="headerlink" title="什么是Nuxt？"></a>什么是Nuxt？</h2><p>要理解Nuxt是什么，我们需要了解创建一个现代应用程序需要什么：</p>
+<ul>
+<li>JavaScript框架： 一个带来JavaScript组件的JavaScript框架，支持Vue.js。</li>
+<li>打包工具：支持开发中的热模块替换和生产代码，支持webpack 5和Vite。</li>
+<li>最新JavaScript语法：在支持遗留浏览器的同时编写最新的JavaScript语法的转换器，支持esbuild。</li>
+<li>服务器端：Nuxt是一个在开发中服务于应用程序的服务器，同时也支持服务器端呈现或API路由，它使用h3进行部署的多功能性，如serverless, workers, Node.js和无与伦比的性能。</li>
+<li>路由：一个处理客户端导航的路由库，支持 <a target="_blank" rel="noopener" href="https://router.vuejs.org/">vue-router</a>.。</li>
+</ul>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/installation#prerequisites">https://nuxt.com/docs/getting-started/installation#prerequisites</a></p>
+<pre><code class="bash">pnpm dlx nuxi init &lt;project-name&gt;
+</code></pre>
+<pre><code class="bash">code &lt;project-name&gt;
+</code></pre>
+<pre><code class="bash"># Make sure you have `shamefully-hoist=true` in `.npmrc` before running pnpm install
+pnpm install
+</code></pre>
+<p><strong>注意：</strong> 如果你用 <code>pnpm</code> 安装依赖，请创建一个 <code>.npmrc</code> 文件，且设置:</p>
+<pre><code class="ini">shamefully-hoist=true
+</code></pre>
+<p>安装完成😋</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code class="bash">pnpm dev -o
+</code></pre>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127193306.png"></p>
+<p>看一眼文件树</p>
+<p>抛开编译结果<code>.nuxt</code>文件夹不谈 就只有一个<code>app.vue</code> 和<code>nuxt.config.ts</code></p>
+<p>很简陋 怎么会这样呢？我们一般写的vue框架也不是这样的啊</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127193603.png"></p>
+<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><p>创建 <code>components/</code> <code>pages/</code></p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127200417.png"></p>
+<p>具体操作见官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/views">https://nuxt.com/docs/getting-started/views</a></p>
+<p>也可以新建<code>src</code>目录 把 <code>components/</code> <code>pages/</code>目录放到<code>src</code>里</p>
+<p>在nuxt里组件是自动导入的，不用配置</p>
+<h2 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h2><p>路由是自动创建的</p>
+<pre><code class="html">&lt;NuxtLink to=&quot;/about&quot;&gt;About&lt;/NuxtLink&gt;
+</code></pre>
+<p>以上的代码点击会自动跳到<code>page/about.vue</code></p>
+<p>也可以使用路由</p>
+<pre><code class="vue">&lt;script setup&gt;
+const route = useRoute()
+
+// When accessing /posts/1, route.params.id will be 1
+console.log(route.params.id)
+&lt;/script&gt;
+</code></pre>
+<p><code>/posts/1</code>是创建的<code>/posts/[id].vue</code>这样id会被当做props传入</p>
+<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>nuxt服务端渲染最重要的就是搜索引擎优化</p>
+<p>可以被拉取到带内容的html</p>
+<p>而不是一般vue项目的空html</p>
+<pre><code class="js">export default defineNuxtConfig(&#123;
+  app: &#123;
+    head: &#123;
+      charset: &#39;utf-16&#39;,
+      viewport: &#39;width=500, initial-scale=1&#39;,
+      title: &#39;My App&#39;,
+      meta: [
+        // &lt;meta name=&quot;description&quot; content=&quot;My amazing site&quot;&gt;
+        &#123; name: &#39;description&#39;, content: &#39;My amazing site.&#39; &#125;
+      ],
+    &#125;
+  &#125;
+&#125;)
+</code></pre>
+<p>在<code>nuxt.config.ts</code>配置如上内容</p>
+<p>或者在<code>app.vue</code>里添加</p>
+<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
+useHead(&#123;
+  title: &#39;My App&#39;,
+  meta: [
+    &#123; name: &#39;description&#39;, content: &#39;My amazing site.&#39; &#125;
+  ],
+  bodyAttrs: &#123;
+    class: &#39;test&#39;
+  &#125;,
+  script: [ &#123; children: &#39;console.log(\&#39;Hello world\&#39;)&#39; &#125; ]
+&#125;)
+useServerSeoMeta(&#123;
+  title: &#39;My Amazing Site&#39;,
+  ogTitle: &#39;My Amazing Site&#39;,
+  description: &#39;This is my amazing site, let me tell you all about it.&#39;,
+  ogDescription: &#39;This is my amazing site, let me tell you all about it.&#39;,
+  ogImage: &#39;https://example.com/image.png&#39;,
+  twitterCard: &#39;summary_large_image&#39;,
+&#125;)
+&lt;/script&gt;
+</code></pre>
+<p>这几个函数可以添加meta头</p>
+<p>还有一些设置可以看官方文档 <a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/seo-meta">https://nuxt.com/docs/getting-started/seo-meta</a></p>
+<p>也可以使用 <a target="_blank" rel="noopener" href="https://nuxt.com/modules/seo-kit">https://nuxt.com/modules/seo-kit</a></p>
+<p>这个模块来配置SEO</p>
+<p>很方便😎</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇文章介绍了大概一半的nuxt3特性，下一篇会介绍另外一半</p>
+<p>我也是第一次使用nuxt3来开发项目</p>
+<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
+<p>😎</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/modules/seo-kit">https://nuxt.com/modules/seo-kit</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/seo-meta">https://nuxt.com/docs/getting-started/seo-meta</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/views">https://nuxt.com/docs/getting-started/views</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs">https://nuxt.com/docs</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7170746000112353293">https://juejin.cn/post/7170746000112353293</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7037336504418435103">https://juejin.cn/post/7037336504418435103</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/26/UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -2278,93 +2427,12 @@ grid: unset;
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2023/01/11/HTTP3%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="HTTP3初体验 ｜ 青训营笔记" class="lazyload">
-                    <h1>HTTP3初体验 ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月11日</a>
-            <a><i class="nexmoefont icon-areachart"></i>670 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-        </div>
-        
-        <article>
-            
-                <h2 id="HTTP-x2F-3试水"><a href="#HTTP-x2F-3试水" class="headerlink" title="HTTP&#x2F;3试水"></a>HTTP&#x2F;3试水</h2><h3 id="I"><a href="#I" class="headerlink" title="I"></a>I</h3><p>小看一眼，发现全是编译啥的。应该会踩很多坑的，这次用国外没东西的小1h512M服务器试水一下。<br>目前cloudflare给出了一键开启http3。很好用，我在netlify托管的网页一键开开了。<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221046.png" alt="1" class="lazyload"><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221121.png" alt="2" class="lazyload"></p>
-<h3 id="II"><a href="#II" class="headerlink" title="II"></a>II</h3><p>现在要编译安装一个nginx，用的是<a target="_blank" rel="noopener" href="https://github.com/cloudflare/quiche">https://github.com/cloudflare/quiche</a>方案。<br><a target="_blank" rel="noopener" href="https://github.com/cloudflare/quiche/tree/master/nginx">https://github.com/cloudflare/quiche/tree/master/nginx</a>处理nginx的教程在这里，一步步跟上</p>
-<pre><code class="bash">  curl -O https://nginx.org/download/nginx-1.16.1.tar.gz
-  tar xzvf nginx-1.16.1.tar.gz
-  git clone --recursive https://github.com/cloudflare/quiche
-  cd nginx-1.16.1
-  patch -p01 &lt; ../quiche/nginx/nginx-1.16.patch
-</code></pre>
-<p>在之前要apt upgrade一下避免有装不上的东西<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230111221522.png" alt="3" class="lazyload"><br>外网服务器下的就是快😎<br>要编译了发现cmake没有  装个cmake先<br><code>apt install cmake</code></p>
-<p>gcc g++也没有 装个</p>
-<p>接下来</p>
-<pre><code class="bash">  ./configure                                 \
-       --prefix=$PWD                           \
-       --build=&quot;quiche-$(git --git-dir=../quiche/.git rev-parse --short HEAD)&quot; \
-       --with-http_ssl_module                  \
-       --with-http_v2_module                   \
-       --with-http_v3_module                   \
-       --with-openssl=../quiche/quiche/deps/boringssl \
-       --with-quiche=../quiche
-  make
-</code></pre>
-<p>nginx configure 时候报错，<br><code>the HTTP rewrite module requires the PCRE library.</code><br>搜了 装这个 <code>apt install libpcre3 libpcre3-dev</code></p>
-<p><code>the HTTP gzip module requires the zlib library</code><br>搜了 装这个 <code>apt install zlib1g-dev</code></p>
-<p>又error 没有cargo 装个<br><code>apt install cargo</code></p>
-<p>make好了</p>
-<pre><code class="bash">nginx -V
-</code></pre>
-<p>装是装好了 好像要一个https证书啊<br>acme签一个<br><code>https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E</code></p>
-<pre><code class="conf">events &#123;
-    worker_connections  1024;
-&#125;
-
-http &#123;
-    server &#123;
-        # Enable QUIC and HTTP/3.
-        listen 443 quic reuseport;
-
-        # Enable HTTP/2 (optional).
-        listen 443 ssl http2;
-
-        ssl_certificate      cert.crt;
-        ssl_certificate_key  cert.key;
-
-        # Enable all TLS versions (TLSv1.3 is required for QUIC).
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-
-        # Add Alt-Svc header to negotiate HTTP/3.
-        add_header alt-svc &#39;h3=&quot;:443&quot;; ma=86400&#39;;
-    &#125;
-&#125;
-</code></pre>
-<p>签证书签了半天 签好了 放在</p>
-<pre><code class="bash">        ssl_certificate      cert.crt;
-        ssl_certificate_key  cert.key;
-</code></pre>
-<p>里面<br>配置好nginx 注意网站不要在root下<br>在root下nginx访问不到直接403了<br>建一个<code>/www/wwwroot/domin</code>文件夹放东西</p>
-<h3 id="III"><a href="#III" class="headerlink" title="III"></a>III</h3><p>最后配置结果是这样滴</p>
-<h4 id="第一个"><a href="#第一个" class="headerlink" title="第一个"></a>第一个</h4><p><a target="_blank" rel="noopener" href="https://geekflare.com/tools/test/yn22t29e04y7v0u5jl61mcark2dwxmbn">https://geekflare.com/tools/test/yn22t29e04y7v0u5jl61mcark2dwxmbn</a><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004019.png" alt="6" class="lazyload"><br>这个网站会检测什么h3-xxx的版本协议 （看不懂，看懂了在写一篇<br>你没有这个版本号的协议这个网站就检测不出来好像 在这里改就行<br><code>add_header alt-svc &#39;h3=&quot;:443&quot;; ma=86400&#39;;</code><br>我加了版本号114514🤓<br><code>add_header alt-svc h3=&quot;:443&quot;; ma=86400; h3-114514=&quot;:443&quot;; ma=86400</code><br>上面这个好像就检测这个alt-svc这个头</p>
-<h4 id="第二个"><a href="#第二个" class="headerlink" title="第二个"></a>第二个</h4><p><a target="_blank" rel="noopener" href="https://http3check.net/?host=http3.typescriptactions.xyz">https://http3check.net/?host=http3.typescriptactions.xyz</a><br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004253.png" alt="7" class="lazyload"><br>这个就很正常了 不加版本直接检测h3的</p>
-<h4 id="第三个"><a href="#第三个" class="headerlink" title="第三个"></a>第三个</h4><p>然后是wappalyzer插件<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004611.png" alt="8" class="lazyload"></p>
-<h4 id="第四个"><a href="#第四个" class="headerlink" title="第四个"></a>第四个</h4><p>然后是浏览器devtools的协议检查<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230112004854.png" alt="9" class="lazyload"></p>
-<h3 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h3><p>总结一下<br>2023-1-11 21:57:32 开始的<br>2023-1-12 00:53:12 写完这篇<br>🤥感觉没啥可总结的 国外服务器也测不了http3优势啥的<br>下班！睡觉！😝</p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
+    <nav class="nexmoe-page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/01/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/01/page/2/"><i class="nexmoefont icon-right"></i></a>
+    </nav>
+  
 
         <div class="nexmoe-post-right">
           
@@ -3078,7 +3146,7 @@ http &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674745253833"></script>
+<script src="/js/app.js?v=1674822143638"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -3095,8 +3163,6 @@ http &#123;
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -3109,11 +3175,13 @@ http &#123;
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
 
-<script src="/js/webapp.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
+
+<script src="/js/clock.js"></script>
+
+<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
 </html>
 
