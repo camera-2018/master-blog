@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674822143626">
+  <link rel="stylesheet" href="/css/style.css?v=1674917907093">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>18 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>20 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,245 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/17/%E6%B7%B1%E5%85%A5CSS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="深入CSS ｜ 青训营笔记" class="lazyload">
+                    <h1>深入CSS ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月17日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 2 天</strong></p>
+<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ol>
+<li>选择器的特异度</li>
+<li>属性的继承</li>
+<li>Layout 方式</li>
+<li>盒子模型</li>
+<li>块级元素和行级元素</li>
+<li>flex</li>
+<li>grid</li>
+<li>float</li>
+<li>position</li>
+</ol>
+<h2 id="详细知识点介绍："><a href="#详细知识点介绍：" class="headerlink" title="详细知识点介绍："></a>详细知识点介绍：</h2><h3 id="1-选择器的特异度（Specificity）"><a href="#1-选择器的特异度（Specificity）" class="headerlink" title="1. 选择器的特异度（Specificity）"></a>1. 选择器的特异度（Specificity）</h3><p>即 CSS 选择器的<strong>优先级</strong>，当一个元素能够匹配多个样式时，浏览器会根据优先级为元素赋予正确的样式。</p>
+<p>一般情况下，ID选择器优先级最高，其次是类选择器&#x2F;属性选择器&#x2F;伪类，优先级最低的是类型选择器和伪元素选择器。不同选择器的叠加也会改变优先级。<code>!important</code> 的样式会覆盖其他样式。</p>
+<p>在 <code>VSCode</code> 中，鼠标悬浮在选择器上是，能实时看到选择器的优先级数值</p>
+<p>id选择器 大于 类选择器 大于 标签选择器</p>
+<h3 id="2-CSS-属性的继承"><a href="#2-CSS-属性的继承" class="headerlink" title="2. CSS 属性的继承"></a>2. CSS 属性的继承</h3><p>某些属性会自动继承其父元素的计算值除非显式指定一个值</p>
+<p>不同的 CSS 属性有着不同的继承规则。对于一个能够被继承的样式属性，子元素能够从父元素继承相同的属性值，而不需要额外的设置。当然，对于一个默认不继承的样式，也可以通过将其值设置为<code>inherit</code>来强制从父元素继承。</p>
+<p>初始值：CSS 中，每个属性都有一个初始值 <code>background-color</code> 的初始值为 <code>transparent</code><br><code>margin-left</code> 的初始值为 0<br>可以使用 <code>initial</code> 关键字显式重置为初始值<br><code>background-color: initial</code></p>
+<h3 id="3-CSS-布局方式"><a href="#3-CSS-布局方式" class="headerlink" title="3. CSS 布局方式"></a>3. CSS 布局方式</h3><p>CSS 存在许多种布局方式。总体上分为三类：常规流&#x2F;文档流、浮动、绝对定位。其中，在正常的文档流中，又可以细分出很多布局方式，例如行级、块级、表格布局、弹性布局（flex）、网格布局（grid）</p>
+<p>盒子模型：<code>margin</code> <code>border</code> <code>padding</code></p>
+<h3 id="4-CSS-盒子模型"><a href="#4-CSS-盒子模型" class="headerlink" title="4. CSS 盒子模型"></a>4. CSS 盒子模型</h3><p>width: content box 的宽度</p>
+<p>height: content box 的高度</p>
+<p>padding: 元素内边距，百分比相对于<strong>元素宽度</strong></p>
+<p>border: 元素的边框样式、粗细和颜色</p>
+<p>margin: 元素外边距，百分比相对于<strong>元素宽度</strong></p>
+<p>当 box-sizing 取值为 border-box 时，模型会发生相应变化。</p>
+<h3 id="5-块级元素"><a href="#5-块级元素" class="headerlink" title="5. 块级元素"></a>5. 块级元素</h3><p>即 <code>display</code> 属性值为 <code>block</code> 的元素。例如 <code>body</code>、<code>article</code>、<code>div</code>、<code>main</code>、<code>section</code>、<code>p</code>、<code>h1</code>~&#96;h6<code>、</code>ul<code>/</code>ol<code>、</code>li&#96; 等</p>
+<h3 id="行级元素"><a href="#行级元素" class="headerlink" title="行级元素"></a>行级元素</h3><p>即 <code>display</code> 属性值为 <code>inline</code> 的元素。</p>
+<h3 id="6-flex"><a href="#6-flex" class="headerlink" title="6. flex"></a>6. flex</h3><p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
+<p>2009年，W3C提出了一种新的方案—Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+<p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性.</p>
+<pre><code class="css">.box&#123;
+  display: flex;
+&#125;
+</code></pre>
+<p>任何一个容器都可以指定为Flex布局。</p>
+<p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。</p>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
+<pre><code class="css">.box &#123;
+  flex-direction: row | row-reverse | column | column-reverse;
+&#125;
+</code></pre>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。</li>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<h3 id="7-grid"><a href="#7-grid" class="headerlink" title="7. grid"></a>7. grid</h3><p>网格是一组相交的水平线和垂直线，它定义了网格的列和行。</p>
+<p>CSS 提供了一个基于网格的布局系统，带有行和列，可以让我们更轻松地设计网页，而无需使用浮动和定位。</p>
+<p>当一个 HTML 元素将 display 属性设置为 grid 或 inline-grid 后，它就变成了一个网格容器，这个元素的所有直系子元素将成为网格元素。</p>
+<pre><code class="css">grid: none;
+grid: &quot;a&quot; 100px &quot;b&quot; 1fr;
+grid: [linename1] &quot;a&quot; 100px [linename2];
+grid: &quot;a&quot; 200px &quot;b&quot; min-content;
+grid: &quot;a&quot; minmax(100px, max-content) &quot;b&quot; 20%;
+grid: 100px / 200px;
+grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
+
+grid: 200px / auto-flow;
+grid: 30% / auto-flow dense;
+grid: repeat(3, [line1 line2 line3] 200px) / auto-flow 300px;
+grid: [line1] minmax(20em, max-content) / auto-flow dense 40%;
+
+grid: auto-flow / 200px;
+grid: auto-flow dense / 30%;
+grid: auto-flow 300px / repeat(3, [line1 line2 line3] 200px);
+grid: auto-flow dense 40% / [line1] minmax(20em, max-content);
+
+grid: inherit;
+grid: initial;
+grid: unset;
+</code></pre>
+<p>我们通过 <strong>grid-template-columns</strong> 和 <strong>grid-template-rows</strong> 属性来定义网格中的行和列。</p>
+<p>这些属性定义了网格的轨道，一个网格轨道就是网格中任意两条线之间的空间。</p>
+<p>在下图中你可以看到一个绿色框的轨道——网格的第一个行轨道。第二行有三个白色框轨道。</p>
+<p>轨道可以使用任何长度单位进行定义。</p>
+<p>网格引入了 <strong>fr</strong> 单位来帮助我们创建灵活的网格轨道。一个 fr 单位代表网格容器中可用空间的一等份。</p>
+<p>以下实例定义了一个网格定义将创建三个相等宽度的轨道，这些轨道会随着可用空间增长和收缩。</p>
+<p>一个网格单元是在一个网格元素中最小的单位， 从概念上来讲其实它和表格的一个单元格很像。现在再看回我们前面的一个例子, 一旦一个网格元素被定义在一个父级元素当中，那么他的子级元素将会排列在每个事先定义好的网格单元中。</p>
+<p>列与列，行与行之间的交接处就是网格线。</p>
+<p>Grid 会为我们创建编号的网格线来让我们来定位每一个网格元素。</p>
+<pre><code class="css">#container &#123;
+  display: grid;
+  grid: repeat(2, 60px) / auto-flow 80px;
+&#125;
+
+#container &gt; div &#123;
+  background-color: #8ca0ff;
+  width: 50px;
+  height: 50px;
+&#125;
+</code></pre>
+<p>网格线的编号顺序取决于文章的书写模式。在从左至右书写的语言中，编号为 1 的网格线位于最左边。在从右至左书写的语言中，编号为 1 的网格线位于最右边。</p>
+<p>接下来我使用了 grid-column-start, grid-column-end, grid-row-start 和 grid-row-end 属性来演示如何使用网格线。</p>
+<p>以下实例我们设置一个网格元素的网格线从第一列开始，第三列结束：</p>
+<pre><code class="css">.item1 &#123;
+  grid-column-start: 1;
+  grid-column-end: 3;
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/try/gridgarden/index.html">https://www.runoob.com/try/gridgarden/index.html</a></p>
+<p>菜鸟教程的grid布局小游戏</p>
+<h2 id="实践练习例子："><a href="#实践练习例子：" class="headerlink" title="实践练习例子："></a>实践练习例子：</h2><h3 id="特异度相关例子"><a href="#特异度相关例子" class="headerlink" title="特异度相关例子"></a>特异度相关例子</h3><p>下面的文字是什么颜色？</p>
+<pre><code class="html">&lt;div class=&quot;wrapper1&quot;&gt;
+  &lt;div class=&quot;text1&quot;&gt;文本1&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  .wrapper1 .text1 &#123;
+    color: red;
+  &#125;
+  
+  .text1 &#123;
+    color: black;
+  &#125;
+&lt;/style&gt;
+</code></pre>
+<p>正确答案是红色</p>
+<p>虽然黑色的属性声明在后面，理应覆盖掉前面的红色，但是前面是两个类选择器的叠加，优先级是 <code>0, 2, 0</code> ，后者只有一个类选择器，优先级是 <code>0, 1, 0</code>，所以最终浏览器应用了红色。</p>
+<h2 id="课后个人总结："><a href="#课后个人总结：" class="headerlink" title="课后个人总结："></a>课后个人总结：</h2><p>本节课中，我学习了CSS中特异度、属性继承、布局方式、盒子模型、块级元素和行级元素、flex、grid等概念，掌握了相关的知识和应用。 特异度是CSS中最重要的概念之一，让我们明白当一个元素能够匹配多个样式时，浏览器会根据优先级为元素赋予正确的样式。</p>
+<p>属性的继承也是重要的概念，它会依赖于不同的CSS属性，有了它，我们可以让HTML元素的样式可以从父元素继承。</p>
+<p>我们还学习了CSS中的布局方式，包括常规流&#x2F;文档流、浮动、绝对定位等，以及flex、grid等网格布局。</p>
+<p>熟练掌握这些知识，我们可以更好的制作网页，满足各种布局的需求。</p>
+<h2 id="引用参考："><a href="#引用参考：" class="headerlink" title="引用参考："></a>引用参考：</h2><p>课程ppt</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid">https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox</a></p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/16/%E5%89%8D%E7%AB%AF%E4%B8%8E%20HTML%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="前端与 HTML ｜ 青训营笔记" class="lazyload">
+                    <h1>前端与 HTML ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月16日</a>
+            <a><i class="nexmoefont icon-areachart"></i>777 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 1 天</strong></p>
+<h2 id="本堂课重点内容："><a href="#本堂课重点内容：" class="headerlink" title="本堂课重点内容："></a>本堂课重点内容：</h2><ol>
+<li>前端的介绍</li>
+<li>HTML 标签的简单介绍</li>
+<li>HTML 语义化</li>
+</ol>
+<h2 id="详细知识点介绍："><a href="#详细知识点介绍：" class="headerlink" title="详细知识点介绍："></a>详细知识点介绍：</h2><ol>
+<li>前端技术栈</li>
+<li>前端的边界、开发环境（ide、浏览器）</li>
+<li>DOM 树的简单介绍</li>
+<li>HTML 语法简单介绍</li>
+<li>各类常用标签（h1-h5、p、form、a）</li>
+<li>常见的语义化标签（main&#x2F;footer&#x2F;section）</li>
+<li>语义化的优势</li>
+</ol>
+<h2 id="实践练习例子："><a href="#实践练习例子：" class="headerlink" title="实践练习例子："></a>实践练习例子：</h2><h3 id="1-标题元素"><a href="#1-标题元素" class="headerlink" title="1. 标题元素"></a>1. 标题元素</h3><p>使用 <code>h1</code>~&#96;h6&#96; 标签将标题文本包裹，标题会根据级别拥有默认的字重、字号和外边距。</p>
+<pre><code class="html">&lt;h1&gt;一级标题&lt;/h1&gt;
+&lt;h2&gt;二级标题&lt;/h2&gt;
+&lt;h3&gt;三级标题&lt;/h3&gt;
+&lt;h4&gt;四级标题&lt;/h4&gt;
+&lt;h5&gt;五级标题&lt;/h5&gt;
+&lt;h6&gt;六级标题&lt;/h6&gt;
+</code></pre>
+<h3 id="2-图片元素"><a href="#2-图片元素" class="headerlink" title="2. 图片元素"></a>2. 图片元素</h3><p>使用 <code>src</code> 属性来确定图片链接，<code>alt</code> 属性用于表示图片无法显示时的替代文本</p>
+<pre><code class="html">&lt;img src=&quot;https://example.com/image&quot; /&gt;
+&lt;img src=&quot;https://example.com&quot; alt=&quot;显示不出来的图片&quot; /&gt;
+</code></pre>
+<h3 id="3-单选框"><a href="#3-单选框" class="headerlink" title="3. 单选框"></a>3. 单选框</h3><p><code>radio</code> 类型的 <code>input</code> 元素，相同 <code>name</code> 的单选框会归为同一组（只能选其中一个） 使用 <code>label</code> 标签来标识单选框的内容</p>
+<pre><code class="html">&lt;input type=&quot;radio&quot; id=&quot;el1&quot; name=&quot;group1&quot; /&gt;
+&lt;label for=&quot;el1&quot;&gt;第一组-选项1&lt;/label&gt;
+&lt;input type=&quot;radio&quot; id=&quot;el2&quot; name=&quot;group1&quot; /&gt;
+&lt;label for=&quot;el2&quot;&gt;第一组-选项1&lt;/label&gt;
+&lt;br&gt;
+&lt;input type=&quot;radio&quot; id=&quot;el3&quot; name=&quot;group2&quot; /&gt;
+&lt;label for=&quot;el3&quot;&gt;第二组-选项1&lt;/label&gt;
+&lt;input type=&quot;radio&quot; id=&quot;el4&quot; name=&quot;group2&quot; /&gt;
+&lt;label for=&quot;el4&quot;&gt;第二组-选项2&lt;/label&gt;
+</code></pre>
+<h3 id="4-超链接"><a href="#4-超链接" class="headerlink" title="4. 超链接"></a>4. 超链接</h3><p>使用 <code>a</code> 标签包裹文本，<code>href</code> 属性是目标链接，默认在当前页面打开，为了在新标签页打开，可以将 <code>target</code> 属性设置为 <code>_blank</code></p>
+<pre><code class="html">&lt;a href=&quot;https://example.com&quot;&gt;在当前页面打开&lt;/a&gt;
+&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;在新页面打开&lt;/a&gt;
+</code></pre>
+<h3 id="5-有序列表"><a href="#5-有序列表" class="headerlink" title="5. 有序列表"></a>5. 有序列表</h3><p>最外层使用 <code>ol</code>标签包裹，内部包含多个 <code>li</code> 标签</p>
+<pre><code class="html">&lt;ol&gt;
+    &lt;li&gt;第一&lt;/li&gt;
+    &lt;li&gt;第二&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;第三&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h3 id="6-无序列表"><a href="#6-无序列表" class="headerlink" title="6. 无序列表"></a>6. 无序列表</h3><p>最外层使用 <code>ul</code>标签包裹，内部包含多个 <code>li</code>标签</p>
+<pre><code class="html">&lt;ul&gt;
+    &lt;li&gt;第一&lt;/li&gt;
+    &lt;li&gt;第二&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;第三&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="课后个人总结："><a href="#课后个人总结：" class="headerlink" title="课后个人总结："></a>课后个人总结：</h3><p>本节课主要介绍了前端的技术栈，以及 HTML 标签的简单介绍和 HTML 语义化，通过本节课的学习，我对 HTML 标签有了一定的了解，掌握了如何使用标签来表达页面元素，并且学习了如何使用语义化标签来提高前端代码的可读性，以及提升代码的可维护性。</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/11/HTTP3%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -2115,7 +2354,7 @@ public class Main &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674822143626"></script>
+<script src="/js/app.js?v=1674917907094"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -2132,6 +2371,8 @@ public class Main &#123;
 
 
 <!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -2147,8 +2388,6 @@ public class Main &#123;
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
-
-<script src="/js/clock.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
