@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674917907109">
+  <link rel="stylesheet" href="/css/style.css?v=1674980015209">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>20 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>21 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,185 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/29/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记" class="lazyload">
+                    <h1>Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月29日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 13 天</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前两篇写了一些nuxt3和SSR的基础</p>
+<p>这一篇讲讲nuxt3比较进阶的部分</p>
+<h2 id="自动引入"><a href="#自动引入" class="headerlink" title="自动引入"></a>自动引入</h2><h4 id="nuxt3自带自动引入"><a href="#nuxt3自带自动引入" class="headerlink" title="nuxt3自带自动引入"></a>nuxt3自带自动引入</h4><p>包括一些nuxt3的api都是不用导入的直接就可以用</p>
+<p>例如</p>
+<ul>
+<li><p>数据获取的函数<code>useFetch</code> <code>useAsyncData</code> </p>
+</li>
+<li><p>状态管理函数<code>useState</code> </p>
+</li>
+<li><p>运行变量获取函数 <code>useRuntimeConfig</code></p>
+</li>
+<li><p>运行时上下文获取函数 <code>useNuxtApp</code></p>
+</li>
+</ul>
+<h4 id="还有一些Vue的api"><a href="#还有一些Vue的api" class="headerlink" title="还有一些Vue的api"></a>还有一些Vue的api</h4><p>例如</p>
+<ul>
+<li><p>响应式的函数<code>ref</code></p>
+</li>
+<li><p>计算属性 <code>computed</code></p>
+</li>
+</ul>
+<h4 id="文件夹下的内容自动引入"><a href="#文件夹下的内容自动引入" class="headerlink" title="文件夹下的内容自动引入"></a>文件夹下的内容自动引入</h4><p>例如</p>
+<ul>
+<li><code>components/</code>文件夹下的组件</li>
+<li><code>composables/</code>文件夹下的响应式函数</li>
+<li><code>utils/</code>文件夹下的工具函数</li>
+</ul>
+<h4 id="可以使用-imports来使导入明确"><a href="#可以使用-imports来使导入明确" class="headerlink" title="可以使用#imports来使导入明确"></a>可以使用<code>#imports</code>来使导入明确</h4><pre><code>&lt;script setup&gt;
+  import &#123; ref, computed &#125; from &#39;#imports&#39;
+
+  const count = ref(1)
+  const double = computed(() =&gt; count.value * 2)
+&lt;/script&gt;
+</code></pre>
+<h4 id="关闭自动引入"><a href="#关闭自动引入" class="headerlink" title="关闭自动引入"></a>关闭自动引入</h4><p>在<code>nuxtconfig</code>里加入</p>
+<pre><code>export default defineNuxtConfig(&#123;
+  imports: &#123;
+    autoImport: false
+  &#125;
+&#125;)
+</code></pre>
+<p>（😡谁会这么做</p>
+<h2 id="自动引入的组件"><a href="#自动引入的组件" class="headerlink" title="自动引入的组件"></a>自动引入的组件</h2><p>假设目录如下</p>
+<pre><code>| components/
+--| base/
+----| foo/
+------| Button.vue
+</code></pre>
+<p>此时可以使用<code>&lt;BaseFooButton /&gt;</code>标签引入这个button组件</p>
+<p>另外，可以使用一个Lazy前缀来懒加载组件</p>
+<p>例如</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Mountains&lt;/h1&gt;
+    &lt;LazyMountainsList v-if=&quot;show&quot; /&gt;
+    &lt;button v-if=&quot;!show&quot; @click=&quot;show = true&quot;&gt;Show List&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default &#123;
+  data() &#123;
+    return &#123;
+      show: false
+    &#125;
+  &#125;
+&#125;
+&lt;/script&gt;
+</code></pre>
+<p>这样可以减少打包大小，增加性能</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>写在<code>pages/</code>里的组件会自动写入路由</p>
+<p><code>pages/index.vue</code>会匹配路由<code>/</code></p>
+<p>只需要在<code>app.vue</code>里添加</p>
+<p><code>&lt;NuxtPage /&gt;</code>标签</p>
+<p>可以通过插槽写法例如写<code>[id].vue</code>来匹配路由内的参数</p>
+<p>例如如下文件树</p>
+<pre><code>-| pages/
+---| index.vue
+---| users-[group]/
+-----| [id].vue
+</code></pre>
+<p>在<code>[id].vue</code>里写下</p>
+<pre><code>&lt;template&gt;
+  &lt;p&gt;&#123;&#123; $route.params.group &#125;&#125; - &#123;&#123; $route.params.id &#125;&#125;&lt;/p&gt;
+&lt;/template&gt;
+</code></pre>
+<p>读取group参数和id参数</p>
+<p>访问路由<code>/users-admins/123</code>会渲染成</p>
+<pre><code>&lt;p&gt;admins - 123&lt;/p&gt;
+</code></pre>
+<h2 id="渲染模式"><a href="#渲染模式" class="headerlink" title="渲染模式"></a>渲染模式</h2><h4 id="传统的Vue项目渲染方式为-客户端渲染"><a href="#传统的Vue项目渲染方式为-客户端渲染" class="headerlink" title="传统的Vue项目渲染方式为  客户端渲染"></a>传统的Vue项目渲染方式为  <code>客户端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129144946.png"></p>
+<p>浏览器会先下载到空的html文件→下载js→渲染出来</p>
+<p>这种方式的优点是：</p>
+<ul>
+<li><p>开发速度快：当完全在客户端上工作时，我们不必担心代码的服务器兼容性，例如，使用像windows这样的浏览器api。 </p>
+</li>
+<li><p>更便宜的服务器成本：运行一个服务器会增加一个基础设施的成本，因为您需要在一个支持JavaScript的平台上运行。我们可以在任何具有HTML、CSS和JavaScript文件的静态服务器上托管仅限客户端的应用程序。 </p>
+</li>
+<li><p>下载好后离线：因为代码完全在浏览器中运行，所以它可以很好地在互联网不可用时很好地保持工作。</p>
+</li>
+</ul>
+<p>缺点为：</p>
+<ul>
+<li>性能不好：用户必须等待浏览器下载、解析和运行JavaScript文件。根据下载部分的网络和用户的解析和执行设备，这可能需要一些时间，并影响用户的体验。</li>
+<li>不友好的搜索引擎优化：索引和更新通过客户端呈现交付的内容比使用服务器呈现的HTML文档需要更多的时间。</li>
+</ul>
+<h4 id="nuxt3的服务端渲染"><a href="#nuxt3的服务端渲染" class="headerlink" title="nuxt3的服务端渲染"></a>nuxt3的<code>服务端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129145732.png"></p>
+<p>有内容的html文件会下载到浏览器→用户在此时可以点击和浏览页面上的内容（部分功能）→需要的组件渲染完成、此时的页面有全部功能</p>
+<p>这种方式的优点是：</p>
+<ul>
+<li>性能好：用户可以立即访问页面的内容，因为浏览器显示静态内容的速度比<code>javascript</code>生成的静态内容要快得多。</li>
+<li>搜索引擎优化：通用呈现将页面的整个HTML内容作为一个经典的服务器应用程序传递到浏览器。Web爬虫可以直接索引页面的内容。</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>开发约束：服务器和浏览器环境不提供相同的api，而且编写可以在两边无缝运行的代码可能会很棘手。幸运的是，Nuxt提供了特定的变量来同步这些。</li>
+<li>成本高：服务器需要运行，才能动态地呈现页面。这就像任何传统服务器一样，增加了每月的成本。但是，由于浏览器接管了客户端导航的通用渲染，服务器调用大大减少了。</li>
+</ul>
+<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><p>使用 <code>TypeScript</code> 后可以使用nuxi带的语法检查</p>
+<pre><code>yarn nuxi typecheck
+</code></pre>
+<p>nuxt也会自动生成类型</p>
+<p>在<a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/typescript#nuxtnuxtdts"><code>.nuxt/nuxt.d.ts</code></a>目录下</p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>一个完整的nuxt3项目文件目录应该包含以下文件夹和文件</p>
+<pre><code>.nuxt                      nuxt生成的文件目录里面有 运行的类型等
+.output                    build产物文件夹
+assets                     css文件、字体文件、图片文件
+components                 组件目录
+composables                响应式函数的文件夹
+content                    基于文件的cms的文件夹
+layouts                    布局组件的文件夹
+middleware                 中间件文件夹
+node_modules               依赖文件夹
+pages                      路由的页面
+plugins                    nuxt插件
+public                     公共文件文件夹，可以放ico图标，图片
+server                     服务端api文件夹
+utils                      工具函数文件夹
+.gitignore                 git忽略文件
+.nuxtignore                不加入nuxt编译的忽略文件
+app.config.ts              config文件 可以使用useAppConfig读取
+app.vue                    vue入口 
+nuxt.config.ts             nuxt配置文件
+package.json               依赖描述文件
+tsconfig.json              ts检查配置文件
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/nuxt">https://nuxt.com/docs/guide/directory-structure/nuxt</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇文章介绍了nuxt3的高级用法</p>
+<p>我也是第一次使用nuxt3来开发项目</p>
+<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
+<p>😎🥰</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/auto-imports">https://nuxt.com/docs/guide/concepts/auto-imports</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/composables">https://nuxt.com/docs/guide/directory-structure/composables</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/components">https://nuxt.com/docs/guide/directory-structure/components</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/unjs/nitro">https://github.com/unjs/nitro</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/28/%E3%80%8C%E9%9D%92%E8%AE%AD%E8%90%A5%20X%20%E7%A0%81%E4%B8%8A%E6%8E%98%E9%87%91%E3%80%8D%E4%B8%BB%E9%A2%98%201%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E5%90%8D%E7%89%87/">
@@ -2391,156 +2570,10 @@ EnumTest[&#39;Tue&#39;] === 1
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2023/01/18/JavaScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="JavaScript ｜ 青训营笔记" class="lazyload">
-                    <h1>JavaScript ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月18日</a>
-            <a><i class="nexmoefont icon-areachart"></i>998 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 3 天</strong></p>
-<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ol>
-<li>编码原则</li>
-<li>组件封装</li>
-<li>过程抽象概念</li>
-<li>高阶函数使用模式</li>
-<li>JavaScript 编程范式</li>
-</ol>
-<h2 id="详细知识点介绍"><a href="#详细知识点介绍" class="headerlink" title="详细知识点介绍"></a>详细知识点介绍</h2><h3 id="编码原则"><a href="#编码原则" class="headerlink" title="编码原则"></a>编码原则</h3><p>各司其职，组件封装，过程抽象</p>
-<p>我们在编码的时候需要注意，尽量让HTML&#x2F;CSS&#x2F;JS各司其职，避免不必要的由JS直接操作样式。</p>
-<h3 id="组件封装"><a href="#组件封装" class="headerlink" title="组件封装"></a>组件封装</h3><p>组件是指一个包含模板、功能、样式的单元，好的组件具有封装性、正确性、扩展性、复用性。 </p>
-<h3 id="过程抽象"><a href="#过程抽象" class="headerlink" title="过程抽象"></a>过程抽象</h3><p>过程抽象用来处理细节控制的一些方法。 需要函数式编程的思想。</p>
-<p>函数式编程，简单理解就是无副作用的输入-&gt;处理-&gt;输出。</p>
-<p>为了能够让<code>只执行一次</code>的需求覆盖不同的事件处理，我们可以将这个需求剥离出来，这个过程我们称为<code>过程抽象</code>。</p>
-<h3 id="高阶函数（HOF）介绍"><a href="#高阶函数（HOF）介绍" class="headerlink" title="高阶函数（HOF）介绍"></a>高阶函数（HOF）介绍</h3><ul>
-<li><p>以函数作为参数</p>
-</li>
-<li><p>以函数作为返回值</p>
-</li>
-<li><p>常用于作为函数装饰器</p>
-</li>
-</ul>
-<h3 id="常见的高阶函数"><a href="#常见的高阶函数" class="headerlink" title="常见的高阶函数"></a>常见的高阶函数</h3><h4 id="Once"><a href="#Once" class="headerlink" title="Once"></a>Once</h4><p>用于只需要执行一次的函数</p>
-<pre><code class="js">function once(fn) &#123;
-    return function(...args) &#123;
-        if(fn) &#123;
-            const ret = fn.apply(this, args);
-            fn = null;
-            return ret;
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<p>使用方法：</p>
-<pre><code class="js">const print = (content) =&gt; &#123;
-    console.log(content)
-&#125;
-
-const printOnce = once(print)
-
-printOnce(&quot;1&quot;) // 输出 1
-printOnce(&quot;2&quot;) // 不输出
-</code></pre>
-<p>常用于只需要执行一次的的事件侦听器（也可以使用事件侦听器自带的once option，或者手动在执行后移除侦听器）</p>
-<h4 id="节流（Throttle）"><a href="#节流（Throttle）" class="headerlink" title="节流（Throttle）"></a>节流（Throttle）</h4><p>如果快速调用函数，那么只有第一次能成功调用函数，之后时间间隔之内的调用会被忽略。常用于滚动条事件&#x2F;瀑布流无限滚动的场景（限制函数调用频率，保证一段时间内函数只调用一次）</p>
-<pre><code class="js">function throttle(fn, time = 500) &#123;
-    let timer = null;
-    return function (...args) &#123;
-        if (timer) return;
-        fn.apply(this, args);
-        timer = setTimeout(() =&gt; &#123;
-            timer = null;
-        &#125;, time);
-    &#125;
-&#125;
-</code></pre>
-<h4 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h4><p>当在时间间隔之内快速调用函数时，函数将始终没法执行，直到停止后，函数才会被执行。常用于一些文本输入的场景（比如搜索框停止输入后，展示联想词；文章编辑器中，输入停止后，进行草稿的保存）。</p>
-<pre><code class="js">function debounce(fn, time = 500) &#123;
-    let timer = null;
-    return function (...args) &#123;
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(() =&gt; &#123;
-            fn.apply(this, args);
-        &#125;, time);
-    &#125;
-&#125;
-</code></pre>
-<h4 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h4><p>从名字也很好理解，当快速点击时，函数并不会立刻被调用，而是先将任务推入列表，然后在一定时间后一个一个消费掉。</p>
-<pre><code class="js">function consumer(fn, time = 500) &#123;
-    let tasks = [];
-    let timer = null;
-    return function (...args) &#123;
-        tasks.push(args);
-        if (timer) return;
-        timer = setInterval(() =&gt; &#123;
-            fn.apply(this, tasks.shift());
-            if (tasks.length === 0) &#123;
-                clearInterval(timer);
-                timer = null;
-            &#125;
-        &#125;, time)
-    &#125;
-&#125;
-</code></pre>
-<h4 id="Lterative-可迭代函数"><a href="#Lterative-可迭代函数" class="headerlink" title="Lterative 可迭代函数"></a>Lterative 可迭代函数</h4><h3 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h3><p>命令式与声明式。</p>
-<p>命令式趋向于怎么做。声明式趋向于做什么。</p>
-<p>JS是既有命令式又有声明式。</p>
-<h4 id="命令式"><a href="#命令式" class="headerlink" title="命令式"></a>命令式</h4><pre><code class="js">let list =[1,2,3]
-let map = []
-
-for(let i =0;i&lt;list.length;i++)&#123;
-    map.push(list[i]*2);
-&#125;
-</code></pre>
-<h4 id="声明式"><a href="#声明式" class="headerlink" title="声明式"></a>声明式</h4><pre><code class="js">let list = [1,2,3,4];
-const double = x =&gt; x*2;
-list.map(double);
-</code></pre>
-<h2 id="实践练习例子"><a href="#实践练习例子" class="headerlink" title="实践练习例子"></a>实践练习例子</h2><p>实现一个只能执行一次的函数：</p>
-<pre><code class="js">// 只执行一次函数
-const once = (fn) =&gt; &#123;
-  let done = false;
-  return function (...args) &#123;
-    if (!done) &#123;
-      done = true;
-      return fn.apply(this, args);
-    &#125;
-  &#125;
-&#125;
-
-// 测试
-const sayHello = (name) =&gt; &#123;
-  console.log(`Hello $&#123;name&#125;`);
-&#125;;
-
-const sayHelloOnce = once(sayHello);
-
-sayHelloOnce(&#39;xiaoming&#39;); // Hello xiaoming
-sayHelloOnce(&#39;xiaohong&#39;); // undefined
-</code></pre>
-<h2 id="课后个人总结"><a href="#课后个人总结" class="headerlink" title="课后个人总结"></a>课后个人总结</h2><p>​	本次课程让我学到了很多有关编程原则、组件封装、过程抽象概念、高阶函数使用模式以及JavaScript编程范式的知识，收获很大。 	</p>
-<p>​	对于高阶函数，过去只是略有了解，现在能够真正去理解它们是什么，以及它们的用处如何。</p>
-<h2 id="引用参考"><a href="#引用参考" class="headerlink" title="引用参考"></a>引用参考</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcnxKucsHPvnJ7PfXyCQF5WCd">https://bytedance.feishu.cn/file/boxcnxKucsHPvnJ7PfXyCQF5WCd</a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
     <nav class="nexmoe-page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="nexmoefont icon-right"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="nexmoefont icon-right"></i></a>
     </nav>
   
 
@@ -3256,7 +3289,7 @@ sayHelloOnce(&#39;xiaohong&#39;); // undefined
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674917907110"></script>
+<script src="/js/app.js?v=1674980015210"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>

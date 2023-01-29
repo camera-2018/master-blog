@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>UnoCSS实战 ｜ 青训营笔记 - 向阳信息</title>
+  <title>Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记 - 向阳信息</title>
   <meta charset="UTF-8">
   <meta name="description" content="若月千鸮的博客&#39;">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,25 +16,21 @@
     <meta name="baidu-site-verification" content="code-8gmJzopb3Z" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 10 天 前言原子化css体验 重新构想原子化 CSS (antfu.me) 本篇介绍一下如何配置UnoCSS、UnoCSS怎么使用 安装先创建一个vite模板   https:&#x2F;&#x2F;cn.vitejs.dev&#x2F;guide&#x2F;#scaffolding-your-first-vite-project 这里使用pnpm pnpm create vite">
+  <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 13 天 前言前两篇写了一些nuxt3和SSR的基础 这一篇讲讲nuxt3比较进阶的部分 自动引入nuxt3自带自动引入包括一些nuxt3的api都是不用导入的直接就可以用 例如  数据获取的函数useFetch useAsyncData   状态管理函数useState   运行变量获取函数 useRuntimeConfig  运行时上下文获取函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UnoCSS实战 ｜ 青训营笔记">
-<meta property="og:url" content="https://xyxsw.ltd/2023/01/26/UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记">
+<meta property="og:url" content="https://xyxsw.ltd/2023/01/29/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="向阳信息">
-<meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 10 天 前言原子化css体验 重新构想原子化 CSS (antfu.me) 本篇介绍一下如何配置UnoCSS、UnoCSS怎么使用 安装先创建一个vite模板   https:&#x2F;&#x2F;cn.vitejs.dev&#x2F;guide&#x2F;#scaffolding-your-first-vite-project 这里使用pnpm pnpm create vite">
+<meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 13 天 前言前两篇写了一些nuxt3和SSR的基础 这一篇讲讲nuxt3比较进阶的部分 自动引入nuxt3自带自动引入包括一些nuxt3的api都是不用导入的直接就可以用 例如  数据获取的函数useFetch useAsyncData   状态管理函数useState   运行变量获取函数 useRuntimeConfig  运行时上下文获取函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210343.png">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210518.png">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126211558.png">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126212340.png">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126221543.png">
-<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125225032.png">
-<meta property="article:published_time" content="2023-01-26T15:00:32.000Z">
-<meta property="article:modified_time" content="2023-01-26T15:00:34.084Z">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129144946.png">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129145732.png">
+<meta property="article:published_time" content="2023-01-29T08:13:02.000Z">
+<meta property="article:modified_time" content="2023-01-29T08:13:06.935Z">
 <meta property="article:author" content="xyxsw">
 <meta property="article:tag" content="青训营笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210343.png">
+<meta name="twitter:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129144946.png">
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
   <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
@@ -43,7 +39,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1674980015165">
+  <link rel="stylesheet" href="/css/style.css?v=1674980015020">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -193,15 +189,15 @@
     
         <div class="nexmoe-post-cover"
              style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="UnoCSS实战 ｜ 青训营笔记" class="lazyload">
-            <h1>UnoCSS实战 ｜ 青训营笔记</h1>
+            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记" class="lazyload">
+            <h1>Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月26日</a>
-    <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
 </div>
 
         <div class="nexmoe-post-right">
@@ -209,518 +205,162 @@
         </div>
 
         <article>
-            <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 10 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原子化css体验</p>
-<p><a href="https://link.juejin.cn/?target=https://antfu.me/posts/reimagine-atomic-css-zh">重新构想原子化 CSS (antfu.me)</a></p>
-<p>本篇介绍一下如何配置UnoCSS、UnoCSS怎么使用</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先创建一个vite模板   <a target="_blank" rel="noopener" href="https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project">https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project</a></p>
-<p>这里使用pnpm</p>
-<pre><code class="bash">pnpm create vite
-</code></pre>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210343.png"></p>
-<p>选择vue、typescript</p>
-<pre><code class="bash">cd vite-project
-pnpm install
-pnpm run dev
-</code></pre>
-<p>运行一下</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210518.png"></p>
-<p>初始化成功了，接下来安装unocss  <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/vite">https://github.com/unocss/unocss/tree/main/packages/vite</a></p>
-<p>使用文档给的vite安装方式</p>
-<pre><code class="bash">pnpm i -D unocss
-</code></pre>
-<p>在vite config里写上</p>
-<pre><code class="ts">// vite.config.ts
-import UnoCSS from &#39;unocss/vite&#39;
+            <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 13 天</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前两篇写了一些nuxt3和SSR的基础</p>
+<p>这一篇讲讲nuxt3比较进阶的部分</p>
+<h2 id="自动引入"><a href="#自动引入" class="headerlink" title="自动引入"></a>自动引入</h2><h4 id="nuxt3自带自动引入"><a href="#nuxt3自带自动引入" class="headerlink" title="nuxt3自带自动引入"></a>nuxt3自带自动引入</h4><p>包括一些nuxt3的api都是不用导入的直接就可以用</p>
+<p>例如</p>
+<ul>
+<li><p>数据获取的函数<code>useFetch</code> <code>useAsyncData</code> </p>
+</li>
+<li><p>状态管理函数<code>useState</code> </p>
+</li>
+<li><p>运行变量获取函数 <code>useRuntimeConfig</code></p>
+</li>
+<li><p>运行时上下文获取函数 <code>useNuxtApp</code></p>
+</li>
+</ul>
+<h4 id="还有一些Vue的api"><a href="#还有一些Vue的api" class="headerlink" title="还有一些Vue的api"></a>还有一些Vue的api</h4><p>例如</p>
+<ul>
+<li><p>响应式的函数<code>ref</code></p>
+</li>
+<li><p>计算属性 <code>computed</code></p>
+</li>
+</ul>
+<h4 id="文件夹下的内容自动引入"><a href="#文件夹下的内容自动引入" class="headerlink" title="文件夹下的内容自动引入"></a>文件夹下的内容自动引入</h4><p>例如</p>
+<ul>
+<li><code>components/</code>文件夹下的组件</li>
+<li><code>composables/</code>文件夹下的响应式函数</li>
+<li><code>utils/</code>文件夹下的工具函数</li>
+</ul>
+<h4 id="可以使用-imports来使导入明确"><a href="#可以使用-imports来使导入明确" class="headerlink" title="可以使用#imports来使导入明确"></a>可以使用<code>#imports</code>来使导入明确</h4><pre><code>&lt;script setup&gt;
+  import &#123; ref, computed &#125; from &#39;#imports&#39;
 
+  const count = ref(1)
+  const double = computed(() =&gt; count.value * 2)
+&lt;/script&gt;
+</code></pre>
+<h4 id="关闭自动引入"><a href="#关闭自动引入" class="headerlink" title="关闭自动引入"></a>关闭自动引入</h4><p>在<code>nuxtconfig</code>里加入</p>
+<pre><code>export default defineNuxtConfig(&#123;
+  imports: &#123;
+    autoImport: false
+  &#125;
+&#125;)
+</code></pre>
+<p>（😡谁会这么做</p>
+<h2 id="自动引入的组件"><a href="#自动引入的组件" class="headerlink" title="自动引入的组件"></a>自动引入的组件</h2><p>假设目录如下</p>
+<pre><code>| components/
+--| base/
+----| foo/
+------| Button.vue
+</code></pre>
+<p>此时可以使用<code>&lt;BaseFooButton /&gt;</code>标签引入这个button组件</p>
+<p>另外，可以使用一个Lazy前缀来懒加载组件</p>
+<p>例如</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Mountains&lt;/h1&gt;
+    &lt;LazyMountainsList v-if=&quot;show&quot; /&gt;
+    &lt;button v-if=&quot;!show&quot; @click=&quot;show = true&quot;&gt;Show List&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
 export default &#123;
-  plugins: [
-    UnoCSS(&#123; /* options */ &#125;),
-  ],
-&#125;
-</code></pre>
-<p>配置完全的vite config是这样的</p>
-<pre><code class="ts">// vite.config.ts
-import &#123; defineConfig &#125; from &#39;vite&#39;
-import vue from &#39;@vitejs/plugin-vue&#39;
-import UnoCSS from &#39;unocss/vite&#39;
-import &#123; presetUno &#125; from &#39;unocss&#39;
-
-// https://vitejs.dev/config/
-export default defineConfig(&#123;
-  plugins: [
-    vue(),
-    UnoCSS(&#123;
-      presets: [
-        presetUno(),
-      ],
-    &#125;),
-  ],
-&#125;)
-</code></pre>
-<p>然后在<code>main.ts</code>里加入</p>
-<pre><code class="ts">// main.ts
-import &#39;uno.css&#39;
-</code></pre>
-<p>这里没有eslint还是很不舒服的，推荐一个antfu的eslint配置，来安装一下eslint</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/eslint-config">https://github.com/antfu/eslint-config</a></p>
-<pre><code class="bash">pnpm add -D eslint @antfu/eslint-config
-</code></pre>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126211558.png"></p>
-<p>创建<code>.eslintrc</code>写入</p>
-<pre><code>&#123;
-  &quot;extends&quot;: &quot;@antfu&quot;
-&#125;
-</code></pre>
-<p>在package json里加入</p>
-<pre><code class="json">&#123;
-  &quot;scripts&quot;: &#123;
-    &quot;lint&quot;: &quot;eslint .&quot;,
-    &quot;lint:fix&quot;: &quot;eslint . --fix&quot;
+  data() &#123;
+    return &#123;
+      show: false
+    &#125;
   &#125;
 &#125;
-</code></pre>
-<p>如果你使用的是VSCode 下载 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">VS Code ESLint extension</a> 然后编辑 <code>.vscode/settings.json</code></p>
-<pre><code class="json">&#123;
-  &quot;prettier.enable&quot;: false,
-  &quot;editor.formatOnSave&quot;: false,
-  &quot;editor.codeActionsOnSave&quot;: &#123;
-    &quot;source.fixAll.eslint&quot;: true
-  &#125;
-&#125;
-</code></pre>
-<p>之后重启vscode</p>
-<p>安装完成😎</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>我们来写一个小demo</p>
-<p>就把原本的默认界面改成unocss好了</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126212340.png"></p>
-<p>先看app.vue</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
 &lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;/vite.svg&quot; class=&quot;logo&quot; alt=&quot;Vite logo&quot;&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;logo vue&quot; alt=&quot;Vue logo&quot;&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
+</code></pre>
+<p>这样可以减少打包大小，增加性能</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>写在<code>pages/</code>里的组件会自动写入路由</p>
+<p><code>pages/index.vue</code>会匹配路由<code>/</code></p>
+<p>只需要在<code>app.vue</code>里添加</p>
+<p><code>&lt;NuxtPage /&gt;</code>标签</p>
+<p>可以通过插槽写法例如写<code>[id].vue</code>来匹配路由内的参数</p>
+<p>例如如下文件树</p>
+<pre><code>-| pages/
+---| index.vue
+---| users-[group]/
+-----| [id].vue
+</code></pre>
+<p>在<code>[id].vue</code>里写下</p>
+<pre><code>&lt;template&gt;
+  &lt;p&gt;&#123;&#123; $route.params.group &#125;&#125; - &#123;&#123; $route.params.id &#125;&#125;&lt;/p&gt;
 &lt;/template&gt;
-
-&lt;style scoped&gt;
-.logo &#123;
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-&#125;
-.logo:hover &#123;
-  filter: drop-shadow(0 0 2em #646cffaa);
-&#125;
-.logo.vue:hover &#123;
-  filter: drop-shadow(0 0 2em #42b883aa);
-&#125;
-&lt;/style&gt;
 </code></pre>
-<p>改成原子化css的形式</p>
-<p>这里最好先配置一下vite config 多加一点预设</p>
-<pre><code class="ts">// vite.config.ts
-import &#123; defineConfig &#125; from &#39;vite&#39;
-import vue from &#39;@vitejs/plugin-vue&#39;
-import UnoCSS from &#39;unocss/vite&#39;
-import &#123; presetAttributify, presetIcons, presetTypography, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup &#125; from &#39;unocss&#39;
-
-// https://vitejs.dev/config/
-export default defineConfig(&#123;
-  plugins: [
-    vue(),
-    UnoCSS(
-      &#123;
-        presets: [
-          presetUno(),
-          presetAttributify(),
-          presetIcons(&#123;
-            scale: 1.2,
-          &#125;),
-          presetTypography(),
-          presetWebFonts(&#123;
-            fonts: &#123;
-              sans: &#39;DM Sans&#39;,
-              serif: &#39;DM Serif Display&#39;,
-              mono: &#39;DM Mono&#39;,
-            &#125;,
-          &#125;),
-        ],
-        transformers: [
-          transformerDirectives(),
-          transformerVariantGroup(),
-        ],
-      &#125;,
-    ),
-  ],
-&#125;)
+<p>读取group参数和id参数</p>
+<p>访问路由<code>/users-admins/123</code>会渲染成</p>
+<pre><code>&lt;p&gt;admins - 123&lt;/p&gt;
 </code></pre>
-<p>我们先用@apply将css改一下 <code>&lt;style scoped&gt;</code></p>
-<pre><code class="css">.logo &#123;
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-&#125;
-.logo:hover &#123;
-  filter: drop-shadow(0 0 2em #646cffaa);
-&#125;
-.logo.vue:hover &#123;
-  filter: drop-shadow(0 0 2em #42b883aa);
-&#125;
+<h2 id="渲染模式"><a href="#渲染模式" class="headerlink" title="渲染模式"></a>渲染模式</h2><h4 id="传统的Vue项目渲染方式为-客户端渲染"><a href="#传统的Vue项目渲染方式为-客户端渲染" class="headerlink" title="传统的Vue项目渲染方式为  客户端渲染"></a>传统的Vue项目渲染方式为  <code>客户端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129144946.png"></p>
+<p>浏览器会先下载到空的html文件→下载js→渲染出来</p>
+<p>这种方式的优点是：</p>
+<ul>
+<li><p>开发速度快：当完全在客户端上工作时，我们不必担心代码的服务器兼容性，例如，使用像windows这样的浏览器api。 </p>
+</li>
+<li><p>更便宜的服务器成本：运行一个服务器会增加一个基础设施的成本，因为您需要在一个支持JavaScript的平台上运行。我们可以在任何具有HTML、CSS和JavaScript文件的静态服务器上托管仅限客户端的应用程序。 </p>
+</li>
+<li><p>下载好后离线：因为代码完全在浏览器中运行，所以它可以很好地在互联网不可用时很好地保持工作。</p>
+</li>
+</ul>
+<p>缺点为：</p>
+<ul>
+<li>性能不好：用户必须等待浏览器下载、解析和运行JavaScript文件。根据下载部分的网络和用户的解析和执行设备，这可能需要一些时间，并影响用户的体验。</li>
+<li>不友好的搜索引擎优化：索引和更新通过客户端呈现交付的内容比使用服务器呈现的HTML文档需要更多的时间。</li>
+</ul>
+<h4 id="nuxt3的服务端渲染"><a href="#nuxt3的服务端渲染" class="headerlink" title="nuxt3的服务端渲染"></a>nuxt3的<code>服务端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129145732.png"></p>
+<p>有内容的html文件会下载到浏览器→用户在此时可以点击和浏览页面上的内容（部分功能）→需要的组件渲染完成、此时的页面有全部功能</p>
+<p>这种方式的优点是：</p>
+<ul>
+<li>性能好：用户可以立即访问页面的内容，因为浏览器显示静态内容的速度比<code>javascript</code>生成的静态内容要快得多。</li>
+<li>搜索引擎优化：通用呈现将页面的整个HTML内容作为一个经典的服务器应用程序传递到浏览器。Web爬虫可以直接索引页面的内容。</li>
+</ul>
+<p>缺点是：</p>
+<ul>
+<li>开发约束：服务器和浏览器环境不提供相同的api，而且编写可以在两边无缝运行的代码可能会很棘手。幸运的是，Nuxt提供了特定的变量来同步这些。</li>
+<li>成本高：服务器需要运行，才能动态地呈现页面。这就像任何传统服务器一样，增加了每月的成本。但是，由于浏览器接管了客户端导航的通用渲染，服务器调用大大减少了。</li>
+</ul>
+<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><p>使用 <code>TypeScript</code> 后可以使用nuxi带的语法检查</p>
+<pre><code>yarn nuxi typecheck
 </code></pre>
-<p>这里不会的语法可以看tailwindcss文档</p>
-<p>改成</p>
-<pre><code class="css">.logo &#123;
-  @apply h-6em p-1.5em
-&#125;
-.logo &#123;
-  @apply hover:drop-shadow-[0_0_2em_#646cffaa]
-&#125;
-.logo.vue &#123;
-  @apply hover:drop-shadow-[0_0_2em_#42b883aa]
-&#125;
+<p>nuxt也会自动生成类型</p>
+<p>在<a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/typescript#nuxtnuxtdts"><code>.nuxt/nuxt.d.ts</code></a>目录下</p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>一个完整的nuxt3项目文件目录应该包含以下文件夹和文件</p>
+<pre><code>.nuxt                      nuxt生成的文件目录里面有 运行的类型等
+.output                    build产物文件夹
+assets                     css文件、字体文件、图片文件
+components                 组件目录
+composables                响应式函数的文件夹
+content                    基于文件的cms的文件夹
+layouts                    布局组件的文件夹
+middleware                 中间件文件夹
+node_modules               依赖文件夹
+pages                      路由的页面
+plugins                    nuxt插件
+public                     公共文件文件夹，可以放ico图标，图片
+server                     服务端api文件夹
+utils                      工具函数文件夹
+.gitignore                 git忽略文件
+.nuxtignore                不加入nuxt编译的忽略文件
+app.config.ts              config文件 可以使用useAppConfig读取
+app.vue                    vue入口 
+nuxt.config.ts             nuxt配置文件
+package.json               依赖描述文件
+tsconfig.json              ts检查配置文件
 </code></pre>
-<p>怎么样？是不是感觉很清晰明了</p>
-<p>这是在tailwindcss里很受欢迎的@apply命令 通过预设导入了unocss</p>
-<p>但是这样体现不出原子化css的方便，虽然非常好看</p>
-<p>我们把css写入html</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;/vite.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#646cffaa]&quot; alt=&quot;Vite logo&quot;&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;hover:drop-shadow-[0_0_2em_#42b883aa]&quot; alt=&quot;Vue logo&quot;&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-&lt;/style&gt;
-</code></pre>
-<p>这样写就很方便了</p>
-<p>再看<code>HelloWorld.vue</code></p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;button type=&quot;button&quot; @click=&quot;count++&quot;&gt;count is &#123;&#123; count &#125;&#125;&lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot;
-      &gt;create-vue&lt;/a
-    &gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;read-the-docs&quot;&gt;Click on the Vite and Vue logos to learn more&lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-.read-the-docs &#123;
-  color: #888;
-&#125;
-&lt;/style&gt;
-</code></pre>
-<p>这个改的比较少</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;button type=&quot;button&quot; @click=&quot;count++&quot;&gt;
-      count is &#123;&#123; count &#125;&#125;
-    &lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot;&gt;create-vue&lt;/a&gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;text-[#888]&quot;&gt;
-    Click on the Vite and Vue logos to learn more
-  &lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<p>改成这样就行</p>
-<p>再看<code>style.css</code>文件 内容比较多</p>
-<pre><code class="css">:root &#123;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-&#125;
-
-a &#123;
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-&#125;
-a:hover &#123;
-  color: #535bf2;
-&#125;
-
-body &#123;
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-&#125;
-
-h1 &#123;
-  font-size: 3.2em;
-  line-height: 1.1;
-&#125;
-
-button &#123;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-&#125;
-button:hover &#123;
-  border-color: #646cff;
-&#125;
-button:focus,
-button:focus-visible &#123;
-  outline: 4px auto -webkit-focus-ring-color;
-&#125;
-
-.card &#123;
-  padding: 2em;
-&#125;
-
-#app &#123;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-&#125;
-
-@media (prefers-color-scheme: light) &#123;
-  :root &#123;
-    color: #213547;
-    background-color: #ffffff;
-  &#125;
-  a:hover &#123;
-    color: #747bff;
-  &#125;
-  button &#123;
-    background-color: #f9f9f9;
-  &#125;
-&#125;
-</code></pre>
-<p>一点点儿改</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126221543.png"></p>
-<p>最后改成了这样 还挺还原的是不是</p>
-<p>有一些媒体查询不会改</p>
-<p>根元素没改</p>
-<p>代码如下</p>
-<pre><code class="css">// style.css
-:root &#123;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-&#125;
-
-
-@media (prefers-color-scheme: light) &#123;
-  :root &#123;
-    color: #213547;
-    background-color: #ffffff;
-  &#125;
-  a:hover &#123;
-    color: #747bff;
-  &#125;
-  button &#123;
-    background-color: #f9f9f9;
-  &#125;
-&#125;
-</code></pre>
-<pre><code class="vue">// HelloWorld.vue
-&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1 class=&quot;text-3.2em leading-tight&quot;&gt;
-    &#123;&#123; msg &#125;&#125;
-  &lt;/h1&gt;
-
-  &lt;div class=&quot;p-2em flex flex-col place-items-center&quot;&gt;
-    &lt;button
-      type=&quot;button&quot; class=&quot;
-      rounded-8px border-1px border-solid border-transparent
-      py-0.6em px-1.2em text-1em font-medium
-      bg-[#1a1a1a] cursor-pointer transition duration-250
-      hover:border-color-[#646cff]
-      focus:outline-4 focus:outline-[-webkit-focus-ring-color]
-      focus-visible:outline-4 focus-visible:outline-[-webkit-focus-ring-color]
-    &quot; @click=&quot;count++&quot;
-    &gt;
-      count is &#123;&#123; count &#125;&#125;
-    &lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;create-vue&lt;/a&gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;text-[#888]&quot;&gt;
-    Click on the Vite and Vue logos to learn more
-  &lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<pre><code class="vue">// App.vue
-&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div class=&quot;m-0 flex flex-col place-items-center min-w-320px min-h-100vh&quot;&gt;
-    &lt;div class=&quot;max-w-1280px my-0 mx-auto p-2rem text-center&quot;&gt;
-      &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;
-        &lt;img src=&quot;/vite.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#646cffaa]&quot; alt=&quot;Vite logo&quot;&gt;
-      &lt;/a&gt;
-      &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;
-        &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#42b883aa]&quot; alt=&quot;Vue logo&quot;&gt;
-      &lt;/a&gt;
-    &lt;/div&gt;
-    &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<p>可以看出来虽然写的简单，但是还是比较乱</p>
-<p>这样写的好处是，不用想类名，</p>
-<p>如果加了@apply会更美观，但是还是要写类名，和普通css的区别就是简单了一些</p>
-<p>同时还有一些自带的样式预设</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇我们介绍了UnoCSS的特点，UnoCSS的使用，还是改了挺长时间的，主要是不会写语法，要查tailwind文档 <a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></p>
-<p>还有一些好几个值的css 不知道什么意思</p>
-<pre><code class="css">outline: green solid 3px;
-/* mdn:颜色 | 样式 | 宽度 */
-</code></pre>
-<pre><code class="css">outline: 4px auto -webkit-focus-ring-color;
-/* style.css */
-</code></pre>
-<p>关于这种就不知道怎么写</p>
-<p>最后只能掰成</p>
-<pre><code>focus:outline-4 focus:outline-[-webkit-focus-ring-color]
-</code></pre>
-<p>题外话：</p>
-<blockquote>
-<p>Anthony Fu大佬真的是我目前的偶像，狂热的开源爱好者，人长得又帅，做的东西又好</p>
-</blockquote>
-<p>🤣这是我在掘金搜unocss搜到的一篇文章中的第一句话 文章在这 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
-<p>antfu大佬确实也是我的偶像</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125225032.png"></p>
-<p>22年秋季 antfu大佬在b站办过几场直播写代码，我基本上是每期必看，这个人非常有意思，有很多新鲜的点子，狠活也多 比如说</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/1990-script">https://github.com/antfu/1990-script</a> 这个仓库教你怎么把GitHub历史穿越回1990年🤭</p>
-<p>他的每个star比较多的仓库我都体验过，感觉设计灵感真的让人眼前一亮，启发基于社区，创造更快的轮子，更好玩的轮子</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/retypewriter">https://github.com/antfu/retypewriter</a> 这个是直播写的雏形 让写的代码在vsc里回放，便于理清思路</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-minesweeper">https://github.com/antfu/vue-minesweeper</a> 这个是首次直播写的扫雷，很清晰的vue代码，看他写真的开窍</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-starport">https://github.com/antfu/vue-starport</a> 这个也是直播写的雏形，为了使组件有更好的过渡</p>
-<p>就说这么多，人也长得帅</p>
-<p>🥰😘</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a></p>
-<p><a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.tailwindcss.cn/docs/functions-and-directives#apply">https://www.tailwindcss.cn/docs/functions-and-directives#apply</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss">https://github.com/unocss/unocss</a></p>
-<p><a target="_blank" rel="noopener" href="https://cn.vitejs.dev/">https://cn.vitejs.dev/</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/nuxt">https://nuxt.com/docs/guide/directory-structure/nuxt</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇文章介绍了nuxt3的高级用法</p>
+<p>我也是第一次使用nuxt3来开发项目</p>
+<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
+<p>😎🥰</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/auto-imports">https://nuxt.com/docs/guide/concepts/auto-imports</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/composables">https://nuxt.com/docs/guide/directory-structure/composables</a></p>
+<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/components">https://nuxt.com/docs/guide/directory-structure/components</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/unjs/nitro">https://github.com/unjs/nitro</a></p>
 
         </article>
 
@@ -729,7 +369,7 @@ import HelloWorld from &#39;./components/HelloWorld.vue&#39;
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>xyxsw<br>
     
-    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/26/UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;26&#x2F;UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;26&#x2F;UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/29/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;29&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;29&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -1479,7 +1119,7 @@ gitment.render('gitment')
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1674980015166"></script>
+<script src="/js/app.js?v=1674980015022"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
