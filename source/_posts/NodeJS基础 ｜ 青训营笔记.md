@@ -110,7 +110,6 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
     console.log(`listening port on ${port}`)
 })
-复制代码
 ```
 
 通过 NodeJS 自带的文件操作模块 `fs` 的 `createReadStream` 创建了一个文件流，
