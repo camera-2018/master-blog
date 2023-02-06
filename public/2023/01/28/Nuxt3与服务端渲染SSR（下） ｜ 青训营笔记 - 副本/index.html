@@ -19,7 +19,7 @@
   <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 12 天 前言上一篇文章介绍了大概一半的nuxt3特性，这一篇会介绍另外一半 我也是第一次使用nuxt3来开发项目 踩到的坑还是很多的，预计可以写一篇踩坑记录 过渡Nuxt利用Vue的 &lt;Transition&gt;组件来应用页面和布局之间的转换。 只需要在nuxt config里设置 export default defineNuxtConf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nuxt3与服务端渲染SSR（下） ｜ 青训营笔记">
-<meta property="og:url" content="https://xyxsw.ltd/2023/01/28/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="https://xyxsw.ltd/2023/01/28/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC/index.html">
 <meta property="og:site_name" content="向阳信息">
 <meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 12 天 前言上一篇文章介绍了大概一半的nuxt3特性，这一篇会介绍另外一半 我也是第一次使用nuxt3来开发项目 踩到的坑还是很多的，预计可以写一篇踩坑记录 过渡Nuxt利用Vue的 &lt;Transition&gt;组件来应用页面和布局之间的转换。 只需要在nuxt config里设置 export default defineNuxtConf">
 <meta property="og:locale" content="zh_CN">
@@ -36,7 +36,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1675698944873">
+  <link rel="stylesheet" href="/css/style.css?v=1675700144791">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -64,7 +64,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>24 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>25 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -146,7 +146,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -366,7 +366,7 @@ describe(&#39;My test&#39;, async () =&gt; &#123;
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>xyxsw<br>
     
-    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/28/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;28&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;28&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/28/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;28&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;28&#x2F;Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -1116,7 +1116,7 @@ gitment.render('gitment')
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1675698944874"></script>
+<script src="/js/app.js?v=1675700144792"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1135,6 +1135,10 @@ gitment.render('gitment')
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1146,10 +1150,6 @@ gitment.render('gitment')
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
-
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>

@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1675698944927">
+  <link rel="stylesheet" href="/css/style.css?v=1675700144977">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>24 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>25 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,112 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/02/08/Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Web 开发安全 ｜ 青训营笔记" class="lazyload">
+                    <h1>Web 开发安全 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年02月08日</a>
+            <a><i class="nexmoefont icon-areachart"></i>845 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 17 天</strong></p>
+<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ul>
+<li><p>Web 相关的攻击介绍</p>
+</li>
+<li><p>Web 相关的防御介绍</p>
+</li>
+</ul>
+<h2 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h2><h3 id="XSS-Cross-Site-Scripting"><a href="#XSS-Cross-Site-Scripting" class="headerlink" title="XSS (Cross-Site Scripting)"></a>XSS (Cross-Site Scripting)</h3><p>主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入</p>
+<p>特点：</p>
+<ol>
+<li>通常难以从 UI 上感知</li>
+<li>窃取用户信息，例如 cookie 和 token</li>
+</ol>
+<p>常见的会导致XSS的代码：</p>
+<pre><code>document.write
+el.innerHTML = anyString
+</code></pre>
+<p>总结来说，所有能够渲染dom结构的函数，都有可能导致XSS攻击。</p>
+<p>比如论坛场景中，<strong>用户提交的内容包含恶意script标签</strong></p>
+<pre><code class="js">fetch(&quot;/submit&quot;, &#123;
+    body: JSON.stringify(&#123;
+        id: &quot;1&quot;,
+        content: `&lt;script&gt;alert(&quot;xss&quot;);&lt;/script&gt;`
+    &#125;)
+&#125;)
+</code></pre>
+<p>导致代码被插入到帖子中，所有用户访问页面都会执行恶意脚本</p>
+<p>XSS 能够分成下面四类</p>
+<p><code>Stored XSS</code> 直接将恶意脚本储存到了数据库中，导致之后的所有访问均会携带恶意脚本，危害很大</p>
+<pre><code>Reflected XSS` 反射型，不储存数据，仅仅从URL传入脚本导致攻击，例如 `/path?param=&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;
+</code></pre>
+<p><code>DOM-based XSS</code> 不由服务器参与，攻击的发起和执行都在浏览器，常见于前端框架中</p>
+<p><code>Mutation-based XSS</code> 利用浏览器的特性，不同浏览器会有区别，例如</p>
+<pre><code>&lt;noscript&gt;&lt;p title=&quot;&lt;/noscript&gt;&lt;img src=x onerror=alert(1)&gt;&quot;&gt;
+</code></pre>
+<h3 id="CSRF-Cross-site-request-forgery"><a href="#CSRF-Cross-site-request-forgery" class="headerlink" title="CSRF (Cross-site request forgery)"></a>CSRF (Cross-site request forgery)</h3><p>特点：</p>
+<ol>
+<li>在用户不知情的前提下</li>
+<li>利用用户权限（cookie）</li>
+<li>构造指定HTTP请求，窃取或修改用户敏感信息</li>
+</ol>
+<p>例子：</p>
+<p>用户没有访问银行网页，但是访问了一个带有攻击内容的网页，该网页尝试请求银行接口，由于用户登录过银行，接口携带cookie，导致请求成功，使得用户受到损失。</p>
+<h3 id="SQL-注入-SQL-Injection"><a href="#SQL-注入-SQL-Injection" class="headerlink" title="SQL 注入 (SQL Injection)"></a>SQL 注入 (SQL Injection)</h3><p>在请求参数中构造恶意字符串，拼接SQL语句，导致服务器执行了特定的SQL语句，造成数据库内容泄露</p>
+<p>例子：</p>
+<pre><code class="js">sql.query(`
+    SELECT a, b, c FROM table
+    WHERE username = $&#123;username&#125;
+    AND form_id = $&#123;form_id&#125;
+`)
+</code></pre>
+<p>上面的这段后端代码，攻击者就能够通过构造特殊的 username 或 form_id，使得SQL语句的意义被改变</p>
+<p>例如传入 form_id &#x3D; <code>any; DROP TABLE table;</code></p>
+<p>SQL 语句拼接后变成 <code>SELECT a,b,c FROM table WHERE xxxx AND form_id = any; DROP TABLE table;</code></p>
+<p>将导致数据库被删除</p>
+<h3 id="SSRF-Server-Side-Request-Forgery"><a href="#SSRF-Server-Side-Request-Forgery" class="headerlink" title="SSRF (Server-Side Request Forgery)"></a>SSRF (Server-Side Request Forgery)</h3><p>服务端伪造请求</p>
+<p>例子：</p>
+<pre><code>ctx.body = await fetch(ctx.query.callback)
+</code></pre>
+<p>导致能够通过传入的参数访问到服务器内网的相关服务</p>
+<h3 id="DoS-Denial-of-Service"><a href="#DoS-Denial-of-Service" class="headerlink" title="DoS (Denial of Service)"></a>DoS (Denial of Service)</h3><p><code>「 不搞复杂的 ， 量大就完事儿了 」</code></p>
+<p>通过构造特定请求，导致服务器资源被消耗，来不及响应更多请求，引发雪崩效应</p>
+<p>例如：</p>
+<ol>
+<li>耗时的同步操作</li>
+<li>文件备份</li>
+<li>数据库写入</li>
+<li>SQL join</li>
+<li>循环执行逻辑</li>
+</ol>
+<h4 id="DDoS-Distributed-DoS"><a href="#DDoS-Distributed-DoS" class="headerlink" title="DDoS (Distributed DoS)"></a>DDoS (Distributed DoS)</h4><p>攻击特点</p>
+<ul>
+<li>直接访问 IP</li>
+<li>任意 API</li>
+<li>消耗大量带宽 （ 耗尽 ）</li>
+</ul>
+<p>SYN Flood</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>安全无小事<br>使用的依赖 npm package，甚至是 NodeJS 可能成为最薄弱的一环</p>
+<ul>
+<li>保持学习心态<br>npm install 除了带来了果洞 ， 还可以带来漏洞</li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme">https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065">https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/02/01/NextJS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -994,7 +1100,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1675698944928"></script>
+<script src="/js/app.js?v=1675700144978"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1013,6 +1119,10 @@
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1024,10 +1134,6 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
-
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>

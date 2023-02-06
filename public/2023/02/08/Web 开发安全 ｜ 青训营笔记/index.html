@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>TypeScript ｜ 青训营笔记 - 向阳信息</title>
+  <title>Web 开发安全 ｜ 青训营笔记 - 向阳信息</title>
   <meta charset="UTF-8">
   <meta name="description" content="若月千鸮的博客&#39;">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,15 +16,15 @@
     <meta name="baidu-site-verification" content="code-8gmJzopb3Z" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 4 天 本堂课重点内容 TypeScript 定义解析 TypeScript 基础语法  详细知识点介绍 语言特性 基本数据类型  语言特性JavaScript 是动态类型的语言，而TypeScript顾名思义是静态类型的语言。与js相比，静态类型的特性为ts带来了许多优势  更强的可读性 更强的可维护性 大型项目中提升稳定性 开发效率  而作为js">
+  <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 17 天 课程重点 Web 相关的攻击介绍  Web 相关的防御介绍   详细介绍XSS (Cross-Site Scripting)主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入 特点：  通常难以从 UI 上感知 窃取用户信息，例如 cookie 和 token  常见的会导致XSS的代码： document.write">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript ｜ 青训营笔记">
-<meta property="og:url" content="https://xyxsw.ltd/2023/01/19/TypeScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="Web 开发安全 ｜ 青训营笔记">
+<meta property="og:url" content="https://xyxsw.ltd/2023/02/08/Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="向阳信息">
-<meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 4 天 本堂课重点内容 TypeScript 定义解析 TypeScript 基础语法  详细知识点介绍 语言特性 基本数据类型  语言特性JavaScript 是动态类型的语言，而TypeScript顾名思义是静态类型的语言。与js相比，静态类型的特性为ts带来了许多优势  更强的可读性 更强的可维护性 大型项目中提升稳定性 开发效率  而作为js">
+<meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 17 天 课程重点 Web 相关的攻击介绍  Web 相关的防御介绍   详细介绍XSS (Cross-Site Scripting)主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入 特点：  通常难以从 UI 上感知 窃取用户信息，例如 cookie 和 token  常见的会导致XSS的代码： document.write">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-19T15:55:39.000Z">
-<meta property="article:modified_time" content="2023-01-19T15:56:08.233Z">
+<meta property="article:published_time" content="2023-02-08T02:51:11.000Z">
+<meta property="article:modified_time" content="2023-02-08T04:04:13.860Z">
 <meta property="article:author" content="xyxsw">
 <meta property="article:tag" content="青训营笔记">
 <meta name="twitter:card" content="summary">
@@ -36,7 +36,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1675700144943">
+  <link rel="stylesheet" href="/css/style.css?v=1675700144779">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -186,15 +186,15 @@
     
         <div class="nexmoe-post-cover"
              style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="TypeScript ｜ 青训营笔记" class="lazyload">
-            <h1>TypeScript ｜ 青训营笔记</h1>
+            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Web 开发安全 ｜ 青训营笔记" class="lazyload">
+            <h1>Web 开发安全 ｜ 青训营笔记</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年02月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>845 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
 </div>
 
         <div class="nexmoe-post-right">
@@ -202,133 +202,89 @@
         </div>
 
         <article>
-            <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 4 天</strong></p>
-<h2 id="本堂课重点内容"><a href="#本堂课重点内容" class="headerlink" title="本堂课重点内容"></a>本堂课重点内容</h2><ol>
-<li>TypeScript 定义解析</li>
-<li>TypeScript 基础语法</li>
+            <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 17 天</strong></p>
+<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ul>
+<li><p>Web 相关的攻击介绍</p>
+</li>
+<li><p>Web 相关的防御介绍</p>
+</li>
+</ul>
+<h2 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h2><h3 id="XSS-Cross-Site-Scripting"><a href="#XSS-Cross-Site-Scripting" class="headerlink" title="XSS (Cross-Site Scripting)"></a>XSS (Cross-Site Scripting)</h3><p>主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入</p>
+<p>特点：</p>
+<ol>
+<li>通常难以从 UI 上感知</li>
+<li>窃取用户信息，例如 cookie 和 token</li>
 </ol>
-<h2 id="详细知识点介绍"><a href="#详细知识点介绍" class="headerlink" title="详细知识点介绍"></a>详细知识点介绍</h2><ol>
-<li>语言特性</li>
-<li>基本数据类型</li>
+<p>常见的会导致XSS的代码：</p>
+<pre><code>document.write
+el.innerHTML = anyString
+</code></pre>
+<p>总结来说，所有能够渲染dom结构的函数，都有可能导致XSS攻击。</p>
+<p>比如论坛场景中，<strong>用户提交的内容包含恶意script标签</strong></p>
+<pre><code class="js">fetch(&quot;/submit&quot;, &#123;
+    body: JSON.stringify(&#123;
+        id: &quot;1&quot;,
+        content: `&lt;script&gt;alert(&quot;xss&quot;);&lt;/script&gt;`
+    &#125;)
+&#125;)
+</code></pre>
+<p>导致代码被插入到帖子中，所有用户访问页面都会执行恶意脚本</p>
+<p>XSS 能够分成下面四类</p>
+<p><code>Stored XSS</code> 直接将恶意脚本储存到了数据库中，导致之后的所有访问均会携带恶意脚本，危害很大</p>
+<pre><code>Reflected XSS` 反射型，不储存数据，仅仅从URL传入脚本导致攻击，例如 `/path?param=&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;
+</code></pre>
+<p><code>DOM-based XSS</code> 不由服务器参与，攻击的发起和执行都在浏览器，常见于前端框架中</p>
+<p><code>Mutation-based XSS</code> 利用浏览器的特性，不同浏览器会有区别，例如</p>
+<pre><code>&lt;noscript&gt;&lt;p title=&quot;&lt;/noscript&gt;&lt;img src=x onerror=alert(1)&gt;&quot;&gt;
+</code></pre>
+<h3 id="CSRF-Cross-site-request-forgery"><a href="#CSRF-Cross-site-request-forgery" class="headerlink" title="CSRF (Cross-site request forgery)"></a>CSRF (Cross-site request forgery)</h3><p>特点：</p>
+<ol>
+<li>在用户不知情的前提下</li>
+<li>利用用户权限（cookie）</li>
+<li>构造指定HTTP请求，窃取或修改用户敏感信息</li>
 </ol>
-<h3 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h3><p>JavaScript 是动态类型的语言，而TypeScript顾名思义是静态类型的语言。与js相比，静态类型的特性为ts带来了许多优势</p>
+<p>例子：</p>
+<p>用户没有访问银行网页，但是访问了一个带有攻击内容的网页，该网页尝试请求银行接口，由于用户登录过银行，接口携带cookie，导致请求成功，使得用户受到损失。</p>
+<h3 id="SQL-注入-SQL-Injection"><a href="#SQL-注入-SQL-Injection" class="headerlink" title="SQL 注入 (SQL Injection)"></a>SQL 注入 (SQL Injection)</h3><p>在请求参数中构造恶意字符串，拼接SQL语句，导致服务器执行了特定的SQL语句，造成数据库内容泄露</p>
+<p>例子：</p>
+<pre><code class="js">sql.query(`
+    SELECT a, b, c FROM table
+    WHERE username = $&#123;username&#125;
+    AND form_id = $&#123;form_id&#125;
+`)
+</code></pre>
+<p>上面的这段后端代码，攻击者就能够通过构造特殊的 username 或 form_id，使得SQL语句的意义被改变</p>
+<p>例如传入 form_id &#x3D; <code>any; DROP TABLE table;</code></p>
+<p>SQL 语句拼接后变成 <code>SELECT a,b,c FROM table WHERE xxxx AND form_id = any; DROP TABLE table;</code></p>
+<p>将导致数据库被删除</p>
+<h3 id="SSRF-Server-Side-Request-Forgery"><a href="#SSRF-Server-Side-Request-Forgery" class="headerlink" title="SSRF (Server-Side Request Forgery)"></a>SSRF (Server-Side Request Forgery)</h3><p>服务端伪造请求</p>
+<p>例子：</p>
+<pre><code>ctx.body = await fetch(ctx.query.callback)
+</code></pre>
+<p>导致能够通过传入的参数访问到服务器内网的相关服务</p>
+<h3 id="DoS-Denial-of-Service"><a href="#DoS-Denial-of-Service" class="headerlink" title="DoS (Denial of Service)"></a>DoS (Denial of Service)</h3><p><code>「 不搞复杂的 ， 量大就完事儿了 」</code></p>
+<p>通过构造特定请求，导致服务器资源被消耗，来不及响应更多请求，引发雪崩效应</p>
+<p>例如：</p>
+<ol>
+<li>耗时的同步操作</li>
+<li>文件备份</li>
+<li>数据库写入</li>
+<li>SQL join</li>
+<li>循环执行逻辑</li>
+</ol>
+<h4 id="DDoS-Distributed-DoS"><a href="#DDoS-Distributed-DoS" class="headerlink" title="DDoS (Distributed DoS)"></a>DDoS (Distributed DoS)</h4><p>攻击特点</p>
 <ul>
-<li>更强的可读性</li>
-<li>更强的可维护性</li>
-<li>大型项目中提升稳定性</li>
-<li>开发效率</li>
+<li>直接访问 IP</li>
+<li>任意 API</li>
+<li>消耗大量带宽 （ 耗尽 ）</li>
 </ul>
-<p>而作为js的超集，ts兼容所有js特性，且支持与js共存，能够渐进式地引入和升级。</p>
-<h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><p>TypeScript能够在变量名称后面添加冒号和期望的类型来为变量赋予具体的类型，例如下面的代码，常见的类型有 <code>string</code> <code>number</code> <code>boolean</code> <code>null</code> <code>undefined</code></p>
-<pre><code class="ts">let a: string = &quot;string&quot;
-let b: number = 12
-let c: boolean = true
-</code></pre>
-<p>如果在之后尝试给变量赋值不同类型的值，将会产生报错</p>
-<h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><p>ts使用<code>interface</code>关键字来定义新类型</p>
-<pre><code class="ts">interface ICustomObject &#123;
-    name: string
-    age: number
-    hobby?: string
-    readonly id: number
-&#125;
-
-const obj: ICustonObject &#123;
-    name: &quot;hello world&quot;,
-    age: 12,
-    hobby: &#39;coding&#39;,
-    id: 10
-&#125;
-</code></pre>
-<p>对于只读属性，可以在类型定义时增加readonly修饰符，在之后倘若修改只读属性，将会报错。在属性名后面紧跟问号表示该属性可选（可能不存在），后续倘若直接读取该属性，将导致报错（需要先判断该属性是否存在）</p>
-<blockquote>
-<p>一般情况下，约定自定义类型以大写字母<code>I</code>开头，例如上面的 <code>ICustomObject</code></p>
-</blockquote>
-<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>在某些情况下，对象的键名（key）可能并不固定，比如我希望某个对象键名是任意string，键值是布尔型，那么可以向下面这样定义</p>
-<pre><code class="ts">interface IObj &#123;
-    [key: string]: boolean
-&#125;
-</code></pre>
-<p>或者使用 <code>type</code> 关键字</p>
-<pre><code class="ts">type IObj = Record&lt;string, boolean&gt;
-</code></pre>
-<h3 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h3><p>假设有一个js函数 <code>add</code></p>
-<pre><code class="js">function add(x, y) &#123;
-    return x + y
-&#125;
-</code></pre>
-<p>为其添加类型声明后</p>
-<pre><code class="ts">function add(x: number, y: number):number &#123;
-    return x + y
-&#125;
-</code></pre>
-<p>对于匿名的箭头函数，我们也可以为其添加类型</p>
-<pre><code class="ts">// js
-const add = (x, y) =&gt; x + y
-
-// ts
-const add: (x: number, y: number) =&gt; number = (x, y) =&gt; x + y
-</code></pre>
-<p>或许在某些情况下，将类型和函数写在一起会稍显凌乱，那么我们也可以将函数类型单独定义，例如下面这样</p>
-<pre><code class="ts">interface IAdd &#123;
-    (x: number, y: number): number
-&#125;
-
-const add: IAdd = (x, y) =&gt; x + y
-</code></pre>
-<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><p>数组的类型定义有很多方法，最常见的是像c语言那样的类型定义</p>
-<pre><code class="ts">type IArray = number[]
-
-const array: IArray = [1, 2, 3, 4, 5]
-</code></pre>
-<p>同样也可以使用ts提供的Array泛型，是一样的效果</p>
-<pre><code class="ts">type IArray = Array&lt;number&gt;
-
-const array: IArray = [1, 2, 3, 4, 5]
-</code></pre>
-<p>因为数组实际上就是键名特殊的对象，所以也可以用表示对象的方法来表示</p>
-<pre><code class="ts">interface IArray &#123;
-    [key: number]: number
-&#125;
-
-const array: IArray = [1, 2, 3, 4, 5]
-</code></pre>
-<h3 id="TS-新增的类型"><a href="#TS-新增的类型" class="headerlink" title="TS 新增的类型"></a>TS 新增的类型</h3><p>为了实现一些特殊需求，ts也新增了许多类型方便使用</p>
-<h4 id="空类型"><a href="#空类型" class="headerlink" title="空类型"></a>空类型</h4><pre><code class="ts">function test(): void &#123;
-    alert(&quot;hello&quot;)
-&#125;
-</code></pre>
-<p>顾名思义，表示无赋值，例如函数没有返回值</p>
-<h3 id="任意类型"><a href="#任意类型" class="headerlink" title="任意类型"></a>任意类型</h3><pre><code class="ts">type IArray = Array&lt;any&gt;
-
-const array: IArray = [1, &quot;string&quot;, true, &#123;a: 1&#125;]
-</code></pre>
-<h3 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h3><p>该类型能够通过枚举名查枚举值，同时能够使用枚举值查枚举名</p>
-<pre><code class="ts">enum EnumTest &#123;
-    man = &#39;male&#39;,
-    woman = &#39;female&#39;,
-&#125;
-
-EnumTest[&#39;man&#39;] === &#39;male&#39;
-EnumTest[&#39;male&#39;] === &#39;man&#39;
-</code></pre>
-<p>在不提供枚举名的时候，将默认为由0开始的索引值</p>
-<pre><code class="ts">enum EnumWeekDay &#123; Mon, Tue, Wed, Thu, Fri &#125;
-
-EnumTest[&#39;Mon&#39;] === 0
-EnumTest[&#39;Tue&#39;] === 1
-</code></pre>
-<h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><h4 id="联合类型与交叉类型"><a href="#联合类型与交叉类型" class="headerlink" title="联合类型与交叉类型"></a>联合类型与交叉类型</h4><p>联合类型： <code>IA | IB</code>;</p>
-<p>交叉类型： <code>IA &amp; IB;</code></p>
-<h4 id="类型保护"><a href="#类型保护" class="headerlink" title="类型保护"></a>类型保护</h4><p>可以直接通过<code>.type</code>然后拿到某个变量的类型，可用于后续变量类型的判断，达到类型保护的作用。</p>
-<h4 id="补充类型"><a href="#补充类型" class="headerlink" title="补充类型"></a>补充类型</h4><ul>
-<li>空类型，表示无赋值</li>
-<li>任意类型，是所有类型的子类型</li>
-<li>枚举类型：支持枚举值到枚举名的正、反向映射</li>
+<p>SYN Flood</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>安全无小事<br>使用的依赖 npm package，甚至是 NodeJS 可能成为最薄弱的一环</p>
+<ul>
+<li>保持学习心态<br>npm install 除了带来了果洞 ， 还可以带来漏洞</li>
 </ul>
-<h2 id="课后个人总结"><a href="#课后个人总结" class="headerlink" title="课后个人总结"></a>课后个人总结</h2><p>TypeScript是一个非常有用的语言，给JavaScript开发带来了严格的检查</p>
-<h2 id="引用参考"><a href="#引用参考" class="headerlink" title="引用参考"></a>引用参考</h2><p><a target="_blank" rel="noopener" href="http://www.typescriptlang.org/docs/">www.typescriptlang.org/docs/</a></p>
-<p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcnIjrYQpF7pL6nWGtTl5W8Jd">https://bytedance.feishu.cn/file/boxcnIjrYQpF7pL6nWGtTl5W8Jd</a></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme">https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065">https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065</a></p>
 
         </article>
 
@@ -337,7 +293,7 @@ EnumTest[&#39;Tue&#39;] === 1
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>xyxsw<br>
     
-    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/19/TypeScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;19&#x2F;TypeScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;19&#x2F;TypeScript%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/02/08/Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;02&#x2F;08&#x2F;Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;02&#x2F;08&#x2F;Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -1087,7 +1043,7 @@ gitment.render('gitment')
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1675700144944"></script>
+<script src="/js/app.js?v=1675700144780"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
