@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>Slidev 用markdown写PPT！｜ 青训营笔记 - 向阳信息</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="若月千鸮的博客&#39;">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-8gmJzopb3Z" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 14 天 前言欢迎使用 Slidev! 为开发者打造的演示文稿工具  slidev是slidevjs开发的一款开源的使用markdown来编写ppt样式的前端应用的框架 只需要在单一 Markdown 文件中编写幻灯片就可以创建一个非常漂亮的前端ppt应用 这个项目自从0.20.0版本我就关注来着，当时就觉得很炫很好用 昨天看到了antfu更新说在最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Slidev 用markdown写PPT！｜ 青训营笔记">
+<meta property="og:url" content="https://xyxsw.ltd/2023/01/30/Slidev%20%E7%94%A8markdown%E5%86%99PPT%EF%BC%81%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="向阳信息">
+<meta property="og:description" content="这是我参与「第五届青训营」伴学笔记创作活动的第 14 天 前言欢迎使用 Slidev! 为开发者打造的演示文稿工具  slidev是slidevjs开发的一款开源的使用markdown来编写ppt样式的前端应用的框架 只需要在单一 Markdown 文件中编写幻灯片就可以创建一个非常漂亮的前端ppt应用 这个项目自从0.20.0版本我就关注来着，当时就觉得很炫很好用 昨天看到了antfu更新说在最">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130155007.png">
+<meta property="og:image" content="https://cn.sli.dev/screenshots/cover.png">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130162517.png">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170429.png">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170544.png">
+<meta property="article:published_time" content="2023-01-30T07:40:31.000Z">
+<meta property="article:modified_time" content="2023-01-30T10:02:49.598Z">
+<meta property="article:author" content="xyxsw">
+<meta property="article:tag" content="青训营笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130155007.png">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1678333681039">
+  <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
+  <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
+  <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/xiaomai.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xyxsw" class="mdui-btn mdui-btn-icon"><img src="/images/head/head.jpg" alt="xyxsw"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xyxsw">
+            <img src="/images/head/head.jpg" alt="xyxsw" alt="xyxsw">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>25 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-jiubei1"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/friend.html" title="朋友们">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                朋友们
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=2907618001&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/camera-2018" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/13390475" target="_blank" mdui-tooltip="{content: 'Bilibili'}" style="color: rgb(251, 114, 153);background-color: rgba(251, 114, 153, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">青训营笔记</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 xyxsw
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">津ICP备2021004845号</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Slidev 用markdown写PPT！｜ 青训营笔记" class="lazyload">
+            <h1>Slidev 用markdown写PPT！｜ 青训营笔记</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月30日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 14 天</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>欢迎使用 Slidev!
+为开发者打造的演示文稿工具
+</code></pre>
+<p>slidev是slidevjs开发的一款开源的使用markdown来编写ppt样式的前端应用的框架</p>
+<p>只需要在单一 Markdown 文件中编写幻灯片就可以创建一个非常漂亮的前端ppt应用</p>
+<p>这个项目自从<code>0.20.0</code>版本我就关注来着，当时就觉得很炫很好用</p>
+<p>昨天看到了antfu更新说在最新版本<code>0.39.0</code>里支持了简单的动画切换效果</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130155007.png"></p>
+<p>😋感觉动画切换是ppt最重要的东西吧，很好很圆满😎</p>
+<p>来试试</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cn.sli.dev/screenshots/cover.png" alt="img" class="lazyload"></p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><p><strong>支持 Markdown 语法</strong>：Slidev 使用一种扩展的 Markdown 格式，在一个纯文本文件中存储和组织你的幻灯片。这让你专注于制作内容。而且由于内容和样式是分开的，这也使得在不同的主题之间切换变得更加容易。</p>
+</li>
+<li><p><strong>可定制主题</strong>：Slidev 的主题可以通过 <code>npm</code> 包的形式来分享和安装。</p>
+</li>
+<li><p><strong>对开发者友好</strong>：Slidev 为开发者提供了一流的代码片段支持。它同时支持 <a target="_blank" rel="noopener" href="https://prismjs.com/">Prism</a> 和 <a target="_blank" rel="noopener" href="https://github.com/shikijs/shiki">Shiki</a> 以获得像素级的完美语法高亮，并且能够随时修改代码。通过内置的 <a target="_blank" rel="noopener" href="https://microsoft.github.io/monaco-editor/">Monaco 编辑器</a>，它还能让你在演示文稿中进行现场编码&#x2F;演示，并支持自动补全、类型悬停、甚至是 <code>TypeScript</code> 类型检查。</p>
+</li>
+<li><p><strong>快速</strong>：Slidev 得益于 <a target="_blank" rel="noopener" href="https://vitejs.dev/">Vite</a>，<a target="_blank" rel="noopener" href="https://v3.vuejs.org/">Vue 3</a> 和 <a target="_blank" rel="noopener" href="https://windicss.org/">Windi CSS</a>，为你带来了最美妙的创作体验。你所做的每一个改变都会<strong>立即反映</strong>到你的幻灯片上。</p>
+</li>
+<li><p><strong>互动性 &amp; 直观表达</strong>：你可以编写自定义的 Vue 组件并直接在你的 MarkDown 文件中使用它们。你也可以在演示文稿中与它们互动，以更深入和直观的方式表达你的想法。</p>
+</li>
+<li><p><strong>支持录制</strong>：Slidev 提供了内置的录音和摄像头视图。你可以将你的演示文稿与你的相机视图一起分享，或者为你的屏幕和相机分别录制并保存。所有这些都是内置的，不需要额外的工具。</p>
+</li>
+<li><p><strong>可移植性</strong>：用一个命令就可以将你的幻灯片导出为 PDF 或 PNG，甚至是可托管的单页应用程序（SPA），并在任何地方分享它们。</p>
+</li>
+<li><p><strong>可配置</strong>：由于 Slidev 基于 Web 技术，任何可以在 Web 应用中完成的事情，Slidev 也可以做到。例如，<code>WebGL</code>、<code>API请求</code>、<code>iframes</code>，甚至是实时共享。完全取决于你的想象力!</p>
+</li>
+<li><p><strong>演讲者模式</strong>： 可以使用另一个窗口，甚至是你的手机来控制幻灯片。</p>
+</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>npm init slidev
+</code></pre>
+<p>在package.json里配置</p>
+<pre><code>&#123;
+  &quot;scripts&quot;: &#123;
+    &quot;dev&quot;: &quot;slidev&quot;, //  启动 dev server
+    &quot;build&quot;: &quot;slidev build&quot;, // 构建生产环境的单页面应用
+    &quot;export&quot;: &quot;slidev export&quot; // 将幻灯片导出为 pdf 格式
+  &#125;
+&#125;
+</code></pre>
+<p>执行 <code>npx slidev --help</code> 命令获取更多选项的详细信息。</p>
+<p>这样就安装完成了，你只需要在<code>./slides.md</code>里编写你想要的内容就行😎</p>
+<h2 id="推荐的目录结构"><a href="#推荐的目录结构" class="headerlink" title="推荐的目录结构"></a>推荐的目录结构</h2><pre><code>your-slidev/
+  ├── components/       # 自定义组件
+  ├── layouts/          # 自定义布局
+  ├── public/           # 静态资源
+  ├── setup/            # 自定义 setup / hooks
+  ├── styles/           # 自定义样式
+  ├── index.html        # 注入的 index.html
+  ├── slides.md         # 幻灯片主入口
+  └── vite.config.ts    # 扩展 vite 配置
+</code></pre>
+<h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h4 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h4><p>使用 <code>---</code> 添加分隔符来分隔你的幻灯片。</p>
+<p>注意 这个分隔符最好上下空两行</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130162517.png"></p>
+<p>像这样 </p>
+<p>你可以安装一个VSCode插件 名叫slidev 来获得更好的体验，<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev">https://marketplace.visualstudio.com/items?itemName=antfu.slidev</a></p>
+<p>这个#2是插件告诉你这下面是第几张幻灯片</p>
+<pre><code># Slidev
+
+Hello, World!
+
+---
+
+# Page 2
+
+Directly use code blocks for highlighting
+
+```ts
+console.log(&#39;Hello, World!&#39;)
+```
+
+---
+
+# Page 3
+
+You can directly use Windi CSS and Vue components to style and enrich your slides.
+
+&lt;div class=&quot;p-3&quot;&gt;
+  &lt;Tweet id=&quot;20&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<p>像这样就创建了三张幻灯片</p>
+<h4 id="扉页及布局"><a href="#扉页及布局" class="headerlink" title="扉页及布局"></a>扉页及布局</h4><p>用两个分隔符来表示一个扉页块</p>
+<pre><code>---
+layout: cover
+---
+</code></pre>
+<p>两个分隔符里是<code>yaml</code>格式的对象</p>
+<p>具体的语法如下</p>
+<pre><code>---
+# 主题id 或 主题包名称
+# 了解更多：https://sli.dev/themes/use.html
+theme: &#39;default&#39;
+# 幻灯片的总标题，如果没有指定，那么将以第一张拥有标题的幻灯片的标题作为总标题
+title: &#39;Slidev&#39;
+# titleTemplate for the webpage, `%s` will be replaced by the page&#39;s title
+titleTemplate: &#39;%s - Slidev&#39;
+# information for your slides, can be a markdown string
+info: false
+
+# 在单页（SPA）构建中启用 pdf 下载，也可以指定一个自定义 url
+download: false
+# 要导出文件的文件名称
+exportFilename: &#39;slidev-exported.pdf&#39;
+# 语法高亮设置，可以使用 &#39;prism&#39; 或 &#39;shiki&#39; 方案
+highlighter: &#39;prism&#39;
+# 在代码块中显示行号
+lineNumbers: false
+# 启用 monaco 编辑器，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
+monaco: &#39;dev&#39;
+# 使用 vite-plugin-remote-assets 在本地下载远程资源，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
+remoteAssets: false
+# 控制幻灯片中的文本是否可以选择
+selectable: true
+# 启用幻灯片录制，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
+record: &#39;dev&#39;
+
+# 幻灯片的配色方案，可以使用 &#39;auto&#39;，&#39;light&#39; 或者 &#39;dark&#39;
+colorSchema: &#39;auto&#39;
+# vue-router 模式，可以使用 &#39;history&#39; 或 &#39;hash&#39; 模式
+routerMode: &#39;history&#39;
+# 幻灯片的长宽比
+aspectRatio: &#39;16/9&#39;
+# canvas 的真实宽度，单位为 px
+canvasWidth: 980
+# 用于主题定制，会将属性 `x` 注入根样式 `--slidev-theme-x`
+themeConfig:
+  primary: &#39;#5d8392&#39;
+
+# favicon 可以是本地文件路径，也可以是一个 URL
+favicon: &#39;https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png&#39;
+# 用于渲染图表的 PlantUML 服务器的 URL
+plantUmlServer: &#39;https://www.plantuml.com/plantuml&#39;
+# 字体将从 Google 字体自动导入
+# 了解更多：https://sli.dev/custom/fonts
+fonts:
+  sans: &#39;Roboto&#39;
+  serif: &#39;Roboto Slab&#39;
+  mono: &#39;Fira Code&#39;
+
+# 为所有幻灯片添加默认的 frontmatter
+defaults:
+  layout: &#39;default&#39;
+  # ...
+
+# 绘制选项
+# 了解更多：https://sli.dev/guide/drawing.html
+drawings:
+  enabled: true
+  persist: false
+  presenterOnly: false
+  syncAll: true
+---
+</code></pre>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p>可以通过&#96;&#96;&#96;来创建一个代码块</p>
+<pre><code>```ts
+console.log(&#39;Hello, World!&#39;)
+```
+</code></pre>
+<p>可以通过在语言名后写大括号的形式来指定特定行高亮<code>&#123;&#125;</code></p>
+<p>注意：行号从 1 开始计算。</p>
+<pre><code>```ts &#123;2-3|5|all&#125;
+function add(
+  a: Ref&lt;number&gt; | number,
+  b: Ref&lt;number&gt; | number
+) &#123;
+  return computed(() =&gt; unref(a) + unref(b))
+&#125;
+```
+</code></pre>
+<p>这段代码的意思是 点进来先是2到3行高亮，再点一下2到3不亮第5行亮，再点一下整个都亮</p>
+<h4 id="Monaco-编辑器"><a href="#Monaco-编辑器" class="headerlink" title="Monaco 编辑器"></a>Monaco 编辑器</h4><p>只需在语言 id 后添加 <code>&#123;monaco&#125;</code> 就可以启用monaco</p>
+<p>什么是monaco呢，可以理解为网页版的vscode那样的，可以在线编辑的</p>
+<pre><code>```ts &#123;monaco&#125;
+console.log(&#39;HelloWorld&#39;)
+```
+</code></pre>
+<h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>你可以在 Markdown 中直接使用 <code>&lt;style&gt;</code> 标签来覆盖<strong>当前幻灯片</strong>的样式。</p>
+<p>Slidev支持windicss的原子化写法和指令集 例如<code>@apply</code></p>
+<pre><code># Slidev
+
+&gt; Hello `world`
+
+&lt;style&gt;
+blockquote &#123;
+  code &#123;
+    @apply text-teal-500 dark:text-teal-400;
+  &#125;
+&#125;
+&lt;/style&gt;
+</code></pre>
+<h4 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h4><p>和编写 Markdown 的方式一样，你可以使用本地或远程的 URL 的图片。</p>
+<p>远程资源会缓存</p>
+<p>本地资源请放到public文件夹</p>
+<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><p>你也可以为每张幻灯片编写备注。它们将展示在 <a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/presenter-mode.html">演讲者模式</a> 中，供你在演示时参考。</p>
+<p>在每一页幻灯片内容最后</p>
+<p>添加注释即可</p>
+<pre><code>---
+layout: cover
+---
+
+# 第 1 页
+
+This is the cover page.
+
+&lt;!-- 这是一条备注 --&gt;
+
+---
+
+# 第 2 页
+
+&lt;!-- 这不是一条备注，因为它在幻灯片内容前 --&gt;
+
+The second page
+
+&lt;!--
+这是另一条备注
+--&gt;
+</code></pre>
+<h4 id="icon图标"><a href="#icon图标" class="headerlink" title="icon图标"></a>icon图标</h4><p>很喜欢的功能</p>
+<p>Slidev 允许你在 Markdown 中<strong>直接</strong>访问几乎所有的开源的图标集。</p>
+<p>你可以通过 <a target="_blank" rel="noopener" href="https://icones.js.org/">Icônes</a> 来浏览访问所有可用的图标。</p>
+<p>更详细的请看<a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/syntax.html#icons">https://cn.sli.dev/guide/syntax.html#icons</a></p>
+<h4 id="LaTeX"><a href="#LaTeX" class="headerlink" title="LaTeX"></a>LaTeX</h4><p>这个不是很熟啊</p>
+<p><a target="_blank" rel="noopener" href="https://demo.sli.dev/starter/8">https://demo.sli.dev/starter/8</a></p>
+<p>可以看下示例 和 文档</p>
+<p><a target="_blank" rel="noopener" href="https://katex.org/">https://katex.org/</a></p>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p>这个东西也没怎么用过，只知道github什么的支持这种语法 基于<a target="_blank" rel="noopener" href="https://github.com/mermaid-js/mermaid">https://github.com/mermaid-js/mermaid</a></p>
+<p>被标记为 <code>mermaid</code> 的代码块将被转换为图形，例如：</p>
+<pre><code>```mermaid
+sequenceDiagram
+  Alice-&gt;John: Hello John, how are you?
+  Note over Alice,John: A typical interaction
+```
+</code></pre>
+<pre><code class="mermaid">sequenceDiagram
+  Alice-&gt;John: Hello John, how are you?
+  Note over Alice,John: A typical interaction
+</code></pre>
+<p>我在typora也可以创建这个图表，感觉很好用</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170429.png"></p>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170544.png"></p>
+<p>导航栏默认在左下角，鼠标移动上去显示</p>
+<p>可以用<code>right / space</code>来切换下一张幻灯片</p>
+<p>按<code>g</code>跳出一个栏，输入页码可以跳转</p>
+<p>更多快捷键详见<a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/navigation.html#navigation-bar">https://cn.sli.dev/guide/navigation.html#navigation-bar</a></p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>重头戏</p>
+<p>这个版本就更新了这个</p>
+<h4 id="点击动画"><a href="#点击动画" class="headerlink" title="点击动画"></a>点击动画</h4><p><code>v-click</code> 可以用<code>&lt;v-click&gt;&lt;/v-click&gt;</code>标签或在标签内写<code>&lt;div v-click class=&quot;text-xl p-2&quot;&gt;</code>这样的指令</p>
+<p>以下指令写法同理</p>
+<p><code>v-after</code> 和<code>v-click</code>绑定，这俩会一起显示</p>
+<p><code>v-click-hide</code>点击后不可见</p>
+<p><code>v-clicks</code> 只能使用标签写法 可以方便的展示一个列表</p>
+<pre><code>&lt;v-clicks&gt;
+
+- Item 1
+- Item 2
+- Item 3
+- Item 4
+
+&lt;/v-clicks&gt;
+</code></pre>
+<p>你还可以手动指定过渡动画 覆写两个类的动画</p>
+<pre><code>// the default
+
+.slidev-vclick-target &#123;
+  transition: opacity 100ms ease;
+&#125;
+
+.slidev-vclick-hidden &#123;
+  opacity: 0;
+  pointer-events: none;
+&#125;
+</code></pre>
+<h4 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h4><p><a target="_blank" rel="noopener" href="https://vueuse.org/functions.html#category=%40Motion">https://vueuse.org/functions.html#category=%40Motion</a></p>
+<p>内置了vueuse的motion功能</p>
+<p>你可以对任何元素应用 <code>v-motion</code> 指令，以对它们施加运动效果。例如：</p>
+<pre><code>&lt;div
+  v-motion
+  :initial=&quot;&#123; x: -80 &#125;&quot;
+  :enter=&quot;&#123; x: 0 &#125;&quot;&gt;
+  Slidev
+&lt;/div&gt;
+</code></pre>
+<p>文本 <code>Slidev</code> 将从其初始化位置 <code>-80px</code> 移至其原始位置。</p>
+<h4 id="页面过渡"><a href="#页面过渡" class="headerlink" title="页面过渡"></a>页面过渡</h4><p>🤩新功能！</p>
+<p>可以在扉页中填写</p>
+<pre><code>---
+transition: slide-left
+---
+</code></pre>
+<p>这将给你一个很好的滑动效果。将其设置在首页，将适用于所有的幻灯片。您还可以为每张幻灯片设置不同的过渡。</p>
+<p>自带的过渡效果</p>
+<pre><code>fade - Crossfade in/out
+fade-out - Fade out and then fade in
+slide-left - Slides to the left, slide to right when going back
+slide-right - Slides to the right, slide to left when going back
+slide-top - Slides to the top, slide to bottom when going back
+slide-bottom - Slides to the bottom, slide to top when going back
+</code></pre>
+<p>还可以自定义过渡效果</p>
+<pre><code>---
+transition: my-transition
+---
+</code></pre>
+<pre><code>.my-transition-enter-active,
+.my-transition-leave-active &#123;
+  transition: opacity 0.5s ease;
+&#125;
+
+.my-transition-enter-from,
+.my-transition-leave-to &#123;
+  opacity: 0;
+&#125;
+</code></pre>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><p>导出为pdf 依赖于微软开源的playwright框架</p>
+<p><a target="_blank" rel="noopener" href="https://playwright.dev/docs/installation#download-single-browser-binary"><code>playwright-chromium</code></a></p>
+<p>需要先安装</p>
+<pre><code>npm i -D playwright-chromium
+</code></pre>
+<p>使用</p>
+<pre><code>slidev export
+</code></pre>
+<p>可导出pdf格式</p>
+<pre><code>slidev export --format png
+</code></pre>
+<p>可导出png格式</p>
+<h2 id="静态部署"><a href="#静态部署" class="headerlink" title="静态部署"></a>静态部署</h2><pre><code>slidev build
+</code></pre>
+<p>编译当前幻灯片生成在<code>dist/</code>目录下，可以部署到静态托管平台</p>
+<h4 id="提供可下载的-PDF"><a href="#提供可下载的-PDF" class="headerlink" title="提供可下载的 PDF"></a>提供可下载的 PDF</h4><p>在扉页中设置</p>
+<pre><code>---
+download: true
+---
+</code></pre>
+<p>会在单页应用中展示下载按钮</p>
+<p>也可以自定义url</p>
+<pre><code>---
+download: &#39;https://myside.com/my-talk.pdf&#39;
+---
+</code></pre>
+<h4 id="部署到netlify"><a href="#部署到netlify" class="headerlink" title="部署到netlify"></a>部署到netlify</h4><p>创建<code>netlify.toml</code>文件 配置</p>
+<pre><code>[build.environment]
+  NODE_VERSION = &quot;14&quot;
+
+[build]
+  publish = &quot;dist&quot;
+  command = &quot;npm run build&quot;
+
+[[redirects]]
+  from = &quot;/*&quot;
+  to = &quot;/index.html&quot;
+  status = 200
+</code></pre>
+<h4 id="部署到vercel"><a href="#部署到vercel" class="headerlink" title="部署到vercel"></a>部署到vercel</h4><p>创建<code>vercel.json</code>文件 配置</p>
+<pre><code>&#123;
+  &quot;rewrites&quot;: [
+    &#123; &quot;source&quot;: &quot;/(.*)&quot;, &quot;destination&quot;: &quot;/index.html&quot; &#125;
+  ]
+&#125;
+</code></pre>
+<h2 id="演讲录制"><a href="#演讲录制" class="headerlink" title="演讲录制"></a>演讲录制</h2><h4 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h4><p>导航面板的小人按钮可以开启摄像头</p>
+<p>你可以拖动它，并使用右下角的把手来调整大小。尺寸和位置将持久化存储在 <code>localStorage</code> 中，因此，可以保证多次刷新后的展示一致，无需担心位置和大小丢失的问题。</p>
+<h4 id="录制"><a href="#录制" class="headerlink" title="录制"></a>录制</h4><p>导航面板的摄像机按钮</p>
+<p>可以录制麦克风和摄像头</p>
+<h2 id="演讲者模式"><a href="#演讲者模式" class="headerlink" title="演讲者模式"></a>演讲者模式</h2><p>点击小人带麦克风的按钮</p>
+<p>可以进入演讲者模式</p>
+<p>需要双端在同一网络下</p>
+<p>其他页面的实例会自动和演讲者的页面同步</p>
+<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><p>可以在页面上画画</p>
+<p>可以在演讲者模式中启用，会实时自动同步</p>
+<p>支持触控笔压感</p>
+<h2 id="编辑器整合"><a href="#编辑器整合" class="headerlink" title="编辑器整合"></a>编辑器整合</h2><p>你可以在运行中在网页上更改你的源码，他会自动同步到slide.md里</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>在这里浏览主题并应用到你的实例中</p>
+<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/themes/gallery.html">https://cn.sli.dev/themes/gallery.html</a></p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p><a target="_blank" rel="noopener" href="https://cn.sli.dev/builtin/layouts.html">https://cn.sli.dev/builtin/layouts.html</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇写了不少，详细的写了我比较喜欢的ppt框架</p>
+<p>我有一个部署的版本，地址在 <a target="_blank" rel="noopener" href="https://botppt.netlify.app/">https://botppt.netlify.app/</a></p>
+<p>是很久之前写的辣，版本还是很老的，有时间会更新一下</p>
+<p>😎</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://botppt.netlify.app/1">https://botppt.netlify.app/1</a></p>
+<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/showcases.html">https://cn.sli.dev/showcases.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/">https://cn.sli.dev/</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/slidevjs/slidev">https://github.com/slidevjs/slidev</a></p>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xyxsw<br>
+    
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/01/30/Slidev%20%E7%94%A8markdown%E5%86%99PPT%EF%BC%81%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;30&#x2F;Slidev%20%E7%94%A8markdown%E5%86%99PPT%EF%BC%81%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;01&#x2F;30&#x2F;Slidev%20%E7%94%A8markdown%E5%86%99PPT%EF%BC%81%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" rel="tag">青训营笔记</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div id="gitment"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: '', // 你的 GitHub ID
+    repo: '', // 存储评论的 repo
+    oauth: {
+        client_id: '', // 你的 client ID
+        client_secret: '' // 你的 client secret
+    },
+})
+gitment.render('gitment')
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "220",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1678333681040"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/16ad17e2.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "16ad17e2"
+  });
+  daovoice('update');
+</script>
+
