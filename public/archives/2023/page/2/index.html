@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1678766249633">
+  <link rel="stylesheet" href="/css/style.css?v=1683548842095">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -61,8 +61,8 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>25 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
-        <div class="nexmoe-count-item"><span>标签</span>1<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>文章</span>26 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>2<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -133,7 +133,7 @@
   
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">青训营笔记</a>
+      <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
     </div>
     
   </div>
@@ -143,7 +143,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,6 +180,243 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/25/%E5%8E%9F%E5%AD%90%E5%8C%96CSS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="原子化CSS｜ 青训营笔记" class="lazyload">
+                    <h1>原子化CSS｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月25日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.9k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 9 天</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原子化 CSS是一个很新颖的定义 出自<a target="_blank" rel="noopener" href="https://css-tricks.com/lets-define-exactly-atomic-CSS/">https://CSS-tricks.com/lets-define-exactly-atomic-CSS/</a></p>
+<p>意思是<code>原子化 CSS是一种 CSS的架构方式，它倾向于小巧且用途单一的 class，并且会以视觉效果进行命名。</code></p>
+<h2 id="什么是原子化-CSS"><a href="#什么是原子化-CSS" class="headerlink" title="什么是原子化 CSS?"></a>什么是原子化 CSS?</h2><p>与一般的我们写正常CSS不同，原子化CSS会把元素本身的属性提取出来，加以视觉效果命名，例如：</p>
+<p>如下的html</p>
+<pre><code class="html">&lt;button class=&quot;btn&quot;&gt;Basic&lt;/button&gt;
+</code></pre>
+<p>正常的CSS</p>
+<pre><code class="css">.btn &#123;
+    padding: 1rem, 2rem;
+    font-family: &#39;semi&#39;;
+    font-weight: bold; 
+&#125;
+</code></pre>
+<p>使用原子化CSS后，将不用写CSS文件，改为写class属性</p>
+<pre><code class="html">&lt;button class=&quot;py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700&quot;&gt;
+  Click me
+&lt;/button&gt;
+</code></pre>
+<p>市面上有不少实用至上的 CSS框架，如 <a target="_blank" rel="noopener" href="https://tailwindcss.com/">Tailwind CSS</a>，<a target="_blank" rel="noopener" href="https://cn.windicss.org/">Windi CSS</a> 以及 <a target="_blank" rel="noopener" href="https://tachyons.io/">Tachyons</a> 等。</p>
+<p>同时有些 UI 库也会附带一些 CSS工具类作为框架的补充，如 <a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/5.1/utilities/api/">Bootstrap</a> 和 <a target="_blank" rel="noopener" href="https://chakra-ui.com/docs/features/style-props">Chakra UI</a>。</p>
+<h2 id="写之前，我们谈谈优势"><a href="#写之前，我们谈谈优势" class="headerlink" title="写之前，我们谈谈优势"></a>写之前，我们谈谈优势</h2><ul>
+<li>类名自由：你绞尽脑汁想这个元素的类名怎么写。在你面前的是一点击就会变颜色的按钮，你想给他起个class或者id，你想了半天，最后取了class名为<code>click-it-and-turn-it-from-blue-to-green</code>😰。</li>
+<li>html嵌入：正常情况我们要引入CSS文件去写这个样式，切来切去不太方便。</li>
+<li>预设的原子化CSS：可以引入插件、其他基于原子化CSS写的组件库。</li>
+<li>IDE支持：插件支持类名提示，很好写。</li>
+<li>写的快：比如说hover属性，原子化CSS可以直接写在class里，很快很方便，比如说tailwind自带的响应式布局，不用自己写媒体查询就可以适配移动端。</li>
+</ul>
+<h2 id="常用的原子化CSS框架"><a href="#常用的原子化CSS框架" class="headerlink" title="常用的原子化CSS框架"></a>常用的原子化CSS框架</h2><ul>
+<li><p>tailwindCSS<a target="_blank" rel="noopener" href="https://tailwindcss.com/">https://tailwindcss.com/</a></p>
+<ul>
+<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125214852.png"></li>
+</ul>
+</li>
+<li><p>Windi CSS<a target="_blank" rel="noopener" href="https://windicss.org/">https://windicss.org/</a></p>
+<ul>
+<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215026.png"></li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://tachyons.io/">Tachyons</a> <a target="_blank" rel="noopener" href="https://tachyons.io/">https://tachyons.io/</a></p>
+<ul>
+<li><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215141.png"></p>
+</li>
+<li><p>UnoCSS<a target="_blank" rel="noopener" href="https://github.com/unocss/unocss">https://github.com/unocss/unocss</a></p>
+<ul>
+<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215337.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="本文的重点：UnoCSS"><a href="#本文的重点：UnoCSS" class="headerlink" title="本文的重点：UnoCSS"></a>本文的重点：UnoCSS</h2><p>讲这么多，我们终于回到主题UnoCSS上</p>
+<blockquote>
+<p> antfu<a href="https://link.juejin.cn/?target=https://antfu.me/posts/reimagine-atomic-css-zh">重新构想原子化CSS</a> 这篇文章讲了unocss是怎么诞生的</p>
+</blockquote>
+<p>Windi CSS已经足够优秀，但antfu大佬还是不够满意，对于框架预设外的自定义工具的额外配置上，还是比较繁琐，而且配置的方式也不够简便</p>
+<blockquote>
+<p>由于 Windi 需要与 Tailwind 兼容，它还必须使用与 Tailwind 完全相同的配置项。尽管数字推断的问题得到了解决，但如果你想添加一些自定义的工具，这将是一场噩梦。</p>
+</blockquote>
+<p>所以经过重新构想原子化CSS，UnoCSS出现了</p>
+<blockquote>
+<p><a href="https://link.juejin.cn/?target=https://github.com/antfu/unocss"><strong>UnoCSS</strong></a> - 具有高性能且极具灵活性的即时原子化 CSS引擎。</p>
+</blockquote>
+<p>它不是像TailWind CSS和Windi CSS属于框架，而是一个引擎，它没有提供预设的原子化CSS工具类</p>
+<p>UnoCSS通过编写规则来定制工具类</p>
+<p>静态规则</p>
+<pre><code class="js">rules: [
+    [&#39;m-1&#39;, &#123; margin: &#39;0.25rem&#39; &#125;]
+]
+</code></pre>
+<p>使用正则表达式来做动态规则</p>
+<pre><code class="ts">rules: [
+  [/^m-(\d)$/, ([, d]) =&gt; (&#123; margin: `$&#123;d / 4&#125;rem` &#125;)],
+  [/^p-(\d)$/, (match) =&gt; (&#123; padding: `$&#123;match[1] / 4&#125;rem` &#125;)],
+]
+</code></pre>
+<p>当然这些比较常见的规则unocss已经提供了预设在<code>@unocss/preset-uno</code>中</p>
+<pre><code class="html">&lt;div class=&quot;m-100&quot;&gt;
+  &lt;button class=&quot;m-3&quot;&gt;
+    &lt;icon class=&quot;p-5&quot; /&gt;
+    My Button
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<p>生成出的css为</p>
+<pre><code class="css">.m-100 &#123; margin: 25rem; &#125;
+.m-3 &#123; margin: 0.75rem; &#125;
+.p-5 &#123; padding: 1.25rem; &#125;
+</code></pre>
+<p>unocss提供了一个叫shortcuts的功能，可以批量生成css</p>
+<pre><code class="js">shortcuts: [
+  // you could still have object style
+  &#123;
+    btn: &#39;py-2 px-4 font-semibold rounded-lg shadow-md&#39;,
+  &#125;,
+  // dynamic shortcuts
+  [/^btn-(.*)$/, ([, c]) =&gt; `bg-$&#123;c&#125;-400 text-$&#123;c&#125;-100 py-2 px-4 rounded-lg`],
+]
+</code></pre>
+<p>只需要配置这个字段</p>
+<p>在使用中可以使用 <code>btn-green</code> 和 <code>btn-red</code> </p>
+<p>生成的css如下</p>
+<pre><code class="css">.btn-green &#123;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --un-bg-opacity: 1;
+  background-color: rgba(74, 222, 128, var(--un-bg-opacity));
+  border-radius: 0.5rem;
+  --un-text-opacity: 1;
+  color: rgba(220, 252, 231, var(--un-text-opacity));
+&#125;
+.btn-red &#123;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --un-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--un-bg-opacity));
+  border-radius: 0.5rem;
+  --un-text-opacity: 1;
+  color: rgba(254, 226, 226, var(--un-text-opacity));
+&#125;
+</code></pre>
+<p>unocss提供了很多预设</p>
+<h6 id="Official-Presets"><a href="#Official-Presets" class="headerlink" title="Official Presets"></a>Official Presets</h6><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-uno">@unocss&#x2F;preset-uno</a> - The default preset (right now it’s equivalent to <code>@unocss/preset-wind</code>).</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-mini">@unocss&#x2F;preset-mini</a> - The minimal but essential rules and variants.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-wind">@unocss&#x2F;preset-wind</a> - Tailwind &#x2F; Windi CSScompact preset.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify">@unocss&#x2F;preset-attributify</a> - Provides <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode">Attributify Mode</a> to other presets and rules.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-icons">@unocss&#x2F;preset-icons</a> - Use any icon as a class utility.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-web-fonts">@unocss&#x2F;preset-web-fonts</a> - Web fonts at ease.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-typography">@unocss&#x2F;preset-typography</a> - The typography preset.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-tagify">@unocss&#x2F;preset-tagify</a> - Tagify Mode for UnoCSS.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-rem-to-px">@unocss&#x2F;preset-rem-to-px</a> - Converts rem to px for utils.</li>
+</ul>
+<h6 id="Community-Presets"><a href="#Community-Presets" class="headerlink" title="Community Presets"></a>Community Presets</h6><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/macheteHot/unocss-preset-scalpel">unocss-preset-scalpel</a> - Scalpel Preset by <a target="_blank" rel="noopener" href="https://github.com/macheteHot/">@macheteHot</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/chu121su12/unocss-preset-chroma">unocss-preset-chroma</a> - Gradient Preset by <a target="_blank" rel="noopener" href="https://github.com/chu121su12">@chu121su12</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/action-hong/unocss-preset-scrollbar">unocss-preset-scrollbar</a> - Scrollbar Preset by <a target="_blank" rel="noopener" href="https://github.com/action-hong">@action-hong</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss-applet/unocss-applet">unocss-applet</a> - Using UnoCSSin applet (UniApp &#x2F; Taro) by <a target="_blank" rel="noopener" href="https://github.com/zguolee">@zguolee</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MellowCo/unocss-preset-weapp">unocss-preset-weapp</a> - Wechat MiniProgram Preset for <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/">UniApp</a> and <a target="_blank" rel="noopener" href="https://taro-docs.jd.com/taro/docs">Taro</a> by <a target="_blank" rel="noopener" href="https://github.com/MellowCo">@MellowCo</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-heropatterns">unocss-preset-heropatterns</a> - Preset that integrates <a target="_blank" rel="noopener" href="https://heropatterns.com/">Hero Patterns</a> by <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-flowbite">unocss-preset-flowbite</a> - Port of of <a target="_blank" rel="noopener" href="https://github.com/themesberg/flowbite">Flowbite Tailwind plugin</a> for UnoCSSby <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-forms">unocss-preset-forms</a> - Port of <a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss-forms">@tailwindcss&#x2F;forms</a> for UnoCSSby <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MoomFE/unocss-preset-extra">unocss-preset-extra</a> - <a target="_blank" rel="noopener" href="https://animate.style/">Animate.css</a> Preset and some other rules by <a target="_blank" rel="noopener" href="https://github.com/Zhang-Wei-666">@Zhang-Wei-666</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/kidonng/unocss-preset-daisy">unocss-preset-daisy</a> - daisyUI Preset by <a target="_blank" rel="noopener" href="https://github.com/kidonng">@kidonng</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zirbest/unocss-preset-primitives">unocss-preset-primitives</a> - Like <a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss">headlessui-tailwindcss</a> , radix-ui , custom for UnoCSSBy <a target="_blank" rel="noopener" href="https://github.com/zirbest">@zirbest</a>.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Dunqing/unocss-preset-theme">unocss-preset-theme</a> - Preset for automatic theme switching by <a target="_blank" rel="noopener" href="https://github.com/Dunqing">@Dunqing</a>.</p>
+<p>通过这些预设可以达到融合tailwind和windi的效果</p>
+</li>
+</ul>
+<h2 id="UnoCSS的优点"><a href="#UnoCSS的优点" class="headerlink" title="UnoCSS的优点"></a>UnoCSS的优点</h2><p>对比其他原子化框架来说</p>
+<ul>
+<li><p>完全可定制：作为一款引擎没有核心实用程序，所有的功能都是通过预设提供的。</p>
+</li>
+<li><p>扩展性强：通过各种预设组合达到windi或者tailwind的效果。</p>
+</li>
+<li><p>快：没有解析，没有AST，没有扫描，它是即时的。</p>
+</li>
+<li><p>小：运行库打包好只有6kb，无痛</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main#shortcuts">Shortcuts</a>：可以写Shortcuts来预设一些常用样式</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify/">Attributify mode</a> ：将class写成组，避免无法阅读的问题</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-icons/">Pure CSSIcons</a> ：纯 CSSicon 可以在 <a target="_blank" rel="noopener" href="https://icones.js.org/">https://icones.js.org/</a> 找到并导入成千上万的icon  安装只需要找到你喜欢的 iconfy 库 <code>@iconify-json/[the-collection-you-want]</code> 这样安装就行</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group">Variant Groups</a> ：和 <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify/">Attributify mode</a> 看起来几乎是一样的功能，写成组</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-directives">CSSDirectives</a> ：可以在style标签里写  <code>@apply</code>  把一系列样式打包成一个样式，在windi里是个很受欢迎的功能</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-compile-class/">Compilation mode</a> ：打包优化，生成随机class名</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main#inspector">Inspector</a> ：自带的debug工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/runtime">CSS-in-JS Runtime build</a> ：可以CDN导入</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=antfu.unocss">VS Code extension</a>：自带VSCode提示扩展，很方便</p>
+</li>
+</ul>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇我们介绍了UnoCSS的特点，原子化CSS的好处，下一篇讲讲unocss实战，安装使用之类的</p>
+<p>题外话：</p>
+<blockquote>
+<p>Anthony Fu大佬真的是我目前的偶像，狂热的开源爱好者，人长得又帅，做的东西又好</p>
+</blockquote>
+<p>🤣这是我在掘金搜unocss搜到的一篇文章中的第一句话 文章在这 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
+<p>antfu大佬确实也是我的偶像</p>
+<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125225032.png"></p>
+<p>22年秋季 antfu大佬在b站办过几场直播写代码，我基本上是每期必看，这个人非常有意思，有很多新鲜的点子，狠活也多 比如说</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/antfu/1990-script">https://github.com/antfu/1990-script</a> 这个仓库教你怎么把GitHub历史穿越回1990年🤭</p>
+<p>他的每个star比较多的仓库我都体验过，感觉设计灵感真的让人眼前一亮，启发基于社区，创造更快的轮子，更好玩的轮子</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/antfu/retypewriter">https://github.com/antfu/retypewriter</a> 这个是直播写的雏形 让写的代码在vsc里回放，便于理清思路</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-minesweeper">https://github.com/antfu/vue-minesweeper</a> 这个是首次直播写的扫雷，很清晰的vue代码，看他写真的开窍</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-starport">https://github.com/antfu/vue-starport</a> 这个也是直播写的雏形，为了使组件有更好的过渡</p>
+<p>就说这么多，人也长得帅</p>
+<p>🥰😘</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
+<p><a target="_blank" rel="noopener" href="https://antfu.me/posts/reimagine-atomic-css-zh">https://antfu.me/posts/reimagine-atomic-css-zh</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7027414082378530852">https://juejin.cn/post/7027414082378530852</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7161211941652791304">https://juejin.cn/post/7161211941652791304</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tailwindcss.cn/docs/">https://www.tailwindcss.cn/docs/</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/24/MonoRepo&Nuxt%E6%A1%86%E6%9E%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -2310,7 +2547,7 @@ http &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1678766249634"></script>
+<script src="/js/app.js?v=1683548842096"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -2327,8 +2564,6 @@ http &#123;
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -2340,6 +2575,8 @@ http &#123;
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
