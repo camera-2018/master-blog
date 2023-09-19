@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>gorm 初体验 ｜ 青训营笔记 - 向阳信息</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="若月千鸮的博客&#39;">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-8gmJzopb3Z" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="gorm gorm是Golang语言中一款性能极好的ORM库，对开发人员相对是比较友好的。接下来主要学习下gorm库的一些基本使用。 功能概览  全功能 ORM 关联 (Has One，Has Many，Belongs To，Many To Many，多态，单表继承) Create，Save，Update，Delete，Find 中钩子方法 支持 Preload、Joins 的预加载 事务，嵌套事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gorm 初体验 ｜ 青训营笔记">
+<meta property="og:url" content="https://xyxsw.ltd/2023/08/23/gorm%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="向阳信息">
+<meta property="og:description" content="gorm gorm是Golang语言中一款性能极好的ORM库，对开发人员相对是比较友好的。接下来主要学习下gorm库的一些基本使用。 功能概览  全功能 ORM 关联 (Has One，Has Many，Belongs To，Many To Many，多态，单表继承) Create，Save，Update，Delete，Find 中钩子方法 支持 Preload、Joins 的预加载 事务，嵌套事">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gorm.io/gorm.svg">
+<meta property="article:published_time" content="2023-08-23T13:50:26.000Z">
+<meta property="article:modified_time" content="2023-08-23T16:11:00.497Z">
+<meta property="article:author" content="xyxsw">
+<meta property="article:tag" content="青训营笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gorm.io/gorm.svg">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1695140390160">
+  <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
+  <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
+  <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss.xml" title="向阳信息" type="application/rss+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/xiaomai.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="xyxsw" class="mdui-btn mdui-btn-icon"><img src="/images/head/head.jpg" alt="xyxsw"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="xyxsw">
+            <img src="/images/head/head.jpg" alt="xyxsw" alt="xyxsw">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-jiubei1"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/friend.html" title="朋友们">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                朋友们
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=2907618001&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://github.com/camera-2018" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/13390475" target="_blank" mdui-tooltip="{content: 'Bilibili'}" style="color: rgb(251, 114, 153);background-color: rgba(251, 114, 153, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/DN11/" style="font-size: 10px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 xyxsw
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">津ICP备2021004845号</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="gorm 初体验 ｜ 青训营笔记" class="lazyload">
+            <h1>gorm 初体验 ｜ 青训营笔记</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <h2 id="gorm"><a href="#gorm" class="headerlink" title="gorm"></a>gorm</h2><p><img src="https://gorm.io/gorm.svg"></p>
+<p>gorm是Golang语言中一款性能极好的ORM库，对开发人员相对是比较友好的。接下来主要学习下gorm库的一些基本使用。</p>
+<p>功能概览</p>
+<ul>
+<li>全功能 ORM</li>
+<li>关联 (Has One，Has Many，Belongs To，Many To Many，多态，单表继承)</li>
+<li>Create，Save，Update，Delete，Find 中钩子方法</li>
+<li>支持 Preload、Joins 的预加载</li>
+<li>事务，嵌套事务，Save Point，Rollback To Saved Point</li>
+<li>Context、预编译模式、DryRun 模式</li>
+<li>批量插入，FindInBatches，Find&#x2F;Create with Map，使用 SQL 表达式、Context Valuer 进行 CRUD</li>
+<li>SQL 构建器，Upsert，数据库锁，Optimizer&#x2F;Index&#x2F;Comment Hint，命名参数，子查询<br>复合主键，索引，约束</li>
+<li>Auto Migration</li>
+<li>自定义 Logger</li>
+<li>灵活的可扩展插件 API：Database Resolver（多数据库，读写分离）、Prometheus…</li>
+<li>每个特性都经过了测试的重重考验</li>
+<li>开发者友好</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装</p>
+<pre><code class="bash">go get -u gorm.io/gorm
+go get -u gorm.io/driver/sqlite
+</code></pre>
+<h3 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h3><h4 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h4><p>因为orm可以自动创建数据库，创建表，所以我们要用一个约定的形式来描述一个schema，便于他创建表，也便于代码中调用</p>
+<p>例如</p>
+<pre><code class="go">type User struct &#123;
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<p>这样的一个结构体就可以描述user这个表</p>
+<h4 id="gorm-Model"><a href="#gorm-Model" class="headerlink" title="gorm.Model"></a>gorm.Model</h4><pre><code class="go">// gorm.Model 的定义
+type Model struct &#123;
+  ID        uint           `gorm:&quot;primaryKey&quot;`
+  CreatedAt time.Time
+  UpdatedAt time.Time
+  DeletedAt gorm.DeletedAt `gorm:&quot;index&quot;`
+&#125;
+</code></pre>
+<p>这个约定了一些gorm的标准配置，相当于implement了这个结构体</p>
+<p>例如</p>
+<pre><code class="go">type User struct &#123;
+  gorm.Model
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<p>这样这个gorm.Model相当于在user表里添加了一些基础的字段</p>
+<p>这个user最终会变成 相当于</p>
+<pre><code class="go">type User struct &#123;
+  ID        uint           `gorm:&quot;primaryKey&quot;`
+  CreatedAt time.Time
+  UpdatedAt time.Time
+  DeletedAt gorm.DeletedAt `gorm:&quot;index&quot;`
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<h4 id="嵌入结构体"><a href="#嵌入结构体" class="headerlink" title="嵌入结构体"></a>嵌入结构体</h4><p>如上的gorm.Model就是一种嵌入结构体</p>
+<p>官网的解释是：对于匿名字段，GORM 会将其字段包含在父结构体中</p>
+<p>其他嵌入方法为：</p>
+<p>对于正常的结构体字段，你也可以通过标签 embedded 将其嵌入，例如：</p>
+<pre><code class="go">type Author struct &#123;
+    Name  string
+    Email string
+&#125;
+
+type Blog struct &#123;
+  ID      int
+  Author  Author `gorm:&quot;embedded&quot;`
+  Upvotes int32
+&#125;
+</code></pre>
+<pre><code class="go">// 它等效于
+type Blog struct &#123;
+  ID    int64
+  Name  string
+  Email string
+  Upvotes  int32
+&#125;
+</code></pre>
+<blockquote>
+<p>可以使用标签 embeddedPrefix 来为 db 中的字段名添加前缀<br>Author  Author &#96;gorm:”embedded;embeddedPrefix:author_”</p>
+</blockquote>
+<h4 id="字段标签"><a href="#字段标签" class="headerlink" title="字段标签"></a>字段标签</h4><p>声明 model 时，tag 是可选的，gorm 支持以下这些 tag： tag 名大小写不敏感，但我们写的时候最好用驼峰命名法。</p>
+<p>写法为 在字段后面添加飘号和gorm:</p>
+<p>例如</p>
+<pre>
+ID        uint           `gorm:"primaryKey"`
+</pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">标签名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">column</td>
+<td align="left">指定 database 的列名</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">列数据类型，推荐使用兼容性好的通用类型，例如：所有数据库都支持 bool、int、uint、float、string、time、bytes 并且可以和其他标签一起使用，例如：<code>not null</code>、<code>size</code>, <code>autoIncrement</code>… 像 <code>varbinary(8)</code> 这样指定数据库数据类型也是支持的。在使用指定数据库数据类型时，它需要是完整的数据库数据类型，如：<code>MEDIUMINT UNSIGNED not NULL AUTO_INCREMENT</code></td>
+</tr>
+<tr>
+<td align="left">serializer</td>
+<td align="left">指定将数据序列化或反序列化到数据库中的序列化器, 例如: <code>serializer:json/gob/unixtime</code></td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">定义列数据类型的大小或长度，例如 <code>size: 256</code></td>
+</tr>
+<tr>
+<td align="left">primaryKey</td>
+<td align="left">将列定义为主键</td>
+</tr>
+<tr>
+<td align="left">unique</td>
+<td align="left">将列定义为唯一键</td>
+</tr>
+<tr>
+<td align="left">default</td>
+<td align="left">定义列的默认值</td>
+</tr>
+<tr>
+<td align="left">precision</td>
+<td align="left">指定列的精度</td>
+</tr>
+<tr>
+<td align="left">scale</td>
+<td align="left">指定列大小</td>
+</tr>
+<tr>
+<td align="left">not null</td>
+<td align="left">指定列为 NOT NULL</td>
+</tr>
+<tr>
+<td align="left">autoIncrement</td>
+<td align="left">指定列为自动增长</td>
+</tr>
+<tr>
+<td align="left">autoIncrementIncrement</td>
+<td align="left">自动步长，控制连续记录之间的间隔</td>
+</tr>
+<tr>
+<td align="left">embedded</td>
+<td align="left">嵌套字段</td>
+</tr>
+<tr>
+<td align="left">embeddedPrefix</td>
+<td align="left">嵌入字段的列名前缀</td>
+</tr>
+<tr>
+<td align="left">autoCreateTime</td>
+<td align="left">创建时追踪当前时间，对于 <code>int</code> 字段，它会追踪时间戳秒数，您可以使用 <code>nano</code>&#x2F;<code>milli</code> 来追踪纳秒、毫秒时间戳，例如：<code>autoCreateTime:nano</code></td>
+</tr>
+<tr>
+<td align="left">autoUpdateTime</td>
+<td align="left">创建&#x2F;更新时追踪当前时间，对于 <code>int</code> 字段，它会追踪时间戳秒数，您可以使用 <code>nano</code>&#x2F;<code>milli</code> 来追踪纳秒、毫秒时间戳，例如：<code>autoUpdateTime:milli</code></td>
+</tr>
+<tr>
+<td align="left">index</td>
+<td align="left">根据参数创建索引，多个字段使用相同的名称则创建复合索引，查看 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/indexes.html">索引</a> 获取详情</td>
+</tr>
+<tr>
+<td align="left">uniqueIndex</td>
+<td align="left">与 <code>index</code> 相同，但创建的是唯一索引</td>
+</tr>
+<tr>
+<td align="left">check</td>
+<td align="left">创建检查约束，例如 <code>check:age &gt; 13</code>，查看 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/constraints.html">约束</a> 获取详情</td>
+</tr>
+<tr>
+<td align="left">&lt;-</td>
+<td align="left">设置字段写入的权限， <code>&lt;-:create</code> 只创建、<code>&lt;-:update</code> 只更新、<code>&lt;-:false</code> 无写入权限、<code>&lt;-</code> 创建和更新权限</td>
+</tr>
+<tr>
+<td align="left">-&gt;</td>
+<td align="left">设置字段读的权限，<code>-&gt;:false</code> 无读权限</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">忽略该字段，<code>-</code> 表示无读写，<code>-:migration</code> 表示无迁移权限，<code>-:all</code> 表示无读写迁移权限</td>
+</tr>
+<tr>
+<td align="left">comment</td>
+<td align="left">迁移时为字段添加注释</td>
+</tr>
+</tbody></table>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>官方提供的代码</p>
+<pre><code class="go">import (
+  &quot;gorm.io/driver/mysql&quot;
+  &quot;gorm.io/gorm&quot;
+)
+
+func main() &#123;
+  // 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情
+  dsn := &quot;user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;
+  db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)
+&#125;
+</code></pre>
+<p>这里我提供一种封装方案，因为一般数据库配置写在配置文件里，防止泄露与主代码分离‘</p>
+<pre><code class="go">
+import (
+    &quot;fmt&quot;
+    &quot;gorm.io/driver/mysql&quot;
+    &quot;gorm.io/gorm&quot;
+    &quot;gorm.io/gorm/schema&quot;
+)
+
+type Config struct &#123;
+    // 数据库配置
+    DBList DBListConf
+&#125;
+
+type DBListConf struct &#123;
+    Mysql MysqlConf
+&#125;
+
+type MysqlConf struct &#123;
+    Address     string
+    Username    string
+    Password    string
+    DBName      string
+    TablePrefix string
+&#125;
+
+type ServiceContext struct &#123;
+    Config Config
+    DBList *DBList
+&#125;
+
+type DBList struct &#123;
+    Mysql *gorm.DB
+&#125;
+
+func NewServiceContext(c Config) *ServiceContext &#123;
+    return &amp;ServiceContext&#123;
+        Config: c,
+        DBList: initDB(c),
+    &#125;
+&#125;
+
+func initDB(c Config) *DBList &#123;
+    dbList := new(DBList)
+    dbList.Mysql = initMysql(c)
+
+    return dbList
+&#125;
+
+func initMysql(c Config) *gorm.DB &#123;
+    dsn := fmt.Sprintf(&quot;%s:%s@tcp(%s)/%s?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;,
+        c.DBList.Mysql.Username,
+        c.DBList.Mysql.Password,
+        c.DBList.Mysql.Address,
+        c.DBList.Mysql.DBName,
+    )
+
+    db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;
+        NamingStrategy: schema.NamingStrategy&#123;
+            TablePrefix:   c.DBList.Mysql.TablePrefix, // 表名前缀
+            SingularTable: true,                       // 使用单数表名
+        &#125;,
+        DisableForeignKeyConstraintWhenMigrating: true,
+    &#125;)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+
+    // 自动建表
+    err = db.AutoMigrate(&amp;model.Video&#123;&#125;, &amp;model.Favorite&#123;&#125;, &amp;model.Comment&#123;&#125;)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+
+    return db
+&#125;
+
+func main() &#123;
+    // 创建配置实例
+    config := Config&#123;
+        DBList: DBListConf&#123;
+            Mysql: MysqlConf&#123;
+                Address:     &quot;Address&quot;,
+                Username:    &quot;root&quot;,
+                Password:    &quot;1111111111111&quot;,
+                DBName:      &quot;dbname&quot;,
+                TablePrefix: &quot;Prefix&quot;,
+            &#125;,
+        &#125;,
+    &#125;
+
+    // 创建服务上下文
+    serviceContext := NewServiceContext(config)
+    
+    // 在这里你可以使用 serviceContext 进行操作
+    // ...
+
+    fmt.Println(&quot;Database initialization and configuration completed.&quot;)
+&#125;
+
+</code></pre>
+<p>这里出现了自动建表的操作AutoMigrate 你需要把你想要创建的模型传进来自动建表</p>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><h3 id="1-C"><a href="#1-C" class="headerlink" title="1. C"></a>1. C</h3><p>接下来开始 crud,</p>
+<p>假如你有一个user表，可以使用create创建多个数据</p>
+<pre><code class="go">users := []*User&#123;
+    User&#123;Name: &quot;Jinzhu&quot;, Age: 18, Birthday: time.Now()&#125;,
+    User&#123;Name: &quot;Jackson&quot;, Age: 19, Birthday: time.Now()&#125;,
+&#125;
+
+result := db.Create(users) // pass a slice to insert multiple row
+
+result.Error        // returns error
+result.RowsAffected // returns inserted records count
+</code></pre>
+<p>Error相信你会接</p>
+<pre><code class="go">if result.Error != nil &#123;
+    return exit
+&#125;
+</code></pre>
+<p>或者可以直接在create里</p>
+<pre><code class="go">err := db.create().Error
+if err != nil &#123;
+    return exit
+&#125;
+</code></pre>
+<h3 id="2-R"><a href="#2-R" class="headerlink" title="2.R"></a>2.R</h3><p>根据主键检索</p>
+<pre><code class="go">
+db.First(&amp;user, 10)
+// SELECT * FROM users WHERE id = 10;
+
+db.First(&amp;user, &quot;10&quot;)
+// SELECT * FROM users WHERE id = 10;
+
+db.Find(&amp;users, []int&#123;1,2,3&#125;)
+// SELECT * FROM users WHERE id IN (1,2,3);
+</code></pre>
+<p>这里的first为检索第一个 limit为1</p>
+<p>检索全部对象</p>
+<pre><code class="go">// Get all records
+result := db.Find(&amp;users)
+// SELECT * FROM users;
+
+result.RowsAffected // returns found records count, equals `len(users)`
+result.Error        // returns error
+</code></pre>
+<p>条件检索</p>
+<p>这样相当于拼sql语句</p>
+<pre><code class="go">// Get first matched record
+db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).First(&amp;user)
+// SELECT * FROM users WHERE name = &#39;jinzhu&#39; ORDER BY id LIMIT 1;
+
+// Get all matched records
+db.Where(&quot;name &lt;&gt; ?&quot;, &quot;jinzhu&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name &lt;&gt; &#39;jinzhu&#39;;
+
+// IN
+db.Where(&quot;name IN ?&quot;, []string&#123;&quot;jinzhu&quot;, &quot;jinzhu 2&quot;&#125;).Find(&amp;users)
+// SELECT * FROM users WHERE name IN (&#39;jinzhu&#39;,&#39;jinzhu 2&#39;);
+
+// LIKE
+db.Where(&quot;name LIKE ?&quot;, &quot;%jin%&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name LIKE &#39;%jin%&#39;;
+
+// AND
+db.Where(&quot;name = ? AND age &gt;= ?&quot;, &quot;jinzhu&quot;, &quot;22&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name = &#39;jinzhu&#39; AND age &gt;= 22;
+
+// Time
+db.Where(&quot;updated_at &gt; ?&quot;, lastWeek).Find(&amp;users)
+// SELECT * FROM users WHERE updated_at &gt; &#39;2000-01-01 00:00:00&#39;;
+
+// BETWEEN
+db.Where(&quot;created_at BETWEEN ? AND ?&quot;, lastWeek, today).Find(&amp;users)
+// SELECT * FROM users WHERE created_at BETWEEN &#39;2000-01-01 00:00:00&#39; AND &#39;2000-01-08 00:00:00&#39;;
+</code></pre>
+<p>高级查询 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/advanced_query.html">https://gorm.io/zh_CN/docs/advanced_query.html</a></p>
+<h3 id="3-U"><a href="#3-U" class="headerlink" title="3.U"></a>3.U</h3><p>更新 所有字段</p>
+<pre><code class="go">db.Save(&amp;User&#123;Name: &quot;jinzhu&quot;, Age: 100&#125;)
+// INSERT INTO `users` (`name`,`age`,`birthday`,`update_at`) VALUES (&quot;jinzhu&quot;,100,&quot;0000-00-00 00:00:00&quot;,&quot;0000-00-00 00:00:00&quot;)
+
+db.Save(&amp;User&#123;ID: 1, Name: &quot;jinzhu&quot;, Age: 100&#125;)
+// UPDATE `users` SET `name`=&quot;jinzhu&quot;,`age`=100,`birthday`=&quot;0000-00-00 00:00:00&quot;,`update_at`=&quot;0000-00-00 00:00:00&quot; WHERE `id` = 1
+</code></pre>
+<p>更多更新方法 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/update.html">https://gorm.io/zh_CN/docs/update.html</a></p>
+<h3 id="4-D"><a href="#4-D" class="headerlink" title="4.D"></a>4.D</h3><p>删除一条记录 </p>
+<pre><code class="go">// Email 的 ID 是 `10`
+db.Delete(&amp;email)
+// DELETE from emails where id = 10;
+
+// 带额外条件的删除
+db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).Delete(&amp;email)
+// DELETE from emails where id = 10 AND name = &quot;jinzhu&quot;;
+</code></pre>
+<p>更多删除方法 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/delete.html">https://gorm.io/zh_CN/docs/delete.html</a></p>
+<p>其中的软删除感觉很有用</p>
+<blockquote>
+<p>当调用Delete时，GORM并不会从数据库中删除该记录，而是将该记录的DeleteAt设置为当前时间，而后的一般查询方法将无法查找到此条记录。</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>gorm是个很好用的go的orm框架，对很多数据库都兼容</p>
+<p>性能也很好，操作起来也很简单。</p>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xyxsw<br>
+    
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/08/23/gorm%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;08&#x2F;23&#x2F;gorm%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;08&#x2F;23&#x2F;gorm%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" rel="tag">青训营笔记</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div id="gitment"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: '', // 你的 GitHub ID
+    repo: '', // 存储评论的 repo
+    oauth: {
+        client_id: '', // 你的 client ID
+        client_secret: '' // 你的 client secret
+    },
+})
+gitment.render('gitment')
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "220",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1695140390161"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/16ad17e2.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "16ad17e2"
+  });
+  daovoice('update');
+</script>
+

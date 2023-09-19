@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1690467207942">
+  <link rel="stylesheet" href="/css/style.css?v=1695140390227">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -62,8 +62,8 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>27 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
-        <div class="nexmoe-count-item"><span>标签</span>2<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -134,7 +134,7 @@
   
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
+      <a href="/tags/DN11/" style="font-size: 10px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
     </div>
     
   </div>
@@ -144,7 +144,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +181,1123 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/30/go-zero%20api%E6%96%87%E4%BB%B6%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="go-zero api文件生成项目框架 ｜ 青训营笔记" class="lazyload">
+                    <h1>go-zero api文件生成项目框架 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月30日</a>
+            <a><i class="nexmoefont icon-areachart"></i>809 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="go-zero-api文件生成项目框架"><a href="#go-zero-api文件生成项目框架" class="headerlink" title="go-zero api文件生成项目框架"></a>go-zero api文件生成项目框架</h2><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>.api文件是go-zero自创的文件格式，和protobuf的语法有很大不同，但好在不难理解。具体语法介绍可看官网文档：<a href="https://link.juejin.cn/?target=https://go-zero.dev/docs/tasks/dsl/api">go-zero.dev&#x2F;docs&#x2F;tasks&#x2F;…</a></p>
+<p>先编写接口定义，然后直接一次性使用 goctl 生成代码。</p>
+<p>api文件支持将一个数据结构嵌入另一个结构中，便于编写统一的响应格式。</p>
+<p>首先定义空请求结构和基础的响应结构：</p>
+<pre><code class="api">syntax = &quot;v1&quot;  
+  
+type Empty &#123;  
+&#125;  
+  
+type BasicResponse &#123;  
+    StatusCode int32 `json:&quot;status_code&quot;`  
+    StatusMsg string `json:&quot;status_msg&quot;`  
+&#125;
+</code></pre>
+<p>type关键字也支持代码块，只需要用<code>type()</code>包裹，就可以省去关键词。下面定义了注册和登录的请求和响应结构。</p>
+<pre><code class="go">type (  
+    RegisterRequest struct &#123;  
+        Username string `form:&quot;username&quot;`  
+        Password string `form:&quot;password&quot;`  
+    &#125;  
+
+    RegisterResponse struct &#123;  
+        BasicResponse  
+        UserId int64 `json:&quot;user_id&quot;`   
+    &#125;  
+)  
+  
+type (  
+    LoginRequest struct &#123;  
+        Username string `form:&quot;username&quot;`  
+        Password string `form:&quot;password&quot;`  
+    &#125;  
+
+    LoginResponse struct &#123;  
+        BasicResponse  
+        UserId int64 `json:&quot;user_id&quot;`  
+    &#125;  
+)
+</code></pre>
+<p>最后还要定义一个获取用户信息的接口。因为本文不涉及创作、社交方面的业务逻辑实现，所以<code>User</code>结构其实没什么可以返回的信息。之后将其嵌入响应类型的<code>user</code>字段中：</p>
+<pre><code class="go">type (  
+    User &#123;  
+        Id int64 `json:&quot;id&quot;`  
+        Name string `json:&quot;name&quot;`  
+    &#125;  
+    
+    GetUserInfoRequest struct &#123;  
+        UserId int64 `form:&quot;user_id&quot;`   
+    &#125;  
+
+    GetUserInfoResponse struct &#123;  
+        BasicResponse  
+        User User `json:&quot;user&quot;`  
+    &#125;  
+)
+</code></pre>
+<h2 id="定义接口路由"><a href="#定义接口路由" class="headerlink" title="定义接口路由"></a>定义接口路由</h2><p>把所有api路由配置好</p>
+<pre><code class="api">@server(  
+    group: app  
+)  
+service app &#123;  
+    @handler Ping  
+    get /ping (Empty) returns (BasicResponse)  
+&#125;  
+  
+@server(  
+    group: user  
+    prefix: /douyin/user  
+)  
+service app &#123;  
+    @handler Register  
+    post /register (RegisterRequest) returns (RegisterResponse)  
+  
+    @handler Login  
+    post /login (LoginRequest) returns (LoginResponse)  
+  
+    @handler GetUserInfo  
+    get / (GetUserInfoRequest) returns (GetUserInfoResponse)  
+&#125;
+</code></pre>
+<p>以下几点需要注意：</p>
+<ol>
+<li>如果service代码块有多个，要求后面的名称（即“app”）相同</li>
+<li>形如装饰器的@server代码块可以做代码分组、路由前缀、鉴权、中间件等多种配置。<ul>
+<li>这里把路由分成app和user两组，之后生成时会分组放在文件夹里</li>
+<li>给user组设置了<code>/douyin/user</code>的路由器前缀，就不用重复写了</li>
+<li>鉴权和中间件配置下文会提到</li>
+</ul>
+</li>
+<li>每个接口需要一个<code>handler</code>，其实就是给函数起名</li>
+<li>接口定义的格式是 <code>&lt;HTTP方法&gt; &lt;子路径&gt; (&lt;请求数据结构&gt;) returns (&lt;响应数据结构&gt;) </code></li>
+</ol>
+<h2 id="创建项目模板"><a href="#创建项目模板" class="headerlink" title="创建项目模板"></a>创建项目模板</h2><p>这次不是新建示例项目，而是根据现有的api声明创建</p>
+<p>安装 goctl</p>
+<p><a target="_blank" rel="noopener" href="https://go-zero.dev/docs/tasks/installation/goctl">https://go-zero.dev/docs/tasks/installation/goctl</a></p>
+<pre><code class="bash">$ GO111MODULE=on go install github.com/zeromicro/go-zero/tools/goctl@latest
+</code></pre>
+<p>安装 protoc</p>
+<p><a target="_blank" rel="noopener" href="https://go-zero.dev/docs/tasks/installation/protoc">https://go-zero.dev/docs/tasks/installation/protoc</a></p>
+<pre><code class="bash">$ goctl env check --install --verbose --force
+</code></pre>
+<pre><code class="shell">goctl api go --api app.api --dir=. --style=goZero 
+</code></pre>
+<p>这会在当前目录生成项目文件。之后进入目录安装依赖：</p>
+<pre><code class="shell">go mod tidy
+</code></pre>
+<h2 id="测试Ping接口"><a href="#测试Ping接口" class="headerlink" title="测试Ping接口"></a>测试Ping接口</h2><p>Ping接口的逻辑在<code>internal/logic/app/pingLogic.go</code>，打开文件并编辑handler函数：</p>
+<pre><code class="go">func (l *PingLogic) Ping(req *types.Empty) (resp *types.BasicResponse, err error) &#123;  
+    return &amp;types.BasicResponse&#123;
+        StatusCode: 0,
+        StatusMsg:  &quot;pong&quot;,
+    &#125;, nil
+&#125;
+</code></pre>
+<p>这里的写法和rpc微服务有点区别。注意到传入的<code>resp</code>是一个指针，所以需要<strong>手动创建</strong>一个响应结构体并设置键值。</p>
+<p>这样就算完成Ping接口了，可以运行服务。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/30/gorm%E8%BF%9B%E9%98%B6%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="gorm 进阶 ｜ 青训营笔记" class="lazyload">
+                    <h1>gorm 进阶 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月30日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="gorm"><a href="#gorm" class="headerlink" title="gorm"></a>gorm</h2><p>关于简单的 gorm 总结 可以看上一篇文章  gorm 初体验 ｜ 青训营笔记</p>
+<h3 id="软删除"><a href="#软删除" class="headerlink" title="软删除"></a>软删除</h3><p><code>Gorm</code>提供了软删除的能力，需要在结构体中定义一个<code>Deleted</code>字段，此时再调用<code>Delete</code>删除函数，则会生成<code>update</code>语句，并将<code>deleted</code>字段赋值为当前删除时间。</p>
+<pre><code class="go">type Product struct &#123;
+    ID      uint
+    Code    string
+    Price   uint
+    Deleted gorm.DeletedAt
+&#125;
+</code></pre>
+<p>再次执行删除操作：</p>
+<pre><code class="go">go
+db.Delete(&amp;Product&#123;&#125;, 1)
+</code></pre>
+<p>生成的<code>sql</code>为：</p>
+<pre><code class="sql">UPDATE `product` SET `deleted`=&#39;2023-01-30 22:22:22.202&#39; WHERE `product`.`id` = 1 AND `product`.`deleted` IS NULL
+</code></pre>
+<p>查询被软删除的操作，要使用<code>Unscoped</code>函数：</p>
+<pre><code class="go">db.Unscoped().First(&amp;product, 2)
+</code></pre>
+<p>有了<code>DeleteAt</code>字段后，删除操作已经变成了更新操作，那么想要物理删除怎么办？也是使用<code>Unscoped</code>函数：</p>
+<pre><code class="go">db.Unscoped().Delete(&amp;Product&#123;&#125;, 1)
+</code></pre>
+<h2 id="Gorm事务"><a href="#Gorm事务" class="headerlink" title="Gorm事务"></a>Gorm事务</h2><p><code>Gorm</code>提供了<code>Begin</code>、<code>Commit</code>、<code>Rollback</code>方法用于使用事务。</p>
+<pre><code class="go">// 开启事务
+tx := db.Begin()
+if err := tx.Create(&amp;Product&#123;Code: &quot;D32&quot;, Price: 100&#125;).Error; err != nil &#123;
+    // 出现错误回滚
+    tx.Rollback()
+    return
+&#125;
+if err := tx.Create(&amp;Product&#123;Code: &quot;D33&quot;, Price: 100&#125;).Error; err != nil &#123;
+    // 出现错误回滚
+    tx.Rollback()
+    return
+&#125;
+// 提交事务
+tx.Commit()
+</code></pre>
+<p>在开启事务后，调用增删改操作是应该使用开启事务返回的<code>tx</code>而不是<code>db</code>。</p>
+<p><code>Gorm</code>还提供了<code>Transaction</code>函数用于自定提交事务，避免用户漏写<code>Commit</code>、<code>Rollback</code>。</p>
+<pre><code class="go">if err = db.Transaction(func(tx *gorm.DB) error &#123;
+    if err := db.Create(&amp;Product&#123;Code: &quot;D55&quot;, Price: 100&#125;).Error; err != nil &#123;
+        return err
+    &#125;
+    if err := db.Create(&amp;Product&#123;Code: &quot;D56&quot;, Price: 100&#125;).Error; err != nil &#123;
+        return err
+    &#125;
+    return nil
+&#125;); err != nil &#123;
+    return
+&#125;
+</code></pre>
+<p>这种写法，当出现错误时会自动进行<code>Rollback</code>，当正常执行时会自动<code>Commit</code>。</p>
+<h3 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h3><p>当我们想在执行增删改查操作前后做一些额外的操作时，可以使用<code>Gorm</code>提供的<code>Hook</code>能力。</p>
+<p><code>Hook</code>是在创建、查询、更新、删除等操作之前、之后自动调用的函数，如果任何<code>Hook</code>返回错误，<code>Gorm</code>将停止后续的操作并回滚事务。</p>
+<p><code>Hook</code>会开启默认事务，所以会带来了一些性能损失。</p>
+<h3 id="性能提高"><a href="#性能提高" class="headerlink" title="性能提高"></a>性能提高</h3><p>对于写操作（创建、更新、删除），为了确保数据的完整性，<code>Gorm</code>会将他们封装在事务内运行，但是这样会降低性能，可以使用<code>SkipDefaultTransaction</code>关闭默认事务。</p>
+<p>使用<code>PrepareStmt</code>缓存预编译语句可以提高后续调用的速度。</p>
+<pre><code class="go">db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  SkipDefaultTransaction: true,
+  PrepareStmt: true,
+&#125;)
+</code></pre>
+<h2 id="Gorm生态"><a href="#Gorm生态" class="headerlink" title="Gorm生态"></a>Gorm生态</h2><p>Gorm拥有非常丰富的扩展生态，下面列举一些常用的扩展。</p>
+<ul>
+<li>代码生成工具:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/gen">github.com&#x2F;go-gorm&#x2F;gen</a></li>
+<li>分片分库方案:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/sharding">github.com&#x2F;go-gorm&#x2F;sha…</a></li>
+<li>手动索引:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/hints">github.com&#x2F;go-gorm&#x2F;hin…</a></li>
+<li>乐观锁:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/optimisticlock">github.com&#x2F;go-gorm&#x2F;opt…</a></li>
+<li>读写分离:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/dbresolver">github.com&#x2F;go-gorm&#x2F;dbr…</a></li>
+<li>OpenTelemetry扩展:<a href="https://link.juejin.cn/?target=https://github.com/go-gorm/opentelemetry">github.com&#x2F;go-gorm&#x2F;ope…</a></li>
+</ul>
+<h2 id="GORM-配置"><a href="#GORM-配置" class="headerlink" title="GORM 配置"></a>GORM 配置</h2><p>GORM 提供的配置可以在初始化时使用</p>
+<pre><code class="go">type Config struct &#123;
+  SkipDefaultTransaction   bool
+  NamingStrategy           schema.Namer
+  Logger                   logger.Interface
+  NowFunc                  func() time.Time
+  DryRun                   bool
+  PrepareStmt              bool
+  DisableNestedTransaction bool
+  AllowGlobalUpdate        bool
+  DisableAutomaticPing     bool
+  DisableForeignKeyConstraintWhenMigrating bool
+&#125;
+</code></pre>
+<h3 id="跳过默认事务"><a href="#跳过默认事务" class="headerlink" title="跳过默认事务"></a>跳过默认事务</h3><p>为了确保数据一致性，GORM 会在事务里执行写入操作（创建、更新、删除）。如果没有这方面的要求，您可以在初始化时禁用它。</p>
+<pre><code class="go">db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  SkipDefaultTransaction: true,
+&#125;)
+</code></pre>
+<h3 id="命名策略"><a href="#命名策略" class="headerlink" title="命名策略"></a>命名策略</h3><p>GORM 允许用户通过覆盖默认的<code>NamingStrategy</code>来更改命名约定，这需要实现接口 <code>Namer</code></p>
+<pre><code class="go">type Namer interface &#123;
+    TableName(table string) string
+    SchemaName(table string) string
+    ColumnName(table, column string) string
+    JoinTableName(table string) string
+    RelationshipFKName(Relationship) string
+    CheckerName(table, column string) string
+    IndexName(table, column string) string
+&#125;
+</code></pre>
+<p>默认 <code>NamingStrategy</code> 也提供了几个选项，如：</p>
+<pre><code class="go">db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  NamingStrategy: schema.NamingStrategy&#123;
+    TablePrefix: &quot;t_&quot;,   // table name prefix, table for `User` would be `t_users`
+    SingularTable: true, // use singular table name, table for `User` would be `user` with this option enabled
+    NoLowerCase: true, // skip the snake_casing of names
+    NameReplacer: strings.NewReplacer(&quot;CID&quot;, &quot;Cid&quot;), // use name replacer to change struct/field name before convert it to db name
+  &#125;,
+&#125;)
+</code></pre>
+<h3 id="NowFunc"><a href="#NowFunc" class="headerlink" title="NowFunc"></a>NowFunc</h3><p>更改创建时间使用的函数</p>
+<pre><code>db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  NowFunc: func() time.Time &#123;
+    return time.Now().Local()
+  &#125;,
+&#125;)
+</code></pre>
+<h3 id="DryRun"><a href="#DryRun" class="headerlink" title="DryRun"></a>DryRun</h3><p>生成 <code>SQL</code> 但不执行，可以用于准备或测试生成的 SQL</p>
+<pre><code>db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  DryRun: false,
+&#125;)
+</code></pre>
+<h3 id="PrepareStmt"><a href="#PrepareStmt" class="headerlink" title="PrepareStmt"></a>PrepareStmt</h3><p><code>PreparedStmt</code> 在执行任何 SQL 时都会创建一个 prepared statement 并将其缓存，以提高后续的效率</p>
+<pre><code>db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  PrepareStmt: false,
+&#125;)
+</code></pre>
+<h3 id="禁用嵌套事务"><a href="#禁用嵌套事务" class="headerlink" title="禁用嵌套事务"></a>禁用嵌套事务</h3><p>在一个事务中使用 <code>Transaction</code> 方法，GORM 会使用 <code>SavePoint(savedPointName)</code>，<code>RollbackTo(savedPointName)</code> 为你提供嵌套事务支持，你可以通过 <code>DisableNestedTransaction</code> 选项关闭它</p>
+<h3 id="DisableAutomaticPing"><a href="#DisableAutomaticPing" class="headerlink" title="DisableAutomaticPing"></a>DisableAutomaticPing</h3><p>在完成初始化后，GORM 会自动 ping 数据库以检查数据库的可用性，若要禁用该特性，可将其设置为 <code>true</code></p>
+<pre><code>db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  DisableAutomaticPing: true,
+&#125;)
+</code></pre>
+<h3 id="DisableForeignKeyConstraintWhenMigrating"><a href="#DisableForeignKeyConstraintWhenMigrating" class="headerlink" title="DisableForeignKeyConstraintWhenMigrating"></a>DisableForeignKeyConstraintWhenMigrating</h3><p>在 <code>AutoMigrate</code> 或 <code>CreateTable</code> 时，GORM 会自动创建外键约束，若要禁用该特性，可将其设置为 <code>true</code></p>
+<pre><code>db, err := gorm.Open(sqlite.Open(&quot;gorm.db&quot;), &amp;gorm.Config&#123;
+  DisableForeignKeyConstraintWhenMigrating: true,
+&#125;)
+</code></pre>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/28/go%E5%AD%97%E8%8A%82%E4%B8%89%E4%BB%B6%E5%A5%97%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="go字节三件套 ｜ 青训营笔记" class="lazyload">
+                    <h1>go字节三件套 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月28日</a>
+            <a><i class="nexmoefont icon-areachart"></i>671 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="Gorm、Kitex、Hertz：三件套介绍与基本用法"><a href="#Gorm、Kitex、Hertz：三件套介绍与基本用法" class="headerlink" title="Gorm、Kitex、Hertz：三件套介绍与基本用法"></a>Gorm、Kitex、Hertz：三件套介绍与基本用法</h2><h3 id="Gorm"><a href="#Gorm" class="headerlink" title="Gorm"></a>Gorm</h3><p>Gorm是Golang中广受欢迎的ORM（对象关系映射）框架，已经发展数十年，具有强大的功能和出色的性能。</p>
+<p>ORM框架用于将面向对象的概念与数据库中的表相对应，简化数据操作过程。在Golang中，自定义的结构体与数据库表一一对应，结构体的实例对应表中的一条记录。</p>
+<p>基本用法</p>
+<p>定义结构体：在Gorm中，定义结构体来映射数据库表。</p>
+<pre><code class="go">type User struct &#123;
+  ID    uint   `gorm:&quot;primary_key&quot;`
+  Name  string `gorm:&quot;type:varchar(100)&quot;`
+  Email string `gorm:&quot;type:varchar(100);uniqueIndex&quot;`
+&#125;
+</code></pre>
+<p>增加数据：使用Create方法来新增数据条目。</p>
+<pre><code class="go">db.Create(&amp;User&#123;Name: &quot;John&quot;, Email: &quot;john@example.com&quot;&#125;)
+</code></pre>
+<p>查询数据：使用Find进行数据查找，可以通过Where和Or条件构建查询条件。</p>
+<pre><code class="go">var user User
+db.Where(&quot;name = ?&quot;, &quot;John&quot;).First(&amp;user)
+</code></pre>
+<p>更新数据：使用Update进行数据更新，可以使用Model结合Update或Updates方法来更新列。</p>
+<pre><code class="go">db.Model(&amp;user).Update(&quot;Name&quot;, &quot;John Updated&quot;)
+</code></pre>
+<p>删除数据：使用Delete进行数据删除操作，根据是否包含gorm.deletedat字段执行物理或逻辑删除。</p>
+<pre><code class="go">db.Delete(&amp;user)
+</code></pre>
+<h3 id="Kitex"><a href="#Kitex" class="headerlink" title="Kitex"></a>Kitex</h3><p><a target="_blank" rel="noopener" href="https://www.cloudwego.io/zh/docs/kitex/overview/">https://www.cloudwego.io/zh/docs/kitex/overview/</a></p>
+<p>Kitex是字节开发的高性能Golang微服务RPC框架，具备出色的可扩展性和高性能。<br>服务端</p>
+<pre><code class="go">func main() &#123;
+  srv := kitex.NewServer(new(YourServiceImpl), 
+                          kitex.WithServiceAddr(&quot;:8888&quot;))
+  srv.Run()
+&#125;
+</code></pre>
+<p>客户端</p>
+<pre><code class="go">func main() &#123;
+  client := NewYourServiceClient(&quot;127.0.0.1:8888&quot;, kitex.WithTransportProtocol(protocol.TRPC))
+  // 调用RPC方法
+&#125;
+</code></pre>
+<p>高性能：Kitex具有优异的性能表现，适用于高负载的微服务场景。<br>可扩展：支持多协议，并且有丰富的开源扩展库，可以满足各种需求。</p>
+<h3 id="Hertz"><a href="#Hertz" class="headerlink" title="Hertz"></a>Hertz</h3><p><a target="_blank" rel="noopener" href="https://www.cloudwego.io/zh/docs/hertz/overview/">https://www.cloudwego.io/zh/docs/hertz/overview/</a></p>
+<p>Hertz是字节开发的HTTP框架，结合了其他开源框架的优点，同时满足字节跳动内部的需求，具有高可用性、高性能和高扩展性。</p>
+<pre><code class="go">package main
+
+import (
+    &quot;context&quot;
+
+    &quot;github.com/cloudwego/hertz/pkg/app&quot;
+    &quot;github.com/cloudwego/hertz/pkg/app/server&quot;
+    &quot;github.com/cloudwego/hertz/pkg/common/utils&quot;
+    &quot;github.com/cloudwego/hertz/pkg/protocol/consts&quot;
+)
+
+func main() &#123;
+    h := server.Default()
+
+    h.GET(&quot;/ping&quot;, func(c context.Context, ctx *app.RequestContext) &#123;
+            ctx.JSON(consts.StatusOK, utils.H&#123;&quot;message&quot;: &quot;pong&quot;&#125;)
+    &#125;)
+
+    h.Spin()
+&#125;
+</code></pre>
+<p>高可用性：Hertz框架被设计为具有高度的稳定性和可用性，适用于大规模的应用场景。<br>高性能：框架在性能方面表现出色，适合处理高并发请求。<br>高扩展性：Hertz框架允许根据业务需求进行定制和扩展，以满足复杂应用的要求。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/26/%E7%BD%91%E7%AB%99%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="网站安全漏洞 ｜ 青训营笔记" class="lazyload">
+                    <h1>网站安全漏洞 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月26日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="什么是漏洞"><a href="#什么是漏洞" class="headerlink" title="什么是漏洞"></a>什么是漏洞</h2><p>漏洞是指在网站或网络应用中存在的安全弱点，它们可能由于各种原因而产生，包括编码错误、配置不当或第三方组件的安全性不足。了解一个网站的基本构成是理解漏洞的第一步。网站通常由以下几个关键组成部分构成，而攻击者通常会尝试从这些部分找出弱点进行攻击：</p>
+<ul>
+<li><strong>前端</strong>：使用的技术可能包括HTML、CSS、JavaScript、Vue.js、React.js等。</li>
+<li><strong>网关</strong>：例如nginx或Apache，负责处理进出的网络流量。</li>
+<li><strong>后端</strong>：可能是用Go、Java、Node.js、Python等语言编写的。</li>
+<li><strong>前后端交互</strong>：通常通过HTTP或WebSocket进行。</li>
+</ul>
+<h2 id="常见的安全事件"><a href="#常见的安全事件" class="headerlink" title="常见的安全事件"></a>常见的安全事件</h2><p>由安全漏洞引发的攻击事件不仅可能导致数据泄露、服务瘫痪、成果失窃和系统劫持，还可能带来以下更为严重的后果：</p>
+<ul>
+<li><strong>法律责任</strong>：泄露用户数据可能导致法律诉讼和巨额罚款。</li>
+<li><strong>品牌声誉受损</strong>：一次严重的安全事件可能永久性地影响公司的声誉。</li>
+<li><strong>业务中断</strong>：服务中断可能导致用户流失和收入减少。</li>
+<li><strong>内外部信任度下降</strong>：员工和合作伙伴也可能因为安全事件而对企业失去信任。</li>
+</ul>
+<h2 id="网站攻击者的意图"><a href="#网站攻击者的意图" class="headerlink" title="网站攻击者的意图"></a>网站攻击者的意图</h2><p>确切地知道攻击者的意图可以帮助企业更有效地防御威胁。除了政治、经济和竞争等原因外，还有以下可能的攻击动机：</p>
+<ul>
+<li><strong>社会工程攻击</strong>：通过人为操作或欺骗，使内部人员泄露敏感信息。</li>
+<li><strong>黑帽SEO</strong>：通过各种手段来操纵搜索引擎排名。</li>
+<li><strong>资源占用</strong>：攻击者可能只是为了消耗目标网站的资源。</li>
+<li><strong>纯粹的破坏欲</strong>：有些攻击者可能只是出于破坏的乐趣。</li>
+</ul>
+<h3 id="红蓝对抗"><a href="#红蓝对抗" class="headerlink" title="红蓝对抗"></a>红蓝对抗</h3><p>红蓝对抗是一种模拟现实世界网络攻防场景的方法，通常用于评估和提升组织的安全防护能力。在这一模式中，红军（Red Team）模拟攻击者，寻找系统的弱点和漏洞；蓝军（Blue Team）则扮演防御方，负责检测和阻止这些攻击。除此之外，还有所谓的“紫军”（Purple Team），负责协调红蓝两方，以确保双方都从对抗中获得最大的学习价值。</p>
+<h3 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h3><p>网站攻击通常可以分为两大类：针对客户端的攻击和针对服务端的攻击。</p>
+<ul>
+<li><strong>针对客户端的攻击</strong>：这类攻击直接影响网站的终端用户，例如通过XSS（跨站脚本）或CSRF（跨站请求伪造）等方式。</li>
+<li><strong>针对服务端的攻击</strong>：这类攻击目标是网站后端的服务器或数据库，例如通过SQL注入或命令执行等方式。 每一种攻击都有其自己的防护机制和修补方案，因此对这些攻击手段有深入的了解是非常重要的。</li>
+</ul>
+<h3 id="服务端漏洞"><a href="#服务端漏洞" class="headerlink" title="服务端漏洞"></a>服务端漏洞</h3><p>服务端漏洞通常比客户端漏洞更为严重，因为它们直接影响到整个系统的安全性。其中，第三方组件漏洞是一个常见但经常被忽视的问题。例如，一些流行的开源库或框架可能存在已知的安全问题，如果开发人员没有及时更新这些组件，就可能导致整个系统的安全性受到威胁。</p>
+<h3 id="SQL注入漏洞"><a href="#SQL注入漏洞" class="headerlink" title="SQL注入漏洞"></a>SQL注入漏洞</h3><p>SQL注入是一种常见但危险的攻击手段，它出现在应用程序未能正确地处理用户输入的场合。更准确地说，攻击者通过输入特定的SQL代码片段，使得原SQL查询逻辑被改变，从而达到非法获取数据或执行特定操作的目的。防范SQL注入的基础是编码规范，包括但不限于使用预编译SQL语句、参数化查询，以及进行严格的输入验证。</p>
+<h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3><p>命令执行漏洞通常发生在应用需要与操作系统进行交互时。与SQL注入类似，这一漏洞也常常是由于不正确的输入处理引起的。攻击者可能会尝试插入恶意命令或参数，以此来控制或破坏目标系统。防护措施包括使用安全的API进行命令调用、对用户输入进行严格的验证和过滤，以及使用最小权限原则来限制应用程序对系统资源的访问。</p>
+<h3 id="越权漏洞"><a href="#越权漏洞" class="headerlink" title="越权漏洞"></a>越权漏洞</h3><p>越权漏洞是授权控制不当导致的一类安全问题，它们通常分为三类：</p>
+<ul>
+<li><strong>未授权</strong>：用户无需任何授权即可访问受限制的资源。</li>
+<li><strong>水平越权</strong>：用户访问同一权限级别但不属于自己的资源。</li>
+<li><strong>垂直越权</strong>：低权限用户访问高权限用户的资源。 越权问题的根本在于不恰当的权限控制和会话管理，因此相应的防护措施应从这两方面入手。</li>
+</ul>
+<h3 id="SSRF攻击"><a href="#SSRF攻击" class="headerlink" title="SSRF攻击"></a>SSRF攻击</h3><p>服务端请求伪造（SSRF）是一种利用目标服务器作为中间人来发起请求的攻击。这样做可能会暴露原本不可达的内部网络资源。SSRF通常利用的是应用程序或服务器配置中的不当输入验证或URL解析缺陷。防范措施包括限制从服务器发出的请求类型和目标，以及对所有外部输入进行严格的验证。</p>
+<h3 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h3><p>文件上传漏洞是一种常见的安全风险，尤其是在允许用户上传文件的应用中。如果没有适当的安全措施，攻击者可能会上传含有恶意代码的文件，这些文件一旦被执行，可能会导致严重的安全后果。因此，除了基本的文件类型检测和大小限制外，更高级的防护措施，如内容扫描和安全存储策略，也是非常必要的。</p>
+<h3 id="客户端漏洞"><a href="#客户端漏洞" class="headerlink" title="客户端漏洞"></a>客户端漏洞</h3><p>客户端漏洞主要影响网站的最终用户，而不是服务器或数据库。这些漏洞通常涉及到如何处理从客户端（通常是Web浏览器）发来的数据和请求。例如，开放重定向是一种常见的客户端漏洞，攻击者通过这种漏洞可以将用户重定向到恶意网站。修复这类问题通常需要在客户端和服务器端都进行适当的输入验证。</p>
+<h3 id="跨站脚本（XSS）攻击"><a href="#跨站脚本（XSS）攻击" class="headerlink" title="跨站脚本（XSS）攻击"></a>跨站脚本（XSS）攻击</h3><p>跨站脚本（XSS）是一种在目标网站上执行恶意脚本的攻击方式。它利用的是网站没有对用户提交的数据进行适当的过滤和转义。根据攻击的具体形式，XSS攻击可以进一步分为存储型、反射型和DOM型三类。每种类型的XSS攻击都有其独特的防御方法，如输入过滤、输出编码和内容安全策略（CSP）。</p>
+<h3 id="跨站请求伪造（CSRF）"><a href="#跨站请求伪造（CSRF）" class="headerlink" title="跨站请求伪造（CSRF）"></a>跨站请求伪造（CSRF）</h3><p>跨站请求伪造（CSRF）是一种攻击手法，攻击者通过某种方式诱导用户点击一个链接或按钮，从而在用户不知情的情况下，以该用户的身份执行非预期的操作。防御CSRF攻击的常见方法包括使用CSRF令牌、设置SameSite属性等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这篇文章中，我们列举了网站安全漏洞的多个方面，从基础概念到各种类型的安全漏洞，以及如何防范这些漏洞。重要的是，无论是服务端还是客户端，安全漏洞都可能存在，并且都需要得到妥善的处理。</p>
+<p>网站安全是一个涉及多个层面的复杂问题，需要开发者、运维人员、以及安全团队共同努力来维护。只有全方位、多层次的安全防护措施，才能有效地减少安全风险，保护网站和用户数据的安全。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/24/go%E6%9E%B6%E6%9E%84%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="go架构 ｜ 青训营笔记" class="lazyload">
+                    <h1>go架构 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月24日</a>
+            <a><i class="nexmoefont icon-areachart"></i>3.3k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="什么是架构"><a href="#什么是架构" class="headerlink" title="什么是架构"></a>什么是架构</h2><p>主要针对互联网服server系统（类似网站）来定义架构：架构是系统的骨架，支撑和链接各个部分，包括组件、连接件、约束规范，以及指导这些内容设计与演化的原理。</p>
+<ul>
+<li><p>组件：类似应用服务，独立模块、数据库、nginx等等、</p>
+</li>
+<li><p>连接件：分布式调用、进程间调用、调用使用http协议还是tcp协议、组件之间的交互关系、</p>
+</li>
+<li><p>约束规范： 定规则做限制：例如设计原则、编码规范等等。</p>
+</li>
+</ul>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>组件是架构的构建块，包括独立模块、数据库、Nginx等。</p>
+<p>例如，Go语言中可以定义一个组件，如一个HTTP服务器：</p>
+<pre><code class="go">package main
+
+import (
+    &quot;net/http&quot;
+)
+
+func main() &#123;
+    http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) &#123;
+        w.Write([]byte(&quot;Hello, World!&quot;))
+    &#125;)
+    http.ListenAndServe(&quot;:8080&quot;, nil)
+&#125;
+</code></pre>
+<h3 id="连接件"><a href="#连接件" class="headerlink" title="连接件"></a>连接件</h3><p>连接件处理组件之间的交互关系，例如分布式调用、进程间调用、使用的协议等。</p>
+<h3 id="约束规范"><a href="#约束规范" class="headerlink" title="约束规范"></a>约束规范</h3><p>约束规范定义了架构中的规则和限制，例如设计原则和编码规范。</p>
+<h2 id="几种典型架构"><a href="#几种典型架构" class="headerlink" title="几种典型架构"></a>几种典型架构</h2><h3 id="单机架构"><a href="#单机架构" class="headerlink" title="单机架构"></a>单机架构</h3><p>单机架构就是把所有功能都实现在一个进程中，并部署在一台机器上。</p>
+<p>单机架构的<strong>优点</strong>是非常简单，<strong>缺点</strong>是会遇到并发处理的难题，而且运维需要停服。</p>
+<p>当时计算机软硬件性能比较基础，这个问题引起人们对网络套接字优化和服务端调度的关注，这个词语也随着时代的发展逐渐变化，如<code>C10M</code>代表的是处理1000万个并发连接。现在的计算机已经有足够的性能和优秀的软件来支撑单机数百万连接了，然而并发问题仍然是后端架构设计中不能略过的关键问题。</p>
+<h3 id="单体架构"><a href="#单体架构" class="headerlink" title="单体架构"></a>单体架构</h3><p>单体架构是对单机架构的改进。既然单机处理能力有限，就可以采用分布式部署的模式设置多台单机，再设置一个分流环节，将请求转发给各个单体服务器来处理。</p>
+<p>单体架构的优点是可以实现水平扩容，处理能力不够时只需要简单添加新的单机即可；运维不需要停服，可以逐个对单机维护不影响其他单机的运行。单体架构下，每台机器的功能是一致的，因此它没有解决这两个缺点：</p>
+<ol>
+<li>职责太多，开发效率低：每台机器都要实现系统的完整功能，不能专注于某个功能的开发。</li>
+<li><strong>爆炸半径大</strong>： 爆炸半径是指爆炸可能造成损害的区域范围。在生产环境中指的就是部署的服务故障时可能影响的软件功能范围。单体架构下每一个单机下线，都会造成所有功能的处理承载量下降，因此爆炸半径覆盖了软件多数功能。</li>
+</ol>
+<h3 id="垂直应用架构"><a href="#垂直应用架构" class="headerlink" title="垂直应用架构"></a>垂直应用架构</h3><p>为了解决单体架构的问题，垂直应用架构提供了一种思路，将系统按照服务拆分任务，分配给不同的服务器，从而实现职责的简单划分，一定程度上提高开发和运维的效率。不过在实践中一个服务往往是大量功能点的集合，仍然存在功能琐碎的问题</p>
+<h2 id="更加高级的架构"><a href="#更加高级的架构" class="headerlink" title="更加高级的架构"></a>更加高级的架构</h2><h3 id="SOA、微服务架构"><a href="#SOA、微服务架构" class="headerlink" title="SOA、微服务架构"></a>SOA、微服务架构</h3><p>SOA（Service-Oriented Architecture）架构具有两个特性：</p>
+<ol>
+<li>将应用的不同功能单元抽象为服务，从而细分职责</li>
+<li>定义服务之间的通信标准，确保服务之间的数据流通</li>
+</ol>
+<p>微服务架构则是SOA架构去中心化的演进方向，旨在减少服务之间的沟通消耗，避免SOA服务内部集中沟通导致的过度中心化问题，他实现了水平切分，减少了跨级别调用链，让每个服务直接负责的上下级减少。</p>
+<p>这类架构在解决之前的弊端时，也会引入新的问题：</p>
+<ul>
+<li>数据一致性问题：不同服务如何确保数据同步</li>
+<li>高可用问题：服务之间如何进行可靠合作</li>
+<li>治理问题：一个服务出现问题时，要如何容灾</li>
+<li>解耦和过微问题：过度细分会导致运维成本提高，要如何权衡？</li>
+</ul>
+<h3 id="事件驱动架构"><a href="#事件驱动架构" class="headerlink" title="事件驱动架构"></a>事件驱动架构</h3><p>事件驱动架构（EDA）是一种异步架构，其中生产者生成事件，并由一个或多个消费者消费。这允许解耦生产者和消费者，并实现高度可扩展和灵活的系统。</p>
+<p>Apache Kafka<br>Apache Kafka是一种流行的事件流平台。您可以使用Go编写Kafka的生产者和消费者。</p>
+<p>如下是示例代码 </p>
+<pre><code class="go">package main
+
+import (
+    &quot;github.com/confluentinc/confluent-kafka-go/kafka&quot;
+)
+
+func main() &#123;
+    producer, err := kafka.NewProducer(&amp;kafka.ConfigMap&#123;&quot;bootstrap.servers&quot;: &quot;localhost&quot;&#125;)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+
+    // 生产消息
+    producer.Produce(&amp;kafka.Message&#123;
+        TopicPartition: kafka.TopicPartition&#123;Topic: &amp;topic, Partition: kafka.PartitionAny&#125;,
+        Value:          []byte(&quot;Message Value&quot;),
+    &#125;, nil)
+
+    // 消费消息
+    consumer, err := kafka.NewConsumer(&amp;kafka.ConfigMap&#123;
+        &quot;bootstrap.servers&quot;: &quot;localhost&quot;,
+        &quot;group.id&quot;:          &quot;myGroup&quot;,
+        &quot;auto.offset.reset&quot;: &quot;earliest&quot;,
+    &#125;)
+    consumer.SubscribeTopics([]string&#123;&quot;myTopic&quot;&#125;, nil)
+    msg, err := consumer.ReadMessage(-1)
+    if err == nil &#123;
+        fmt.Printf(&quot;Message on %s: %s\n&quot;, msg.TopicPartition, string(msg.Value))
+    &#125;
+&#125;
+</code></pre>
+<h3 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h3><p>云计算是指通过软件自动化管理，提供计算资源的服务网络，是现在互联网大规模数据分析和存储的基石。</p>
+<p>云计算的基础是虚拟化技术和编排方式，关系到资源的分配和调度。</p>
+<p>云计算提供一系列特有的架构：</p>
+<ul>
+<li>基础设施即服务IaaS（Infrastructure as a Service）：服务商提供互联网基础设施，比如用户只需要获得服务器、云硬盘、宽带网络，而不用关心物理的机房、数据中心、网络怎么建设。但是，用户需要自己进行服务器系统安装、环境部署和软件配置。</li>
+<li>平台即服务PaaS（Platform as a Service）：服务商提供底层软件设施，比如为用户准备安装了指定操作系统、数据库软件、环境套件的主机。用户需要自己控制上层应用的部署和托管。</li>
+<li>软件即服务Saas（Software as a Service）：服务商及提供基于软件的解决方案来满足客户的需求，比如用户想要一套OA办公系统，CMS内容管理系统，HRM人事管理系统等，而不用自行搭建和维护这样的服务，能够简化用户的工作。</li>
+<li>函数即服务FaaS（Function as a service）：服务商提供一个平台，允许客户开发、运行和管理应用程序功能，而不用关心如何启动和部署这样的程序。这个模式是“无服务器”体系架构的方式，具有灵活性，适合构建微服务应用程序。</li>
+</ul>
+<h3 id="云原生架构"><a href="#云原生架构" class="headerlink" title="云原生架构"></a>云原生架构</h3><p>云原生技术为公司在公有云、私有云、混合云等新型动态环境中，构建和运行可弹性拓展的应用提供了可能。</p>
+<p>云原生为公司提供了以下关键能力：</p>
+<h3 id="弹性资源调度"><a href="#弹性资源调度" class="headerlink" title="弹性资源调度"></a>弹性资源调度</h3><ul>
+<li>服务资源调度：分配微服务、大服务使用的资源。</li>
+<li>计算资源调度：分配在线计算、离线计算使用的资源</li>
+<li>消息队列：和计算资源调度类似，提供海量的数据吞吐和大数据分析能力。</li>
+</ul>
+<h3 id="弹性存储资源"><a href="#弹性存储资源" class="headerlink" title="弹性存储资源"></a>弹性存储资源</h3><p>云原生让用户可以将存储资源看作服务，寻找对应的服务来满足自己的存储需求。</p>
+<ul>
+<li>经典存储：对象存储、大数据记录存储。</li>
+<li>关系型数据库：业务记录存储。</li>
+<li>元数据：提供服务发现能力</li>
+<li>NoSQL：key-value存储，实现缓存和分布式事务。</li>
+</ul>
+<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>DevOps贯穿整个软件开发周期，使用一系列自动化流程，提高软件开发、交付的效率。DevOps提供了敏捷开发、持续集成&#x2F;交付（CI&#x2F;CD）的能力。</p>
+<h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><p>微服务架构实现业务功能单元的解耦，同时提供一套统一的通信标准确保服务之间的数据流通。</p>
+<p>微服务常见的通信标准是HTTP（RESTful API）和RPC（Thrift, gRPC），需要结合性能、服务治理、协议可解释性来选择。实际场景下，常常使用微服务框架提供的通信能力，而不用自己从头实现一套。</p>
+<h3 id="服务网格"><a href="#服务网格" class="headerlink" title="服务网格"></a>服务网格</h3><p>服务网格实现业务与治理的结构以及异构系统治理的统一化，从而提供复杂的治理能力。</p>
+<h3 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h3><p>服务注册与发现 Eureka或Consul等服务可以用于服务发现。</p>
+<p>服务注册与发现使服务可以动态地找到其他服务的位置。</p>
+<pre><code class="go">// 使用Consul进行服务注册
+consulConfig := consulapi.DefaultConfig()
+consulConfig.Address = &quot;localhost:8500&quot;
+client, err := consulapi.NewClient(consulConfig)
+if err != nil &#123;
+    log.Fatal(err)
+&#125;
+
+// 创建新的服务
+registration := new(consulapi.AgentServiceRegistration)
+registration.ID = &quot;my-service-id&quot;
+registration.Name = &quot;my-service&quot;
+registration.Port = 8080
+registration.Tags = []string&#123;&quot;my-service&quot;&#125;
+
+// 注册服务
+agent := client.Agent()
+if err := agent.ServiceRegister(registration); err != nil &#123;
+    log.Fatal(err)
+&#125;
+
+// 服务发现逻辑...
+</code></pre>
+<h3 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h3><p>分布式锁</p>
+<p>在分布式环境中，协调多个节点的访问资源可能会变得复杂。分布式锁是一种解决方案，可以在多个节点之间同步访问。</p>
+<p>可以使用Go语言和Redis创建分布式锁：</p>
+<pre><code class="go">
+package main
+
+import (
+    &quot;fmt&quot;
+    &quot;github.com/go-redis/redis/v8&quot;
+    &quot;golang.org/x/net/context&quot;
+)
+
+func main() &#123;
+    rdb := redis.NewClient(&amp;redis.Options&#123;
+        Addr: &quot;localhost:6379&quot;,
+    &#125;)
+
+    ctx := context.Background()
+    lockKey := &quot;lock_key&quot;
+
+    // 尝试获取锁
+    locked, err := rdb.SetNX(ctx, lockKey, &quot;lock_value&quot;, 0).Result()
+    if err != nil || !locked &#123;
+        fmt.Println(&quot;获取锁失败&quot;)
+        return
+    &#125;
+
+    // 执行业务逻辑...
+
+    // 释放锁
+    rdb.Del(ctx, lockKey)
+    fmt.Println(&quot;业务逻辑执行完毕，锁已释放&quot;)
+&#125;
+</code></pre>
+<h2 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h2><h3 id="离在线资源并池"><a href="#离在线资源并池" class="headerlink" title="离在线资源并池"></a>离在线资源并池</h3><p>在线业务以<strong>IO密集型</strong>为主，要求计算的<strong>实时性</strong>，但是具有<strong>潮汐性</strong>，不同时间段的压力不同。离线业务以<strong>计算密集型</strong>为主，对计算实时性不高。</p>
+<p>把在线和离线资源放入同一个资源池进行调度，利用在线业务的潮汐性自动扩缩容，能够有效降低物理资源成本，提供更多的弹性资源，增加收益。</p>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>简单的http负载均衡 轮询算法</p>
+<pre><code class="go">package main
+
+import (
+    &quot;net/http&quot;
+    &quot;net/http/httputil&quot;
+    &quot;net/url&quot;
+)
+
+var servers = []string&#123;
+    &quot;http://localhost:8081&quot;,
+    &quot;http://localhost:8082&quot;,
+&#125;
+
+var currentServer = 0
+
+func nextServer() string &#123;
+    server := servers[currentServer]
+    currentServer = (currentServer + 1) % len(servers)
+    return server
+&#125;
+
+func main() &#123;
+    http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) &#123;
+        server := nextServer()
+        target, _ := url.Parse(server)
+        proxy := httputil.NewSingleHostReverseProxy(target)
+        proxy.ServeHTTP(w, r)
+    &#125;)
+    http.ListenAndServe(&quot;:8080&quot;, nil)
+&#125;
+</code></pre>
+<h3 id="亲和性部署"><a href="#亲和性部署" class="headerlink" title="亲和性部署"></a>亲和性部署</h3><p>如果两个微服务之间通信密切，则这两个服务的亲和性较高。将满足亲和性条件的容器调度到一台宿主机，让微服务中间件与服务网格通过共享内存通信，能够有效降低通信成本，提高服务可用性。</p>
+<h3 id="流量治理"><a href="#流量治理" class="headerlink" title="流量治理"></a>流量治理</h3><p>基于微服务中间件和服务网格的流量治理，赋予微服务熔断、重试的能力，提供复杂环境下的流量调度，可以提高微服务调用容错性，增强容灾能力，还能进一步提高开发效率。</p>
+<h3 id="CPU水位负载均衡"><a href="#CPU水位负载均衡" class="headerlink" title="CPU水位负载均衡"></a>CPU水位负载均衡</h3><p>结合IaaS提供的资源探针和服务网格的负载均衡能力，能够为自动扩缩容提供反馈，打平异构环境下算力的差异。</p>
+<h3 id="容器化与服务编排"><a href="#容器化与服务编排" class="headerlink" title="容器化与服务编排"></a>容器化与服务编排</h3><p>Docker</p>
+<p>可以使用Docker将Go应用程序打包到容器中，并确保它在任何支持Docker的平台上以相同的方式运行。</p>
+<p>Kubernetes</p>
+<p>Kubernetes是一种强大的容器编排工具，用于自动部署、扩展和管理容器化应用程序。Go语言是Kubernetes的主要实现语言。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现代软件架构的复杂性和灵活性要求了解许多概念和技术。从单机到分布式，从单体到微服务，架构演化为满足不断增长的需求。</p>
+<p>通过使用强大和灵活的编程语言，如Go，您可以构建符合这些需求的解决方案。从分布式锁到服务发现，从负载均衡到微服务通信，Go为构建现代、可扩展和高性能的系统提供了强大的工具和库。</p>
+<p>不断学习和实践这些概念和技术将使您更好地设计和构建复杂的系统，满足业务目标，并应对未来的挑战。</p>
+
+            
+        </article>
+    </div>
+    
+    <div class="nexmoe-post">
+        <a href="/2023/08/23/gorm%E5%88%9D%E4%BD%93%E9%AA%8C%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="gorm 初体验 ｜ 青训营笔记" class="lazyload">
+                    <h1>gorm 初体验 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年08月23日</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.3k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h2 id="gorm"><a href="#gorm" class="headerlink" title="gorm"></a>gorm</h2><p><img src="https://gorm.io/gorm.svg"></p>
+<p>gorm是Golang语言中一款性能极好的ORM库，对开发人员相对是比较友好的。接下来主要学习下gorm库的一些基本使用。</p>
+<p>功能概览</p>
+<ul>
+<li>全功能 ORM</li>
+<li>关联 (Has One，Has Many，Belongs To，Many To Many，多态，单表继承)</li>
+<li>Create，Save，Update，Delete，Find 中钩子方法</li>
+<li>支持 Preload、Joins 的预加载</li>
+<li>事务，嵌套事务，Save Point，Rollback To Saved Point</li>
+<li>Context、预编译模式、DryRun 模式</li>
+<li>批量插入，FindInBatches，Find&#x2F;Create with Map，使用 SQL 表达式、Context Valuer 进行 CRUD</li>
+<li>SQL 构建器，Upsert，数据库锁，Optimizer&#x2F;Index&#x2F;Comment Hint，命名参数，子查询<br>复合主键，索引，约束</li>
+<li>Auto Migration</li>
+<li>自定义 Logger</li>
+<li>灵活的可扩展插件 API：Database Resolver（多数据库，读写分离）、Prometheus…</li>
+<li>每个特性都经过了测试的重重考验</li>
+<li>开发者友好</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装</p>
+<pre><code class="bash">go get -u gorm.io/gorm
+go get -u gorm.io/driver/sqlite
+</code></pre>
+<h3 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h3><h4 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h4><p>因为orm可以自动创建数据库，创建表，所以我们要用一个约定的形式来描述一个schema，便于他创建表，也便于代码中调用</p>
+<p>例如</p>
+<pre><code class="go">type User struct &#123;
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<p>这样的一个结构体就可以描述user这个表</p>
+<h4 id="gorm-Model"><a href="#gorm-Model" class="headerlink" title="gorm.Model"></a>gorm.Model</h4><pre><code class="go">// gorm.Model 的定义
+type Model struct &#123;
+  ID        uint           `gorm:&quot;primaryKey&quot;`
+  CreatedAt time.Time
+  UpdatedAt time.Time
+  DeletedAt gorm.DeletedAt `gorm:&quot;index&quot;`
+&#125;
+</code></pre>
+<p>这个约定了一些gorm的标准配置，相当于implement了这个结构体</p>
+<p>例如</p>
+<pre><code class="go">type User struct &#123;
+  gorm.Model
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<p>这样这个gorm.Model相当于在user表里添加了一些基础的字段</p>
+<p>这个user最终会变成 相当于</p>
+<pre><code class="go">type User struct &#123;
+  ID        uint           `gorm:&quot;primaryKey&quot;`
+  CreatedAt time.Time
+  UpdatedAt time.Time
+  DeletedAt gorm.DeletedAt `gorm:&quot;index&quot;`
+  Name         string
+  Email        string
+  Age          uint8
+&#125;
+</code></pre>
+<h4 id="嵌入结构体"><a href="#嵌入结构体" class="headerlink" title="嵌入结构体"></a>嵌入结构体</h4><p>如上的gorm.Model就是一种嵌入结构体</p>
+<p>官网的解释是：对于匿名字段，GORM 会将其字段包含在父结构体中</p>
+<p>其他嵌入方法为：</p>
+<p>对于正常的结构体字段，你也可以通过标签 embedded 将其嵌入，例如：</p>
+<pre><code class="go">type Author struct &#123;
+    Name  string
+    Email string
+&#125;
+
+type Blog struct &#123;
+  ID      int
+  Author  Author `gorm:&quot;embedded&quot;`
+  Upvotes int32
+&#125;
+</code></pre>
+<pre><code class="go">// 它等效于
+type Blog struct &#123;
+  ID    int64
+  Name  string
+  Email string
+  Upvotes  int32
+&#125;
+</code></pre>
+<blockquote>
+<p>可以使用标签 embeddedPrefix 来为 db 中的字段名添加前缀<br>Author  Author &#96;gorm:”embedded;embeddedPrefix:author_”</p>
+</blockquote>
+<h4 id="字段标签"><a href="#字段标签" class="headerlink" title="字段标签"></a>字段标签</h4><p>声明 model 时，tag 是可选的，gorm 支持以下这些 tag： tag 名大小写不敏感，但我们写的时候最好用驼峰命名法。</p>
+<p>写法为 在字段后面添加飘号和gorm:</p>
+<p>例如</p>
+<pre>
+ID        uint           `gorm:"primaryKey"`
+</pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">标签名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">column</td>
+<td align="left">指定 database 的列名</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">列数据类型，推荐使用兼容性好的通用类型，例如：所有数据库都支持 bool、int、uint、float、string、time、bytes 并且可以和其他标签一起使用，例如：<code>not null</code>、<code>size</code>, <code>autoIncrement</code>… 像 <code>varbinary(8)</code> 这样指定数据库数据类型也是支持的。在使用指定数据库数据类型时，它需要是完整的数据库数据类型，如：<code>MEDIUMINT UNSIGNED not NULL AUTO_INCREMENT</code></td>
+</tr>
+<tr>
+<td align="left">serializer</td>
+<td align="left">指定将数据序列化或反序列化到数据库中的序列化器, 例如: <code>serializer:json/gob/unixtime</code></td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">定义列数据类型的大小或长度，例如 <code>size: 256</code></td>
+</tr>
+<tr>
+<td align="left">primaryKey</td>
+<td align="left">将列定义为主键</td>
+</tr>
+<tr>
+<td align="left">unique</td>
+<td align="left">将列定义为唯一键</td>
+</tr>
+<tr>
+<td align="left">default</td>
+<td align="left">定义列的默认值</td>
+</tr>
+<tr>
+<td align="left">precision</td>
+<td align="left">指定列的精度</td>
+</tr>
+<tr>
+<td align="left">scale</td>
+<td align="left">指定列大小</td>
+</tr>
+<tr>
+<td align="left">not null</td>
+<td align="left">指定列为 NOT NULL</td>
+</tr>
+<tr>
+<td align="left">autoIncrement</td>
+<td align="left">指定列为自动增长</td>
+</tr>
+<tr>
+<td align="left">autoIncrementIncrement</td>
+<td align="left">自动步长，控制连续记录之间的间隔</td>
+</tr>
+<tr>
+<td align="left">embedded</td>
+<td align="left">嵌套字段</td>
+</tr>
+<tr>
+<td align="left">embeddedPrefix</td>
+<td align="left">嵌入字段的列名前缀</td>
+</tr>
+<tr>
+<td align="left">autoCreateTime</td>
+<td align="left">创建时追踪当前时间，对于 <code>int</code> 字段，它会追踪时间戳秒数，您可以使用 <code>nano</code>&#x2F;<code>milli</code> 来追踪纳秒、毫秒时间戳，例如：<code>autoCreateTime:nano</code></td>
+</tr>
+<tr>
+<td align="left">autoUpdateTime</td>
+<td align="left">创建&#x2F;更新时追踪当前时间，对于 <code>int</code> 字段，它会追踪时间戳秒数，您可以使用 <code>nano</code>&#x2F;<code>milli</code> 来追踪纳秒、毫秒时间戳，例如：<code>autoUpdateTime:milli</code></td>
+</tr>
+<tr>
+<td align="left">index</td>
+<td align="left">根据参数创建索引，多个字段使用相同的名称则创建复合索引，查看 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/indexes.html">索引</a> 获取详情</td>
+</tr>
+<tr>
+<td align="left">uniqueIndex</td>
+<td align="left">与 <code>index</code> 相同，但创建的是唯一索引</td>
+</tr>
+<tr>
+<td align="left">check</td>
+<td align="left">创建检查约束，例如 <code>check:age &gt; 13</code>，查看 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/constraints.html">约束</a> 获取详情</td>
+</tr>
+<tr>
+<td align="left">&lt;-</td>
+<td align="left">设置字段写入的权限， <code>&lt;-:create</code> 只创建、<code>&lt;-:update</code> 只更新、<code>&lt;-:false</code> 无写入权限、<code>&lt;-</code> 创建和更新权限</td>
+</tr>
+<tr>
+<td align="left">-&gt;</td>
+<td align="left">设置字段读的权限，<code>-&gt;:false</code> 无读权限</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">忽略该字段，<code>-</code> 表示无读写，<code>-:migration</code> 表示无迁移权限，<code>-:all</code> 表示无读写迁移权限</td>
+</tr>
+<tr>
+<td align="left">comment</td>
+<td align="left">迁移时为字段添加注释</td>
+</tr>
+</tbody></table>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>官方提供的代码</p>
+<pre><code class="go">import (
+  &quot;gorm.io/driver/mysql&quot;
+  &quot;gorm.io/gorm&quot;
+)
+
+func main() &#123;
+  // 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情
+  dsn := &quot;user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;
+  db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)
+&#125;
+</code></pre>
+<p>这里我提供一种封装方案，因为一般数据库配置写在配置文件里，防止泄露与主代码分离‘</p>
+<pre><code class="go">
+import (
+    &quot;fmt&quot;
+    &quot;gorm.io/driver/mysql&quot;
+    &quot;gorm.io/gorm&quot;
+    &quot;gorm.io/gorm/schema&quot;
+)
+
+type Config struct &#123;
+    // 数据库配置
+    DBList DBListConf
+&#125;
+
+type DBListConf struct &#123;
+    Mysql MysqlConf
+&#125;
+
+type MysqlConf struct &#123;
+    Address     string
+    Username    string
+    Password    string
+    DBName      string
+    TablePrefix string
+&#125;
+
+type ServiceContext struct &#123;
+    Config Config
+    DBList *DBList
+&#125;
+
+type DBList struct &#123;
+    Mysql *gorm.DB
+&#125;
+
+func NewServiceContext(c Config) *ServiceContext &#123;
+    return &amp;ServiceContext&#123;
+        Config: c,
+        DBList: initDB(c),
+    &#125;
+&#125;
+
+func initDB(c Config) *DBList &#123;
+    dbList := new(DBList)
+    dbList.Mysql = initMysql(c)
+
+    return dbList
+&#125;
+
+func initMysql(c Config) *gorm.DB &#123;
+    dsn := fmt.Sprintf(&quot;%s:%s@tcp(%s)/%s?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;,
+        c.DBList.Mysql.Username,
+        c.DBList.Mysql.Password,
+        c.DBList.Mysql.Address,
+        c.DBList.Mysql.DBName,
+    )
+
+    db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;
+        NamingStrategy: schema.NamingStrategy&#123;
+            TablePrefix:   c.DBList.Mysql.TablePrefix, // 表名前缀
+            SingularTable: true,                       // 使用单数表名
+        &#125;,
+        DisableForeignKeyConstraintWhenMigrating: true,
+    &#125;)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+
+    // 自动建表
+    err = db.AutoMigrate(&amp;model.Video&#123;&#125;, &amp;model.Favorite&#123;&#125;, &amp;model.Comment&#123;&#125;)
+    if err != nil &#123;
+        panic(err)
+    &#125;
+
+    return db
+&#125;
+
+func main() &#123;
+    // 创建配置实例
+    config := Config&#123;
+        DBList: DBListConf&#123;
+            Mysql: MysqlConf&#123;
+                Address:     &quot;Address&quot;,
+                Username:    &quot;root&quot;,
+                Password:    &quot;1111111111111&quot;,
+                DBName:      &quot;dbname&quot;,
+                TablePrefix: &quot;Prefix&quot;,
+            &#125;,
+        &#125;,
+    &#125;
+
+    // 创建服务上下文
+    serviceContext := NewServiceContext(config)
+    
+    // 在这里你可以使用 serviceContext 进行操作
+    // ...
+
+    fmt.Println(&quot;Database initialization and configuration completed.&quot;)
+&#125;
+
+</code></pre>
+<p>这里出现了自动建表的操作AutoMigrate 你需要把你想要创建的模型传进来自动建表</p>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><h3 id="1-C"><a href="#1-C" class="headerlink" title="1. C"></a>1. C</h3><p>接下来开始 crud,</p>
+<p>假如你有一个user表，可以使用create创建多个数据</p>
+<pre><code class="go">users := []*User&#123;
+    User&#123;Name: &quot;Jinzhu&quot;, Age: 18, Birthday: time.Now()&#125;,
+    User&#123;Name: &quot;Jackson&quot;, Age: 19, Birthday: time.Now()&#125;,
+&#125;
+
+result := db.Create(users) // pass a slice to insert multiple row
+
+result.Error        // returns error
+result.RowsAffected // returns inserted records count
+</code></pre>
+<p>Error相信你会接</p>
+<pre><code class="go">if result.Error != nil &#123;
+    return exit
+&#125;
+</code></pre>
+<p>或者可以直接在create里</p>
+<pre><code class="go">err := db.create().Error
+if err != nil &#123;
+    return exit
+&#125;
+</code></pre>
+<h3 id="2-R"><a href="#2-R" class="headerlink" title="2.R"></a>2.R</h3><p>根据主键检索</p>
+<pre><code class="go">
+db.First(&amp;user, 10)
+// SELECT * FROM users WHERE id = 10;
+
+db.First(&amp;user, &quot;10&quot;)
+// SELECT * FROM users WHERE id = 10;
+
+db.Find(&amp;users, []int&#123;1,2,3&#125;)
+// SELECT * FROM users WHERE id IN (1,2,3);
+</code></pre>
+<p>这里的first为检索第一个 limit为1</p>
+<p>检索全部对象</p>
+<pre><code class="go">// Get all records
+result := db.Find(&amp;users)
+// SELECT * FROM users;
+
+result.RowsAffected // returns found records count, equals `len(users)`
+result.Error        // returns error
+</code></pre>
+<p>条件检索</p>
+<p>这样相当于拼sql语句</p>
+<pre><code class="go">// Get first matched record
+db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).First(&amp;user)
+// SELECT * FROM users WHERE name = &#39;jinzhu&#39; ORDER BY id LIMIT 1;
+
+// Get all matched records
+db.Where(&quot;name &lt;&gt; ?&quot;, &quot;jinzhu&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name &lt;&gt; &#39;jinzhu&#39;;
+
+// IN
+db.Where(&quot;name IN ?&quot;, []string&#123;&quot;jinzhu&quot;, &quot;jinzhu 2&quot;&#125;).Find(&amp;users)
+// SELECT * FROM users WHERE name IN (&#39;jinzhu&#39;,&#39;jinzhu 2&#39;);
+
+// LIKE
+db.Where(&quot;name LIKE ?&quot;, &quot;%jin%&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name LIKE &#39;%jin%&#39;;
+
+// AND
+db.Where(&quot;name = ? AND age &gt;= ?&quot;, &quot;jinzhu&quot;, &quot;22&quot;).Find(&amp;users)
+// SELECT * FROM users WHERE name = &#39;jinzhu&#39; AND age &gt;= 22;
+
+// Time
+db.Where(&quot;updated_at &gt; ?&quot;, lastWeek).Find(&amp;users)
+// SELECT * FROM users WHERE updated_at &gt; &#39;2000-01-01 00:00:00&#39;;
+
+// BETWEEN
+db.Where(&quot;created_at BETWEEN ? AND ?&quot;, lastWeek, today).Find(&amp;users)
+// SELECT * FROM users WHERE created_at BETWEEN &#39;2000-01-01 00:00:00&#39; AND &#39;2000-01-08 00:00:00&#39;;
+</code></pre>
+<p>高级查询 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/advanced_query.html">https://gorm.io/zh_CN/docs/advanced_query.html</a></p>
+<h3 id="3-U"><a href="#3-U" class="headerlink" title="3.U"></a>3.U</h3><p>更新 所有字段</p>
+<pre><code class="go">db.Save(&amp;User&#123;Name: &quot;jinzhu&quot;, Age: 100&#125;)
+// INSERT INTO `users` (`name`,`age`,`birthday`,`update_at`) VALUES (&quot;jinzhu&quot;,100,&quot;0000-00-00 00:00:00&quot;,&quot;0000-00-00 00:00:00&quot;)
+
+db.Save(&amp;User&#123;ID: 1, Name: &quot;jinzhu&quot;, Age: 100&#125;)
+// UPDATE `users` SET `name`=&quot;jinzhu&quot;,`age`=100,`birthday`=&quot;0000-00-00 00:00:00&quot;,`update_at`=&quot;0000-00-00 00:00:00&quot; WHERE `id` = 1
+</code></pre>
+<p>更多更新方法 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/update.html">https://gorm.io/zh_CN/docs/update.html</a></p>
+<h3 id="4-D"><a href="#4-D" class="headerlink" title="4.D"></a>4.D</h3><p>删除一条记录 </p>
+<pre><code class="go">// Email 的 ID 是 `10`
+db.Delete(&amp;email)
+// DELETE from emails where id = 10;
+
+// 带额外条件的删除
+db.Where(&quot;name = ?&quot;, &quot;jinzhu&quot;).Delete(&amp;email)
+// DELETE from emails where id = 10 AND name = &quot;jinzhu&quot;;
+</code></pre>
+<p>更多删除方法 <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/delete.html">https://gorm.io/zh_CN/docs/delete.html</a></p>
+<p>其中的软删除感觉很有用</p>
+<blockquote>
+<p>当调用Delete时，GORM并不会从数据库中删除该记录，而是将该记录的DeleteAt设置为当前时间，而后的一般查询方法将无法查找到此条记录。</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>gorm是个很好用的go的orm框架，对很多数据库都兼容</p>
+<p>性能也很好，操作起来也很简单。</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/07/25/go%E8%AF%AD%E8%A8%80%E4%B8%89%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -705,1700 +1822,10 @@ server.listen(port, () =&gt; &#123;
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2023/01/30/Slidev%20%E7%94%A8markdown%E5%86%99PPT%EF%BC%81%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Slidev 用markdown写PPT！｜ 青训营笔记" class="lazyload">
-                    <h1>Slidev 用markdown写PPT！｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月30日</a>
-            <a><i class="nexmoefont icon-areachart"></i>3.2k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 14 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>欢迎使用 Slidev!
-为开发者打造的演示文稿工具
-</code></pre>
-<p>slidev是slidevjs开发的一款开源的使用markdown来编写ppt样式的前端应用的框架</p>
-<p>只需要在单一 Markdown 文件中编写幻灯片就可以创建一个非常漂亮的前端ppt应用</p>
-<p>这个项目自从<code>0.20.0</code>版本我就关注来着，当时就觉得很炫很好用</p>
-<p>昨天看到了antfu更新说在最新版本<code>0.39.0</code>里支持了简单的动画切换效果</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130155007.png"></p>
-<p>😋感觉动画切换是ppt最重要的东西吧，很好很圆满😎</p>
-<p>来试试</p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cn.sli.dev/screenshots/cover.png" alt="img" class="lazyload"></p>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li><p><strong>支持 Markdown 语法</strong>：Slidev 使用一种扩展的 Markdown 格式，在一个纯文本文件中存储和组织你的幻灯片。这让你专注于制作内容。而且由于内容和样式是分开的，这也使得在不同的主题之间切换变得更加容易。</p>
-</li>
-<li><p><strong>可定制主题</strong>：Slidev 的主题可以通过 <code>npm</code> 包的形式来分享和安装。</p>
-</li>
-<li><p><strong>对开发者友好</strong>：Slidev 为开发者提供了一流的代码片段支持。它同时支持 <a target="_blank" rel="noopener" href="https://prismjs.com/">Prism</a> 和 <a target="_blank" rel="noopener" href="https://github.com/shikijs/shiki">Shiki</a> 以获得像素级的完美语法高亮，并且能够随时修改代码。通过内置的 <a target="_blank" rel="noopener" href="https://microsoft.github.io/monaco-editor/">Monaco 编辑器</a>，它还能让你在演示文稿中进行现场编码&#x2F;演示，并支持自动补全、类型悬停、甚至是 <code>TypeScript</code> 类型检查。</p>
-</li>
-<li><p><strong>快速</strong>：Slidev 得益于 <a target="_blank" rel="noopener" href="https://vitejs.dev/">Vite</a>，<a target="_blank" rel="noopener" href="https://v3.vuejs.org/">Vue 3</a> 和 <a target="_blank" rel="noopener" href="https://windicss.org/">Windi CSS</a>，为你带来了最美妙的创作体验。你所做的每一个改变都会<strong>立即反映</strong>到你的幻灯片上。</p>
-</li>
-<li><p><strong>互动性 &amp; 直观表达</strong>：你可以编写自定义的 Vue 组件并直接在你的 MarkDown 文件中使用它们。你也可以在演示文稿中与它们互动，以更深入和直观的方式表达你的想法。</p>
-</li>
-<li><p><strong>支持录制</strong>：Slidev 提供了内置的录音和摄像头视图。你可以将你的演示文稿与你的相机视图一起分享，或者为你的屏幕和相机分别录制并保存。所有这些都是内置的，不需要额外的工具。</p>
-</li>
-<li><p><strong>可移植性</strong>：用一个命令就可以将你的幻灯片导出为 PDF 或 PNG，甚至是可托管的单页应用程序（SPA），并在任何地方分享它们。</p>
-</li>
-<li><p><strong>可配置</strong>：由于 Slidev 基于 Web 技术，任何可以在 Web 应用中完成的事情，Slidev 也可以做到。例如，<code>WebGL</code>、<code>API请求</code>、<code>iframes</code>，甚至是实时共享。完全取决于你的想象力!</p>
-</li>
-<li><p><strong>演讲者模式</strong>： 可以使用另一个窗口，甚至是你的手机来控制幻灯片。</p>
-</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>npm init slidev
-</code></pre>
-<p>在package.json里配置</p>
-<pre><code>&#123;
-  &quot;scripts&quot;: &#123;
-    &quot;dev&quot;: &quot;slidev&quot;, //  启动 dev server
-    &quot;build&quot;: &quot;slidev build&quot;, // 构建生产环境的单页面应用
-    &quot;export&quot;: &quot;slidev export&quot; // 将幻灯片导出为 pdf 格式
-  &#125;
-&#125;
-</code></pre>
-<p>执行 <code>npx slidev --help</code> 命令获取更多选项的详细信息。</p>
-<p>这样就安装完成了，你只需要在<code>./slides.md</code>里编写你想要的内容就行😎</p>
-<h2 id="推荐的目录结构"><a href="#推荐的目录结构" class="headerlink" title="推荐的目录结构"></a>推荐的目录结构</h2><pre><code>your-slidev/
-  ├── components/       # 自定义组件
-  ├── layouts/          # 自定义布局
-  ├── public/           # 静态资源
-  ├── setup/            # 自定义 setup / hooks
-  ├── styles/           # 自定义样式
-  ├── index.html        # 注入的 index.html
-  ├── slides.md         # 幻灯片主入口
-  └── vite.config.ts    # 扩展 vite 配置
-</code></pre>
-<h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h4 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h4><p>使用 <code>---</code> 添加分隔符来分隔你的幻灯片。</p>
-<p>注意 这个分隔符最好上下空两行</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130162517.png"></p>
-<p>像这样 </p>
-<p>你可以安装一个VSCode插件 名叫slidev 来获得更好的体验，<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev">https://marketplace.visualstudio.com/items?itemName=antfu.slidev</a></p>
-<p>这个#2是插件告诉你这下面是第几张幻灯片</p>
-<pre><code># Slidev
-
-Hello, World!
-
----
-
-# Page 2
-
-Directly use code blocks for highlighting
-
-```ts
-console.log(&#39;Hello, World!&#39;)
-```
-
----
-
-# Page 3
-
-You can directly use Windi CSS and Vue components to style and enrich your slides.
-
-&lt;div class=&quot;p-3&quot;&gt;
-  &lt;Tweet id=&quot;20&quot; /&gt;
-&lt;/div&gt;
-</code></pre>
-<p>像这样就创建了三张幻灯片</p>
-<h4 id="扉页及布局"><a href="#扉页及布局" class="headerlink" title="扉页及布局"></a>扉页及布局</h4><p>用两个分隔符来表示一个扉页块</p>
-<pre><code>---
-layout: cover
----
-</code></pre>
-<p>两个分隔符里是<code>yaml</code>格式的对象</p>
-<p>具体的语法如下</p>
-<pre><code>---
-# 主题id 或 主题包名称
-# 了解更多：https://sli.dev/themes/use.html
-theme: &#39;default&#39;
-# 幻灯片的总标题，如果没有指定，那么将以第一张拥有标题的幻灯片的标题作为总标题
-title: &#39;Slidev&#39;
-# titleTemplate for the webpage, `%s` will be replaced by the page&#39;s title
-titleTemplate: &#39;%s - Slidev&#39;
-# information for your slides, can be a markdown string
-info: false
-
-# 在单页（SPA）构建中启用 pdf 下载，也可以指定一个自定义 url
-download: false
-# 要导出文件的文件名称
-exportFilename: &#39;slidev-exported.pdf&#39;
-# 语法高亮设置，可以使用 &#39;prism&#39; 或 &#39;shiki&#39; 方案
-highlighter: &#39;prism&#39;
-# 在代码块中显示行号
-lineNumbers: false
-# 启用 monaco 编辑器，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
-monaco: &#39;dev&#39;
-# 使用 vite-plugin-remote-assets 在本地下载远程资源，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
-remoteAssets: false
-# 控制幻灯片中的文本是否可以选择
-selectable: true
-# 启用幻灯片录制，可以是 boolean，&#39;dev&#39; 或者 &#39;build&#39;
-record: &#39;dev&#39;
-
-# 幻灯片的配色方案，可以使用 &#39;auto&#39;，&#39;light&#39; 或者 &#39;dark&#39;
-colorSchema: &#39;auto&#39;
-# vue-router 模式，可以使用 &#39;history&#39; 或 &#39;hash&#39; 模式
-routerMode: &#39;history&#39;
-# 幻灯片的长宽比
-aspectRatio: &#39;16/9&#39;
-# canvas 的真实宽度，单位为 px
-canvasWidth: 980
-# 用于主题定制，会将属性 `x` 注入根样式 `--slidev-theme-x`
-themeConfig:
-  primary: &#39;#5d8392&#39;
-
-# favicon 可以是本地文件路径，也可以是一个 URL
-favicon: &#39;https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png&#39;
-# 用于渲染图表的 PlantUML 服务器的 URL
-plantUmlServer: &#39;https://www.plantuml.com/plantuml&#39;
-# 字体将从 Google 字体自动导入
-# 了解更多：https://sli.dev/custom/fonts
-fonts:
-  sans: &#39;Roboto&#39;
-  serif: &#39;Roboto Slab&#39;
-  mono: &#39;Fira Code&#39;
-
-# 为所有幻灯片添加默认的 frontmatter
-defaults:
-  layout: &#39;default&#39;
-  # ...
-
-# 绘制选项
-# 了解更多：https://sli.dev/guide/drawing.html
-drawings:
-  enabled: true
-  persist: false
-  presenterOnly: false
-  syncAll: true
----
-</code></pre>
-<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p>可以通过&#96;&#96;&#96;来创建一个代码块</p>
-<pre><code>```ts
-console.log(&#39;Hello, World!&#39;)
-```
-</code></pre>
-<p>可以通过在语言名后写大括号的形式来指定特定行高亮<code>&#123;&#125;</code></p>
-<p>注意：行号从 1 开始计算。</p>
-<pre><code>```ts &#123;2-3|5|all&#125;
-function add(
-  a: Ref&lt;number&gt; | number,
-  b: Ref&lt;number&gt; | number
-) &#123;
-  return computed(() =&gt; unref(a) + unref(b))
-&#125;
-```
-</code></pre>
-<p>这段代码的意思是 点进来先是2到3行高亮，再点一下2到3不亮第5行亮，再点一下整个都亮</p>
-<h4 id="Monaco-编辑器"><a href="#Monaco-编辑器" class="headerlink" title="Monaco 编辑器"></a>Monaco 编辑器</h4><p>只需在语言 id 后添加 <code>&#123;monaco&#125;</code> 就可以启用monaco</p>
-<p>什么是monaco呢，可以理解为网页版的vscode那样的，可以在线编辑的</p>
-<pre><code>```ts &#123;monaco&#125;
-console.log(&#39;HelloWorld&#39;)
-```
-</code></pre>
-<h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>你可以在 Markdown 中直接使用 <code>&lt;style&gt;</code> 标签来覆盖<strong>当前幻灯片</strong>的样式。</p>
-<p>Slidev支持windicss的原子化写法和指令集 例如<code>@apply</code></p>
-<pre><code># Slidev
-
-&gt; Hello `world`
-
-&lt;style&gt;
-blockquote &#123;
-  code &#123;
-    @apply text-teal-500 dark:text-teal-400;
-  &#125;
-&#125;
-&lt;/style&gt;
-</code></pre>
-<h4 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h4><p>和编写 Markdown 的方式一样，你可以使用本地或远程的 URL 的图片。</p>
-<p>远程资源会缓存</p>
-<p>本地资源请放到public文件夹</p>
-<h4 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h4><p>你也可以为每张幻灯片编写备注。它们将展示在 <a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/presenter-mode.html">演讲者模式</a> 中，供你在演示时参考。</p>
-<p>在每一页幻灯片内容最后</p>
-<p>添加注释即可</p>
-<pre><code>---
-layout: cover
----
-
-# 第 1 页
-
-This is the cover page.
-
-&lt;!-- 这是一条备注 --&gt;
-
----
-
-# 第 2 页
-
-&lt;!-- 这不是一条备注，因为它在幻灯片内容前 --&gt;
-
-The second page
-
-&lt;!--
-这是另一条备注
---&gt;
-</code></pre>
-<h4 id="icon图标"><a href="#icon图标" class="headerlink" title="icon图标"></a>icon图标</h4><p>很喜欢的功能</p>
-<p>Slidev 允许你在 Markdown 中<strong>直接</strong>访问几乎所有的开源的图标集。</p>
-<p>你可以通过 <a target="_blank" rel="noopener" href="https://icones.js.org/">Icônes</a> 来浏览访问所有可用的图标。</p>
-<p>更详细的请看<a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/syntax.html#icons">https://cn.sli.dev/guide/syntax.html#icons</a></p>
-<h4 id="LaTeX"><a href="#LaTeX" class="headerlink" title="LaTeX"></a>LaTeX</h4><p>这个不是很熟啊</p>
-<p><a target="_blank" rel="noopener" href="https://demo.sli.dev/starter/8">https://demo.sli.dev/starter/8</a></p>
-<p>可以看下示例 和 文档</p>
-<p><a target="_blank" rel="noopener" href="https://katex.org/">https://katex.org/</a></p>
-<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p>这个东西也没怎么用过，只知道github什么的支持这种语法 基于<a target="_blank" rel="noopener" href="https://github.com/mermaid-js/mermaid">https://github.com/mermaid-js/mermaid</a></p>
-<p>被标记为 <code>mermaid</code> 的代码块将被转换为图形，例如：</p>
-<pre><code>```mermaid
-sequenceDiagram
-  Alice-&gt;John: Hello John, how are you?
-  Note over Alice,John: A typical interaction
-```
-</code></pre>
-<pre><code class="mermaid">sequenceDiagram
-  Alice-&gt;John: Hello John, how are you?
-  Note over Alice,John: A typical interaction
-</code></pre>
-<p>我在typora也可以创建这个图表，感觉很好用</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170429.png"></p>
-<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230130170544.png"></p>
-<p>导航栏默认在左下角，鼠标移动上去显示</p>
-<p>可以用<code>right / space</code>来切换下一张幻灯片</p>
-<p>按<code>g</code>跳出一个栏，输入页码可以跳转</p>
-<p>更多快捷键详见<a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/navigation.html#navigation-bar">https://cn.sli.dev/guide/navigation.html#navigation-bar</a></p>
-<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>重头戏</p>
-<p>这个版本就更新了这个</p>
-<h4 id="点击动画"><a href="#点击动画" class="headerlink" title="点击动画"></a>点击动画</h4><p><code>v-click</code> 可以用<code>&lt;v-click&gt;&lt;/v-click&gt;</code>标签或在标签内写<code>&lt;div v-click class=&quot;text-xl p-2&quot;&gt;</code>这样的指令</p>
-<p>以下指令写法同理</p>
-<p><code>v-after</code> 和<code>v-click</code>绑定，这俩会一起显示</p>
-<p><code>v-click-hide</code>点击后不可见</p>
-<p><code>v-clicks</code> 只能使用标签写法 可以方便的展示一个列表</p>
-<pre><code>&lt;v-clicks&gt;
-
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-
-&lt;/v-clicks&gt;
-</code></pre>
-<p>你还可以手动指定过渡动画 覆写两个类的动画</p>
-<pre><code>// the default
-
-.slidev-vclick-target &#123;
-  transition: opacity 100ms ease;
-&#125;
-
-.slidev-vclick-hidden &#123;
-  opacity: 0;
-  pointer-events: none;
-&#125;
-</code></pre>
-<h4 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h4><p><a target="_blank" rel="noopener" href="https://vueuse.org/functions.html#category=%40Motion">https://vueuse.org/functions.html#category=%40Motion</a></p>
-<p>内置了vueuse的motion功能</p>
-<p>你可以对任何元素应用 <code>v-motion</code> 指令，以对它们施加运动效果。例如：</p>
-<pre><code>&lt;div
-  v-motion
-  :initial=&quot;&#123; x: -80 &#125;&quot;
-  :enter=&quot;&#123; x: 0 &#125;&quot;&gt;
-  Slidev
-&lt;/div&gt;
-</code></pre>
-<p>文本 <code>Slidev</code> 将从其初始化位置 <code>-80px</code> 移至其原始位置。</p>
-<h4 id="页面过渡"><a href="#页面过渡" class="headerlink" title="页面过渡"></a>页面过渡</h4><p>🤩新功能！</p>
-<p>可以在扉页中填写</p>
-<pre><code>---
-transition: slide-left
----
-</code></pre>
-<p>这将给你一个很好的滑动效果。将其设置在首页，将适用于所有的幻灯片。您还可以为每张幻灯片设置不同的过渡。</p>
-<p>自带的过渡效果</p>
-<pre><code>fade - Crossfade in/out
-fade-out - Fade out and then fade in
-slide-left - Slides to the left, slide to right when going back
-slide-right - Slides to the right, slide to left when going back
-slide-top - Slides to the top, slide to bottom when going back
-slide-bottom - Slides to the bottom, slide to top when going back
-</code></pre>
-<p>还可以自定义过渡效果</p>
-<pre><code>---
-transition: my-transition
----
-</code></pre>
-<pre><code>.my-transition-enter-active,
-.my-transition-leave-active &#123;
-  transition: opacity 0.5s ease;
-&#125;
-
-.my-transition-enter-from,
-.my-transition-leave-to &#123;
-  opacity: 0;
-&#125;
-</code></pre>
-<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><p>导出为pdf 依赖于微软开源的playwright框架</p>
-<p><a target="_blank" rel="noopener" href="https://playwright.dev/docs/installation#download-single-browser-binary"><code>playwright-chromium</code></a></p>
-<p>需要先安装</p>
-<pre><code>npm i -D playwright-chromium
-</code></pre>
-<p>使用</p>
-<pre><code>slidev export
-</code></pre>
-<p>可导出pdf格式</p>
-<pre><code>slidev export --format png
-</code></pre>
-<p>可导出png格式</p>
-<h2 id="静态部署"><a href="#静态部署" class="headerlink" title="静态部署"></a>静态部署</h2><pre><code>slidev build
-</code></pre>
-<p>编译当前幻灯片生成在<code>dist/</code>目录下，可以部署到静态托管平台</p>
-<h4 id="提供可下载的-PDF"><a href="#提供可下载的-PDF" class="headerlink" title="提供可下载的 PDF"></a>提供可下载的 PDF</h4><p>在扉页中设置</p>
-<pre><code>---
-download: true
----
-</code></pre>
-<p>会在单页应用中展示下载按钮</p>
-<p>也可以自定义url</p>
-<pre><code>---
-download: &#39;https://myside.com/my-talk.pdf&#39;
----
-</code></pre>
-<h4 id="部署到netlify"><a href="#部署到netlify" class="headerlink" title="部署到netlify"></a>部署到netlify</h4><p>创建<code>netlify.toml</code>文件 配置</p>
-<pre><code>[build.environment]
-  NODE_VERSION = &quot;14&quot;
-
-[build]
-  publish = &quot;dist&quot;
-  command = &quot;npm run build&quot;
-
-[[redirects]]
-  from = &quot;/*&quot;
-  to = &quot;/index.html&quot;
-  status = 200
-</code></pre>
-<h4 id="部署到vercel"><a href="#部署到vercel" class="headerlink" title="部署到vercel"></a>部署到vercel</h4><p>创建<code>vercel.json</code>文件 配置</p>
-<pre><code>&#123;
-  &quot;rewrites&quot;: [
-    &#123; &quot;source&quot;: &quot;/(.*)&quot;, &quot;destination&quot;: &quot;/index.html&quot; &#125;
-  ]
-&#125;
-</code></pre>
-<h2 id="演讲录制"><a href="#演讲录制" class="headerlink" title="演讲录制"></a>演讲录制</h2><h4 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h4><p>导航面板的小人按钮可以开启摄像头</p>
-<p>你可以拖动它，并使用右下角的把手来调整大小。尺寸和位置将持久化存储在 <code>localStorage</code> 中，因此，可以保证多次刷新后的展示一致，无需担心位置和大小丢失的问题。</p>
-<h4 id="录制"><a href="#录制" class="headerlink" title="录制"></a>录制</h4><p>导航面板的摄像机按钮</p>
-<p>可以录制麦克风和摄像头</p>
-<h2 id="演讲者模式"><a href="#演讲者模式" class="headerlink" title="演讲者模式"></a>演讲者模式</h2><p>点击小人带麦克风的按钮</p>
-<p>可以进入演讲者模式</p>
-<p>需要双端在同一网络下</p>
-<p>其他页面的实例会自动和演讲者的页面同步</p>
-<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><p>可以在页面上画画</p>
-<p>可以在演讲者模式中启用，会实时自动同步</p>
-<p>支持触控笔压感</p>
-<h2 id="编辑器整合"><a href="#编辑器整合" class="headerlink" title="编辑器整合"></a>编辑器整合</h2><p>你可以在运行中在网页上更改你的源码，他会自动同步到slide.md里</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>在这里浏览主题并应用到你的实例中</p>
-<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/themes/gallery.html">https://cn.sli.dev/themes/gallery.html</a></p>
-<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p><a target="_blank" rel="noopener" href="https://cn.sli.dev/builtin/layouts.html">https://cn.sli.dev/builtin/layouts.html</a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇写了不少，详细的写了我比较喜欢的ppt框架</p>
-<p>我有一个部署的版本，地址在 <a target="_blank" rel="noopener" href="https://botppt.netlify.app/">https://botppt.netlify.app/</a></p>
-<p>是很久之前写的辣，版本还是很老的，有时间会更新一下</p>
-<p>😎</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://botppt.netlify.app/1">https://botppt.netlify.app/1</a></p>
-<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/showcases.html">https://cn.sli.dev/showcases.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://cn.sli.dev/">https://cn.sli.dev/</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/slidevjs/slidev">https://github.com/slidevjs/slidev</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/29/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记" class="lazyload">
-                    <h1>Nuxt3与服务端渲染SSR（高级篇） ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月29日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 13 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前两篇写了一些nuxt3和SSR的基础</p>
-<p>这一篇讲讲nuxt3比较进阶的部分</p>
-<h2 id="自动引入"><a href="#自动引入" class="headerlink" title="自动引入"></a>自动引入</h2><h4 id="nuxt3自带自动引入"><a href="#nuxt3自带自动引入" class="headerlink" title="nuxt3自带自动引入"></a>nuxt3自带自动引入</h4><p>包括一些nuxt3的api都是不用导入的直接就可以用</p>
-<p>例如</p>
-<ul>
-<li><p>数据获取的函数<code>useFetch</code> <code>useAsyncData</code> </p>
-</li>
-<li><p>状态管理函数<code>useState</code> </p>
-</li>
-<li><p>运行变量获取函数 <code>useRuntimeConfig</code></p>
-</li>
-<li><p>运行时上下文获取函数 <code>useNuxtApp</code></p>
-</li>
-</ul>
-<h4 id="还有一些Vue的api"><a href="#还有一些Vue的api" class="headerlink" title="还有一些Vue的api"></a>还有一些Vue的api</h4><p>例如</p>
-<ul>
-<li><p>响应式的函数<code>ref</code></p>
-</li>
-<li><p>计算属性 <code>computed</code></p>
-</li>
-</ul>
-<h4 id="文件夹下的内容自动引入"><a href="#文件夹下的内容自动引入" class="headerlink" title="文件夹下的内容自动引入"></a>文件夹下的内容自动引入</h4><p>例如</p>
-<ul>
-<li><code>components/</code>文件夹下的组件</li>
-<li><code>composables/</code>文件夹下的响应式函数</li>
-<li><code>utils/</code>文件夹下的工具函数</li>
-</ul>
-<h4 id="可以使用-imports来使导入明确"><a href="#可以使用-imports来使导入明确" class="headerlink" title="可以使用#imports来使导入明确"></a>可以使用<code>#imports</code>来使导入明确</h4><pre><code>&lt;script setup&gt;
-  import &#123; ref, computed &#125; from &#39;#imports&#39;
-
-  const count = ref(1)
-  const double = computed(() =&gt; count.value * 2)
-&lt;/script&gt;
-</code></pre>
-<h4 id="关闭自动引入"><a href="#关闭自动引入" class="headerlink" title="关闭自动引入"></a>关闭自动引入</h4><p>在<code>nuxtconfig</code>里加入</p>
-<pre><code>export default defineNuxtConfig(&#123;
-  imports: &#123;
-    autoImport: false
-  &#125;
-&#125;)
-</code></pre>
-<p>（😡谁会这么做</p>
-<h2 id="自动引入的组件"><a href="#自动引入的组件" class="headerlink" title="自动引入的组件"></a>自动引入的组件</h2><p>假设目录如下</p>
-<pre><code>| components/
---| base/
-----| foo/
-------| Button.vue
-</code></pre>
-<p>此时可以使用<code>&lt;BaseFooButton /&gt;</code>标签引入这个button组件</p>
-<p>另外，可以使用一个Lazy前缀来懒加载组件</p>
-<p>例如</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;h1&gt;Mountains&lt;/h1&gt;
-    &lt;LazyMountainsList v-if=&quot;show&quot; /&gt;
-    &lt;button v-if=&quot;!show&quot; @click=&quot;show = true&quot;&gt;Show List&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-export default &#123;
-  data() &#123;
-    return &#123;
-      show: false
-    &#125;
-  &#125;
-&#125;
-&lt;/script&gt;
-</code></pre>
-<p>这样可以减少打包大小，增加性能</p>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>写在<code>pages/</code>里的组件会自动写入路由</p>
-<p><code>pages/index.vue</code>会匹配路由<code>/</code></p>
-<p>只需要在<code>app.vue</code>里添加</p>
-<p><code>&lt;NuxtPage /&gt;</code>标签</p>
-<p>可以通过插槽写法例如写<code>[id].vue</code>来匹配路由内的参数</p>
-<p>例如如下文件树</p>
-<pre><code>-| pages/
----| index.vue
----| users-[group]/
------| [id].vue
-</code></pre>
-<p>在<code>[id].vue</code>里写下</p>
-<pre><code>&lt;template&gt;
-  &lt;p&gt;&#123;&#123; $route.params.group &#125;&#125; - &#123;&#123; $route.params.id &#125;&#125;&lt;/p&gt;
-&lt;/template&gt;
-</code></pre>
-<p>读取group参数和id参数</p>
-<p>访问路由<code>/users-admins/123</code>会渲染成</p>
-<pre><code>&lt;p&gt;admins - 123&lt;/p&gt;
-</code></pre>
-<h2 id="渲染模式"><a href="#渲染模式" class="headerlink" title="渲染模式"></a>渲染模式</h2><h4 id="传统的Vue项目渲染方式为-客户端渲染"><a href="#传统的Vue项目渲染方式为-客户端渲染" class="headerlink" title="传统的Vue项目渲染方式为  客户端渲染"></a>传统的Vue项目渲染方式为  <code>客户端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129144946.png"></p>
-<p>浏览器会先下载到空的html文件→下载js→渲染出来</p>
-<p>这种方式的优点是：</p>
-<ul>
-<li><p>开发速度快：当完全在客户端上工作时，我们不必担心代码的服务器兼容性，例如，使用像windows这样的浏览器api。 </p>
-</li>
-<li><p>更便宜的服务器成本：运行一个服务器会增加一个基础设施的成本，因为您需要在一个支持JavaScript的平台上运行。我们可以在任何具有HTML、CSS和JavaScript文件的静态服务器上托管仅限客户端的应用程序。 </p>
-</li>
-<li><p>下载好后离线：因为代码完全在浏览器中运行，所以它可以很好地在互联网不可用时很好地保持工作。</p>
-</li>
-</ul>
-<p>缺点为：</p>
-<ul>
-<li>性能不好：用户必须等待浏览器下载、解析和运行JavaScript文件。根据下载部分的网络和用户的解析和执行设备，这可能需要一些时间，并影响用户的体验。</li>
-<li>不友好的搜索引擎优化：索引和更新通过客户端呈现交付的内容比使用服务器呈现的HTML文档需要更多的时间。</li>
-</ul>
-<h4 id="nuxt3的服务端渲染"><a href="#nuxt3的服务端渲染" class="headerlink" title="nuxt3的服务端渲染"></a>nuxt3的<code>服务端渲染</code></h4><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230129145732.png"></p>
-<p>有内容的html文件会下载到浏览器→用户在此时可以点击和浏览页面上的内容（部分功能）→需要的组件渲染完成、此时的页面有全部功能</p>
-<p>这种方式的优点是：</p>
-<ul>
-<li>性能好：用户可以立即访问页面的内容，因为浏览器显示静态内容的速度比<code>javascript</code>生成的静态内容要快得多。</li>
-<li>搜索引擎优化：通用呈现将页面的整个HTML内容作为一个经典的服务器应用程序传递到浏览器。Web爬虫可以直接索引页面的内容。</li>
-</ul>
-<p>缺点是：</p>
-<ul>
-<li>开发约束：服务器和浏览器环境不提供相同的api，而且编写可以在两边无缝运行的代码可能会很棘手。幸运的是，Nuxt提供了特定的变量来同步这些。</li>
-<li>成本高：服务器需要运行，才能动态地呈现页面。这就像任何传统服务器一样，增加了每月的成本。但是，由于浏览器接管了客户端导航的通用渲染，服务器调用大大减少了。</li>
-</ul>
-<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><p>使用 <code>TypeScript</code> 后可以使用nuxi带的语法检查</p>
-<pre><code>yarn nuxi typecheck
-</code></pre>
-<p>nuxt也会自动生成类型</p>
-<p>在<a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/typescript#nuxtnuxtdts"><code>.nuxt/nuxt.d.ts</code></a>目录下</p>
-<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>一个完整的nuxt3项目文件目录应该包含以下文件夹和文件</p>
-<pre><code>.nuxt                      nuxt生成的文件目录里面有 运行的类型等
-.output                    build产物文件夹
-assets                     css文件、字体文件、图片文件
-components                 组件目录
-composables                响应式函数的文件夹
-content                    基于文件的cms的文件夹
-layouts                    布局组件的文件夹
-middleware                 中间件文件夹
-node_modules               依赖文件夹
-pages                      路由的页面
-plugins                    nuxt插件
-public                     公共文件文件夹，可以放ico图标，图片
-server                     服务端api文件夹
-utils                      工具函数文件夹
-.gitignore                 git忽略文件
-.nuxtignore                不加入nuxt编译的忽略文件
-app.config.ts              config文件 可以使用useAppConfig读取
-app.vue                    vue入口 
-nuxt.config.ts             nuxt配置文件
-package.json               依赖描述文件
-tsconfig.json              ts检查配置文件
-</code></pre>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/nuxt">https://nuxt.com/docs/guide/directory-structure/nuxt</a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇文章介绍了nuxt3的高级用法</p>
-<p>我也是第一次使用nuxt3来开发项目</p>
-<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
-<p>😎🥰</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/concepts/auto-imports">https://nuxt.com/docs/guide/concepts/auto-imports</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/composables">https://nuxt.com/docs/guide/directory-structure/composables</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/guide/directory-structure/components">https://nuxt.com/docs/guide/directory-structure/components</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/unjs/nitro">https://github.com/unjs/nitro</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/28/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8B%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（下） ｜ 青训营笔记" class="lazyload">
-                    <h1>Nuxt3与服务端渲染SSR（下） ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月28日</a>
-            <a><i class="nexmoefont icon-areachart"></i>913 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 12 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇文章介绍了大概一半的nuxt3特性，这一篇会介绍另外一半</p>
-<p>我也是第一次使用nuxt3来开发项目</p>
-<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
-<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><p>Nuxt利用Vue的 <a target="_blank" rel="noopener" href="https://vuejs.org/guide/built-ins/transition.html#the-transition-component"><code>&lt;Transition&gt;</code></a>组件来应用页面和布局之间的转换。</p>
-<p>只需要在nuxt config里设置</p>
-<pre><code class="js">export default defineNuxtConfig(&#123;
-  app: &#123;
-    pageTransition: &#123; name: &#39;page&#39;, mode: &#39;out-in&#39; &#125;
-  &#125;,
-&#125;)
-</code></pre>
-<p>然后在<code>app.vue</code>里设置你想要的过渡动画</p>
-<pre><code class="vue">&lt;template&gt;
-  &lt;NuxtPage /&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-.page-enter-active,
-.page-leave-active &#123;
-  transition: all 0.4s;
-&#125;
-.page-enter-from,
-.page-leave-to &#123;
-  opacity: 0;
-  filter: blur(1rem);
-&#125;
-&lt;/style&gt;
-</code></pre>
-<p>类名必须是这几个</p>
-<p>就可以实现一个切换页面有虚化效果的动画</p>
-<p>更高级的用法详见官方文档</p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/transitions">https://nuxt.com/docs/getting-started/transitions</a></p>
-<h2 id="使用Api获取数据"><a href="#使用Api获取数据" class="headerlink" title="使用Api获取数据"></a>使用Api获取数据</h2><p>nuxt3自带一个<code>vueuse</code>里的 <code>useFetch</code> api</p>
-<p>使用方法为</p>
-<pre><code>&lt;script setup&gt;
-const &#123; data: count &#125; = await useFetch(&#39;/api/count&#39;)
-&lt;/script&gt;
-
-&lt;template&gt;
-  Page visits: &#123;&#123; count &#125;&#125;
-&lt;/template&gt;
-</code></pre>
-<p>可以使用<code>useAsyncData</code>来异步获取数据</p>
-<pre><code>&lt;script setup&gt;
-const &#123; data &#125; = await useAsyncData(&#39;count&#39;, () =&gt; $fetch(&#39;/api/count&#39;))
-&lt;/script&gt;
-
-&lt;template&gt;
-  Page visits: &#123;&#123; data &#125;&#125;
-&lt;/template&gt;
-</code></pre>
-<p>更高级的用法详见官方文档</p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/data-fetching">https://nuxt.com/docs/getting-started/data-fetching</a></p>
-<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p>nuxt3提供了<code>vueuse</code>的一个api叫<code>useState</code>来实现全局状态管理</p>
-<p>无需创建state文件</p>
-<p>直接使用</p>
-<pre><code>&lt;script setup&gt;
-const counter = useState(&#39;counter&#39;, () =&gt; Math.round(Math.random() * 1000))
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div&gt;
-    Counter: &#123;&#123; counter &#125;&#125;
-    &lt;button @click=&quot;counter++&quot;&gt;
-      +
-    &lt;/button&gt;
-    &lt;button @click=&quot;counter--&quot;&gt;
-      -
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-</code></pre>
-<p>这个例子创建了一个state叫counter 里面默认记录了一个随机数</p>
-<p>点击按钮会让随机数进行加减</p>
-<p><code>useState</code>默认为响应式 很方便</p>
-<p>nuxt3的auto import特性可以使state简写为</p>
-<pre><code>const counter = useCounter() // Same as useState(&#39;counter&#39;)
-</code></pre>
-<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>nuxt提供了很多高级的错误处理方式</p>
-<p>一个最简单的api是<code>useError</code></p>
-<pre><code>const error = useError()
-</code></pre>
-<p>这句代码可以快速的抛出一条错误</p>
-<p>也可以使用<code>createError</code>方法</p>
-<pre><code>&lt;script setup&gt;
-const route = useRoute()
-const &#123; data &#125; = await useFetch(`/api/movies/$&#123;route.params.slug&#125;`)
-if (!data.value) &#123;
-  throw createError(&#123; statusCode: 404, statusMessage: &#39;Page Not Found&#39; &#125;)
-&#125;
-&lt;/script&gt;
-</code></pre>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>正常的使用<code>nuxt build</code>命令会生成一个在node环境中运行的运行时</p>
-<p><code>.mjs文件</code></p>
-<pre><code class="sh">node .output/server/index.mjs
-</code></pre>
-<p>即可运行</p>
-<pre><code class="bash">$ node .output/server/index.mjs
-Listening on http://localhost:3000
-</code></pre>
-<p>可以设置环境变量例如</p>
-<pre><code>PORT=3001 node .output/server/index.mjs
-</code></pre>
-<p>在3001端口运行</p>
-<p>在 <code>nuxt.config</code> 里添加</p>
-<pre><code>export default &#123;
-  nitro: &#123;
-    preset: &#39;node-server&#39;
-  &#125;
-&#125;
-</code></pre>
-<p>或者<code>NITRO_PRESET=node-server nuxt build</code></p>
-<p>preset字段可以更改生成的代码的依赖平台</p>
-<p>支持的平台有</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/aws">AWS</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/azure">Azure</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/cleavr">Cleavr</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/cloudflare">CloudFlare</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/digitalocean">Digital Ocean</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/firebase">Firebase</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/heroku">heroku</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/edgio">Edgio</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/netlify">Netlify</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/render">Render</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/stormkit">Stormkit</a></li>
-<li><a target="_blank" rel="noopener" href="https://nitro.unjs.io/deploy/providers/vercel">Vercel</a></li>
-</ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>可以添加vitest库来进行测试</p>
-<pre><code>yarn add --dev @nuxt/test-utils vitest
-</code></pre>
-<p>方法如下</p>
-<p>新建test目录 创建文件 <code>demo.test.ts</code></p>
-<pre><code class="ts">import &#123; describe, test &#125; from &#39;vitest&#39;
-import &#123; setup, $fetch &#125; from &#39;@nuxt/test-utils&#39;
-
-describe(&#39;My test&#39;, async () =&gt; &#123;
-  await setup(&#123;
-    // test context options
-  &#125;)
-
-  test(&#39;my test&#39;, () =&gt; &#123;
-    // ...
-  &#125;)
-&#125;)
-</code></pre>
-<p>运行vitest即可获得通过或不通过提示</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>到这里nuxt3基础就几乎结束了</p>
-<p>还有一些更高级的用法没有讲，例如生命周期啊，nuxt-kit啊，自动导入啊</p>
-<p>有机会可以写一篇高级教程</p>
-<p>😋😎</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/state-management">https://nuxt.com/docs/getting-started/state-management</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/api/composables/use-state">https://nuxt.com/docs/api/composables/use-state</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7193305766692913189">https://juejin.cn/post/7193305766692913189</a></p>
-<p><a target="_blank" rel="noopener" href="https://vueuse.org/">https://vueuse.org/</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/27/Nuxt3%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR%EF%BC%88%E4%B8%8A%EF%BC%89%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Nuxt3与服务端渲染SSR（上） ｜ 青训营笔记" class="lazyload">
-                    <h1>Nuxt3与服务端渲染SSR（上） ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月27日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 11 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Nuxt同时提供了前端和后端功能，因此您可以专注于重要的事情：创建web应用程序。</p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs">Nuxt3</a> 是基于 <code>Vite</code>、<code>Vue3</code> 和 <code>Nitro</code> 的 <code>Nuxt</code> 框架的重构，具有一流的 <code>Typescript</code> 支持，且这次更新对内核进行了精简，使之速度更快，体验更好。</p>
-<h2 id="了解-SSR"><a href="#了解-SSR" class="headerlink" title="了解 SSR"></a>了解 <code>SSR</code></h2><p><code>Nuxt</code> 是一个基于 <code>Vue.js</code> 的服务端渲染应用框架</p>
-<h3 id="什么是-SSR"><a href="#什么是-SSR" class="headerlink" title="什么是 SSR"></a>什么是 <code>SSR</code></h3><p><code>服务器端渲染</code>（Server-Side Rendering）是指由服务端完成页面的 HTML 结构拼接的页面处理技术，发送到浏览器，然后为其绑定状态与事件，成为完全可交互页面的过程。</p>
-<p>简单理解就是html是由服务端写出，可以动态改变页面内容，即所谓的动态页面。早年的 php 、 asp 、 jsp  这些 Server page 都是 SSR 的。</p>
-<h3 id="为什么使用-SSR"><a href="#为什么使用-SSR" class="headerlink" title="为什么使用 SSR"></a>为什么使用 <code>SSR</code></h3><ul>
-<li>网页内容在服务器端渲染完成，一次性传输到浏览器，所以 <code>首屏加载速度非常快</code>；</li>
-<li><code>有利于SEO</code>，因为服务器返回的是一个完整的 html，在浏览器可以看到完整的 dom，对于爬虫、百度搜索等引擎就比较友好；</li>
-</ul>
-<h2 id="Nuxt-3"><a href="#Nuxt-3" class="headerlink" title="Nuxt 3"></a>Nuxt 3</h2><p><code>Nuxt</code> 是一个基于 <code>Vue.js</code> 的服务端渲染应用框架，</p>
-<p>刚去查了一下 nuxt3在1月23日变成了默认版本</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125003129.png"></p>
-<p>在1月25日发布了3.1.0版本</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127185726.png"></p>
-<ul>
-<li><p>实验组件群岛 准备就绪</p>
-</li>
-<li><p>新的api</p>
-</li>
-<li><p>Nitro v2 ，vite 4 ，rollup3</p>
-</li>
-<li><p>性能改进</p>
-</li>
-</ul>
-<h2 id="什么是Nuxt？"><a href="#什么是Nuxt？" class="headerlink" title="什么是Nuxt？"></a>什么是Nuxt？</h2><p>要理解Nuxt是什么，我们需要了解创建一个现代应用程序需要什么：</p>
-<ul>
-<li>JavaScript框架： 一个带来JavaScript组件的JavaScript框架，支持Vue.js。</li>
-<li>打包工具：支持开发中的热模块替换和生产代码，支持webpack 5和Vite。</li>
-<li>最新JavaScript语法：在支持遗留浏览器的同时编写最新的JavaScript语法的转换器，支持esbuild。</li>
-<li>服务器端：Nuxt是一个在开发中服务于应用程序的服务器，同时也支持服务器端呈现或API路由，它使用h3进行部署的多功能性，如serverless, workers, Node.js和无与伦比的性能。</li>
-<li>路由：一个处理客户端导航的路由库，支持 <a target="_blank" rel="noopener" href="https://router.vuejs.org/">vue-router</a>.。</li>
-</ul>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/installation#prerequisites">https://nuxt.com/docs/getting-started/installation#prerequisites</a></p>
-<pre><code class="bash">pnpm dlx nuxi init &lt;project-name&gt;
-</code></pre>
-<pre><code class="bash">code &lt;project-name&gt;
-</code></pre>
-<pre><code class="bash"># Make sure you have `shamefully-hoist=true` in `.npmrc` before running pnpm install
-pnpm install
-</code></pre>
-<p><strong>注意：</strong> 如果你用 <code>pnpm</code> 安装依赖，请创建一个 <code>.npmrc</code> 文件，且设置:</p>
-<pre><code class="ini">shamefully-hoist=true
-</code></pre>
-<p>安装完成😋</p>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code class="bash">pnpm dev -o
-</code></pre>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127193306.png"></p>
-<p>看一眼文件树</p>
-<p>抛开编译结果<code>.nuxt</code>文件夹不谈 就只有一个<code>app.vue</code> 和<code>nuxt.config.ts</code></p>
-<p>很简陋 怎么会这样呢？我们一般写的vue框架也不是这样的啊</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127193603.png"></p>
-<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><p>创建 <code>components/</code> <code>pages/</code></p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230127200417.png"></p>
-<p>具体操作见官方文档</p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/views">https://nuxt.com/docs/getting-started/views</a></p>
-<p>也可以新建<code>src</code>目录 把 <code>components/</code> <code>pages/</code>目录放到<code>src</code>里</p>
-<p>在nuxt里组件是自动导入的，不用配置</p>
-<h2 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h2><p>路由是自动创建的</p>
-<pre><code class="html">&lt;NuxtLink to=&quot;/about&quot;&gt;About&lt;/NuxtLink&gt;
-</code></pre>
-<p>以上的代码点击会自动跳到<code>page/about.vue</code></p>
-<p>也可以使用路由</p>
-<pre><code class="vue">&lt;script setup&gt;
-const route = useRoute()
-
-// When accessing /posts/1, route.params.id will be 1
-console.log(route.params.id)
-&lt;/script&gt;
-</code></pre>
-<p><code>/posts/1</code>是创建的<code>/posts/[id].vue</code>这样id会被当做props传入</p>
-<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>nuxt服务端渲染最重要的就是搜索引擎优化</p>
-<p>可以被拉取到带内容的html</p>
-<p>而不是一般vue项目的空html</p>
-<pre><code class="js">export default defineNuxtConfig(&#123;
-  app: &#123;
-    head: &#123;
-      charset: &#39;utf-16&#39;,
-      viewport: &#39;width=500, initial-scale=1&#39;,
-      title: &#39;My App&#39;,
-      meta: [
-        // &lt;meta name=&quot;description&quot; content=&quot;My amazing site&quot;&gt;
-        &#123; name: &#39;description&#39;, content: &#39;My amazing site.&#39; &#125;
-      ],
-    &#125;
-  &#125;
-&#125;)
-</code></pre>
-<p>在<code>nuxt.config.ts</code>配置如上内容</p>
-<p>或者在<code>app.vue</code>里添加</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-useHead(&#123;
-  title: &#39;My App&#39;,
-  meta: [
-    &#123; name: &#39;description&#39;, content: &#39;My amazing site.&#39; &#125;
-  ],
-  bodyAttrs: &#123;
-    class: &#39;test&#39;
-  &#125;,
-  script: [ &#123; children: &#39;console.log(\&#39;Hello world\&#39;)&#39; &#125; ]
-&#125;)
-useServerSeoMeta(&#123;
-  title: &#39;My Amazing Site&#39;,
-  ogTitle: &#39;My Amazing Site&#39;,
-  description: &#39;This is my amazing site, let me tell you all about it.&#39;,
-  ogDescription: &#39;This is my amazing site, let me tell you all about it.&#39;,
-  ogImage: &#39;https://example.com/image.png&#39;,
-  twitterCard: &#39;summary_large_image&#39;,
-&#125;)
-&lt;/script&gt;
-</code></pre>
-<p>这几个函数可以添加meta头</p>
-<p>还有一些设置可以看官方文档 <a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/seo-meta">https://nuxt.com/docs/getting-started/seo-meta</a></p>
-<p>也可以使用 <a target="_blank" rel="noopener" href="https://nuxt.com/modules/seo-kit">https://nuxt.com/modules/seo-kit</a></p>
-<p>这个模块来配置SEO</p>
-<p>很方便😎</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇文章介绍了大概一半的nuxt3特性，下一篇会介绍另外一半</p>
-<p>我也是第一次使用nuxt3来开发项目</p>
-<p>踩到的坑还是很多的，预计可以写一篇踩坑记录</p>
-<p>😎</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://nuxt.com/modules/seo-kit">https://nuxt.com/modules/seo-kit</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/seo-meta">https://nuxt.com/docs/getting-started/seo-meta</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs/getting-started/views">https://nuxt.com/docs/getting-started/views</a></p>
-<p><a target="_blank" rel="noopener" href="https://nuxt.com/docs">https://nuxt.com/docs</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7170746000112353293">https://juejin.cn/post/7170746000112353293</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7037336504418435103">https://juejin.cn/post/7037336504418435103</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/26/UnoCSS%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="UnoCSS实战 ｜ 青训营笔记" class="lazyload">
-                    <h1>UnoCSS实战 ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月26日</a>
-            <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 10 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原子化css体验</p>
-<p><a href="https://link.juejin.cn/?target=https://antfu.me/posts/reimagine-atomic-css-zh">重新构想原子化 CSS (antfu.me)</a></p>
-<p>本篇介绍一下如何配置UnoCSS、UnoCSS怎么使用</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先创建一个vite模板   <a target="_blank" rel="noopener" href="https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project">https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project</a></p>
-<p>这里使用pnpm</p>
-<pre><code class="bash">pnpm create vite
-</code></pre>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210343.png"></p>
-<p>选择vue、typescript</p>
-<pre><code class="bash">cd vite-project
-pnpm install
-pnpm run dev
-</code></pre>
-<p>运行一下</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126210518.png"></p>
-<p>初始化成功了，接下来安装unocss  <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/vite">https://github.com/unocss/unocss/tree/main/packages/vite</a></p>
-<p>使用文档给的vite安装方式</p>
-<pre><code class="bash">pnpm i -D unocss
-</code></pre>
-<p>在vite config里写上</p>
-<pre><code class="ts">// vite.config.ts
-import UnoCSS from &#39;unocss/vite&#39;
-
-export default &#123;
-  plugins: [
-    UnoCSS(&#123; /* options */ &#125;),
-  ],
-&#125;
-</code></pre>
-<p>配置完全的vite config是这样的</p>
-<pre><code class="ts">// vite.config.ts
-import &#123; defineConfig &#125; from &#39;vite&#39;
-import vue from &#39;@vitejs/plugin-vue&#39;
-import UnoCSS from &#39;unocss/vite&#39;
-import &#123; presetUno &#125; from &#39;unocss&#39;
-
-// https://vitejs.dev/config/
-export default defineConfig(&#123;
-  plugins: [
-    vue(),
-    UnoCSS(&#123;
-      presets: [
-        presetUno(),
-      ],
-    &#125;),
-  ],
-&#125;)
-</code></pre>
-<p>然后在<code>main.ts</code>里加入</p>
-<pre><code class="ts">// main.ts
-import &#39;uno.css&#39;
-</code></pre>
-<p>这里没有eslint还是很不舒服的，推荐一个antfu的eslint配置，来安装一下eslint</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/eslint-config">https://github.com/antfu/eslint-config</a></p>
-<pre><code class="bash">pnpm add -D eslint @antfu/eslint-config
-</code></pre>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126211558.png"></p>
-<p>创建<code>.eslintrc</code>写入</p>
-<pre><code>&#123;
-  &quot;extends&quot;: &quot;@antfu&quot;
-&#125;
-</code></pre>
-<p>在package json里加入</p>
-<pre><code class="json">&#123;
-  &quot;scripts&quot;: &#123;
-    &quot;lint&quot;: &quot;eslint .&quot;,
-    &quot;lint:fix&quot;: &quot;eslint . --fix&quot;
-  &#125;
-&#125;
-</code></pre>
-<p>如果你使用的是VSCode 下载 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">VS Code ESLint extension</a> 然后编辑 <code>.vscode/settings.json</code></p>
-<pre><code class="json">&#123;
-  &quot;prettier.enable&quot;: false,
-  &quot;editor.formatOnSave&quot;: false,
-  &quot;editor.codeActionsOnSave&quot;: &#123;
-    &quot;source.fixAll.eslint&quot;: true
-  &#125;
-&#125;
-</code></pre>
-<p>之后重启vscode</p>
-<p>安装完成😎</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>我们来写一个小demo</p>
-<p>就把原本的默认界面改成unocss好了</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126212340.png"></p>
-<p>先看app.vue</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;/vite.svg&quot; class=&quot;logo&quot; alt=&quot;Vite logo&quot;&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;logo vue&quot; alt=&quot;Vue logo&quot;&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-.logo &#123;
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-&#125;
-.logo:hover &#123;
-  filter: drop-shadow(0 0 2em #646cffaa);
-&#125;
-.logo.vue:hover &#123;
-  filter: drop-shadow(0 0 2em #42b883aa);
-&#125;
-&lt;/style&gt;
-</code></pre>
-<p>改成原子化css的形式</p>
-<p>这里最好先配置一下vite config 多加一点预设</p>
-<pre><code class="ts">// vite.config.ts
-import &#123; defineConfig &#125; from &#39;vite&#39;
-import vue from &#39;@vitejs/plugin-vue&#39;
-import UnoCSS from &#39;unocss/vite&#39;
-import &#123; presetAttributify, presetIcons, presetTypography, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup &#125; from &#39;unocss&#39;
-
-// https://vitejs.dev/config/
-export default defineConfig(&#123;
-  plugins: [
-    vue(),
-    UnoCSS(
-      &#123;
-        presets: [
-          presetUno(),
-          presetAttributify(),
-          presetIcons(&#123;
-            scale: 1.2,
-          &#125;),
-          presetTypography(),
-          presetWebFonts(&#123;
-            fonts: &#123;
-              sans: &#39;DM Sans&#39;,
-              serif: &#39;DM Serif Display&#39;,
-              mono: &#39;DM Mono&#39;,
-            &#125;,
-          &#125;),
-        ],
-        transformers: [
-          transformerDirectives(),
-          transformerVariantGroup(),
-        ],
-      &#125;,
-    ),
-  ],
-&#125;)
-</code></pre>
-<p>我们先用@apply将css改一下 <code>&lt;style scoped&gt;</code></p>
-<pre><code class="css">.logo &#123;
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-&#125;
-.logo:hover &#123;
-  filter: drop-shadow(0 0 2em #646cffaa);
-&#125;
-.logo.vue:hover &#123;
-  filter: drop-shadow(0 0 2em #42b883aa);
-&#125;
-</code></pre>
-<p>这里不会的语法可以看tailwindcss文档</p>
-<p>改成</p>
-<pre><code class="css">.logo &#123;
-  @apply h-6em p-1.5em
-&#125;
-.logo &#123;
-  @apply hover:drop-shadow-[0_0_2em_#646cffaa]
-&#125;
-.logo.vue &#123;
-  @apply hover:drop-shadow-[0_0_2em_#42b883aa]
-&#125;
-</code></pre>
-<p>怎么样？是不是感觉很清晰明了</p>
-<p>这是在tailwindcss里很受欢迎的@apply命令 通过预设导入了unocss</p>
-<p>但是这样体现不出原子化css的方便，虽然非常好看</p>
-<p>我们把css写入html</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;/vite.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#646cffaa]&quot; alt=&quot;Vite logo&quot;&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;hover:drop-shadow-[0_0_2em_#42b883aa]&quot; alt=&quot;Vue logo&quot;&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-&lt;/style&gt;
-</code></pre>
-<p>这样写就很方便了</p>
-<p>再看<code>HelloWorld.vue</code></p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;button type=&quot;button&quot; @click=&quot;count++&quot;&gt;count is &#123;&#123; count &#125;&#125;&lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot;
-      &gt;create-vue&lt;/a
-    &gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;read-the-docs&quot;&gt;Click on the Vite and Vue logos to learn more&lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style scoped&gt;
-.read-the-docs &#123;
-  color: #888;
-&#125;
-&lt;/style&gt;
-</code></pre>
-<p>这个改的比较少</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;
-
-  &lt;div class=&quot;card&quot;&gt;
-    &lt;button type=&quot;button&quot; @click=&quot;count++&quot;&gt;
-      count is &#123;&#123; count &#125;&#125;
-    &lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot;&gt;create-vue&lt;/a&gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;text-[#888]&quot;&gt;
-    Click on the Vite and Vue logos to learn more
-  &lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<p>改成这样就行</p>
-<p>再看<code>style.css</code>文件 内容比较多</p>
-<pre><code class="css">:root &#123;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-&#125;
-
-a &#123;
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-&#125;
-a:hover &#123;
-  color: #535bf2;
-&#125;
-
-body &#123;
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-&#125;
-
-h1 &#123;
-  font-size: 3.2em;
-  line-height: 1.1;
-&#125;
-
-button &#123;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-&#125;
-button:hover &#123;
-  border-color: #646cff;
-&#125;
-button:focus,
-button:focus-visible &#123;
-  outline: 4px auto -webkit-focus-ring-color;
-&#125;
-
-.card &#123;
-  padding: 2em;
-&#125;
-
-#app &#123;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-&#125;
-
-@media (prefers-color-scheme: light) &#123;
-  :root &#123;
-    color: #213547;
-    background-color: #ffffff;
-  &#125;
-  a:hover &#123;
-    color: #747bff;
-  &#125;
-  button &#123;
-    background-color: #f9f9f9;
-  &#125;
-&#125;
-</code></pre>
-<p>一点点儿改</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230126221543.png"></p>
-<p>最后改成了这样 还挺还原的是不是</p>
-<p>有一些媒体查询不会改</p>
-<p>根元素没改</p>
-<p>代码如下</p>
-<pre><code class="css">// style.css
-:root &#123;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-&#125;
-
-
-@media (prefers-color-scheme: light) &#123;
-  :root &#123;
-    color: #213547;
-    background-color: #ffffff;
-  &#125;
-  a:hover &#123;
-    color: #747bff;
-  &#125;
-  button &#123;
-    background-color: #f9f9f9;
-  &#125;
-&#125;
-</code></pre>
-<pre><code class="vue">// HelloWorld.vue
-&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref &#125; from &#39;vue&#39;
-
-defineProps&lt;&#123; msg: string &#125;&gt;()
-
-const count = ref(0)
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;h1 class=&quot;text-3.2em leading-tight&quot;&gt;
-    &#123;&#123; msg &#125;&#125;
-  &lt;/h1&gt;
-
-  &lt;div class=&quot;p-2em flex flex-col place-items-center&quot;&gt;
-    &lt;button
-      type=&quot;button&quot; class=&quot;
-      rounded-8px border-1px border-solid border-transparent
-      py-0.6em px-1.2em text-1em font-medium
-      bg-[#1a1a1a] cursor-pointer transition duration-250
-      hover:border-color-[#646cff]
-      focus:outline-4 focus:outline-[-webkit-focus-ring-color]
-      focus-visible:outline-4 focus-visible:outline-[-webkit-focus-ring-color]
-    &quot; @click=&quot;count++&quot;
-    &gt;
-      count is &#123;&#123; count &#125;&#125;
-    &lt;/button&gt;
-    &lt;p&gt;
-      Edit
-      &lt;code&gt;components/HelloWorld.vue&lt;/code&gt; to test HMR
-    &lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;p&gt;
-    Check out
-    &lt;a href=&quot;https://vuejs.org/guide/quick-start.html#local&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;create-vue&lt;/a&gt;, the official Vue + Vite starter
-  &lt;/p&gt;
-  &lt;p&gt;
-    Install
-    &lt;a href=&quot;https://github.com/johnsoncodehk/volar&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;Volar&lt;/a&gt;
-    in your IDE for a better DX
-  &lt;/p&gt;
-  &lt;p class=&quot;text-[#888]&quot;&gt;
-    Click on the Vite and Vue logos to learn more
-  &lt;/p&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<pre><code class="vue">// App.vue
-&lt;script setup lang=&quot;ts&quot;&gt;
-import HelloWorld from &#39;./components/HelloWorld.vue&#39;
-&lt;/script&gt;
-
-&lt;template&gt;
-  &lt;div class=&quot;m-0 flex flex-col place-items-center min-w-320px min-h-100vh&quot;&gt;
-    &lt;div class=&quot;max-w-1280px my-0 mx-auto p-2rem text-center&quot;&gt;
-      &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;
-        &lt;img src=&quot;/vite.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#646cffaa]&quot; alt=&quot;Vite logo&quot;&gt;
-      &lt;/a&gt;
-      &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; class=&quot;font-medium color-[#646cff] hover:color-[#535bf2]&quot;&gt;
-        &lt;img src=&quot;./assets/vue.svg&quot; class=&quot;h-6em p-1.5em hover:drop-shadow-[0_0_2em_#42b883aa]&quot; alt=&quot;Vue logo&quot;&gt;
-      &lt;/a&gt;
-    &lt;/div&gt;
-    &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;style&gt;
-&lt;/style&gt;
-</code></pre>
-<p>可以看出来虽然写的简单，但是还是比较乱</p>
-<p>这样写的好处是，不用想类名，</p>
-<p>如果加了@apply会更美观，但是还是要写类名，和普通css的区别就是简单了一些</p>
-<p>同时还有一些自带的样式预设</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇我们介绍了UnoCSS的特点，UnoCSS的使用，还是改了挺长时间的，主要是不会写语法，要查tailwind文档 <a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></p>
-<p>还有一些好几个值的css 不知道什么意思</p>
-<pre><code class="css">outline: green solid 3px;
-/* mdn:颜色 | 样式 | 宽度 */
-</code></pre>
-<pre><code class="css">outline: 4px auto -webkit-focus-ring-color;
-/* style.css */
-</code></pre>
-<p>关于这种就不知道怎么写</p>
-<p>最后只能掰成</p>
-<pre><code>focus:outline-4 focus:outline-[-webkit-focus-ring-color]
-</code></pre>
-<p>题外话：</p>
-<blockquote>
-<p>Anthony Fu大佬真的是我目前的偶像，狂热的开源爱好者，人长得又帅，做的东西又好</p>
-</blockquote>
-<p>🤣这是我在掘金搜unocss搜到的一篇文章中的第一句话 文章在这 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
-<p>antfu大佬确实也是我的偶像</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125225032.png"></p>
-<p>22年秋季 antfu大佬在b站办过几场直播写代码，我基本上是每期必看，这个人非常有意思，有很多新鲜的点子，狠活也多 比如说</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/1990-script">https://github.com/antfu/1990-script</a> 这个仓库教你怎么把GitHub历史穿越回1990年🤭</p>
-<p>他的每个star比较多的仓库我都体验过，感觉设计灵感真的让人眼前一亮，启发基于社区，创造更快的轮子，更好玩的轮子</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/retypewriter">https://github.com/antfu/retypewriter</a> 这个是直播写的雏形 让写的代码在vsc里回放，便于理清思路</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-minesweeper">https://github.com/antfu/vue-minesweeper</a> 这个是首次直播写的扫雷，很清晰的vue代码，看他写真的开窍</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-starport">https://github.com/antfu/vue-starport</a> 这个也是直播写的雏形，为了使组件有更好的过渡</p>
-<p>就说这么多，人也长得帅</p>
-<p>🥰😘</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a></p>
-<p><a target="_blank" rel="noopener" href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.tailwindcss.cn/docs/functions-and-directives#apply">https://www.tailwindcss.cn/docs/functions-and-directives#apply</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss">https://github.com/unocss/unocss</a></p>
-<p><a target="_blank" rel="noopener" href="https://cn.vitejs.dev/">https://cn.vitejs.dev/</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/01/25/%E5%8E%9F%E5%AD%90%E5%8C%96CSS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="原子化CSS｜ 青训营笔记" class="lazyload">
-                    <h1>原子化CSS｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月25日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.9k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 9 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原子化 CSS是一个很新颖的定义 出自<a target="_blank" rel="noopener" href="https://css-tricks.com/lets-define-exactly-atomic-CSS/">https://CSS-tricks.com/lets-define-exactly-atomic-CSS/</a></p>
-<p>意思是<code>原子化 CSS是一种 CSS的架构方式，它倾向于小巧且用途单一的 class，并且会以视觉效果进行命名。</code></p>
-<h2 id="什么是原子化-CSS"><a href="#什么是原子化-CSS" class="headerlink" title="什么是原子化 CSS?"></a>什么是原子化 CSS?</h2><p>与一般的我们写正常CSS不同，原子化CSS会把元素本身的属性提取出来，加以视觉效果命名，例如：</p>
-<p>如下的html</p>
-<pre><code class="html">&lt;button class=&quot;btn&quot;&gt;Basic&lt;/button&gt;
-</code></pre>
-<p>正常的CSS</p>
-<pre><code class="css">.btn &#123;
-    padding: 1rem, 2rem;
-    font-family: &#39;semi&#39;;
-    font-weight: bold; 
-&#125;
-</code></pre>
-<p>使用原子化CSS后，将不用写CSS文件，改为写class属性</p>
-<pre><code class="html">&lt;button class=&quot;py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700&quot;&gt;
-  Click me
-&lt;/button&gt;
-</code></pre>
-<p>市面上有不少实用至上的 CSS框架，如 <a target="_blank" rel="noopener" href="https://tailwindcss.com/">Tailwind CSS</a>，<a target="_blank" rel="noopener" href="https://cn.windicss.org/">Windi CSS</a> 以及 <a target="_blank" rel="noopener" href="https://tachyons.io/">Tachyons</a> 等。</p>
-<p>同时有些 UI 库也会附带一些 CSS工具类作为框架的补充，如 <a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/5.1/utilities/api/">Bootstrap</a> 和 <a target="_blank" rel="noopener" href="https://chakra-ui.com/docs/features/style-props">Chakra UI</a>。</p>
-<h2 id="写之前，我们谈谈优势"><a href="#写之前，我们谈谈优势" class="headerlink" title="写之前，我们谈谈优势"></a>写之前，我们谈谈优势</h2><ul>
-<li>类名自由：你绞尽脑汁想这个元素的类名怎么写。在你面前的是一点击就会变颜色的按钮，你想给他起个class或者id，你想了半天，最后取了class名为<code>click-it-and-turn-it-from-blue-to-green</code>😰。</li>
-<li>html嵌入：正常情况我们要引入CSS文件去写这个样式，切来切去不太方便。</li>
-<li>预设的原子化CSS：可以引入插件、其他基于原子化CSS写的组件库。</li>
-<li>IDE支持：插件支持类名提示，很好写。</li>
-<li>写的快：比如说hover属性，原子化CSS可以直接写在class里，很快很方便，比如说tailwind自带的响应式布局，不用自己写媒体查询就可以适配移动端。</li>
-</ul>
-<h2 id="常用的原子化CSS框架"><a href="#常用的原子化CSS框架" class="headerlink" title="常用的原子化CSS框架"></a>常用的原子化CSS框架</h2><ul>
-<li><p>tailwindCSS<a target="_blank" rel="noopener" href="https://tailwindcss.com/">https://tailwindcss.com/</a></p>
-<ul>
-<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125214852.png"></li>
-</ul>
-</li>
-<li><p>Windi CSS<a target="_blank" rel="noopener" href="https://windicss.org/">https://windicss.org/</a></p>
-<ul>
-<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215026.png"></li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://tachyons.io/">Tachyons</a> <a target="_blank" rel="noopener" href="https://tachyons.io/">https://tachyons.io/</a></p>
-<ul>
-<li><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215141.png"></p>
-</li>
-<li><p>UnoCSS<a target="_blank" rel="noopener" href="https://github.com/unocss/unocss">https://github.com/unocss/unocss</a></p>
-<ul>
-<li><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125215337.png"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="本文的重点：UnoCSS"><a href="#本文的重点：UnoCSS" class="headerlink" title="本文的重点：UnoCSS"></a>本文的重点：UnoCSS</h2><p>讲这么多，我们终于回到主题UnoCSS上</p>
-<blockquote>
-<p> antfu<a href="https://link.juejin.cn/?target=https://antfu.me/posts/reimagine-atomic-css-zh">重新构想原子化CSS</a> 这篇文章讲了unocss是怎么诞生的</p>
-</blockquote>
-<p>Windi CSS已经足够优秀，但antfu大佬还是不够满意，对于框架预设外的自定义工具的额外配置上，还是比较繁琐，而且配置的方式也不够简便</p>
-<blockquote>
-<p>由于 Windi 需要与 Tailwind 兼容，它还必须使用与 Tailwind 完全相同的配置项。尽管数字推断的问题得到了解决，但如果你想添加一些自定义的工具，这将是一场噩梦。</p>
-</blockquote>
-<p>所以经过重新构想原子化CSS，UnoCSS出现了</p>
-<blockquote>
-<p><a href="https://link.juejin.cn/?target=https://github.com/antfu/unocss"><strong>UnoCSS</strong></a> - 具有高性能且极具灵活性的即时原子化 CSS引擎。</p>
-</blockquote>
-<p>它不是像TailWind CSS和Windi CSS属于框架，而是一个引擎，它没有提供预设的原子化CSS工具类</p>
-<p>UnoCSS通过编写规则来定制工具类</p>
-<p>静态规则</p>
-<pre><code class="js">rules: [
-    [&#39;m-1&#39;, &#123; margin: &#39;0.25rem&#39; &#125;]
-]
-</code></pre>
-<p>使用正则表达式来做动态规则</p>
-<pre><code class="ts">rules: [
-  [/^m-(\d)$/, ([, d]) =&gt; (&#123; margin: `$&#123;d / 4&#125;rem` &#125;)],
-  [/^p-(\d)$/, (match) =&gt; (&#123; padding: `$&#123;match[1] / 4&#125;rem` &#125;)],
-]
-</code></pre>
-<p>当然这些比较常见的规则unocss已经提供了预设在<code>@unocss/preset-uno</code>中</p>
-<pre><code class="html">&lt;div class=&quot;m-100&quot;&gt;
-  &lt;button class=&quot;m-3&quot;&gt;
-    &lt;icon class=&quot;p-5&quot; /&gt;
-    My Button
-  &lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-<p>生成出的css为</p>
-<pre><code class="css">.m-100 &#123; margin: 25rem; &#125;
-.m-3 &#123; margin: 0.75rem; &#125;
-.p-5 &#123; padding: 1.25rem; &#125;
-</code></pre>
-<p>unocss提供了一个叫shortcuts的功能，可以批量生成css</p>
-<pre><code class="js">shortcuts: [
-  // you could still have object style
-  &#123;
-    btn: &#39;py-2 px-4 font-semibold rounded-lg shadow-md&#39;,
-  &#125;,
-  // dynamic shortcuts
-  [/^btn-(.*)$/, ([, c]) =&gt; `bg-$&#123;c&#125;-400 text-$&#123;c&#125;-100 py-2 px-4 rounded-lg`],
-]
-</code></pre>
-<p>只需要配置这个字段</p>
-<p>在使用中可以使用 <code>btn-green</code> 和 <code>btn-red</code> </p>
-<p>生成的css如下</p>
-<pre><code class="css">.btn-green &#123;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  --un-bg-opacity: 1;
-  background-color: rgba(74, 222, 128, var(--un-bg-opacity));
-  border-radius: 0.5rem;
-  --un-text-opacity: 1;
-  color: rgba(220, 252, 231, var(--un-text-opacity));
-&#125;
-.btn-red &#123;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  --un-bg-opacity: 1;
-  background-color: rgba(248, 113, 113, var(--un-bg-opacity));
-  border-radius: 0.5rem;
-  --un-text-opacity: 1;
-  color: rgba(254, 226, 226, var(--un-text-opacity));
-&#125;
-</code></pre>
-<p>unocss提供了很多预设</p>
-<h6 id="Official-Presets"><a href="#Official-Presets" class="headerlink" title="Official Presets"></a>Official Presets</h6><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-uno">@unocss&#x2F;preset-uno</a> - The default preset (right now it’s equivalent to <code>@unocss/preset-wind</code>).</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-mini">@unocss&#x2F;preset-mini</a> - The minimal but essential rules and variants.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-wind">@unocss&#x2F;preset-wind</a> - Tailwind &#x2F; Windi CSScompact preset.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify">@unocss&#x2F;preset-attributify</a> - Provides <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify#attributify-mode">Attributify Mode</a> to other presets and rules.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-icons">@unocss&#x2F;preset-icons</a> - Use any icon as a class utility.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-web-fonts">@unocss&#x2F;preset-web-fonts</a> - Web fonts at ease.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-typography">@unocss&#x2F;preset-typography</a> - The typography preset.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-tagify">@unocss&#x2F;preset-tagify</a> - Tagify Mode for UnoCSS.</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-rem-to-px">@unocss&#x2F;preset-rem-to-px</a> - Converts rem to px for utils.</li>
-</ul>
-<h6 id="Community-Presets"><a href="#Community-Presets" class="headerlink" title="Community Presets"></a>Community Presets</h6><ul>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/macheteHot/unocss-preset-scalpel">unocss-preset-scalpel</a> - Scalpel Preset by <a target="_blank" rel="noopener" href="https://github.com/macheteHot/">@macheteHot</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/chu121su12/unocss-preset-chroma">unocss-preset-chroma</a> - Gradient Preset by <a target="_blank" rel="noopener" href="https://github.com/chu121su12">@chu121su12</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/action-hong/unocss-preset-scrollbar">unocss-preset-scrollbar</a> - Scrollbar Preset by <a target="_blank" rel="noopener" href="https://github.com/action-hong">@action-hong</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss-applet/unocss-applet">unocss-applet</a> - Using UnoCSSin applet (UniApp &#x2F; Taro) by <a target="_blank" rel="noopener" href="https://github.com/zguolee">@zguolee</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/MellowCo/unocss-preset-weapp">unocss-preset-weapp</a> - Wechat MiniProgram Preset for <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/">UniApp</a> and <a target="_blank" rel="noopener" href="https://taro-docs.jd.com/taro/docs">Taro</a> by <a target="_blank" rel="noopener" href="https://github.com/MellowCo">@MellowCo</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-heropatterns">unocss-preset-heropatterns</a> - Preset that integrates <a target="_blank" rel="noopener" href="https://heropatterns.com/">Hero Patterns</a> by <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-flowbite">unocss-preset-flowbite</a> - Port of of <a target="_blank" rel="noopener" href="https://github.com/themesberg/flowbite">Flowbite Tailwind plugin</a> for UnoCSSby <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/Julien-R44/unocss-preset-forms">unocss-preset-forms</a> - Port of <a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss-forms">@tailwindcss&#x2F;forms</a> for UnoCSSby <a target="_blank" rel="noopener" href="https://github.com/Julien-R44">@Julien-R44</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/MoomFE/unocss-preset-extra">unocss-preset-extra</a> - <a target="_blank" rel="noopener" href="https://animate.style/">Animate.css</a> Preset and some other rules by <a target="_blank" rel="noopener" href="https://github.com/Zhang-Wei-666">@Zhang-Wei-666</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/kidonng/unocss-preset-daisy">unocss-preset-daisy</a> - daisyUI Preset by <a target="_blank" rel="noopener" href="https://github.com/kidonng">@kidonng</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/zirbest/unocss-preset-primitives">unocss-preset-primitives</a> - Like <a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss">headlessui-tailwindcss</a> , radix-ui , custom for UnoCSSBy <a target="_blank" rel="noopener" href="https://github.com/zirbest">@zirbest</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/Dunqing/unocss-preset-theme">unocss-preset-theme</a> - Preset for automatic theme switching by <a target="_blank" rel="noopener" href="https://github.com/Dunqing">@Dunqing</a>.</p>
-<p>通过这些预设可以达到融合tailwind和windi的效果</p>
-</li>
-</ul>
-<h2 id="UnoCSS的优点"><a href="#UnoCSS的优点" class="headerlink" title="UnoCSS的优点"></a>UnoCSS的优点</h2><p>对比其他原子化框架来说</p>
-<ul>
-<li><p>完全可定制：作为一款引擎没有核心实用程序，所有的功能都是通过预设提供的。</p>
-</li>
-<li><p>扩展性强：通过各种预设组合达到windi或者tailwind的效果。</p>
-</li>
-<li><p>快：没有解析，没有AST，没有扫描，它是即时的。</p>
-</li>
-<li><p>小：运行库打包好只有6kb，无痛</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main#shortcuts">Shortcuts</a>：可以写Shortcuts来预设一些常用样式</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify/">Attributify mode</a> ：将class写成组，避免无法阅读的问题</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-icons/">Pure CSSIcons</a> ：纯 CSSicon 可以在 <a target="_blank" rel="noopener" href="https://icones.js.org/">https://icones.js.org/</a> 找到并导入成千上万的icon  安装只需要找到你喜欢的 iconfy 库 <code>@iconify-json/[the-collection-you-want]</code> 这样安装就行</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group">Variant Groups</a> ：和 <a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/preset-attributify/">Attributify mode</a> 看起来几乎是一样的功能，写成组</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-directives">CSSDirectives</a> ：可以在style标签里写  <code>@apply</code>  把一系列样式打包成一个样式，在windi里是个很受欢迎的功能</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/transformer-compile-class/">Compilation mode</a> ：打包优化，生成随机class名</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main#inspector">Inspector</a> ：自带的debug工具</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/unocss/unocss/tree/main/packages/runtime">CSS-in-JS Runtime build</a> ：可以CDN导入</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=antfu.unocss">VS Code extension</a>：自带VSCode提示扩展，很方便</p>
-</li>
-</ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本篇我们介绍了UnoCSS的特点，原子化CSS的好处，下一篇讲讲unocss实战，安装使用之类的</p>
-<p>题外话：</p>
-<blockquote>
-<p>Anthony Fu大佬真的是我目前的偶像，狂热的开源爱好者，人长得又帅，做的东西又好</p>
-</blockquote>
-<p>🤣这是我在掘金搜unocss搜到的一篇文章中的第一句话 文章在这 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
-<p>antfu大佬确实也是我的偶像</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125225032.png"></p>
-<p>22年秋季 antfu大佬在b站办过几场直播写代码，我基本上是每期必看，这个人非常有意思，有很多新鲜的点子，狠活也多 比如说</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/1990-script">https://github.com/antfu/1990-script</a> 这个仓库教你怎么把GitHub历史穿越回1990年🤭</p>
-<p>他的每个star比较多的仓库我都体验过，感觉设计灵感真的让人眼前一亮，启发基于社区，创造更快的轮子，更好玩的轮子</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/retypewriter">https://github.com/antfu/retypewriter</a> 这个是直播写的雏形 让写的代码在vsc里回放，便于理清思路</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-minesweeper">https://github.com/antfu/vue-minesweeper</a> 这个是首次直播写的扫雷，很清晰的vue代码，看他写真的开窍</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vue-starport">https://github.com/antfu/vue-starport</a> 这个也是直播写的雏形，为了使组件有更好的过渡</p>
-<p>就说这么多，人也长得帅</p>
-<p>🥰😘</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7028841960752283656">https://juejin.cn/post/7028841960752283656</a></p>
-<p><a target="_blank" rel="noopener" href="https://antfu.me/posts/reimagine-atomic-css-zh">https://antfu.me/posts/reimagine-atomic-css-zh</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7027414082378530852">https://juejin.cn/post/7027414082378530852</a></p>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7161211941652791304">https://juejin.cn/post/7161211941652791304</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.tailwindcss.cn/docs/">https://www.tailwindcss.cn/docs/</a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
     <nav class="nexmoe-page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/page/2/">2</a><a class="extend next" rel="next" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/page/2/"><i class="nexmoefont icon-right"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/page/2/">2</a><a class="page-number" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/page/3/">3</a><a class="extend next" rel="next" href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/page/2/"><i class="nexmoefont icon-right"></i></a>
     </nav>
   
 
@@ -3114,7 +2541,7 @@ import HelloWorld from &#39;./components/HelloWorld.vue&#39;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1690467207943"></script>
+<script src="/js/app.js?v=1695140390228"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -3131,6 +2558,12 @@ import HelloWorld from &#39;./components/HelloWorld.vue&#39;
 
 
 <!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -3142,12 +2575,6 @@ import HelloWorld from &#39;./components/HelloWorld.vue&#39;
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
-
-<script src="/js/clock.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>
