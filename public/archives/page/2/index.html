@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1695140390206">
+  <link rel="stylesheet" href="/css/style.css?v=1697640283424">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -62,7 +62,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>35 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -134,7 +134,7 @@
   
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/DN11/" style="font-size: 10px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
+      <a href="/tags/DN11/" style="font-size: 15px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
     </div>
     
   </div>
@@ -144,7 +144,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +181,112 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/02/08/Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Web 开发安全 ｜ 青训营笔记" class="lazyload">
+                    <h1>Web 开发安全 ｜ 青训营笔记</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年02月08日</a>
+            <a><i class="nexmoefont icon-areachart"></i>845 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 17 天</strong></p>
+<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ul>
+<li><p>Web 相关的攻击介绍</p>
+</li>
+<li><p>Web 相关的防御介绍</p>
+</li>
+</ul>
+<h2 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h2><h3 id="XSS-Cross-Site-Scripting"><a href="#XSS-Cross-Site-Scripting" class="headerlink" title="XSS (Cross-Site Scripting)"></a>XSS (Cross-Site Scripting)</h3><p>主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入</p>
+<p>特点：</p>
+<ol>
+<li>通常难以从 UI 上感知</li>
+<li>窃取用户信息，例如 cookie 和 token</li>
+</ol>
+<p>常见的会导致XSS的代码：</p>
+<pre><code>document.write
+el.innerHTML = anyString
+</code></pre>
+<p>总结来说，所有能够渲染dom结构的函数，都有可能导致XSS攻击。</p>
+<p>比如论坛场景中，<strong>用户提交的内容包含恶意script标签</strong></p>
+<pre><code class="js">fetch(&quot;/submit&quot;, &#123;
+    body: JSON.stringify(&#123;
+        id: &quot;1&quot;,
+        content: `&lt;script&gt;alert(&quot;xss&quot;);&lt;/script&gt;`
+    &#125;)
+&#125;)
+</code></pre>
+<p>导致代码被插入到帖子中，所有用户访问页面都会执行恶意脚本</p>
+<p>XSS 能够分成下面四类</p>
+<p><code>Stored XSS</code> 直接将恶意脚本储存到了数据库中，导致之后的所有访问均会携带恶意脚本，危害很大</p>
+<pre><code>Reflected XSS` 反射型，不储存数据，仅仅从URL传入脚本导致攻击，例如 `/path?param=&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;
+</code></pre>
+<p><code>DOM-based XSS</code> 不由服务器参与，攻击的发起和执行都在浏览器，常见于前端框架中</p>
+<p><code>Mutation-based XSS</code> 利用浏览器的特性，不同浏览器会有区别，例如</p>
+<pre><code>&lt;noscript&gt;&lt;p title=&quot;&lt;/noscript&gt;&lt;img src=x onerror=alert(1)&gt;&quot;&gt;
+</code></pre>
+<h3 id="CSRF-Cross-site-request-forgery"><a href="#CSRF-Cross-site-request-forgery" class="headerlink" title="CSRF (Cross-site request forgery)"></a>CSRF (Cross-site request forgery)</h3><p>特点：</p>
+<ol>
+<li>在用户不知情的前提下</li>
+<li>利用用户权限（cookie）</li>
+<li>构造指定HTTP请求，窃取或修改用户敏感信息</li>
+</ol>
+<p>例子：</p>
+<p>用户没有访问银行网页，但是访问了一个带有攻击内容的网页，该网页尝试请求银行接口，由于用户登录过银行，接口携带cookie，导致请求成功，使得用户受到损失。</p>
+<h3 id="SQL-注入-SQL-Injection"><a href="#SQL-注入-SQL-Injection" class="headerlink" title="SQL 注入 (SQL Injection)"></a>SQL 注入 (SQL Injection)</h3><p>在请求参数中构造恶意字符串，拼接SQL语句，导致服务器执行了特定的SQL语句，造成数据库内容泄露</p>
+<p>例子：</p>
+<pre><code class="js">sql.query(`
+    SELECT a, b, c FROM table
+    WHERE username = $&#123;username&#125;
+    AND form_id = $&#123;form_id&#125;
+`)
+</code></pre>
+<p>上面的这段后端代码，攻击者就能够通过构造特殊的 username 或 form_id，使得SQL语句的意义被改变</p>
+<p>例如传入 form_id &#x3D; <code>any; DROP TABLE table;</code></p>
+<p>SQL 语句拼接后变成 <code>SELECT a,b,c FROM table WHERE xxxx AND form_id = any; DROP TABLE table;</code></p>
+<p>将导致数据库被删除</p>
+<h3 id="SSRF-Server-Side-Request-Forgery"><a href="#SSRF-Server-Side-Request-Forgery" class="headerlink" title="SSRF (Server-Side Request Forgery)"></a>SSRF (Server-Side Request Forgery)</h3><p>服务端伪造请求</p>
+<p>例子：</p>
+<pre><code>ctx.body = await fetch(ctx.query.callback)
+</code></pre>
+<p>导致能够通过传入的参数访问到服务器内网的相关服务</p>
+<h3 id="DoS-Denial-of-Service"><a href="#DoS-Denial-of-Service" class="headerlink" title="DoS (Denial of Service)"></a>DoS (Denial of Service)</h3><p><code>「 不搞复杂的 ， 量大就完事儿了 」</code></p>
+<p>通过构造特定请求，导致服务器资源被消耗，来不及响应更多请求，引发雪崩效应</p>
+<p>例如：</p>
+<ol>
+<li>耗时的同步操作</li>
+<li>文件备份</li>
+<li>数据库写入</li>
+<li>SQL join</li>
+<li>循环执行逻辑</li>
+</ol>
+<h4 id="DDoS-Distributed-DoS"><a href="#DDoS-Distributed-DoS" class="headerlink" title="DDoS (Distributed DoS)"></a>DDoS (Distributed DoS)</h4><p>攻击特点</p>
+<ul>
+<li>直接访问 IP</li>
+<li>任意 API</li>
+<li>消耗大量带宽 （ 耗尽 ）</li>
+</ul>
+<p>SYN Flood</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>安全无小事<br>使用的依赖 npm package，甚至是 NodeJS 可能成为最薄弱的一环</p>
+<ul>
+<li>保持学习心态<br>npm install 除了带来了果洞 ， 还可以带来漏洞</li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme">https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065">https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065</a></p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/02/01/NextJS%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
@@ -2234,473 +2340,6 @@ import HelloWorld from &#39;./components/HelloWorld.vue&#39;
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2023/01/24/MonoRepo&Nuxt%E6%A1%86%E6%9E%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%9E%E6%88%98%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="MonoRepo&amp;Nuxt框架初始化实战 ｜ 青训营笔记" class="lazyload">
-                    <h1>MonoRepo&amp;Nuxt框架初始化实战 ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月24日</a>
-            <a><i class="nexmoefont icon-areachart"></i>2.2k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 8 天</strong></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇笔记介绍了MonoRepo的优点和基于go语言的MonoRepo框架TurboRepo，这一篇我们详细介绍一下如何配置出一个团队能用的TurboRepo库，包括一些actions和自动部署预览等。</p>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
-<li>⚡️ <code>Nuxt3</code> - SSR框架</li>
-<li>✨ <code>Vue3.2 </code>- 最新Vue更多语法糖</li>
-<li>💨 <code>Turbo</code> - MonoRepo框架</li>
-<li>💎 <code>Strapi</code> - Headless CMS 框架</li>
-<li>😎 <code>@Nuxt/Image</code> - images 服务端渲染</li>
-<li>😁 <code>Umami</code> - Better Analytics 访问源分析</li>
-<li>🃏 <code>Commit Lint</code> - commit规范检查</li>
-<li>💖 <code>Husky &amp; Lint Staged</code> — precommit运行库</li>
-<li>📏 <code>Eslint</code> - 规范化TypeScript、JavaScript代码</li>
-<li>🐶 <code>UnoCss</code> - 原子化 CSS 引擎、兼容 tailwindcss、windicss </li>
-<li>🤖 <code>preset-icons</code> - unocss 自带icons</li>
-<li>⏰ The <code>&lt;script setup&gt;</code> syntax setup语法糖 来自Vue3.2</li>
-<li>🍍 <code>Pinia</code> - 全局状态管理库 更好用</li>
-<li>🎨 <code>APIs auto importing</code> - 库自动引入</li>
-<li>🦾 <code>TypeScript</code> - 更规范的语法</li>
-<li>👷 <code>Github Actions</code> - actions自动运行、ci&#x2F;cd云端检查语法</li>
-<li>👀 <code>Automatic Branch and Issue Autolink</code> - Issue AutoLink actions 创建issue会创建一个分支</li>
-<li>🗺 <code>Nuxt SEO Kit</code> - SEO优化 SSR必备</li>
-<li>📦 <code>Vercel</code> - 自动部署、预览的平台</li>
-<li>🔥 <code>Netlify + Cloudflare</code> - 部署平台</li>
-</ul>
-<h2 id="前端模板"><a href="#前端模板" class="headerlink" title="前端模板"></a>前端模板</h2><p>前端模板选择了<a target="_blank" rel="noopener" href="https://github.com/antfu/vitesse-nuxt3">https://github.com/antfu/vitesse-nuxt3</a> </p>
-<p>是antfu的vitesse系列模板的nuxt3款</p>
-<p>这套模板用了好多个 很好用的</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230124233609.png"></p>
-<p>配置很全、自带的unocss也是几乎兼容windicss和tailwind 很适应</p>
-<p>想用icons可以去antfu的另一个项目里找</p>
-<p><a target="_blank" rel="noopener" href="https://icones.js.org/">https://icones.js.org/</a> 这里二次封装了几万个icons用个爽</p>
-<h2 id="配置turbo"><a href="#配置turbo" class="headerlink" title="配置turbo"></a>配置turbo</h2><p>turbo官网有讲怎么配置到一个已有的MonoRepo里<a target="_blank" rel="noopener" href="https://turbo.build/repo/docs/getting-started/existing-monorepo">https://turbo.build/repo/docs/getting-started/existing-monorepo</a></p>
-<p>这里只需要在根目录的package.json里建立<code>workspaces</code>字段 和<code>packageManager</code>字段</p>
-<pre><code class="json">//package.json
-&#123;
-&quot;packageManager&quot;: &quot;yarn@1.22.19&quot;,
-  &quot;workspaces&quot;: [
-    &quot;frontend&quot;,
-    &quot;backend&quot;
-  ],
-&#125;
-</code></pre>
-<h3 id="安装TurboRepo"><a href="#安装TurboRepo" class="headerlink" title="安装TurboRepo"></a>安装TurboRepo</h3><pre><code class="sql">yarn global add turbo
-</code></pre>
-<h3 id="创建任务管道"><a href="#创建任务管道" class="headerlink" title="创建任务管道"></a>创建任务管道</h3><p>在<code>package.json</code> 的<code>turbo</code>中，将想要”turbo”的命令添加到管道中 管道定义了 npm 包中 scripts 的依赖关系，并且为这些命令开启了缓存。这些命令的依赖关系和缓存设置会应用到 MonoRepo 中的各个包中</p>
-<pre><code class="json">//turbo.json
-&#123;
-  &quot;$schema&quot;: &quot;https://turbo.build/schema.json&quot;,
-  &quot;pipeline&quot;: &#123;
-    &quot;build&quot;: &#123;
-      // A package&#39;s `build` script depends on that package&#39;s
-      // dependencies and devDependencies
-      // `build` tasks  being completed first
-      // (the `^` symbol signifies `upstream`).
-      &quot;dependsOn&quot;: [&quot;^build&quot;],
-      // note: output globs are relative to each package&#39;s `package.json`
-      // (and not the monorepo root)
-      &quot;outputs&quot;: [&quot;.next/**&quot;]
-    &#125;,
-    &quot;test&quot;: &#123;
-      // A package&#39;s `test` script depends on that package&#39;s
-      // own `build` script being completed first.
-      &quot;dependsOn&quot;: [&quot;build&quot;],
-      // A package&#39;s `test` script should only be rerun when
-      // either a `.tsx` or `.ts` file has changed in `src` or `test` folders.
-      &quot;inputs&quot;: [&quot;src/**/*.tsx&quot;, &quot;src/**/*.ts&quot;, &quot;test/**/*.ts&quot;, &quot;test/**/*.tsx&quot;]
-    &#125;,
-    // A package&#39;s `lint` script has no dependencies and
-    // can be run whenever. It also has no filesystem outputs.
-    &quot;lint&quot;: &#123;&#125;,
-    &quot;deploy&quot;: &#123;
-      // A package&#39;s `deploy` script depends on the `build`,
-      // `test`, and `lint` scripts of the same package
-      // being completed. It also has no filesystem outputs.
-      &quot;dependsOn&quot;: [&quot;build&quot;, &quot;test&quot;, &quot;lint&quot;]
-    &#125;
-  &#125;
-&#125;
-</code></pre>
-<p>上面的示例中，<code>build</code>和<code>test</code>这两个任务具有依赖性，必须要等他们的依赖项对应的任务完成后才能执行，所以这里用<code>^</code>来表示。 对于每个包中 package.json 中的 script 命令，如果没有配置覆盖项，那么TurboRepo将缓存默认输出到 <code>dist/** </code>和<code>build/**</code>文件夹中。</p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>这样只需要运行</p>
-<pre><code class="bash">npx turbo run build test lint deploy
-</code></pre>
-<p>就可以运行全部参数</p>
-<h3 id="配置-gitignore"><a href="#配置-gitignore" class="headerlink" title="配置.gitignore"></a>配置<code>.gitignore</code></h3><p>根目录 创建<code>.gitignore</code>文件</p>
-<pre><code class="json">+ .turbo
-+ build/**
-+ dist/**
-+ .next/**
-</code></pre>
-<h3 id="Remote-cache"><a href="#Remote-cache" class="headerlink" title="Remote cache"></a>Remote cache</h3><pre><code class="bash">turbo login
-</code></pre>
-<pre><code class="bash">turbo link
-</code></pre>
-<p>然后删除你的<code>./node_modules/.cache/turbo</code>文件夹</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230123234538.png"></p>
-<p>显示 full turbo 则证明匹配到了云端的缓存，直接拉下来不再构建一遍</p>
-<h2 id="配置husky"><a href="#配置husky" class="headerlink" title="配置husky"></a>配置husky</h2><p>在根目录安装husky</p>
-<p>先运行<code>husky install</code></p>
-<p>然后创建<code>.husky</code>文件夹</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230124235647.png"></p>
-<p>文件树如上</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre><code>//.gitignore
-*
-</code></pre>
-<pre><code class="sh"># husky.sh
-#!/usr/bin/env sh
-if [ -z &quot;$husky_skip_init&quot; ]; then
-  debug () &#123;
-    if [ &quot;$HUSKY_DEBUG&quot; = &quot;1&quot; ]; then
-      echo &quot;husky (debug) - $1&quot;
-    fi
-  &#125;
-
-  readonly hook_name=&quot;$(basename -- &quot;$0&quot;)&quot;
-  debug &quot;starting $hook_name...&quot;
-
-  if [ &quot;$HUSKY&quot; = &quot;0&quot; ]; then
-    debug &quot;HUSKY env variable is set to 0, skipping hook&quot;
-    exit 0
-  fi
-
-  if [ -f ~/.huskyrc ]; then
-    debug &quot;sourcing ~/.huskyrc&quot;
-    . ~/.huskyrc
-  fi
-
-  readonly husky_skip_init=1
-  export husky_skip_init
-  sh -e &quot;$0&quot; &quot;$@&quot;
-  exitCode=&quot;$?&quot;
-
-  if [ $exitCode != 0 ]; then
-    echo &quot;husky - $hook_name hook exited with code $exitCode (error)&quot;
-  fi
-
-  if [ $exitCode = 127 ]; then
-    echo &quot;husky - command not found in PATH=$PATH&quot;
-  fi
-
-  exit $exitCode
-fi
-</code></pre>
-<pre><code class="sh">//commit-msg
-#!/bin/sh
-. &quot;$(dirname &quot;$0&quot;)/_/husky.sh&quot;
-
-npx --no-install commitlint --edit &quot;$1&quot;
-</code></pre>
-<pre><code class="sh">//post-merge
-#!/bin/sh
-. &quot;$(dirname &quot;$0&quot;)/_/husky.sh&quot;
-
-yarn install
-</code></pre>
-<pre><code class="sh">//pre-commit
-#!/bin/sh
-. &quot;$(dirname &quot;$0&quot;)/_/husky.sh&quot;
-
-yarn lint-staged
-</code></pre>
-<h3 id="安装commit-lint"><a href="#安装commit-lint" class="headerlink" title="安装commit lint"></a>安装commit lint</h3><pre><code>yarn install -D @commitlint/config-conventional 	@commitlint/cli
-</code></pre>
-<p>这个可以在MonoRepo内安装不在根目录装</p>
-<p>在前端的package.json里配置</p>
-<pre><code class="json">//./frontend/package.json
-&#123;
-  &quot;name&quot;: &quot;frontend&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;private&quot;: true,
-  &quot;scripts&quot;: &#123;
-    &quot;build&quot;: &quot;nuxi build&quot;,
-    &quot;dev&quot;: &quot;nuxi dev&quot;,
-    &quot;start&quot;: &quot;node .output/server/index.mjs&quot;,
-    &quot;lint&quot;: &quot;eslint .&quot;,
-    &quot;lint:fix&quot;: &quot;eslint . --fix&quot;,
-    &quot;generate&quot;: &quot;nuxi generate&quot;,
-    &quot;typecheck&quot;: &quot;tsc --noEmit --incremental false&quot;,
-    &quot;lint:strict&quot;: &quot;eslint --max-warnings=0 .&quot;
-  &#125;,
-  &quot;lint-staged&quot;: &#123;
-    &quot;**/*.&#123;js,ts,vue,html&#125;&quot;: [
-      &quot;eslint --max-warnings=0&quot;
-    ]
-  &#125;
-&#125;
-</code></pre>
-<p>最后在根目录创建<code>commitlint.config.js</code></p>
-<p>里面写上commit lint 规则</p>
-<pre><code class="js">//commitlint.config.js
-module.exports = &#123;
-  extends: [&#39;@commitlint/config-conventional&#39;],
-  rules: &#123;
-    &#39;type-enum&#39;: [
-      2,
-      &#39;always&#39;,
-      [
-        &#39;feat&#39;,
-        &#39;fix&#39;,
-        &#39;docs&#39;,
-        &#39;chore&#39;,
-        &#39;style&#39;,
-        &#39;refactor&#39;,
-        &#39;ci&#39;,
-        &#39;test&#39;,
-        &#39;revert&#39;,
-        &#39;perf&#39;,
-        &#39;build&#39;,
-        &#39;vercel&#39;,
-      ],
-    ],
-  &#125;,
-&#125;
-</code></pre>
-<h2 id="配置-gitignore-1"><a href="#配置-gitignore-1" class="headerlink" title="配置.gitignore"></a>配置<code>.gitignore</code></h2><pre><code>node_modules
-*.log
-dist
-.output
-.nuxt
-.env
-.turbo
-
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Directory for instrumented libs generated by jscoverage/JSCover
-lib-cov
-
-# Coverage directory used by tools like istanbul
-coverage
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Bower dependency directory (https://bower.io/)
-bower_components
-
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# TypeScript v1 declaration files
-typings/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# Output of &#39;npm pack&#39;
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-dist
-
-# Gatsby files
-.cache/
-# Comment in the public line in if your project uses Gatsby and *not* Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
-
-# vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless/
-
-# FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
-.dynamodb/
-
-# TernJS port file
-.tern-port
-.vercel
-frontend/.env
-</code></pre>
-<h2 id="配置vercel"><a href="#配置vercel" class="headerlink" title="配置vercel"></a>配置vercel</h2><p>创建<code>vercel.json</code></p>
-<p>由于是nuxt3项目 vercel有预设 只需要配置一个字段</p>
-<pre><code class="json">&#123;
-  &quot;framework&quot;: &quot;nuxtjs&quot;
-&#125;
-</code></pre>
-<p>然后是登录vercel把项目绑定上去</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125000950.png"></p>
-<p>配置好团队是这样的</p>
-<h2 id="配置netlify"><a href="#配置netlify" class="headerlink" title="配置netlify"></a>配置netlify</h2><p>创建<code>netlify.toml</code></p>
-<pre><code class="toml">[build.environment]
-  NODE_VERSION = &quot;16&quot;
-
-[build]
-  publish = &quot;dist&quot;
-  command = &quot;yarn build&quot;
-  functions = &quot;netlify/functions&quot;
-
-[[redirects]]
-  from = &quot;/*&quot;
-  to = &quot;/index.html&quot;
-  status = 200
-</code></pre>
-<p>默认配置为如上</p>
-<p>然后是登录netlify把项目绑定上去</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125001234.png"></p>
-<p>配好了是这样的</p>
-<h2 id="配置workflows"><a href="#配置workflows" class="headerlink" title="配置workflows"></a>配置workflows</h2><p>配置一个actions用来在线lint 有错会xx</p>
-<pre><code class="yaml"># lint.yaml
-# https://github.com/kentcdodds/kentcdodds.com/blob/main/.github/workflows/deployment.yml
-name: Code Check
-on:
-  push:
-    branches:
-      - main
-  pull_request: &#123;&#125;
-
-jobs:
-  lint:
-    name: ⬣ ESLint
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v2
-
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-
-      - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
-
-      - name: 🔬 Lint
-        run: npx turbo lint:strict
-</code></pre>
-<p>配置一个release bot 用来生成打包文件 区分版本号</p>
-<pre><code class="yaml"># release.yaml
-name: release-please
-on:
-  # workflow_dispatch:
-  push:
-    branches:
-      - main
-jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: google-github-actions/release-please-action@v3
-        with:
-          release-type: node
-          package-name: release-please-action
-</code></pre>
-<p>配置 issue bot 用来自动用issue创建分支</p>
-<pre><code class="yaml"># issue.yaml
-name: &quot;Issue Autolink&quot;
-on:
-  pull_request:
-    types: [opened]
-
-jobs:
-  issue-links:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: tkt-actions/add-issue-links@v1.6.0
-        with:
-          repo-token: &quot;$&#123;&#123; secrets.AUTO_LINK &#125;&#125;&quot;
-          branch-prefix: &quot;i&quot;
-          resolve: &quot;true&quot;
-</code></pre>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>到此应该初始化的差不多了</p>
-<p>这个从创建 debug 到上线的时间大概花了两天 问题出在 vercel 和 netlify 上</p>
-<p>vercel 对 nuxt 的兼容性不好，不如他的亲儿子 next</p>
-<p>刚去查了一下 nuxt3在1月23日变成了默认版本</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125003129.png"></p>
-<p>nuxt3用了一个叫nitro的编译框架 <a target="_blank" rel="noopener" href="https://github.com/unjs/nitro">https://github.com/unjs/nitro</a></p>
-<p><a target="_blank" rel="noopener" href="https://nitro.unjs.io/">https://nitro.unjs.io/</a></p>
-<p><code>构建和部署通用JavaScript服务器</code></p>
-<p><code>Nitro提供了一个强大的工具链和一个来自unjs生态系统的运行时框架，可以随时随地构建和部署任何JavaScript服务器！</code></p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125003640.png"></p>
-<p>unjs 我感觉是写js魔法的组织 里面全是魔法库</p>
-<p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20230125003728.png"></p>
-<p>这位是主谋</p>
-<p>这个框架会自动检测你当前的环境 给你分配一个preset  比如说你在当前node环境build nuxt的话会给你生成一个 .mjs文件 你运行文件就可以启动一个SSR服务器</p>
-<p>你在vercel上运行的话就给你 <code>preset：vercel</code> 生成vercel认的文件格式</p>
-<p>netlify同理</p>
-<p>问题出在 使用MonoRepo 后 nitro不认我这是在vercel里了  他会生成默认的node的mjs文件 然后构建失败</p>
-<p>很烦</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://turbo.build/repo/docs/getting-started/existing-monorepo">https://turbo.build/repo/docs/getting-started/existing-monorepo</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu/vitesse-nuxt3">https://github.com/antfu/vitesse-nuxt3</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/antfu?tab=repositories&amp;q=vitesse&amp;type=&amp;language=&amp;sort=">https://github.com/antfu?tab=repositories&amp;q=vitesse&amp;type=&amp;language=&amp;sort=</a></p>
-<p><a target="_blank" rel="noopener" href="https://nitro.unjs.io/">https://nitro.unjs.io/</a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
     <nav class="nexmoe-page-nav">
@@ -3420,7 +3059,7 @@ jobs:
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1695140390207"></script>
+<script src="/js/app.js?v=1697640283424"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -3439,10 +3078,6 @@ jobs:
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -3454,6 +3089,10 @@ jobs:
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>

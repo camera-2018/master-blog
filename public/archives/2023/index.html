@@ -33,7 +33,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1695140390214">
+  <link rel="stylesheet" href="/css/style.css?v=1697640283430">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -62,7 +62,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>文章</span>35 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>分类</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -134,7 +134,7 @@
   
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/DN11/" style="font-size: 10px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
+      <a href="/tags/DN11/" style="font-size: 15px;">DN11</a> <a href="/tags/Linux%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">Linux实验</a> <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">青训营笔记</a>
     </div>
     
   </div>
@@ -144,7 +144,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +181,629 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/10/18/DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流" class="lazyload">
+                    <h1>DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年10月18日</a>
+            <a><i class="nexmoefont icon-areachart"></i>5.1k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 24 分钟</a>
+        </div>
+        
+        <article>
+            
+                <h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><h2 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h2><p>域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
+<p>简单来说就是用域名请求服务器换回来ip地址</p>
+<p><a target="_blank" rel="noopener" href="https://www.nslookup.io/">https://www.nslookup.io/</a></p>
+<p>这个网站可以看dns请求的结果、同理还有linux或者windows的nslookup命令</p>
+<p><strong>DNS records for dn11.top</strong></p>
+<blockquote>
+<p>A records</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>IPv4 address</th>
+<th>Revalidate in</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>104.21.27.178</td>
+<td>5m</td>
+</tr>
+<tr>
+<td>172.67.143.107</td>
+<td>5m</td>
+</tr>
+</tbody></table>
+<p>DNS 服务器使人们无需存储复杂记不住的ip地址，而是记住有规律的域名来方便的访问互联网</p>
+<h2 id="DNS记录"><a href="#DNS记录" class="headerlink" title="DNS记录"></a>DNS记录</h2><p>DNS 记录是位于权威 DNS 服务器中的指令，提供一个域的相关信息，包括哪些 IP 地址与该域关联，以及如何处理对该域的请求。</p>
+<h3 id="常见的-DNS-记录"><a href="#常见的-DNS-记录" class="headerlink" title="常见的 DNS 记录"></a>常见的 DNS 记录</h3><p>SOA 记录 - 存储域的管理信息。</p>
+<pre><code class="bash">;; ANSWER SECTION:
+dn11.top.               1800    IN      SOA     ophelia.ns.cloudflare.com. dns.cloudflare.com. 2322082117 10000 2400 604800 1800
+</code></pre>
+<p>NS 记录 - 存储 DNS 条目的名称服务器。</p>
+<pre><code class="bash">;; ANSWER SECTION:
+dn11.top.               21600   IN      NS      ophelia.ns.cloudflare.com.
+dn11.top.               21600   IN      NS      phil.ns.cloudflare.com.
+</code></pre>
+<p>A 记录 - 保存域的 IPv4 地址的记录。</p>
+<pre><code class="bash">;; ANSWER SECTION:
+dn11.top.               300     IN      A       104.21.27.178
+dn11.top.               300     IN      A       172.67.143.107
+</code></pre>
+<p>AAAA 记录 - 包含域的 IPv6 地址的记录（与 A 记录相反，A 记录列出的是 IPv4 地址）。</p>
+<p>CNAME 记录 - 将一个域或子域转发到另一个域，不提供 IP 地址。</p>
+<p>MX 记录 - 将邮件定向到电子邮件服务器。</p>
+<p>TXT 记录 - 可让管理员在记录中存储文本注释。这些记录通常用于电子邮件安全。</p>
+<h2 id="有几种DNS服务器？有几种工作方式？"><a href="#有几种DNS服务器？有几种工作方式？" class="headerlink" title="有几种DNS服务器？有几种工作方式？"></a>有几种DNS服务器？有几种工作方式？</h2><p>有两种DNS服务器：DNS递归服务器和DNS权威服务器</p>
+<p>有两种工作方式：递归和迭代</p>
+<p>DNS客户端设置使用的DNS服务器一般都是DNS递归服务器，它负责全权处理客户端的DNS查询请求，直到返回最终结果。而DNS服务器之间一般采用迭代查询方式。</p>
+<h2 id="如何工作的"><a href="#如何工作的" class="headerlink" title="如何工作的"></a>如何工作的</h2><p>DNS查询 涉及 4 个 DNS 服务器：</p>
+<ol>
+<li>DNS 递归解析器</li>
+</ol>
+<p>DNS 解析器是一种服务器，旨在通过 Web 浏览器等应用程序接收客户端计算机的查询。然后，解析器一<strong>般负责发出其他请求</strong>，以便满足客户端的 DNS 查询。</p>
+<blockquote>
+<p>常见的 dns 递归解析器有</p>
+<p>谷歌 8.8.8.8  8.8.4.4</p>
+<p>阿里 223.5.5.5 223.6.6.6</p>
+<p>百度 180.76.76.76</p>
+<p>腾讯DNSPod 119.29.29.29</p>
+<p>CloudFlare 1.1.1.1</p>
+<p>更多 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Public_recursive_name_server">https://en.wikipedia.org/wiki/Public_recursive_name_server</a></p>
+</blockquote>
+<ol start="2">
+<li>根域名服务器</li>
+</ol>
+<p>根域名服务器是将主机名转换（解析）为 IP 地址的第一步。</p>
+<p>根域名服务器（英语：root name server，简称“根域名服务器”）是互联网域名解析系统（DNS）中最高级别的域名服务器，负责返回顶级域的权威域名服务器地址。</p>
+<p>任意正常 linux 发行版可以运行如下命令来看到这13台根域名服务器</p>
+<pre><code class="bash">ubuntu@ubuntu_dn11:~$ dig ns . @8.8.8.8
+
+; &lt;&lt;&gt;&gt; DiG 9.18.12-0ubuntu0.22.04.3-Ubuntu &lt;&lt;&gt;&gt; ns . @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 9453
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       71928   IN      NS      a.root-servers.net.
+.                       71928   IN      NS      b.root-servers.net.
+.                       71928   IN      NS      c.root-servers.net.
+.                       71928   IN      NS      d.root-servers.net.
+.                       71928   IN      NS      e.root-servers.net.
+.                       71928   IN      NS      f.root-servers.net.
+.                       71928   IN      NS      g.root-servers.net.
+.                       71928   IN      NS      h.root-servers.net.
+.                       71928   IN      NS      i.root-servers.net.
+.                       71928   IN      NS      j.root-servers.net.
+.                       71928   IN      NS      k.root-servers.net.
+.                       71928   IN      NS      l.root-servers.net.
+.                       71928   IN      NS      m.root-servers.net.
+
+;; Query time: 0 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+;; WHEN: Fri Oct 06 13:22:43 UTC 2023
+;; MSG SIZE  rcvd: 239
+</code></pre>
+<p>全球13<strong>组</strong>根域名服务器以英文字母A到M依序命名，域名格式为“字母.root-servers.net”。利用任播（anycast）技术在全球多个地点设立镜像站。</p>
+<p>截至2023年6月，全球共有1719台根域名服务器在运行。</p>
+<blockquote>
+<p>Q：为什么是13组？1700组不行吗？</p>
+<p>A：由于DNS和某些协议（未分片的用户数据报协议（UDP）数据包在IPv4内的最大有效大小为512字节）的共同限制，根域名服务器地址的数量被限制为13个。一次返回的数据放不下啦~</p>
+<p>Q：anycast是什么？</p>
+<p>A：我们假设有三台服务器α、β、γ和一台客户机，这三台服务器都宣告了同样的一个地址比如说172.16.255.53，客户机访问172.16.255.53时，会因为路由协议的原因，选择客户机距离服务器最近的一条路径。假设α距离客户机近，访问172.16.255.53获得的数据就是α服务器给客户机的。</p>
+<p>Q：anycast的好处？</p>
+<p>A：防止服务挂掉、流量会自动寻找最佳路径、假设一台服务器挂掉了，整个服务会被另一台服务器承担。</p>
+</blockquote>
+<blockquote>
+<p>Q：有 . 这个服务器吗</p>
+<p>A：存放这13个根域的是一个文件，它被内置在递归服务器内，没有权威服务器会返回 . 这个域的解析给你。<br>在这里可以下载到这个文件 <a target="_blank" rel="noopener" href="https://www.iana.org/domains/root/files">https://www.iana.org/domains/root/files</a><br>运营商通常需要配置一个 “Root Hints 文件” 来管理 DNS 递归解析器。该文件包含了根区域的权威名称服务器的名称和 IP 地址，以便软件可以引导 DNS 解析过程。对于许多软件来说，这个列表已经内置在软件中。<a target="_blank" rel="noopener" href="https://www.internic.net/domain/named.root">https://www.internic.net/domain/named.root</a></p>
+</blockquote>
+<ol start="3">
+<li>TLD 名称服务器</li>
+</ol>
+<p>顶级域名（英语：Top-level Domain, TLD）是互联网域名系统的等级中，位于根域空间的最高级域名。</p>
+<p>顶级域名服务器这个服务器是搜索特定 IP 地址的下一步，其上托管了主机名的最后一部分（例如，在 dn11.top 中，TLD 服务器为 “top”）。</p>
+<p><a target="_blank" rel="noopener" href="https://www.iana.org/domains/root/db">https://www.iana.org/domains/root/db</a> 这里是世界上完整的顶级域列表。</p>
+<ol start="4">
+<li>权威性域名服务器</li>
+</ol>
+<p>权威性域名服务器是域名服务器查询中的最后一站。</p>
+<p>权威名称服务器包含特定于其服务域名的信息（例如，dn11.top）权威性域名服务器包含特定于其所服务的域名的信息（例如 dn11.top），并且它可为递归解析器提供在 DNS A 记录中找到的服务器的 IP 地址（例如找到了上文的ipv4地址 104.21.27.178）</p>
+<h2 id="图解工作流程"><a href="#图解工作流程" class="headerlink" title="图解工作流程"></a>图解工作流程</h2><h3 id="递归工作流程"><a href="#递归工作流程" class="headerlink" title="递归工作流程"></a>递归工作流程</h3><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20231006233612.png"></p>
+<p>我这里画了一张图：其中红色服务器为DNS递归服务器，PC上的DNS客户端只与DNS递归服务器通讯，由递归服务器完成后续查询内容。蓝色云为想要访问的网站的ip地址所在的服务器。</p>
+<p>我会逐一讲解每个过程（箭头）都做了什么。</p>
+<p>本图的前提是dns递归服务器中不含任何缓存。</p>
+<p>①：PC通过浏览器输入了dn11.top这个域名、dns客户端收到了请求dn11.top这个域名的ip的任务、dns客户端去请求DNS递归服务器</p>
+<p>②：DNS递归服务器使用内置的Root Hint文件（内有根服务器的NS解析和根服务器的IP地址）去请求根权威服务器、得到了TLD服务器的NS解析并得到了TLD服务器的ip地址</p>
+<p>③：TLD服务器的ip地址被返回给DNS递归服务器</p>
+<p>④：DNS递归服务器去请求TLD服务器、得到了域名权威服务器的NS解析并得到了域名权威服务器的NS记录和IP地址</p>
+<p>⑤：域名权威服务器的ip地址被返回给DNS递归服务器</p>
+<p>⑥：DNS递归服务器去请求域名权威服务器、得到了请求域名最终的ip</p>
+<p>⑦：请求域名最终的ip被返回给DNS递归服务器</p>
+<p>⑧：请求域名最终的ip被返回给PC上的DNS客户端</p>
+<p>⑨：PC上的浏览器用请求域名最终的ip访问域名所在的云服务器</p>
+<p>⑩：云服务器返回网页数据给PC浏览器、实现页面的访问</p>
+<h3 id="迭代工作流程"><a href="#迭代工作流程" class="headerlink" title="迭代工作流程"></a>迭代工作流程</h3><p><img src="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20231015181102.png"></p>
+<p>我这里画了一张图：其中红色服务器为DNS递归服务器，PC上的DNS客户端只与DNS递归服务器通讯，由递归服务器和权威服务器的迭代查询完成后续查询内容。蓝色云为想要访问的网站的ip地址所在的服务器。</p>
+<p>我会逐一讲解每个过程（箭头）都做了什么。</p>
+<p>本图的前提是dns递归服务器中不含任何缓存。</p>
+<p>①：PC通过浏览器输入了dn11.top这个域名、dns客户端收到了请求dn11.top这个域名的ip的任务、dns客户端去请求DNS递归服务器</p>
+<p>②：DNS递归服务器使用内置的Root Hint文件（内有根服务器的NS解析和根服务器的IP地址）去请求根权威服务器、根权威服务器收到了请求、找到了TLD权威服务器的NS记录和ip地址</p>
+<p>③：根权威服务器请求TLD服务器、TLD服务器收到了请求、找到了域名权威服务器的NS记录和ip地址</p>
+<p>④：TLD服务器请求域名权威服务器、权威服务器找到了域名的ip地址</p>
+<p>⑤：域名的ip地址从域名权威服务器返回给TLD权威服务器</p>
+<p>⑥：域名的ip地址从TLD权威服务器返回给根权威服务器</p>
+<p>⑦：域名的ip地址从根权威返回给DNS递归服务器</p>
+<p>⑧：请求域名最终的ip被返回给PC上的DNS客户端</p>
+<p>⑨：PC上的浏览器用请求域名最终的ip访问域名所在的云服务器</p>
+<p>⑩：云服务器返回网页数据给PC浏览器、实现页面的访问</p>
+<h2 id="配置pdns"><a href="#配置pdns" class="headerlink" title="配置pdns"></a>配置pdns</h2><h3 id="1-openwrt直接启动"><a href="#1-openwrt直接启动" class="headerlink" title="1.openwrt直接启动"></a>1.openwrt直接启动</h3><h4 id="装包"><a href="#装包" class="headerlink" title="装包"></a>装包</h4><pre><code>opkg update
+opkg install pdns pdns-backend-sqlite3 pdns-recursor sqlite3-cli
+</code></pre>
+<h4 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h4><p>创建文件</p>
+<pre><code>mkdir -p /usr/share/doc/pdns-backend-sqlite/
+touch schema.sqlite3.sql
+</code></pre>
+<p>然后在schema.sqlite3.sql里写入</p>
+<pre><code>nano /usr/share/doc/pdns-backend-sqlite/schema.sqlite3.sql
+</code></pre>
+<pre><code class="sql">PRAGMA foreign_keys = 1;
+
+CREATE TABLE domains (
+  id                    INTEGER PRIMARY KEY,
+  name                  VARCHAR(255) NOT NULL COLLATE NOCASE,
+  master                VARCHAR(128) DEFAULT NULL,
+  last_check            INTEGER DEFAULT NULL,
+  type                  VARCHAR(8) NOT NULL,
+  notified_serial       INTEGER DEFAULT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  options               VARCHAR(65535) DEFAULT NULL,
+  catalog               VARCHAR(255) DEFAULT NULL
+);
+
+CREATE UNIQUE INDEX name_index ON domains(name);
+CREATE INDEX catalog_idx ON domains(catalog);
+
+
+CREATE TABLE records (
+  id                    INTEGER PRIMARY KEY,
+  domain_id             INTEGER DEFAULT NULL,
+  name                  VARCHAR(255) DEFAULT NULL,
+  type                  VARCHAR(10) DEFAULT NULL,
+  content               VARCHAR(65535) DEFAULT NULL,
+  ttl                   INTEGER DEFAULT NULL,
+  prio                  INTEGER DEFAULT NULL,
+  disabled              BOOLEAN DEFAULT 0,
+  ordername             VARCHAR(255),
+  auth                  BOOL DEFAULT 1,
+  FOREIGN KEY(domain_id) REFERENCES domains(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE INDEX records_lookup_idx ON records(name, type);
+CREATE INDEX records_lookup_id_idx ON records(domain_id, name, type);
+CREATE INDEX records_order_idx ON records(domain_id, ordername);
+
+
+CREATE TABLE supermasters (
+  ip                    VARCHAR(64) NOT NULL,
+  nameserver            VARCHAR(255) NOT NULL COLLATE NOCASE,
+  account               VARCHAR(40) NOT NULL
+);
+
+CREATE UNIQUE INDEX ip_nameserver_pk ON supermasters(ip, nameserver);
+
+
+CREATE TABLE comments (
+  id                    INTEGER PRIMARY KEY,
+  domain_id             INTEGER NOT NULL,
+  name                  VARCHAR(255) NOT NULL,
+  type                  VARCHAR(10) NOT NULL,
+  modified_at           INT NOT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  comment               VARCHAR(65535) NOT NULL,
+  FOREIGN KEY(domain_id) REFERENCES domains(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE INDEX comments_idx ON comments(domain_id, name, type);
+CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
+
+
+CREATE TABLE domainmetadata (
+ id                     INTEGER PRIMARY KEY,
+ domain_id              INT NOT NULL,
+ kind                   VARCHAR(32) COLLATE NOCASE,
+ content                TEXT,
+ FOREIGN KEY(domain_id) REFERENCES domains(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE INDEX domainmetaidindex ON domainmetadata(domain_id);
+
+
+CREATE TABLE cryptokeys (
+ id                     INTEGER PRIMARY KEY,
+ domain_id              INT NOT NULL,
+ flags                  INT NOT NULL,
+ active                 BOOL,
+ published              BOOL DEFAULT 1,
+ content                TEXT,
+ FOREIGN KEY(domain_id) REFERENCES domains(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE INDEX domainidindex ON cryptokeys(domain_id);
+
+
+CREATE TABLE tsigkeys (
+ id                     INTEGER PRIMARY KEY,
+ name                   VARCHAR(255) COLLATE NOCASE,
+ algorithm              VARCHAR(50) COLLATE NOCASE,
+ secret                 VARCHAR(255)
+);
+
+CREATE UNIQUE INDEX namealgoindex ON tsigkeys(name, algorithm);
+</code></pre>
+<p>初始化sqlite3</p>
+<pre><code>mkdir -p /etc/powerdns/
+sqlite3 /etc/powerdns/pdns.sqlite3 &lt; /usr/share/doc/pdns-backend-sqlite/schema.sqlite3.sql
+chmod +r /etc/powerdns
+</code></pre>
+<h4 id="配置pdns-1"><a href="#配置pdns-1" class="headerlink" title="配置pdns"></a>配置pdns</h4><pre><code>nano /etc/powerdns/pdns.conf
+</code></pre>
+<p>写入</p>
+<pre><code>launch=gsqlite3
+gsqlite3-database=/etc/powerdns/pdns.sqlite3
+local-address=&lt;!!你的地址!!&gt;:53
+allow-axfr-ips=0.0.0.0/0
+slave=yes
+allow-notify-from=0.0.0.0/0
+allow-dnsupdate-from=0.0.0.0/0
+allow-unsigned-notify=yes
+</code></pre>
+<p>解释：由于我们正在配置pdns权威服务器，地址可以选一个你自己子网你喜欢的、比如说我在<code>172.16.3.53</code></p>
+<p>当然监听这种地址需要在网卡上创建一个新ip</p>
+<p>对于op来说 可以在web管理界面 选择网络 新建一个接口 区域lan 设备br-lan 地址为<code>172.16.3.53</code></p>
+<p>对于监听53端口、你的本地dnsmasq可能会劫持这个端口</p>
+<p>在此我给出的解决方案是关闭dnsmasq</p>
+<pre><code>service dnsmasq stop
+service dnsmasq disable
+</code></pre>
+<p>然后由于我的dnsmasq会不知道怎么着复活 我写了一个脚本来按死他</p>
+<pre><code>nano /root/stop_dnsmasq_if_running.sh
+</code></pre>
+<pre><code class="bash">#!/bin/sh
+ 
+# 检查 dnsmasq 是否在运行在端口53上
+if netstat -tlunpa | grep &#39;:53 &#39; | grep -q &#39;dnsmasq&#39;; then
+    service dnsmasq stop
+fi
+</code></pre>
+<pre><code>crontab -e
+</code></pre>
+<pre><code>* * * * * /root/stop_dnsmasq_if_running.sh
+</code></pre>
+<p>这个的意思是一个定时脚本 每分钟检测一下 如果他开着 就给他关掉</p>
+<h4 id="启动pdns"><a href="#启动pdns" class="headerlink" title="启动pdns"></a>启动pdns</h4><pre><code>service pdns restart
+</code></pre>
+<p>配置自己的子域</p>
+<pre><code>pdnsutil create-zone ts.dn11 ns1.ts.dn11
+</code></pre>
+<p>其中ts换成你想用的域名</p>
+<pre><code>pdnsutil edit-zone ts.dn11
+</code></pre>
+<p>edit-zone会唤醒叫editor的编辑器，如果你没有这个叫editor的编辑器 可以写一下环境变量</p>
+<pre><code>nano /etc/profile
+</code></pre>
+<p>添加一行</p>
+<pre><code>export EDITOR=/usr/bin/nano
+</code></pre>
+<p>(op的nano默认安装位置在这里、其他你想配的自由发挥)</p>
+<pre><code>source /etc/profile
+</code></pre>
+<p>打开edit-zone后 写入</p>
+<pre><code>; Warning - every name in this file is ABSOLUTE!
+$ORIGIN .
+ts.dn11 3600    IN      SOA     ns1.ts.dn11 hostmaster.ts.dn11 2023093018 60 30 604800 60
+ts.dn11 3600    IN      NS      ns1.ts.dn11.
+ns1.ts.dn11     3600    IN      A     172.16.3.53
+ts.dn11 60      IN      A       172.16.3.1
+</code></pre>
+<p>解释：SOA记录里第一个值是你域名权威服务器所在的NS、第二个为邮箱、第三个为流水号（格式YYYYMMDD+2位顺序号）（如果你不改的话pdns会自动帮你顺延流水号）、第四个为刷新间隔、第五个为重试间隔、第六个为过期时间长、第七个为TTL（生存时间值、意为缓存过期时间、设置为60s）</p>
+<p>最后一行就是给你的域名加一个A解析</p>
+<h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><pre><code>dig a ts.dn11 @172.16.3.53 -p 53
+</code></pre>
+<p>如果返回类似如下内容则成功</p>
+<pre><code>root@OP:~# dig a ts.dn11 @172.16.3.53 -p 53
+
+; &lt;&lt;&gt;&gt; DiG 9.18.16 &lt;&lt;&gt;&gt; a ts.dn11 @172.16.3.53 -p 53
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 58804
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;ts.dn11.                       IN      A
+
+;; ANSWER SECTION:
+ts.dn11.                60      IN      A       172.16.3.1
+
+;; Query time: 0 msec
+;; SERVER: 172.16.3.53#53(172.16.3.53) (UDP)
+;; WHEN: Sun Oct 15 18:55:04 CST 2023
+;; MSG SIZE  rcvd: 52
+</code></pre>
+<h4 id="配置TLD域、拉取同步"><a href="#配置TLD域、拉取同步" class="headerlink" title="配置TLD域、拉取同步"></a>配置TLD域、拉取同步</h4><p>内网用户需要访问 <a target="_blank" rel="noopener" href="http://172.16.7.102:8083/login">http://172.16.7.102:8083/login</a> （账号密码dn11）来配置自己的域名权威的ns指向</p>
+<p>点击dn11域、点击 add record 、添加两条记录</p>
+<pre><code>ns1.ts    A      172.16.3.53
+ts        NS     ns1.ts.dn11.
+</code></pre>
+<p>之后点击 save 然后点击 apply changes</p>
+<p>解释：ns1是你本地自己启的域名权威服务器的地址</p>
+<p>然后回到本地 输入</p>
+<pre><code>pdnsutil create-zone dn11
+</code></pre>
+<p>创建dn11域</p>
+<pre><code>pdnsutil edit-zone dn11
+</code></pre>
+<p>修改里面的soa值为</p>
+<pre><code>dn11    300     IN      SOA     a.root.dn11 hostmaster.dn11 1 60 60 604800 60
+</code></pre>
+<p>解释：流水号填小 便于拉取上游的同步</p>
+<p>然后写数据库启用主从同步</p>
+<pre><code>sqlite3 /etc/powerdns/pdns.sqlite3
+</code></pre>
+<p>进入sqlite命令行</p>
+<p>先启用看头</p>
+<pre><code>sqlite&gt; .header yes
+</code></pre>
+<pre><code>sqlite&gt; select * from domains;
+id|name|master|last_check|type|notified_serial|account|options|catalog
+1|ts.dn11|||NATIVE||||
+2|dn11|||NATIVE||||
+</code></pre>
+<p>里面大概也许是这样、然后写数据库同步上游</p>
+<pre><code>UPDATE domains
+SET master = &#39;172.16.7.53&#39;, type = &#39;SLAVE&#39;
+WHERE name = &#39;dn11&#39;;
+</code></pre>
+<p>写完按 ctrl + D 退出sqlite命令行</p>
+<p>然后使用</p>
+<pre><code>pdns_control retrieve dn11
+</code></pre>
+<p>强制拉取一下dn11的记录</p>
+<p>最后看下自己的记录有没有被同步</p>
+<pre><code>root@OP:~# pdnsutil list-zone dn11
+</code></pre>
+<p>检查一下</p>
+<pre><code>root@OP:~# dig ns ts.dn11 @172.16.3.53 -p 53
+
+; &lt;&lt;&gt;&gt; DiG 9.18.16 &lt;&lt;&gt;&gt; ns ts.dn11 @172.16.3.53 -p 53
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 7351
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;ts.dn11.                       IN      NS
+
+;; ANSWER SECTION:
+ts.dn11.                60      IN      NS      172.16.3.53.
+
+;; Query time: 0 msec
+;; SERVER: 172.16.3.53#53(172.16.3.53) (UDP)
+;; WHEN: Sun Oct 15 19:12:09 CST 2023
+;; MSG SIZE  rcvd: 61
+</code></pre>
+<h4 id="配置pdns-recursor"><a href="#配置pdns-recursor" class="headerlink" title="配置pdns_recursor"></a>配置pdns_recursor</h4><pre><code>nano /etc/powerdns/recursor.conf
+</code></pre>
+<p>写入</p>
+<pre><code># 接受哪些IP的查询请求，0.0.0.0/0表示全部
+allow-from=0.0.0.0/0
+
+# 本地监听的接口IP地址
+local-address=172.16.255.53:53 172.16.255.53:5300
+
+# 关闭dnssec功能，4.5版本后默认开启
+dnssec=off
+
+dont-query=
+
+forward-zones-recurse=dn11=172.16.3.53,.=223.5.5.5
+</code></pre>
+<p>解释：</p>
+<p>本地监听的ip地址这里使用anycast、同样的你需要在你的网卡里加一个ip为172.16.255.53（监听5300的原因是、如果路由路径上有人开了dnsmasq、那么这个53请求会被劫持）</p>
+<p>并且宣告</p>
+<pre><code>root@OP:~# cat /etc/bird.conf
+
+.........
+
+# 宣告 172.16.3.0/24 段
+protocol static &#123;
+    ipv4 &#123;
+        table BGP_table;
+        import all;
+        export none;
+    &#125;;
+
+    # 只是为了让BGP的路由表里出现这条路由，不要担心 reject
+    # 这个动作其实无所谓，reject 这个动作并不会被发到其他 AS
+    # 后续将在导出到 master4 的时候删除这条路由，本地也不会有这一条
+    # 请修改为你自己要宣告的段
+    route 172.16.3.0/24 reject;
+    route 172.16.255.53/32 reject;
+&#125;
+
+.........
+
+root@OP:~# service bird restart
+</code></pre>
+<p>dont-query&#x3D;的意思是允许内网地址进行查询（默认是禁止的、所以这里填空）</p>
+<p>forward-zones-recurse&#x3D;dn11&#x3D;172.16.3.53,.&#x3D;223.5.5.5</p>
+<p>这个递归配置项的意思是：如果请求到了dn11这个TLD就去请求你自己搭的ns、如果不是这个域就当公网处理转发给公网dns 223.5.5.5</p>
+<p>然后重启</p>
+<pre><code>service pdns-recursor restart
+</code></pre>
+<p>最后测试一下、请求一下网里存在的域名</p>
+<pre><code>root@OP:~# dig op.iraze.dn11 @172.16.255.53 -p 53
+
+; &lt;&lt;&gt;&gt; DiG 9.18.16 &lt;&lt;&gt;&gt; op.iraze.dn11 @172.16.255.53 -p 53
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 4037
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;op.iraze.dn11.                 IN      A
+
+;; ANSWER SECTION:
+op.iraze.dn11.          60      IN      A       172.16.2.2
+
+;; Query time: 39 msec
+;; SERVER: 172.16.255.53#53(172.16.255.53) (UDP)
+;; WHEN: Sun Oct 15 19:23:32 CST 2023
+;; MSG SIZE  rcvd: 58
+</code></pre>
+<h3 id="2-docker拉镜像-装pdns-admin-web界面管理"><a href="#2-docker拉镜像-装pdns-admin-web界面管理" class="headerlink" title="2.docker拉镜像 装pdns-admin web界面管理"></a>2.docker拉镜像 装pdns-admin web界面管理</h3><pre><code>[root@gs-fedora Pdns]# cat docker-compose.yml 
+version: &quot;3&quot;
+
+services:
+  pdns:
+    image: zhonger/pdns:latest
+    restart: always
+    ports:
+      - &quot;172.16.7.53:53:53/tcp&quot;
+      - &quot;172.16.7.53:53:53/udp&quot;
+    environment:
+      - PDNS_launch=gsqlite3
+      - PDNS_gsqlite3_database=/var/lib/powerdns/pdns.sqlite3
+      - PDNS_webserver_address=0.0.0.0
+      - PDNS_webserver_allow_from=0.0.0.0/0
+      - PDNS_allow_axfr_ips=0.0.0.0/0,::1
+      - PDNS_allow_dnsupdate_from=0.0.0.0/0,::1
+      - PDNS_allow_notify_from=0.0.0.0/0,::0
+      - PDNS_also_notify=172.16.3.53
+      - PDNS_master=yes
+      - PDNS_api=yes
+      - PDNS_api_key=0F34664B2C9CA2E1B84C5A6B4605C968
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./powerdns:/var/lib/powerdns
+    command: /bin/bash ./up.sh
+    privileged: true
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=powerdnsadmin
+      - MYSQL_USER=pdns 
+      - MYSQL_PASSWORD=my_pdns
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./pda-mysql:/var/lib/mysql
+    privileged: true
+
+  app:
+    image: zhonger/powerdns-admin:latest
+    restart: always
+    depends_on:
+      - db
+      - pdns
+    ports:
+      - &quot;8083:80&quot;
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - SQLALCHEMY_DATABASE_URI=mysql://pdns:my_pdns@db/powerdnsadmin
+      - GUNICORN_TIMEOUT=60
+      - GUNICORN_WORKERS=2
+      - GUNICORN_LOGLEVEL=DEBUG
+      - OFFLINE_MODE=False # True for offline, False for external resources 
+    privileged: true
+</code></pre>
+<pre><code>[root@gs-fedora Pdns]# cat up.sh 
+service system-resolve stop
+ip addr add 172.16.7.53 dev eno1
+</code></pre>
+<p>这个key是我随便写的、你可以自己生成一个</p>
+<p>PDNS_api_key&#x3D;0F34664B2C9CA2E1B84C5A6B4605C968</p>
+<p>在powerdns admin settings pdns中填写这个key 填好后 在上层的PowerDNS server configuration &amp; statistics里能看到一系列pdns的字段</p>
+<h2 id="配置dns分流-MosDNS"><a href="#配置dns分流-MosDNS" class="headerlink" title="配置dns分流 MosDNS"></a>配置dns分流 MosDNS</h2><p>装包</p>
+<pre><code>opkg update
+opkg install mosdns
+</code></pre>
+<p>注意不要装 luci-app-mosdns 我感觉不好用</p>
+<p>改配置</p>
+<pre><code>nano /etc/mosdns/config.yaml
+</code></pre>
+<pre><code>log:
+  level: info
+  file: &quot;/tmp/mosdns.log&quot;
+
+api:
+  http: &quot;0.0.0.0:9091&quot;
+
+include: []
+
+plugins:
+  - tag: main_sequence
+    type: sequence
+    args:
+      # hdu内网dns解析
+      - matches: qname hdu.edu.cn
+        exec: forward 192.168.0.1:53
+      # dn11内网dns解析
+      - matches: qname dn11
+        exec: forward 172.16.255.53:5300
+      # 其他dns解析
+      - matches: &quot;!qname hdu.edu.cn dn11&quot;
+        exec: forward 223.5.5.5:53
+  # 启动端口和ip
+  - tag: udp_server_2
+    type: udp_server
+    args:
+      entry: main_sequence
+      listen: &quot;172.16.3.13:53&quot;
+
+  - tag: tcp_server_2
+    type: tcp_server
+    args:
+      entry: main_sequence
+      listen: &quot;172.16.3.13:53&quot;
+</code></pre>
+<p>同样的 启动需要你br-lan网卡里加一个 172.16.3.13这个ip地址</p>
+<pre><code>service mosdns restart
+</code></pre>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/09/20/DN11%20%E4%BD%BF%E7%94%A8%20EBGP%20%E9%87%8D%E5%88%86%E5%8F%91%20IBGP%20OSPF%EF%BC%88%E5%90%8Cas%E5%86%85%E9%83%A8peer%EF%BC%89/">
@@ -1858,112 +2481,6 @@ dev  ALL=(root:root) /usr/sbin/useradd
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2023/02/08/Web%20%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%20%EF%BD%9C%20%E9%9D%92%E8%AE%AD%E8%90%A5%E7%AC%94%E8%AE%B0/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="Web 开发安全 ｜ 青训营笔记" class="lazyload">
-                    <h1>Web 开发安全 ｜ 青训营笔记</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年02月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>845 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><strong>这是我参与「第五届青训营」伴学笔记创作活动的第 17 天</strong></p>
-<h2 id="课程重点"><a href="#课程重点" class="headerlink" title="课程重点"></a>课程重点</h2><ul>
-<li><p>Web 相关的攻击介绍</p>
-</li>
-<li><p>Web 相关的防御介绍</p>
-</li>
-</ul>
-<h2 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h2><h3 id="XSS-Cross-Site-Scripting"><a href="#XSS-Cross-Site-Scripting" class="headerlink" title="XSS (Cross-Site Scripting)"></a>XSS (Cross-Site Scripting)</h3><p>主要是由于盲目信任用户输入，直接将用户输入渲染出来，导致了攻击脚本的植入</p>
-<p>特点：</p>
-<ol>
-<li>通常难以从 UI 上感知</li>
-<li>窃取用户信息，例如 cookie 和 token</li>
-</ol>
-<p>常见的会导致XSS的代码：</p>
-<pre><code>document.write
-el.innerHTML = anyString
-</code></pre>
-<p>总结来说，所有能够渲染dom结构的函数，都有可能导致XSS攻击。</p>
-<p>比如论坛场景中，<strong>用户提交的内容包含恶意script标签</strong></p>
-<pre><code class="js">fetch(&quot;/submit&quot;, &#123;
-    body: JSON.stringify(&#123;
-        id: &quot;1&quot;,
-        content: `&lt;script&gt;alert(&quot;xss&quot;);&lt;/script&gt;`
-    &#125;)
-&#125;)
-</code></pre>
-<p>导致代码被插入到帖子中，所有用户访问页面都会执行恶意脚本</p>
-<p>XSS 能够分成下面四类</p>
-<p><code>Stored XSS</code> 直接将恶意脚本储存到了数据库中，导致之后的所有访问均会携带恶意脚本，危害很大</p>
-<pre><code>Reflected XSS` 反射型，不储存数据，仅仅从URL传入脚本导致攻击，例如 `/path?param=&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;
-</code></pre>
-<p><code>DOM-based XSS</code> 不由服务器参与，攻击的发起和执行都在浏览器，常见于前端框架中</p>
-<p><code>Mutation-based XSS</code> 利用浏览器的特性，不同浏览器会有区别，例如</p>
-<pre><code>&lt;noscript&gt;&lt;p title=&quot;&lt;/noscript&gt;&lt;img src=x onerror=alert(1)&gt;&quot;&gt;
-</code></pre>
-<h3 id="CSRF-Cross-site-request-forgery"><a href="#CSRF-Cross-site-request-forgery" class="headerlink" title="CSRF (Cross-site request forgery)"></a>CSRF (Cross-site request forgery)</h3><p>特点：</p>
-<ol>
-<li>在用户不知情的前提下</li>
-<li>利用用户权限（cookie）</li>
-<li>构造指定HTTP请求，窃取或修改用户敏感信息</li>
-</ol>
-<p>例子：</p>
-<p>用户没有访问银行网页，但是访问了一个带有攻击内容的网页，该网页尝试请求银行接口，由于用户登录过银行，接口携带cookie，导致请求成功，使得用户受到损失。</p>
-<h3 id="SQL-注入-SQL-Injection"><a href="#SQL-注入-SQL-Injection" class="headerlink" title="SQL 注入 (SQL Injection)"></a>SQL 注入 (SQL Injection)</h3><p>在请求参数中构造恶意字符串，拼接SQL语句，导致服务器执行了特定的SQL语句，造成数据库内容泄露</p>
-<p>例子：</p>
-<pre><code class="js">sql.query(`
-    SELECT a, b, c FROM table
-    WHERE username = $&#123;username&#125;
-    AND form_id = $&#123;form_id&#125;
-`)
-</code></pre>
-<p>上面的这段后端代码，攻击者就能够通过构造特殊的 username 或 form_id，使得SQL语句的意义被改变</p>
-<p>例如传入 form_id &#x3D; <code>any; DROP TABLE table;</code></p>
-<p>SQL 语句拼接后变成 <code>SELECT a,b,c FROM table WHERE xxxx AND form_id = any; DROP TABLE table;</code></p>
-<p>将导致数据库被删除</p>
-<h3 id="SSRF-Server-Side-Request-Forgery"><a href="#SSRF-Server-Side-Request-Forgery" class="headerlink" title="SSRF (Server-Side Request Forgery)"></a>SSRF (Server-Side Request Forgery)</h3><p>服务端伪造请求</p>
-<p>例子：</p>
-<pre><code>ctx.body = await fetch(ctx.query.callback)
-</code></pre>
-<p>导致能够通过传入的参数访问到服务器内网的相关服务</p>
-<h3 id="DoS-Denial-of-Service"><a href="#DoS-Denial-of-Service" class="headerlink" title="DoS (Denial of Service)"></a>DoS (Denial of Service)</h3><p><code>「 不搞复杂的 ， 量大就完事儿了 」</code></p>
-<p>通过构造特定请求，导致服务器资源被消耗，来不及响应更多请求，引发雪崩效应</p>
-<p>例如：</p>
-<ol>
-<li>耗时的同步操作</li>
-<li>文件备份</li>
-<li>数据库写入</li>
-<li>SQL join</li>
-<li>循环执行逻辑</li>
-</ol>
-<h4 id="DDoS-Distributed-DoS"><a href="#DDoS-Distributed-DoS" class="headerlink" title="DDoS (Distributed DoS)"></a>DDoS (Distributed DoS)</h4><p>攻击特点</p>
-<ul>
-<li>直接访问 IP</li>
-<li>任意 API</li>
-<li>消耗大量带宽 （ 耗尽 ）</li>
-</ul>
-<p>SYN Flood</p>
-<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>安全无小事<br>使用的依赖 npm package，甚至是 NodeJS 可能成为最薄弱的一环</p>
-<ul>
-<li>保持学习心态<br>npm install 除了带来了果洞 ， 还可以带来漏洞</li>
-</ul>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><a target="_blank" rel="noopener" href="https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme">https://bytedance.feishu.cn/file/boxcn9L4YzmTK3mwE3tIBL2UVme</a></p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065">https://baike.baidu.com/item/XSS%E6%94%BB%E5%87%BB/954065</a></p>
-
-            
-        </article>
-    </div>
-    
 </section>
 
     <nav class="nexmoe-page-nav">
@@ -2683,7 +3200,7 @@ el.innerHTML = anyString
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1695140390215"></script>
+<script src="/js/app.js?v=1697640283431"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -2702,10 +3219,6 @@ el.innerHTML = anyString
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -2717,6 +3230,10 @@ el.innerHTML = anyString
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/xiaomai.model.json"},"display":{"superSample":2,"width":300,"height":600,"position":"right","hOffset":0,"vOffset":80},"mobile":{"show":false},"react":{"opacity":1},"log":false});</script></body>

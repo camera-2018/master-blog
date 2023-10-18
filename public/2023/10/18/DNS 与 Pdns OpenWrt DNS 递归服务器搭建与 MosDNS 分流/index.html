@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>标签：DN11 - 向阳信息</title>
+  <title>DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流 - 向阳信息</title>
   <meta charset="UTF-8">
   <meta name="description" content="若月千鸮的博客&#39;">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,15 +16,21 @@
     <meta name="baidu-site-verification" content="code-8gmJzopb3Z" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="若月千鸮的博客&#39;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="向阳信息">
-<meta property="og:url" content="https://xyxsw.ltd/tags/DN11/index.html">
+  <meta name="description" content="DNS什么是DNS域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。 简单来说就是用域名请求服务器换回来ip地址 https:&#x2F;&#x2F;www.nslookup.io&#x2F; 这个网站可以看dns请求的结果、同理还有linux或者windows的nslookup命令 DNS records fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流">
+<meta property="og:url" content="https://xyxsw.ltd/2023/10/18/DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81/index.html">
 <meta property="og:site_name" content="向阳信息">
-<meta property="og:description" content="若月千鸮的博客&#39;">
+<meta property="og:description" content="DNS什么是DNS域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。 简单来说就是用域名请求服务器换回来ip地址 https:&#x2F;&#x2F;www.nslookup.io&#x2F; 这个网站可以看dns请求的结果、同理还有linux或者windows的nslookup命令 DNS records fo">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20231006233612.png">
+<meta property="og:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20231015181102.png">
+<meta property="article:published_time" content="2023-10-18T14:43:02.000Z">
+<meta property="article:modified_time" content="2023-10-18T14:44:08.280Z">
 <meta property="article:author" content="xyxsw">
+<meta property="article:tag" content="DN11">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picxyxsw.oss-cn-hangzhou.aliyuncs.com/20231006233612.png">
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
   <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
@@ -33,7 +39,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1697640283442">
+  <link rel="stylesheet" href="/css/style.css?v=1697640283205">
   <script async defer src="https://analytics.umami.is/script.js" data-website-id="06ffa009-2f62-4496-8dff-f46e040421b3"></script>
   <meta name="msvalidate.01" content="B5491427B4527D50E571CC4251B08B3B" />
   <meta name="google-site-verification" content="NyHQaiTptpMk3XAHEF6njcM9lRfwxsJn-kxt5347_kQ" />
@@ -180,27 +186,27 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
+        <div class="nexmoe-post">
     
-    <div class="nexmoe-post">
-        <a href="/2023/10/18/DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流" class="lazyload">
-                    <h1>DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年10月18日</a>
-            <a><i class="nexmoefont icon-areachart"></i>5.1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 24 分钟</a>
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流" class="lazyload">
+            <h1>DNS 与 Pdns OpenWrt DNS 递归服务器搭建与 MosDNS 分流</h1>
         </div>
-        
-        <article>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年10月18日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 24 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
             
-                <h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><h2 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h2><p>域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
+        </div>
+
+        <article>
+            <h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><h2 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h2><p>域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
 <p>简单来说就是用域名请求服务器换回来ip地址</p>
 <p><a target="_blank" rel="noopener" href="https://www.nslookup.io/">https://www.nslookup.io/</a></p>
 <p>这个网站可以看dns请求的结果、同理还有linux或者windows的nslookup命令</p>
@@ -801,236 +807,49 @@ plugins:
 <pre><code>service mosdns restart
 </code></pre>
 
-            
         </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2023/09/20/DN11%20%E4%BD%BF%E7%94%A8%20EBGP%20%E9%87%8D%E5%88%86%E5%8F%91%20IBGP%20OSPF%EF%BC%88%E5%90%8Cas%E5%86%85%E9%83%A8peer%EF%BC%89/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="DN11 使用 EBGP 重分发 IBGP OSPF（同as内部peer）" class="lazyload">
-                    <h1>DN11 使用 EBGP 重分发 IBGP OSPF（同as内部peer）</h1>
-                </div>
-            
-        </a>
+
         
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>xyxsw<br>
+    
+    <strong>本文链接：</strong><a href="https://xyxsw.ltd/2023/10/18/DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81/" title="https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;10&#x2F;18&#x2F;DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;xyxsw.ltd&#x2F;2023&#x2F;10&#x2F;18&#x2F;DNS%20%E4%B8%8E%20Pdns%20OpenWrt%20DNS%20%E9%80%92%E5%BD%92%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8E%20MosDNS%20%E5%88%86%E6%B5%81&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
         <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年09月20日</a>
-            <a><i class="nexmoefont icon-areachart"></i>877 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-        
-        <article>
-            
-                <h1 id="DN11-使用-EBGP-重分发-IBGP-OSPF（同as内部peer）"><a href="#DN11-使用-EBGP-重分发-IBGP-OSPF（同as内部peer）" class="headerlink" title="DN11 使用 EBGP 重分发 IBGP OSPF（同as内部peer）"></a>DN11 使用 EBGP 重分发 IBGP OSPF（同as内部peer）</h1><h2 id="连接-wg-peer"><a href="#连接-wg-peer" class="headerlink" title="连接 wg peer"></a>连接 wg peer</h2><p>1.本地机器</p>
-<pre><code class="nginx"># wg_aws.conf
-[Interface]
-# 你的私钥
-PrivateKey = &lt;PRIVATEKAY&gt;
-# 你开的端口号（注意防火墙）
-ListenPort = &lt;PORT&gt;
-PostUp = /sbin/ip addr add dev %i &lt;your ip&gt; peer &lt;peer ip&gt;
-# 不创建路由（由路由协议接管）
-Table = off
-
-[Peer]
-# 你对端的ip和端口（外网机器）
-Endpoint = &lt;ENDPOINT&gt;:&lt;PORT&gt;
-# 你对端的公钥（外网机器）
-PublicKey = &lt;PUBLICKEY&gt; 
-AllowedIPs = 0.0.0.0/0
-</code></pre>
-<p>2.外网机器</p>
-<pre><code class="nginx"># wg_ts_home.conf
-[Interface]
-# 你的私钥
-PrivateKey = &lt;PRIVATEKAY&gt;
-# 你开的端口号（注意防火墙）
-ListenPort = &lt;PORT&gt;
-PostUp = /sbin/ip addr add dev %i &lt;your ip&gt; peer &lt;peer ip&gt;
-# 不创建路由（由路由协议接管）
-Table = off
-# wg 默认的 MTU 是 1420 （这里主要排除外网机器 MTU 异常的问题，洞里打洞不要配这个）
-MTU = 1420
-
-[Peer]
-# 你对端的ip和端口（本地机器）
-Endpoint = &lt;ENDPOINT&gt;:&lt;PORT&gt;
-# 你对端的公钥（本地机器）
-PublicKey = &lt;PUBLICKEY&gt; 
-AllowedIPs = 0.0.0.0/0
-</code></pre>
-<h2 id="bird配置"><a href="#bird配置" class="headerlink" title="bird配置"></a>bird配置</h2><p>创建</p>
-<pre><code class="bash">/etc/bird.conf
-/etc/bird/ospf.conf
-/etc/bird/ibgp.conf
-/etc/bird/bgp.conf
-</code></pre>
-<p>这四个文件</p>
-<p>内网 openwrt 和外网机器上几乎需要相同的这四个文件（唯一不同的是 bgp neighbor 那里）</p>
-<blockquote>
-<p>文中的 172.16.3.254、172.16.3.91 改为你本机（你的本地机器或者外网机器）的隧道ip<br>文中的 4211112243 改为你的 asn （别整出俩 as 号就行）</p>
-</blockquote>
-<h3 id="x2F-etc-x2F-bird-conf"><a href="#x2F-etc-x2F-bird-conf" class="headerlink" title="&#x2F;etc&#x2F;bird.conf"></a>&#x2F;etc&#x2F;bird.conf</h3><pre><code class="nginx">log syslog all;
-debug protocols all;
-
-router id 172.16.3.254;
-
-ipv4 table BGP_table;
-ipv4 table OSPF_table;
-ipv4 table IBGP_table;
-
-protocol device&#123;
-
-&#125;
-
-protocol kernel&#123;
-    ipv4 &#123;
-        export all;
-        import none;
-    &#125;;
-&#125;
-
-include &quot;/etc/bird/ospf.conf&quot;;
-include &quot;/etc/bird/ibgp.conf&quot;;
-include &quot;/etc/bird/bgp.conf&quot;;
-
-protocol pipe PIPE_OSPF_BGP&#123;
-    table BGP_table;
-    peer table OSPF_table;
-    import all;
-    export none;
-&#125;
-
-protocol pipe PIPE_BGP_MASTER4&#123;
-    table master4;
-    peer table BGP_table;
-    import filter &#123;
-        if source = RTS_STATIC then reject;
-        krt_prefsrc = 172.16.3.254;
-        accept;
-    &#125;;
-    export none;
-&#125;
-
-protocol pipe PIPE_IBGP_BGP &#123;
-    table BGP_table;
-    peer table IBGP_table;
-    import filter &#123;
-        if source = RTS_OSPF then reject;
-        accept;
-    &#125;;
-    export filter &#123;
-        if source = RTS_STATIC then reject;
-        accept;
-    &#125;;
-&#125;
-
-# 宣告 172.16.3.0/24 段
-protocol static &#123;
-    ipv4 &#123;
-        table BGP_table;
-        import all;
-        export none;
-    &#125;;
-
-    # 只是为了让BGP的路由表里出现这条路由，不要担心 reject
-    # 这个动作其实无所谓，reject 这个动作并不会被发到其他 AS
-    # 后续将在导出到 master4 的时候删除这条路由，本地也不会有这一条
-    # 请修改为你自己要宣告的段
-    route 172.16.3.0/24 reject;
-&#125;
-</code></pre>
-<h3 id="x2F-etc-x2F-bird-x2F-ibgp-conf"><a href="#x2F-etc-x2F-bird-x2F-ibgp-conf" class="headerlink" title="&#x2F;etc&#x2F;bird&#x2F;ibgp.conf"></a>&#x2F;etc&#x2F;bird&#x2F;ibgp.conf</h3><pre><code class="nginx">template bgp ibgp_peers &#123;
-    local as 4211112243;
-    source address 172.16.3.254;
-    multihop;
-    ipv4 &#123;
-        next hop self;
-        igp table OSPF_table;
-        table IBGP_table;
-        import all;
-        export all;
-    &#125;;
-&#125;
-
-protocol bgp ibgp_aws from ibgp_peers &#123;
-    neighbor 172.16.3.91 internal;
-&#125;
-</code></pre>
-<h2 id="bgp-conf"><a href="#bgp-conf" class="headerlink" title="bgp.conf"></a>bgp.conf</h2><pre><code class="nginx">template bgp BGP_peers &#123;
-    local 172.16.3.254 as 4211112243;
-
-    ipv4 &#123;
-        table BGP_table;
-        import all;
-        export filter &#123;
-            if source ~ [RTS_STATIC, RTS_BGP, RTS_OSPF] then accept;
-            reject;
-        &#125;;
-    &#125;;
-&#125;
-
-# collector 配置
-protocol bgp collect_self &#123;
-    local as 4211112243;
-    multihop;
-    neighbor 172.16.255.1 as 4211110101;
-    ipv4 &#123;
-        add paths tx;
-        table BGP_table;
-        import none;
-        export filter &#123;
-            if source ~ [RTS_BGP,RTS_STATIC] then accept;
-        &#125;;
-    &#125;;
-&#125;
-
-# 如下的 neighbor 配置应按照 wg 实际链接数量为准
-# 从模板定义一个BGP邻居
-# protocol bgp protocol 名称 from 模板名称
-protocol bgp baimeow from BGP_peers &#123;
-   neighbor 172.16.4.254%baimeow as 4220084444;
-&#125;
-
-# 如下为 如果你有物理链路的 BGP 配置 （没有的别抄）
-# protocol bgp Meva_phy from BGP_peers &#123;
-#     source address 172.16.3.1;
-#     neighbor 172.16.3.97%&#39;br-lan&#39; as 4211111024;
-# 
-#     ipv4 &#123;
-#     import filter &#123;
-#             if bgp_path ~ [= 4211111024 =] then bgp_local_pref = 120;
-#             bgp_next_hop = 172.16.3.97;
-#             accept;
-#         &#125;;
-#     &#125;;
-# &#125;
-</code></pre>
-<h2 id="ospf-conf"><a href="#ospf-conf" class="headerlink" title="ospf.conf"></a>ospf.conf</h2><pre><code class="nginx">protocol ospf v2 ospf_aws &#123;
-        ipv4 &#123;
-                table OSPF_table;
-                export all;
-                import all;
-        &#125;;
-        area 0.0.0.0 &#123;
-                interface &quot;wg_aws&quot; &#123;
-                        cost 20;
-                        type ptp;
-                &#125;;
-                interface &quot;lo&quot; &#123;
-                        type bcast;
-                &#125;;
-        &#125;;
-&#125;
-</code></pre>
-
-            
-        </article>
-    </div>
     
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/DN11/" rel="tag">DN11</a>
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div id="gitment"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: '', // 你的 GitHub ID
+    repo: '', // 存储评论的 repo
+    oauth: {
+        client_id: '', // 你的 client ID
+        client_secret: '' // 你的 client secret
+    },
+})
+gitment.render('gitment')
+</script>
 </section>
+    </div>
+</div>
 
 
         <div class="nexmoe-post-right">
@@ -1745,7 +1564,7 @@ protocol bgp baimeow from BGP_peers &#123;
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1697640283443"></script>
+<script src="/js/app.js?v=1697640283206"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
